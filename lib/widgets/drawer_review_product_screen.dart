@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_widget.dart';
+import 'package:water/widgets/water_item_in_drawer.dart';
 
 class DrawerReviewProductScreen extends StatelessWidget{
   const DrawerReviewProductScreen({super.key});
@@ -39,7 +39,7 @@ class DrawerReviewProductScreen extends StatelessWidget{
                   SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                  const WaterItem(),
+                  const WaterItemInDrawer(),
                   const Text(
                     'العدد',
                     style: TextStyle(

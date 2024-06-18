@@ -20,7 +20,7 @@ class SearchTextField extends StatelessWidget{
           ),
           Container(
             width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.041,
+            height: MediaQuery.of(context).size.height * 0.033,
             decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -40,7 +40,9 @@ class SearchTextField extends StatelessWidget{
                   ),
                   
                 hintText: 'البحث عن منتج',
-                hintStyle: TextStyle()
+                hintStyle: const TextStyle(
+                  color: Color(0xff758195),
+                )
               ),
             )
           ),

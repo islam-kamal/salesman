@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
+import 'package:water/widgets/water_item_in_drawer.dart';
 
 class DrawerHomeScreen extends StatelessWidget{
   const DrawerHomeScreen({super.key});
@@ -40,7 +40,7 @@ class DrawerHomeScreen extends StatelessWidget{
                   SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                  const WaterItem(),
+                  const WaterItemInDrawer(),
                   const Text(
                     'العدد',
                     style: TextStyle(

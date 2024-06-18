@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/home_screen.dart';
-import 'package:water/review_product_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily:'GE Dinar One'
-        
       ),
       home: const HomeScreen(),
     );
