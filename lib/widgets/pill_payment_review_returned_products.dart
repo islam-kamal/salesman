@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PillPayment extends StatelessWidget{
-  const PillPayment({super.key});
+class PillPaymentReviewReturnedProducts extends StatelessWidget{
+  const PillPaymentReviewReturnedProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class PillPayment extends StatelessWidget{
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.007,
                       ),
-                      const Text(
+                      Text(
                         'متبقى 25,000 ر.س',
                         style: TextStyle(
                           fontSize: 14,
@@ -88,10 +88,9 @@ void _showAlertDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-
           content: Container(
             width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.195,
             child: Column(
               children: [
                 Image.asset(
@@ -105,7 +104,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
                     child: Text(
-                      'تم اصدار الفاتورة رقم 12314 للتاجر فلان',
+                      'تم اصدار فاتورة مرتجع رقم 12314 للتاجر فلان',
                       style: TextStyle(
                         color: Color(0xff1D6E4F),
                         fontSize: 18,
@@ -116,7 +115,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 16 , top: 10),
                     child: Text(
-                      'تم تحصيل مبلغ 10,000 كاش و 10,000 فيزا',
+                      'تم ارتجاع 50 منتج',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w300
@@ -126,62 +125,68 @@ void _showAlertDialog(BuildContext context) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                          height: MediaQuery.of(context).size.height * 0.038,
-                          decoration: BoxDecoration(
-                          color: Color(0xff1D7AFC),
-                            borderRadius: BorderRadius.circular(5)
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Opacity(
-                                opacity: 0.8,
-                                child: Text(
-                                  'طباعة الفاتورة',
+                      InkWell(
+                        onTap: (){},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).size.height * 0.038,
+                            decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Opacity(
+                                  opacity: 0.8,
+                                  child: Text(
+                                    'طباعة الفاتورة',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.006,
+                                ),
+                                Image.asset('assets/images/PrinterMinimalistic.png'),
+                              ],
+                            ),
+                        ),
+                      ),
+                      
+                      InkWell(
+                        onTap: (){},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).size.height * 0.038,
+                            decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                            color: Color.fromARGB(255, 198, 195, 195),
+                            width: 0.8,
+                            ),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'الرجوع للزيارة',
                                   style: TextStyle(
-                                    color: Colors.white,
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.006,
-                              ),
-                              Image.asset('assets/images/PrinterMinimalistic.png'),
-                            ],
-                          ),
-                      ),
-                      
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                          height: MediaQuery.of(context).size.height * 0.038,
-                          decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                          color: Color.fromARGB(255, 198, 195, 195),
-                          width: 0.8,
-                          ),
-                            borderRadius: BorderRadius.circular(5)
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'الرجوع للزيارة',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.006,
                                 ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.006,
-                              ),
-                              Image.asset('assets/images/arrowww.png'),
-                            ],
-                          ),
+                                Image.asset('assets/images/arrowww.png'),
+                              ],
+                            ),
+                        ),
                       ),
                     ],
                   ),

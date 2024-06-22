@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/review_product_screen.dart';
 
-class ProductsAndPrices extends StatelessWidget{
-  const ProductsAndPrices({super.key});
+class ProductsAndPricesSoldProducts extends StatelessWidget{
+  const ProductsAndPricesSoldProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ProductsAndPrices extends StatelessWidget{
                 children: <Widget>[
                   Container(
                 width: MediaQuery.of(context).size.width * 0.245,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.21,
                 decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -35,14 +35,14 @@ class ProductsAndPrices extends StatelessWidget{
                               const Text(
                                 'امر بيع',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold
                                 ),
                                 ),
                                 const Text(
                                 'لأسم التاجر',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.w300
                                 ),
                                 ),
@@ -50,22 +50,12 @@ class ProductsAndPrices extends StatelessWidget{
                                   height: MediaQuery.of(context).size.height * 0.008,
                                 ),
                                 const Opacity(
-                                  opacity: 0.4,
-                                  child: Text(
-                                  'المنتج',
-                                  style: TextStyle(
-                                  fontWeight: FontWeight.w300,
-                                fontSize: 14,
-                                ),
-                                  ),
-                                ),
-                                const Opacity(
                                   opacity: 0.7,
                                   child: Text(
                                   '  4*مياه',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w300,
-                                fontSize: 14,
+                                    fontSize: 14,
+                                  fontWeight: FontWeight.w300
                                   ),
                                   ),
                                 ),
@@ -74,8 +64,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  2*مياه',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w300,
-                                fontSize: 14,
+                                    fontSize: 14,
+                                  fontWeight: FontWeight.w300
                                   ),
                                   ),
                                 ),
@@ -84,8 +74,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  25*مياه',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w300,
-                                fontSize: 14,
+                                     fontSize: 14,
+                                  fontWeight: FontWeight.w300
                                   ),
                                   ),
                                 ),
@@ -94,8 +84,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  2*مياه',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.w300,
-                                fontSize: 14,
+                                     fontSize: 14,
+                                  fontWeight: FontWeight.w300
                                   ),
                                   ),
                                 ),
@@ -113,42 +103,32 @@ class ProductsAndPrices extends StatelessWidget{
                               Text(
                                 '',
                               ),
-                              Opacity(
-                                opacity: 0.7,
-                                child: Text(
-                                  'المبلغ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                  ),
+                              Text(
+                                '42ر.س',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                 fontWeight: FontWeight.w500,
-                                fontSize: 14,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                fontSize: 14,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                ),
-                              ),
-                              Text(
-                                '42ر.س',
-                                style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 14,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
                                 ),
                               ),
                             ],
@@ -159,7 +139,7 @@ class ProductsAndPrices extends StatelessWidget{
                         color: Color.fromARGB(255, 186, 180, 180),
                          thickness: 0.5,
                       ),
-                      const Row(
+                       const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Opacity(
@@ -169,7 +149,7 @@ class ProductsAndPrices extends StatelessWidget{
                               style: TextStyle(
                                 color: Color(0xff07326A),
                                 fontWeight: FontWeight.w300,
-                                fontSize: 16,
+                                 fontSize: 16,
                               ),
                             ),
                           ),
@@ -221,8 +201,9 @@ class ProductsAndPrices extends StatelessWidget{
                               const Text(
                                 'مراجعة المنتجات',
                                 style: TextStyle(
-                                  color: Colors.blue,
-                                  fontSize: 16,
+                                  color: Color(0xff1D7AFC),
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 14,
                                 ),
                               ),
                             ],

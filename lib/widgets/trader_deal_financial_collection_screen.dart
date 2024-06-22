@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class TraderDealReviewProductScreen extends StatelessWidget{
-  const TraderDealReviewProductScreen({super.key});
+class TraderDealFinancialCollectionScreen extends StatelessWidget{
+  const TraderDealFinancialCollectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-     return Column(
+    return Column(
       children: [
         Container(
           width: MediaQuery.of(context).size.width * 0.23,
@@ -100,7 +100,7 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                                         SizedBox(
                   width: MediaQuery.of(context).size.width * 0.008,
                                         ),
-                                        const Text(
+                                        Text(
                   'مرتجع',
                   style: TextStyle(
                       fontSize: 16,
@@ -136,7 +136,7 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.008,
                             ),
-                            const Text(
+                            Text(
                               'تحصيل',
                               style: TextStyle(
                                 fontSize: 16,
@@ -154,5 +154,5 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                   ),
       ],
     );
-}
+  }
 }

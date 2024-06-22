@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_review_product_screen.dart';
-import 'package:water/widgets/finish_button_review_product_screen.dart';
-import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/payment_method.dart';
-import 'package:water/widgets/pill_payment.dart';
-import 'package:water/widgets/review_product_water_item.dart';
-import 'package:water/widgets/search_text_field_review_product.dart';
-import 'package:water/widgets/trader_deal_review_product_screen.dart';
+import 'package:water/widgets/finish_button_financial_collection_screen.dart';
+import 'package:water/widgets/first_container_in_financial_collection.dart';
+import 'package:water/widgets/payment_method_financial_collection.dart';
+import 'package:water/widgets/pill_payment_financial_collection.dart';
+import 'package:water/widgets/trader_deal_financial_collection_screen.dart';
 
-class ReviewProductScreenDetails extends StatelessWidget{
-  ReviewProductScreenDetails({super.key});
+
+class FinancialCollectionScreenDetails extends StatelessWidget{
+  FinancialCollectionScreenDetails({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -18,7 +16,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        drawer: const DrawerReviewProductScreen(),
+        //drawer: const DrawerReviewProductScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -71,66 +69,22 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealReviewProductScreen(),
+                  const TraderDealFinancialCollectionScreen(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonReviewProductScreen(),
+                  const FinishButtonFinancialCollectionScreen(),
                 ],
               ),
               ),
-                Expanded(
+                 const Expanded(
                 flex: 5,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SearchTextFieldReviewProduct(),
-                    SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.015,
-                  ),
-                    const ImageNumberProductPriceContainer(),
-                    ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    itemBuilder: (context , index){
-                      return InkWell(
-                        onTap: () => _key.currentState!.openDrawer(),
-                        child: const ReviewProductWaterItem(),
-                        );
-                    }
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.006,
-                    ),
-                    const Row(
-                      children: [
-                        Expanded(
-                      flex: 8,
-                      child: Text(
-                        'الاجمالي',
-                        style: TextStyle(
-                          color: Color(0xff07326A),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300
-                        ),
-                      ),
-                      ),
-                      Expanded(
-                      flex: 1,
-                      child: Text(
-                        '42 ر.س',
-                        style: TextStyle(
-                          color: Color(0xff07326A),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
-                        ),
-                      ),
-                      ),
-                      ],
-                    ),
-                    const PaymentMethod(),
-                    const PillPayment(),
+                    FirstContainerInFinancialCollection(),
+                    PaymentMethodFinancialCollection(),
+                    PillPaymentFinancialCollection(),
                   ],
                 ),
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchTextField extends StatelessWidget{
-  const SearchTextField({super.key});
+class SearchTextFieldSoldProductsScreen extends StatelessWidget{
+  const SearchTextFieldSoldProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +9,10 @@ class SearchTextField extends StatelessWidget{
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
          const Text(
-            'المنتجات المتاحة',
+            'المنتجات المباعة',
             style: TextStyle(
               fontSize: 30,
-              fontWeight: FontWeight.bold
+              fontWeight: FontWeight.w600
             ),
           ),
           SizedBox(

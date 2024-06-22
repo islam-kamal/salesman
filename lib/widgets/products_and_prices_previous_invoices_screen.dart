@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/review_product_screen.dart';
 
-class ProductsAndPrices extends StatelessWidget{
-  const ProductsAndPrices({super.key});
+class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget{
+  const ProductsAndPricesPreviousInvoicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class ProductsAndPrices extends StatelessWidget{
                 children: <Widget>[
                   Container(
                 width: MediaQuery.of(context).size.width * 0.245,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.24,
                 decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -33,36 +33,26 @@ class ProductsAndPrices extends StatelessWidget{
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(
-                                'امر بيع',
+                                'مرتجع منتجات',
                                 style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.bold
                                 ),
                                 ),
                                 const Text(
                                 'لأسم التاجر',
                                 style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w300
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500
                                 ),
                                 ),
                                 SizedBox(
                                   height: MediaQuery.of(context).size.height * 0.008,
                                 ),
                                 const Opacity(
-                                  opacity: 0.4,
-                                  child: Text(
-                                  'المنتج',
-                                  style: TextStyle(
-                                  fontWeight: FontWeight.w300,
-                                fontSize: 14,
-                                ),
-                                  ),
-                                ),
-                                const Opacity(
                                   opacity: 0.7,
                                   child: Text(
-                                  '  4*مياه',
+                                  '4*مياه',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                 fontSize: 14,
@@ -72,7 +62,7 @@ class ProductsAndPrices extends StatelessWidget{
                                 const Opacity(
                                   opacity: 0.7,
                                   child: Text(
-                                  '  2*مياه',
+                                  '2*مياه',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                 fontSize: 14,
@@ -82,7 +72,7 @@ class ProductsAndPrices extends StatelessWidget{
                                 const Opacity(
                                   opacity: 0.7,
                                   child: Text(
-                                  '  25*مياه',
+                                  '25*مياه',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                 fontSize: 14,
@@ -92,7 +82,7 @@ class ProductsAndPrices extends StatelessWidget{
                                 const Opacity(
                                   opacity: 0.7,
                                   child: Text(
-                                  '  2*مياه',
+                                  '2*مياه',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
                                 fontSize: 14,
@@ -113,41 +103,31 @@ class ProductsAndPrices extends StatelessWidget{
                               Text(
                                 '',
                               ),
-                              Opacity(
-                                opacity: 0.7,
-                                child: Text(
-                                  'المبلغ',
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                  ),
-                                ),
-                              ),
                               Text(
-                                '42ر.س',
-                                style: TextStyle(
-                                 fontWeight: FontWeight.w500,
-                                fontSize: 14,
-                                ),
-                              ),
-                              Text(
-                                '42ر.س',
+                                '42 ر.س',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                 fontSize: 14,
                                 ),
                               ),
                               Text(
-                                '42ر.س',
+                                '42 ر.س',
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                 fontSize: 14,
                                 ),
                               ),
                               Text(
-                                '42ر.س',
+                                '42 ر.س',
                                 style: TextStyle(
-                                fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                ),
+                              ),
+                              Text(
+                                '42 ر.س',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w500,
                                 fontSize: 14,
                                 ),
                               ),
@@ -168,19 +148,19 @@ class ProductsAndPrices extends StatelessWidget{
                               'الاجمالي',
                               style: TextStyle(
                                 color: Color(0xff07326A),
-                                fontWeight: FontWeight.w300,
                                 fontSize: 16,
+                                fontWeight: FontWeight.w300
                               ),
                             ),
                           ),
                           Opacity(
                             opacity: 0.9,
                             child: Text(
-                              '42ر.س',
+                              '42 ر.س',
                               style: TextStyle(
                                 color: Color(0xff07326A),
-                                fontWeight: FontWeight.w500,
                                 fontSize: 16,
+                                fontWeight: FontWeight.w500
                               ),
                             ),
                           ),
@@ -222,7 +202,8 @@ class ProductsAndPrices extends StatelessWidget{
                                 'مراجعة المنتجات',
                                 style: TextStyle(
                                   color: Colors.blue,
-                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                 ),
                               ),
                             ],

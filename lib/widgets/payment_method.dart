@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/widgets/popup_menu_of_payment.dart';
 
 class PaymentMethod extends StatelessWidget{
   const PaymentMethod({super.key});
@@ -64,8 +65,8 @@ class PaymentMethod extends StatelessWidget{
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 6),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 6),
                     child: Text(
                       'طريقى الدفع',
                       style: TextStyle(
@@ -103,14 +104,13 @@ class PaymentMethod extends StatelessWidget{
                               fontWeight: FontWeight.w300,
                             ),
                           ),
-                          Icon(Icons.keyboard_arrow_down_outlined)
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              
+                          const PopupMenuOfPayment(),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -120,35 +120,38 @@ class PaymentMethod extends StatelessWidget{
                       '',
                     ),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width * 0.17,
-                    height: MediaQuery.of(context).size.height * 0.038,
-                    decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 246, 246, 246),
-                    border: Border.all(
-                    color: const Color.fromARGB(255, 189, 184, 184),
-                    width: 0.5,
-                    ),
-                      borderRadius: BorderRadius.circular(5)
-                    ),
-                    child: const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ImageIcon(
-                            AssetImage(
-                            'assets/images/AdddddCircle.png'
-                          ),),
-                          Text(
-                            'اضافة دفعة',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300
+                  InkWell(
+                    onTap: (){},
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.17,
+                      height: MediaQuery.of(context).size.height * 0.038,
+                      decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 246, 246, 246),
+                      border: Border.all(
+                      color: const Color.fromARGB(255, 189, 184, 184),
+                      width: 0.5,
+                      ),
+                        borderRadius: BorderRadius.circular(5)
+                      ),
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ImageIcon(
+                              AssetImage(
+                              'assets/images/AdddddCircle.png'
+                            ),),
+                            Text(
+                              'اضافة دفعة',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300
+                              ),
                             ),
-                          ),
-                        ],
-                      )
+                          ],
+                        )
+                      ),
                     ),
                   ),
                 ],

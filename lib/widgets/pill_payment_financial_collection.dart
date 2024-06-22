@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PillPayment extends StatelessWidget{
-  const PillPayment({super.key});
+class PillPaymentFinancialCollection extends StatelessWidget{
+  const PillPaymentFinancialCollection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,15 +88,14 @@ void _showAlertDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-
           content: Container(
             width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.19,
             child: Column(
               children: [
                 Image.asset(
-                  color: Color(0xff23A36D),
-                  'assets/images/imagee-truee.png',
+                  color: Color(0xffDD7208),
+                  'assets/images/VectorError.png',
                   width: MediaQuery.of(context).size.width * 0.12,
                   ),
                 SizedBox(
@@ -105,9 +104,9 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
                     child: Text(
-                      'تم اصدار الفاتورة رقم 12314 للتاجر فلان',
+                      'تأكد من استلام المبلغ قبل اصدار الفاتورة',
                       style: TextStyle(
-                        color: Color(0xff1D6E4F),
+                        color: Color(0xff5F480C),
                         fontSize: 18,
                         fontWeight: FontWeight.w500
                       ),
@@ -116,7 +115,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 16 , top: 10),
                     child: Text(
-                      'تم تحصيل مبلغ 10,000 كاش و 10,000 فيزا',
+                      'هل تم تحصيل اجمالي 50,000 ر.س؟',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w300
@@ -139,7 +138,7 @@ void _showAlertDialog(BuildContext context) {
                               const Opacity(
                                 opacity: 0.8,
                                 child: Text(
-                                  'طباعة الفاتورة',
+                                  'تم استلام المبلغ',
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,

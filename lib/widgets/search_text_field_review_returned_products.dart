@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchTextFieldReviewProduct extends StatelessWidget{
-  const SearchTextFieldReviewProduct({super.key});
+class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
+  const SearchTextFieldReviewReturnedProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class SearchTextFieldReviewProduct extends StatelessWidget{
             icon: const Icon(Icons.arrow_back)
             ),
         const Text(
-          'مراجعة المنتجات',
+          'مراجعة المنتجات المرتجعة',
           style: TextStyle(
             fontSize: 23,
             fontWeight: FontWeight.w500

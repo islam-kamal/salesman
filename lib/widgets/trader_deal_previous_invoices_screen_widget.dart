@@ -1,7 +1,9 @@
+// TraderDealPreviousInvoices
+
 import 'package:flutter/material.dart';
 
-class TraderDealReviewProductScreen extends StatelessWidget{
-  const TraderDealReviewProductScreen({super.key});
+class TraderDealPreviousInvoicesScreen extends StatelessWidget{
+  const TraderDealPreviousInvoicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

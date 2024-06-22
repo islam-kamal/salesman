@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_review_product_screen.dart';
-import 'package:water/widgets/finish_button_review_product_screen.dart';
-import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/payment_method.dart';
-import 'package:water/widgets/pill_payment.dart';
-import 'package:water/widgets/review_product_water_item.dart';
-import 'package:water/widgets/search_text_field_review_product.dart';
-import 'package:water/widgets/trader_deal_review_product_screen.dart';
+import 'package:water/widgets/finish_button_review_returned_products_screen.dart';
+import 'package:water/widgets/image_number_product_price_container_review_returned_products.dart';
+import 'package:water/widgets/pill_payment_review_returned_products.dart';
+import 'package:water/widgets/review_returned_products_water_item.dart';
+import 'package:water/widgets/search_text_field_review_returned_products.dart';
+import 'package:water/widgets/trader_deal_review_returned_products_screen.dart';
 
-class ReviewProductScreenDetails extends StatelessWidget{
-  ReviewProductScreenDetails({super.key});
+
+class ReviewReturnedProductsScreenDetails extends StatelessWidget{
+  ReviewReturnedProductsScreenDetails({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -18,7 +17,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        drawer: const DrawerReviewProductScreen(),
+       // drawer: const DrawerReviewProductScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -71,11 +70,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealReviewProductScreen(),
+                  const TraderDealReviewReturnedProductsScreen(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonReviewProductScreen(),
+                  const FinishButtonReviewReturnedProductsScreen(),
                 ],
               ),
               ),
@@ -84,11 +83,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SearchTextFieldReviewProduct(),
+                    const SearchTextFieldReviewReturnedProducts(),
                     SizedBox(
                     height: MediaQuery.of(context).size.height * 0.015,
                   ),
-                    const ImageNumberProductPriceContainer(),
+                    const ImageNumberProductPriceContainerReviewReturnedProducts(),
                     ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -96,7 +95,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                     itemBuilder: (context , index){
                       return InkWell(
                         onTap: () => _key.currentState!.openDrawer(),
-                        child: const ReviewProductWaterItem(),
+                        child: const ReviewReturnedProductsWaterItem(),
                         );
                     }
                     ),
@@ -129,8 +128,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                       ),
                       ],
                     ),
-                    const PaymentMethod(),
-                    const PillPayment(),
+                    const PillPaymentReviewReturnedProducts(),
                   ],
                 ),
                 ),

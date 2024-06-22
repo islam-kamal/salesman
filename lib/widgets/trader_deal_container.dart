@@ -9,7 +9,7 @@ class TraderDealContainer extends StatelessWidget{
       children: [
         Container(
           width: MediaQuery.of(context).size.width * 0.23,
-          height: MediaQuery.of(context).size.height * 0.23,
+          height: MediaQuery.of(context).size.height * 0.22,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
