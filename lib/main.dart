@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
 import 'package:water/home_screen.dart';
+import 'package:water/review_product_screen.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +21,17 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: const HomeScreen(),
+   /*   home:  HomeScreen(
+        child: Container(),
+        button: HomeButtonWidget(
+          asset: 'assets/images/add.png',
+          text: 'اضافة',
+          onClick: (){
+
+          },
+        ),
+      ),*/
+      home: DashboardScreen(),
     );
   }
 }
