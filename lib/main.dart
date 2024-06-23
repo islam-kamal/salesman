@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/financial_collection_screen.dart';
 import 'package:water/home_screen.dart';
+import 'package:water/inventory_screen.dart';
+import 'package:water/previous_invoices_screen.dart';
 import 'package:water/registered_customers_screen.dart';
 import 'package:water/review_returned_products_screen.dart';
 import 'package:water/visits_today_screen.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: RegisteredCustomersScreen(),    //VisitsTodayScreen(),    //ReviewReturnedProductsScreen(),         //HomeScreen(),  //FinancialCollectionScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
+      home: InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),    //ReviewReturnedProductsScreen(),         //HomeScreen(),  //FinancialCollectionScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
     );
   }
 }

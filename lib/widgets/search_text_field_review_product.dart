@@ -25,7 +25,7 @@ class SearchTextFieldReviewProduct extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.014,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
         Container(
           width: double.infinity,

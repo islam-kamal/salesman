@@ -11,12 +11,12 @@ class SearchTextFieldSoldProductsScreen extends StatelessWidget{
          const Text(
             'المنتجات المباعة',
             style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w600
+              fontSize: 23,
+            fontWeight: FontWeight.w500
             ),
           ),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.022,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
           Container(
             width: MediaQuery.of(context).size.width * 0.5,

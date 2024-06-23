@@ -25,7 +25,7 @@ class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.014,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
         Container(
           width: double.infinity,
@@ -51,8 +51,8 @@ class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
                   ),
                   
                 hintText: 'البحث عن منتج',
-                hintStyle: TextStyle(
-                  color: Color(0xff758195),
+                hintStyle: const TextStyle(
+                  color: Color.fromARGB(255, 165, 171, 182),
                 )
               ),
             ),

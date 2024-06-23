@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SearchTextField extends StatelessWidget{
-  const SearchTextField({super.key});
+class SearchTextFieldInventoryScreen extends StatelessWidget{
+  const SearchTextFieldInventoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +12,14 @@ class SearchTextField extends StatelessWidget{
             'المنتجات المتاحة',
             style: TextStyle(
               fontSize: 23,
-            fontWeight: FontWeight.w500
+              fontWeight: FontWeight.w500
             ),
           ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.019,
           ),
           Container(
-            width: MediaQuery.of(context).size.width * 0.5,
+            width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.033,
             decoration: BoxDecoration(
             color: Colors.white,
@@ -43,7 +43,7 @@ class SearchTextField extends StatelessWidget{
                     
                   hintText: 'البحث عن منتج',
                   hintStyle: const TextStyle(
-                    color: Color(0xff758195),
+                    color: Color.fromARGB(255, 150, 157, 170),
                   )
                 ),
               ),

@@ -6,15 +6,8 @@ class SearchTextFieldPreviousInvoicesScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          children: [
-            IconButton(
-          onPressed: (){
-            Navigator.of(context).pop();
-          },
-            icon: const Icon(Icons.arrow_back)
-            ),
         const Text(
           'الفواتير السابقة',
           style: TextStyle(
@@ -22,10 +15,8 @@ class SearchTextFieldPreviousInvoicesScreen extends StatelessWidget{
             fontWeight: FontWeight.w500
           ),
         ),
-          ],
-        ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.014,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
         Container(
           width: double.infinity,
@@ -51,8 +42,8 @@ class SearchTextFieldPreviousInvoicesScreen extends StatelessWidget{
                   ),
                   
                 hintText: 'البحث عن فاتورة',
-                hintStyle: TextStyle(
-                  color: Color(0xff758195),
+                hintStyle: const TextStyle(
+                  color: Color.fromARGB(255, 146, 155, 171),
                 )
               ),
             ),
