@@ -11,22 +11,14 @@ class PillPaymentReviewReturnedProducts extends StatelessWidget{
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: Row(
             children: [
-              Expanded(
+              const Expanded(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  padding: EdgeInsets.symmetric(vertical: 14),
                   child: Row(
                     children: [
-                      Image.asset('assets/images/Banknote2.png'),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.007,
-                      ),
                       Text(
-                        'متبقى 25,000 ر.س',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w300
-                        ),
+                        '',
                       ),
                     ],
                   ),

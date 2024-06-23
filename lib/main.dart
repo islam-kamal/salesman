@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:water/financial_collection_screen.dart';
+import 'package:water/home_screen.dart';
+import 'package:water/registered_customers_screen.dart';
+import 'package:water/review_returned_products_screen.dart';
+import 'package:water/visits_today_screen.dart';
 
 
 void main() {
@@ -15,11 +19,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff1D7AFC)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff1D7AFC)),
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home:  FinancialCollectionScreen(),         //SoldProductsScreen(),               //ReviewReturnedProductsScreen(),       //PreviousInvoicesScreen()     //HomeScreen(),
+      home: RegisteredCustomersScreen(),    //VisitsTodayScreen(),    //ReviewReturnedProductsScreen(),         //HomeScreen(),  //FinancialCollectionScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
     );
   }
 }

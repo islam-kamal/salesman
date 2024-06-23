@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_home_screen.dart';
-import 'package:water/widgets/finish_button_widget.dart';
-import 'package:water/widgets/products_and_prices.dart';
-import 'package:water/widgets/search_text_field_widget.dart';
-import 'package:water/widgets/trader_deal_container.dart';
-import 'package:water/widgets/water_item_widget.dart';
+import 'package:water/widgets/finish_button_visits_today_screen.dart';
+import 'package:water/widgets/trader_deal_visits_today_screen.dart';
+import 'package:water/widgets/visits_today_screen_container_item.dart';
 
-class HomeScreenDetails extends StatelessWidget{
-  HomeScreenDetails({super.key});
+class VisitsTodayScreenDetails extends StatelessWidget{
+  VisitsTodayScreenDetails({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -16,7 +13,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        drawer: const DrawerHomeScreen(),
+        drawer: const Drawer(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -41,7 +38,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                    child: Padding(
                      padding: const EdgeInsets.symmetric(horizontal: 11),
-                     child:  Row(
+                     child: Row(
                            children: [
                             InkWell(
                               onTap: () => _key.currentState!.openDrawer(),
@@ -55,7 +52,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                           const Opacity(
                             opacity: 0.8,
                               child: Text(
-                                'اخفاء القائمة'
+                                'اخفاء القائمة',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300
+                                ),
                                 ),
                             ),
                            ],
@@ -65,39 +66,49 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealContainer(),
+                  const TraderDealVisitsTodayScreen(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButton(),
-                ],
-              )),
-           
-                Expanded(
-                  flex: 3,
-                child:   Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                 const SearchTextField(),
-              
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 6,
-                    itemBuilder: (context , index){
-                      return const WaterItem();
-                    }
-                    ),
+                  const FinishButtonVisitsTodayScreen(),
                 ],
               ),
+              ),
+                  Expanded(
+                flex: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'زيارات اليوم',
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.008,
+                      ),
+                      GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        childAspectRatio: 4.3/2
+                        ),
+                        itemCount: 8,
+                     itemBuilder: (context , index){
+                      return const VisitsTodayScreenContainerItem();
+                     },
+                               ),
+                    ],
+                  ),
                 ),
-               const ProductsAndPrices()
-               ],
+            ],
           ),
         ),
-       )
-       );
+       ),
+    );
   }
 }
-
-
