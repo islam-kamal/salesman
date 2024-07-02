@@ -88,7 +88,7 @@ void _showAlertDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-
+          backgroundColor: Colors.white, // Set the background color here
           content: Container(
             width: MediaQuery.of(context).size.width * 0.6,
             height: MediaQuery.of(context).size.height * 0.2,

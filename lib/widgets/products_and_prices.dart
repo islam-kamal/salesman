@@ -13,7 +13,7 @@ class ProductsAndPrices extends StatelessWidget{
                 children: <Widget>[
                   Container(
                 width: MediaQuery.of(context).size.width * 0.245,
-                height: MediaQuery.of(context).size.height * 0.25,
+                height: MediaQuery.of(context).size.height * 0.19,
                 decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
