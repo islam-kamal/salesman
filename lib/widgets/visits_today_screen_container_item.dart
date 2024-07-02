@@ -1,16 +1,14 @@
 
 import 'package:flutter/material.dart';
 
-class WaterItemPreviousInvoices extends StatelessWidget{
-  const WaterItemPreviousInvoices({super.key});
+class VisitsTodayScreenContainerItem extends StatelessWidget{
+  const VisitsTodayScreenContainerItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6),
-          child: Container(
+           Container(
             width: MediaQuery.of(context).size.width * 0.5,
             height: MediaQuery.of(context).size.height * 0.08,
             decoration: BoxDecoration(
@@ -28,12 +26,22 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Text(
-                        'اجمالي 50 منتج',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500
-                        ),
+                      Row(
+                        children: [
+                          Image.asset(
+                            'assets/images/VectorShopp.png'
+                          ),
+                          SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.008,
+                              ),
+                          const Text(
+                            'اسم المتجر',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500
+                            ),
+                          ),
+                        ],
                       ),
                       Container(
                         decoration: BoxDecoration(
@@ -48,14 +56,14 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                           padding: const EdgeInsets.symmetric(horizontal: 5),
                           child: Row(
                             children: [
-                              Image.asset('assets/images/VectooorAsd.png'),
+                              Image.asset('assets/images/Vectormnmn.png'),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.008,
                               ),
                               const Text(
-                                'تم سداد 50% ',
+                                'يبعد 232 ك.م',
                                 style: TextStyle(
-                                  color: Color(0xff1D6E4F),
+                                  color: Color(0xff07326A),
                                   fontSize: 14,
                                   fontWeight: FontWeight.w300
                                 ),
@@ -70,13 +78,14 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                      padding: const EdgeInsets.only(top: 5),
                      child: Row(
                           children: [
-                            Image.asset('assets/images/VectorSvsds.png'),
+                            Image.asset('assets/images/VectorStrokeCash.png'),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.008,
                             ),
                             const Text(
-                              'فاتورة رقم 123414',
+                              '15,000 مديونية',
                               style: TextStyle(
+                                color: Color(0xff5F480C),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w300
                               ),
@@ -88,13 +97,14 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                         padding: const EdgeInsets.only(top: 5),
                         child: Row(
                           children: [
-                            Image.asset('assets/images/VectorPkoik.png'),
+                            Image.asset('assets/images/VectorStrokeTruee.png'),
                             SizedBox(
                             width: MediaQuery.of(context).size.width * 0.008,
                           ),
                             const Text(
-                              'اصدار بتاريخ 21 / 8 / 2024',
+                              '30,000 مبيعات شهرية',
                               style: TextStyle(
+                                color: Color(0xff1D6E4F),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w300
                               ),
@@ -106,10 +116,8 @@ class WaterItemPreviousInvoices extends StatelessWidget{
               ),
             )
           ),
-        ),
       ],
     );
   }
 }
-
 

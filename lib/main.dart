@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/financial_collection_screen.dart';
-import 'package:water/home_screen.dart';
-import 'package:water/review_returned_products_screen.dart';
 
 
 void main() {
@@ -17,13 +15,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-       // colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff1D7AFC)),
-        //  dialogBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSeed(seedColor: Color(0xff1D7AFC)),
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: HomeScreen()// ReviewReturnedProductsScreen(),
-      // home:  FinancialCollectionScreen(),         //SoldProductsScreen(),               //ReviewReturnedProductsScreen(),       //PreviousInvoicesScreen()     //HomeScreen(),
+      home:  FinancialCollectionScreen(),         //SoldProductsScreen(),               //ReviewReturnedProductsScreen(),       //PreviousInvoicesScreen()     //HomeScreen(),
     );
   }
 }
