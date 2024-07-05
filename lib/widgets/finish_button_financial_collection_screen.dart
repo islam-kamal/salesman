@@ -29,7 +29,9 @@ class FinishButtonFinancialCollectionScreen extends StatelessWidget{
               ),
                 child: TextButton(
                 clipBehavior: Clip.hardEdge,
-                onPressed: (){},
+                onPressed: (){
+                  _showAlertDialog(context);
+                },
                   child: Row(
                   children: [
                     Image.asset(
@@ -57,3 +59,118 @@ class FinishButtonFinancialCollectionScreen extends StatelessWidget{
     );
   }
 }
+
+
+void _showAlertDialog(BuildContext context) {
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).size.height * 0.188,
+            child: Column(
+              children: [
+                Image.asset(
+                  'assets/images/InfoCircle.png',
+                  width: MediaQuery.of(context).size.width * 0.12,
+                  ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.008,
+                ),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 11),
+                    child: Text(
+                     'هل انت متأكد من انهاء الزيارة؟',
+                      style: TextStyle(
+                        color: Color(0xff0056C9),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500
+                      ),
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 16 , top: 10),
+                    child: Text(
+                      'يمكنك بدء الزيارة مجدداً لاصدار فواتير جديدة',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      InkWell(
+                        onTap: (){},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).size.height * 0.038,
+                            decoration: BoxDecoration(
+                            color: const Color(0xff1D7AFC),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Opacity(
+                                  opacity: 0.8,
+                                  child: Text(
+                                    'انهاء الزيارة',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.006,
+                                ),
+                                Image.asset('assets/images/PrinterMinimalistic.png'),
+                              ],
+                            ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: (){},
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).size.height * 0.038,
+                            decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                            color: Color.fromARGB(255, 198, 195, 195),
+                            width: 0.8,
+                            ),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'الرجوع للزيارة',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.006,
+                                ),
+                                Image.asset('assets/images/arrowww.png'),
+                              ],
+                            ),
+                        ),
+                      ),
+                    ],
+                  ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }

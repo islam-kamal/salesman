@@ -11,7 +11,7 @@ class ProductReturnDrawer extends StatefulWidget{
 
 class _ProductReturnDrawerState extends State<ProductReturnDrawer> {
 
-int _value = 1;
+int _value = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +112,8 @@ int _value = 1;
                       ),
                       Row(
                         children: [
-                              Radio(value: 1,
+                              Radio(
+                                value: 1,
                                groupValue: _value,
                                 onChanged: (value){
                                   setState(() {
@@ -138,7 +139,7 @@ int _value = 1;
                                 }
                                 ),
                                 const Text(
-                                  'مرتجع جيد',
+                                  'مرتجع سىء',
                                   style: TextStyle(
                                     color: Color(0xff758195),
                                     fontSize: 14,

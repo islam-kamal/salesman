@@ -96,7 +96,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
                     child: Text(
-                      'تم اصدار فاتورة مرتجع رقم 12314 للتاجر فلان',
+                      'تم اصدار فاتورة المرتجع',
                       style: TextStyle(
                         color: Color(0xff1D6E4F),
                         fontSize: 18,
@@ -107,7 +107,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 16 , top: 10),
                     child: Text(
-                      'تم ارتجاع 50 منتج',
+                      'تم اصدار فاتورة مرتجع رقم 12314 ب50 منتج للتاجر فلان',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w300

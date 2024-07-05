@@ -79,7 +79,6 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                  const SearchTextField(),
-              
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),

@@ -99,7 +99,7 @@ class PaymentMethodFinancialCollection extends StatelessWidget {
                           const Expanded(
                             flex: 4,
                             child: Text(
-                              'كاش او فيزا',
+                              'شيك أو تحويل',
                               style: TextStyle(
                                 color: Color(0xff758195),
                                 fontSize: 16,

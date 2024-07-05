@@ -26,8 +26,9 @@ class TraderDealReviewProductScreen extends StatelessWidget{
               const Text(
                 'بدا المعاملة مع',
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
+                  color: Color(0xff25292E),
+                  fontSize: 17,
+                  fontWeight: FontWeight.w700
                 ),
                 ),
                 const Opacity(
@@ -35,7 +36,9 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                   child: Text(
                   'اسم التاجر',
                   style: TextStyle(
-                      fontSize: 20,
+                      color: Color(0xff25292E),
+                  fontSize: 17,
+                  fontWeight: FontWeight.w300
                     ),
                   ),
                 ),

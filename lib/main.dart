@@ -5,6 +5,7 @@ import 'package:water/inventory_screen.dart';
 import 'package:water/previous_invoices_screen.dart';
 import 'package:water/registered_customers_screen.dart';
 import 'package:water/review_returned_products_screen.dart';
+import 'package:water/trader_details_screen.dart';
 import 'package:water/visits_today_screen.dart';
 
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),    //ReviewReturnedProductsScreen(),         //HomeScreen(),  //FinancialCollectionScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
+      home: ReviewReturnedProductsScreen(),   //PreviousInvoicesScreen(),   //FinancialCollectionScreen(),   //TraderDetailsScreen(),  //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
     );
   }
 }

@@ -1,5 +1,3 @@
-// FinishButtonPreviousInvoicesScreen
-
 import 'package:flutter/material.dart';
 
 class FinishButtonPreviousInvoicesScreen extends StatelessWidget{

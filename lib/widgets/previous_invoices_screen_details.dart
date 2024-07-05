@@ -75,11 +75,10 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
            
                 Expanded(
                   flex: 3,
-                child:   Column(
+                child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                  const SearchTextFieldPreviousInvoicesScreen(),
-              
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
