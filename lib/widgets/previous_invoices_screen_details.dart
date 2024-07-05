@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/drawer_previous_invoices_screen.dart';
-import 'package:water/widgets/finish_button_previous_invoices_screen.dart';
+import 'package:water/widgets/finish_button_container_widget.dart';
 import 'package:water/widgets/products_and_prices_previous_invoices_screen.dart';
 import 'package:water/widgets/search_text_field_previous_invoices_screen.dart';
-import 'package:water/widgets/trader_deal_previous_invoices_screen_widget.dart';
+import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/water_item_previous_invoices.dart';
 
 class PreviousInvoicesScreenDetails extends StatelessWidget{
@@ -65,11 +65,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealPreviousInvoicesScreen(),
+                  const StoreDealContainer(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonPreviousInvoicesScreen(),
+                  const FinishButtonContainer(),
                 ],
               )),
            

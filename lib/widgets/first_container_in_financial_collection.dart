@@ -28,8 +28,8 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
             ),
             borderRadius: BorderRadius.circular(8)
           ),
-          child: Center(
-          child: const Text(
+          child: const Center(
+          child: Text(
             'مستحق  25,000 ر.س',
             style: TextStyle(
               fontSize: 18,

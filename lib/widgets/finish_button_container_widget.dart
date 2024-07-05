@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FinishButtonFinancialCollectionScreen extends StatelessWidget{
-  const FinishButtonFinancialCollectionScreen({super.key});
+class FinishButtonContainer extends StatelessWidget{
+  const FinishButtonContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

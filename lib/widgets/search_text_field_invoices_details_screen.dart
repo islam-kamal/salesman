@@ -1,5 +1,5 @@
+import './water_item_previous_invoices.dart';
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
 
 class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
   const SearchTextFieldInvoicesDetailsScreen({super.key});
@@ -11,7 +11,12 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
       children: [
         Row(
           children: [
-            const Icon(Icons.arrow_back),
+            InkWell(
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+              child: const Icon(Icons.arrow_back),
+              ),
             SizedBox(
             width: MediaQuery.of(context).size.width * 0.019,
           ),

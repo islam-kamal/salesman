@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TraderDealReviewReturnedProductsScreen extends StatelessWidget{
-  const TraderDealReviewReturnedProductsScreen({super.key});
+class StoreDealContainer extends StatelessWidget {
+  const StoreDealContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-     return Column(
+    return Column(
       children: [
         Container(
           width: MediaQuery.of(context).size.width * 0.23,
-          height: MediaQuery.of(context).size.height * 0.262,
+          height: MediaQuery.of(context).size.height * 0.32,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -98,7 +98,39 @@ class TraderDealReviewReturnedProductsScreen extends StatelessWidget{
                             width: MediaQuery.of(context).size.width * 0.008,
                           ),
                           const Text(
-                            'مرتجع',
+                            'مرتجع جيد',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.011,
+                ),
+                InkWell(
+                  onTap: () {},
+                  focusColor: const Color.fromARGB(255, 30, 133, 219),
+                  hoverColor: const Color.fromARGB(255, 30, 133, 219),
+                  onLongPress: () => Colors.blue,
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.23,
+                    height: MediaQuery.of(context).size.height * 0.041,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(14),
+                      child: Row(
+                        children: [
+                          Image.asset('assets/images/badReturned.png'),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.008,
+                          ),
+                          const Text(
+                           'مرتجع سيء',
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w500),
                           ),
@@ -181,5 +213,5 @@ class TraderDealReviewReturnedProductsScreen extends StatelessWidget{
         ),
       ],
     );
-}
+  }
 }

@@ -1,11 +1,11 @@
+import './finish_button_container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/drawer_review_returned_products_screen.dart';
-import 'package:water/widgets/finish_button_review_returned_products_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_review_returned_products.dart';
 import 'package:water/widgets/pill_payment_review_returned_products.dart';
 import 'package:water/widgets/review_returned_products_water_item.dart';
 import 'package:water/widgets/search_text_field_review_returned_products.dart';
-import 'package:water/widgets/trader_deal_review_returned_products_screen.dart';
+import 'package:water/widgets/store_deal_container_widget.dart';
 
 
 class ReviewReturnedProductsScreenDetails extends StatelessWidget{
@@ -71,11 +71,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealReviewReturnedProductsScreen(),
+                  const StoreDealContainer(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonReviewReturnedProductsScreen(),
+                  const FinishButtonContainer(),
                 ],
               ),
               ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_financial_collection_screen.dart';
+import 'package:water/widgets/finish_button_container_widget.dart';
 import 'package:water/widgets/first_container_in_financial_collection.dart';
 import 'package:water/widgets/payment_method_financial_collection.dart';
 import 'package:water/widgets/pill_payment_financial_collection.dart';
+import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/take_photo_widget.dart';
-import 'package:water/widgets/trader_deal_financial_collection_screen.dart';
 
 class FinancialCollectionScreenDetails extends StatelessWidget {
   FinancialCollectionScreenDetails({super.key});
@@ -65,11 +65,11 @@ class FinancialCollectionScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const TraderDealFinancialCollectionScreen(),
+                    const StoreDealContainer(),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonFinancialCollectionScreen(),
+                    const FinishButtonContainer(),
                   ],
                 ),
               ),
