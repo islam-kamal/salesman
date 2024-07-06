@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water/widgets/finish_button_registered_customers_screen.dart';
 import 'package:water/widgets/registered_customers_screen_container_item.dart';
 import 'package:water/widgets/trader_deal_registered_customers_screen.dart';
+import 'package:water/basics/shared.dart';
 
 class RegisteredCustomersScreenDetails extends StatelessWidget{
   RegisteredCustomersScreenDetails({super.key});
@@ -26,8 +27,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                   height: MediaQuery.of(context).size.height * 0.041,
+                    width: Shared.width * 0.23,
+                   height: Shared.height * 0.041,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -47,7 +48,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
+                              width: Shared.width * 0.01,
                             ),
                           const Opacity(
                             opacity: 0.8,
@@ -64,11 +65,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const TraderDealRegisteredCustomersScreen(),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const FinishButtonRegisteredCustomersScreen(),
                 ],
@@ -87,7 +88,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         ),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
+                        height: Shared.height * 0.008,
                       ),
                       GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),

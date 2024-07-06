@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class PillPaymentReviewReturnedProducts extends StatelessWidget{
   const PillPaymentReviewReturnedProducts({super.key});
@@ -31,8 +32,8 @@ class PillPaymentReviewReturnedProducts extends StatelessWidget{
                       _showAlertDialog(context);
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                        height: MediaQuery.of(context).size.height * 0.038,
+                      width: Shared.width * 0.23,
+                        height: Shared.height * 0.038,
                         decoration: BoxDecoration(
                         color: Color(0xff1D7AFC),
                         borderRadius: BorderRadius.circular(6)
@@ -45,7 +46,7 @@ class PillPaymentReviewReturnedProducts extends StatelessWidget{
                                     color: Colors.white
                                     ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                   const Opacity(
                                     opacity: 0.7,
@@ -81,22 +82,22 @@ void _showAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.195,
+            width: Shared.width * 0.6,
+            height: Shared.height * 0.195,
             child: Column(
               children: [
                 Image.asset(
                   color: Color(0xff23A36D),
                   'assets/images/imagee-truee.png',
-                  width: MediaQuery.of(context).size.width * 0.12,
+                  width: Shared.width * 0.12,
                   ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.013,
+                  height: Shared.height * 0.013,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
                     child: Text(
-                      'تم اصدار فاتورة مرتجع رقم 12314 للتاجر فلان',
+                      'تم اصدار فاتورة المرتجع',
                       style: TextStyle(
                         color: Color(0xff1D6E4F),
                         fontSize: 18,
@@ -107,7 +108,7 @@ void _showAlertDialog(BuildContext context) {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 16 , top: 10),
                     child: Text(
-                      'تم ارتجاع 50 منتج',
+                      'تم اصدار فاتورة مرتجع رقم 12314 ب50 منتج للتاجر فلان',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w300
@@ -120,8 +121,8 @@ void _showAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -141,7 +142,7 @@ void _showAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -152,8 +153,8 @@ void _showAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -173,7 +174,7 @@ void _showAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],

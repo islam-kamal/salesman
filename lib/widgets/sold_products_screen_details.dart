@@ -6,6 +6,7 @@ import 'package:water/widgets/products_and_prices_sold_products.dart';
 import 'package:water/widgets/search_text_field_sold_products_screen.dart';
 import 'package:water/widgets/trader_deal_container_sold_products_screen.dart';
 import 'package:water/widgets/water_item_sold_products.dart';
+import 'package:water/basics/shared.dart';
 
 class SoldProductsScreenDetails extends StatelessWidget{
   SoldProductsScreenDetails({super.key});
@@ -30,8 +31,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                   height: MediaQuery.of(context).size.height * 0.041,
+                    width: Shared.width * 0.23,
+                   height: Shared.height * 0.041,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -51,7 +52,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
+                              width: Shared.width * 0.01,
                             ),
                           const Opacity(
                             opacity: 0.8,
@@ -68,11 +69,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const TraderDealContainerSoldProductsScreen(),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const FinishButtonSoldProductsScreen(),
                 ],
@@ -85,7 +86,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                 children: [
                  const SearchTextFieldSoldProductsScreen(),
                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.015,
+                    height: Shared.height * 0.015,
                   ),
                 const ImageNumberProductPriceContainerSoldProducts(),
                   ListView.builder(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
   const SearchTextFieldReviewReturnedProducts({super.key});
@@ -25,11 +26,11 @@ class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.014,
+            height: Shared.height * 0.019,
           ),
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.033,
+          height: Shared.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -51,8 +52,8 @@ class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
                   ),
                   
                 hintText: 'البحث عن منتج',
-                hintStyle: TextStyle(
-                  color: Color(0xff758195),
+                hintStyle: const TextStyle(
+                  color: Color.fromARGB(255, 165, 171, 182),
                 )
               ),
             ),

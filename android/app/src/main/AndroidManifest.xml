@@ -3,6 +3,10 @@
         android:label="water"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyC6z56KQ401mfW7y1MiNDhuNnmgPbu5o18"/>
+           
         <activity
             android:name=".MainActivity"
             android:exported="true"

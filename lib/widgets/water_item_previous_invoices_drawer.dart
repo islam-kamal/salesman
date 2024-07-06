@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class WaterItemPreviousInvoicesDrawer extends StatelessWidget{
   const WaterItemPreviousInvoicesDrawer({super.key});
@@ -11,8 +12,8 @@ class WaterItemPreviousInvoicesDrawer extends StatelessWidget{
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.08,
+            width: Shared.width * 0.5,
+            height: Shared.height * 0.08,
             decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -50,7 +51,7 @@ class WaterItemPreviousInvoicesDrawer extends StatelessWidget{
                             children: [
                               Image.asset('assets/images/VectooorAsd.png'),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.008,
+                                width: Shared.width * 0.008,
                               ),
                               const Text(
                                 'تم سداد 50% ',
@@ -71,7 +72,7 @@ class WaterItemPreviousInvoicesDrawer extends StatelessWidget{
                           children: [
                             Image.asset('assets/images/VectorSvsds.png'),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.008,
+                              width: Shared.width * 0.008,
                             ),
                             const Text(
                               'فاتورة رقم 123414',
@@ -89,7 +90,7 @@ class WaterItemPreviousInvoicesDrawer extends StatelessWidget{
                           children: [
                             Image.asset('assets/images/VectorPkoik.png'),
                             SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.008,
+                            width: Shared.width * 0.008,
                           ),
                             const Text(
                               'اصدار بتاريخ 21 / 8 / 2024',

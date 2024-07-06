@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_previous_invoices_drawer.dart';
+import 'package:water/basics/shared.dart';
 
 class DrawerPreviousInvoicesScreen extends StatelessWidget{
   const DrawerPreviousInvoicesScreen({super.key});
@@ -7,7 +8,7 @@ class DrawerPreviousInvoicesScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -25,7 +26,7 @@ class DrawerPreviousInvoicesScreen extends StatelessWidget{
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'تحصيل الفاتورة',
@@ -37,7 +38,7 @@ class DrawerPreviousInvoicesScreen extends StatelessWidget{
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.012,
+                        height: Shared.height * 0.012,
                       ),
                   const WaterItemPreviousInvoicesDrawer(),
                  

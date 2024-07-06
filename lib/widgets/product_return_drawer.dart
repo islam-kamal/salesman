@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_product_return_drawer.dart';
+import 'package:water/basics/shared.dart';
 
 class ProductReturnDrawer extends StatefulWidget{
   const ProductReturnDrawer({super.key});
@@ -11,12 +12,12 @@ class ProductReturnDrawer extends StatefulWidget{
 
 class _ProductReturnDrawerState extends State<ProductReturnDrawer> {
 
-int _value = 1;
+int _value = 0;
 
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -34,7 +35,7 @@ int _value = 1;
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'ارتجاع المنتج',
@@ -46,7 +47,7 @@ int _value = 1;
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                   const WaterItemProductReturnDrawer(),
                   const Text(
@@ -70,11 +71,11 @@ int _value = 1;
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            width: Shared.width * 0.13,
+                            height: Shared.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -88,7 +89,7 @@ int _value = 1;
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           InkWell(
                             onTap: (){},
@@ -101,7 +102,7 @@ int _value = 1;
                       ),
                     ),
                     SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                       const Text(
                         'نوع المرتجع',
@@ -112,7 +113,8 @@ int _value = 1;
                       ),
                       Row(
                         children: [
-                              Radio(value: 1,
+                              Radio(
+                                value: 1,
                                groupValue: _value,
                                 onChanged: (value){
                                   setState(() {
@@ -138,7 +140,7 @@ int _value = 1;
                                 }
                                 ),
                                 const Text(
-                                  'مرتجع جيد',
+                                  'مرتجع سىء',
                                   style: TextStyle(
                                     color: Color(0xff758195),
                                     fontSize: 14,
@@ -156,8 +158,8 @@ int _value = 1;
                           dashPattern: [10, 14],
                           strokeWidth: 2,
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 0.5,
-                            height: MediaQuery.of(context).size.height * 0.045,
+                            width: Shared.width * 0.5,
+                            height: Shared.height * 0.045,
                             decoration: BoxDecoration(
                             color: Colors.white,
                               borderRadius: BorderRadius.circular(8)
@@ -174,7 +176,7 @@ int _value = 1;
                                 ),
                               ),
                               SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.005,
+                          width: Shared.width * 0.005,
                         ),
                               const Icon(
                                 Icons.add_circle_outline,
@@ -186,7 +188,7 @@ int _value = 1;
                         ),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -214,8 +216,8 @@ int _value = 1;
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: Shared.width * 0.28,
+                              height: Shared.height * 0.039,
                               decoration: BoxDecoration(
                               color: const Color(0xff1D7AFC),
                                 borderRadius: BorderRadius.circular(5)
@@ -228,7 +230,7 @@ int _value = 1;
                                       color: Colors.white,
                                       ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                     const Opacity(
                                       opacity: 0.8,

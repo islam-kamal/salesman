@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class ReviewReturnedProductsWaterItem extends StatelessWidget{
   const ReviewReturnedProductsWaterItem({super.key});
@@ -9,7 +10,7 @@ class ReviewReturnedProductsWaterItem extends StatelessWidget{
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
         width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.045,
+              height: Shared.height * 0.045,
               decoration: BoxDecoration(
               color: Colors.white,
                 borderRadius: BorderRadius.circular(8)
@@ -21,7 +22,7 @@ class ReviewReturnedProductsWaterItem extends StatelessWidget{
                     child: Image.asset('assets/images/IMGggg.png')
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.015,
+                      width: Shared.width * 0.015,
                     ),
                     const Expanded(
                     flex: 1,
@@ -38,12 +39,32 @@ class ReviewReturnedProductsWaterItem extends StatelessWidget{
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'مياه',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500
-                          ),
+                         Row(
+                          children: [
+                            Text(
+                              'الكاتجوري',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                            Text(
+                              '   .   ',
+                              style: TextStyle(
+                                color: Color(0xff25292E),
+                                fontSize: 18,
+                                fontWeight: FontWeight.w900
+                              ),
+                            ),
+                              Text(
+                              'مياه',
+                              style: TextStyle(
+                                color: Color(0xff25292E),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
                           'مياه مدينة شرنك 15 حبة  600 مل',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class FirstContainerInFinancialCollection extends StatelessWidget{
   const FirstContainerInFinancialCollection({super.key});
@@ -19,7 +20,7 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
           padding: const EdgeInsets.symmetric(vertical: 14),
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.046,
+            height: Shared.height * 0.046,
             decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -28,8 +29,8 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
             ),
             borderRadius: BorderRadius.circular(8)
           ),
-          child: Center(
-          child: const Text(
+          child: const Center(
+          child: Text(
             'مستحق  25,000 ر.س',
             style: TextStyle(
               fontSize: 18,

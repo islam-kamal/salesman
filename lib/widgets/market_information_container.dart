@@ -1,0 +1,197 @@
+import 'package:flutter/material.dart';
+import 'package:water/widgets/files_list_view_item.dart';
+import 'package:water/basics/shared.dart';
+
+class  MarketInformationContainer extends StatelessWidget{
+  const MarketInformationContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+            height: Shared.height * 0.4,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.grey,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          const Text(
+                          'معلومات المتجر',
+                          style: TextStyle(
+                            color: Color(0xff25292E),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(
+                          width: Shared.width * 0.008,
+                        ),
+                        Container(
+                                    width: Shared.width * 0.163,
+                                    height: Shared.height * 0.019,
+                                    decoration: BoxDecoration(
+                                      color: Color.fromARGB(255, 243, 243, 244),
+                                      border: Border.all(
+                                        color: Colors.grey,
+                                        width: 0.5,
+                                      ),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(3),
+                                      child: Row(
+                                children: [
+                                Image.asset(
+                                  'assets/images/VerifiedCheck.png',
+                                  color: const Color(0xff0056C9),
+                                ),
+                                SizedBox(
+                                  width: Shared.width * 0.004,
+                                ),
+                                const Text(
+                                  'عميل منذ 3 سنين',
+                                  style: TextStyle(
+                                      color: Color(0xff0056C9),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: Opacity(
+                          opacity: 0.2,
+                          child: Image.asset(
+                            'assets/images/Shop.png',
+                            height: Shared.height * 0.035,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                      'اسم المتجر',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                   const Text(
+                    'ميسر كو',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+                  SizedBox(
+                    height: Shared.height * 0.008,
+                  ),
+                  const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                      'الرقم الضريبي',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                   const Text(
+                    '6654654654513221',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+                  SizedBox(
+                    height: Shared.height * 0.008,
+                  ),
+                   const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                      'رقم السجل',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                   const Text(
+                    '45464654 654654',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+                  SizedBox(
+                    height: Shared.height * 0.008,
+                  ),
+                   const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                      'الموقع الرسمي',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                   const Text(
+                    'maisarco.com',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500
+                    ),
+                  ),
+                  SizedBox(
+                    height: Shared.height * 0.008,
+                  ),
+                  const Opacity(
+                    opacity: 0.7,
+                    child: Text(
+                     'المستندات',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300
+                      ),
+                    ),
+                  ),
+                // ListView.builder(
+                //   scrollDirection: Axis.horizontal,
+                //    shrinkWrap: true,
+                //    physics: const NeverScrollableScrollPhysics(),
+                //  itemCount: 2,
+                //  itemBuilder: (context , index){
+                //  return const Padding(
+                //         padding: EdgeInsets.symmetric(horizontal: 8),
+                //        child: FilesListViewItem(),
+                //       );
+                //     }
+                //      ),
+                ],
+              ),
+            ),
+    );
+  }
+}

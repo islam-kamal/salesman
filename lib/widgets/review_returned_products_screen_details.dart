@@ -1,10 +1,12 @@
+import './finish_button_container_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_review_returned_products_screen.dart';
+import 'package:water/widgets/drawer_review_returned_products_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_review_returned_products.dart';
 import 'package:water/widgets/pill_payment_review_returned_products.dart';
 import 'package:water/widgets/review_returned_products_water_item.dart';
 import 'package:water/widgets/search_text_field_review_returned_products.dart';
-import 'package:water/widgets/trader_deal_review_returned_products_screen.dart';
+import 'package:water/widgets/store_deal_container_widget.dart';
+import 'package:water/basics/shared.dart';
 
 
 class ReviewReturnedProductsScreenDetails extends StatelessWidget{
@@ -17,7 +19,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-       // drawer: const DrawerReviewProductScreen(),
+        drawer: const DrawerReviewReturnedProductsScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -30,8 +32,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                   height: MediaQuery.of(context).size.height * 0.041,
+                    width: Shared.width * 0.23,
+                   height: Shared.height * 0.041,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -51,7 +53,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
+                              width: Shared.width * 0.01,
                             ),
                           const Opacity(
                             opacity: 0.8,
@@ -68,70 +70,84 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
-                  const TraderDealReviewReturnedProductsScreen(),
+                  const StoreDealContainer(),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
-                  const FinishButtonReviewReturnedProductsScreen(),
+                  const FinishButtonContainer(),
                 ],
               ),
               ),
                 Expanded(
                 flex: 5,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SearchTextFieldReviewReturnedProducts(),
-                    SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.015,
-                  ),
-                    const ImageNumberProductPriceContainerReviewReturnedProducts(),
-                    ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 5,
-                    itemBuilder: (context , index){
-                      return InkWell(
-                        onTap: () => _key.currentState!.openDrawer(),
-                        child: const ReviewReturnedProductsWaterItem(),
-                        );
-                    }
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.006,
-                    ),
-                    const Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Expanded(
-                      flex: 8,
-                      child: Text(
-                        'الاجمالي',
-                        style: TextStyle(
-                          color: Color(0xff07326A),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300
+                        const SearchTextFieldReviewReturnedProducts(),
+                        SizedBox(
+                        height: Shared.height * 0.015,
+                      ),
+                        const ImageNumberProductPriceContainerReviewReturnedProducts(),
+                        ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 6,
+                        itemBuilder: (context , index){
+                          return InkWell(
+                            onTap: () => _key.currentState!.openDrawer(),
+                            child: const ReviewReturnedProductsWaterItem(),
+                            );
+                        }
                         ),
-                      ),
-                      ),
-                      Expanded(
-                      flex: 1,
-                      child: Text(
-                        '42 ر.س',
-                        style: TextStyle(
-                          color: Color(0xff07326A),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
+                        SizedBox(
+                          height: Shared.height * 0.006,
                         ),
-                      ),
-                      ),
+                        Container(
+                          width: double.infinity,
+                          height: Shared.height * 0.03,
+                          decoration: const BoxDecoration(
+                            color: Color(0xffEBF7FC),
+                            borderRadius: BorderRadius.only(
+                               bottomRight: Radius.circular(11),
+                               bottomLeft: Radius.circular(11)
+                            )
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            child: Row(
+                              children: [
+                                Expanded(
+                              flex: 8,
+                              child: Text(
+                                'الاجمالي',
+                                style: TextStyle(
+                                  color: Color(0xff0056C9),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300
+                                ),
+                              ),
+                              ),
+                              Expanded(
+                              flex: 1,
+                              child: Text(
+                                '42 ر.س',
+                                style: TextStyle(
+                                  color: Color(0xff0056C9),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500
+                                ),
+                              ),
+                              ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const PillPaymentReviewReturnedProducts(),
                       ],
                     ),
-                    const PillPaymentReviewReturnedProducts(),
-                  ],
-                ),
-                ),
+                  ),
             ],
           ),
         ),
