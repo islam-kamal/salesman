@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class SearchTextFieldReviewProduct extends StatelessWidget{
   const SearchTextFieldReviewProduct({super.key});
@@ -25,11 +26,11 @@ class SearchTextFieldReviewProduct extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.019,
+            height: Shared.height * 0.019,
           ),
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.033,
+          height: Shared.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

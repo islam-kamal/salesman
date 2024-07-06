@@ -1,5 +1,6 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class TakePhoto extends StatelessWidget {
   const TakePhoto({super.key});
@@ -16,7 +17,7 @@ class TakePhoto extends StatelessWidget {
         strokeWidth: 2,
         child: Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.044,
+          height: Shared.height * 0.044,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(8)),
           child: Row(
@@ -31,7 +32,7 @@ class TakePhoto extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.005,
+                width: Shared.width * 0.005,
               ),
               const Icon(
                 Icons.add_circle_outline,

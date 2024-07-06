@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
+import 'package:water/basics/shared.dart';
 
 class TraderDealVisitsTodayScreen extends StatelessWidget{
   const TraderDealVisitsTodayScreen({super.key});
@@ -9,8 +10,8 @@ class TraderDealVisitsTodayScreen extends StatelessWidget{
      return Column(
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 0.23,
-          height: MediaQuery.of(context).size.height * 0.295,
+          width: Shared.width * 0.23,
+          height: Shared.height * 0.295,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -32,35 +33,35 @@ class TraderDealVisitsTodayScreen extends StatelessWidget{
                 ),
                 ),
                 SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
+          height: Shared.height * 0.01,
         ),
                 const TraderDealContainerItem(
                   name: 'الرئيسية',
                    image: 'assets/images/VectorHome.png',
                    ),
                 SizedBox(
-          height: MediaQuery.of(context).size.height * 0.011,
+          height: Shared.height * 0.011,
         ),
                const TraderDealContainerItem(
                 name: 'الزيارات',
                  image: 'assets/images/VectorVisits.png',
                  ),
                 SizedBox(
-          height: MediaQuery.of(context).size.height * 0.011,
+          height: Shared.height * 0.011,
         ),
                const TraderDealContainerItem(
                 name: 'العملاء',
                  image: 'assets/images/VectorClints.png',
                  ),
                 SizedBox(
-          height: MediaQuery.of(context).size.height * 0.011,
+          height: Shared.height * 0.011,
         ),
                const TraderDealContainerItem(
                 name: 'المخزن',
                  image: 'assets/images/VectorBuild.png',
                  ),
                 SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.011,
+                    height: Shared.height * 0.011,
                   ),
          const TraderDealContainerItem(
           name: 'الحساب',

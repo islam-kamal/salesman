@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/transection_row_in_indebtedness_container.dart';
+import 'package:water/basics/shared.dart';
 
 class IndebtednessContainer extends StatelessWidget {
   const IndebtednessContainer({super.key});
@@ -8,7 +9,7 @@ class IndebtednessContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.208,
+      height: Shared.height * 0.208,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -26,10 +27,10 @@ class IndebtednessContainer extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      right: MediaQuery.of(context).size.width * 0.034),
+                      right: Shared.width * 0.034),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.145,
-                    height: MediaQuery.of(context).size.height * 0.019,
+                    width: Shared.width * 0.145,
+                    height: Shared.height * 0.019,
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 243, 243, 244),
                       border: Border.all(
@@ -47,7 +48,7 @@ class IndebtednessContainer extends StatelessWidget {
                             color: const Color(0xffDD7208),
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.004,
+                            width: Shared.width * 0.004,
                           ),
                           const Text(
                             'مديونية مرتفعة',
@@ -64,7 +65,7 @@ class IndebtednessContainer extends StatelessWidget {
                 Image.asset(
                   'assets/images/moneyBaggg.png',
                   color: const Color(0xffDCDFE3),
-                  height: MediaQuery.of(context).size.height * 0.03,
+                  height: Shared.height * 0.03,
                 ),
               ],
             ),
@@ -74,17 +75,17 @@ class IndebtednessContainer extends StatelessWidget {
                   flex: 8,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        right: MediaQuery.of(context).size.width * 0.06),
+                        right: Shared.width * 0.06),
                     child: Row(
                       children: [
                         Image.asset(
                           'assets/images/BillList.png',
                           color: const Color(0xff111111),
-                          width: MediaQuery.of(context).size.height * 0.014,
-                          height: MediaQuery.of(context).size.height * 0.0144,
+                          width: Shared.height * 0.014,
+                          height: Shared.height * 0.0144,
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.006,
+                          width: Shared.width * 0.006,
                         ),
                         const Text(
                           'نوع الفاتورة',
@@ -103,12 +104,12 @@ class IndebtednessContainer extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/costThis.png',
-                        width: MediaQuery.of(context).size.height * 0.014,
-                        height: MediaQuery.of(context).size.height * 0.0144,
+                        width: Shared.height * 0.014,
+                        height: Shared.height * 0.0144,
                         color: const Color(0xff111111),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.006,
+                        width: Shared.width * 0.006,
                       ),
                       const Text(
                         'المبلغ',
@@ -126,12 +127,12 @@ class IndebtednessContainer extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/images/CalendarMark.png',
-                        width: MediaQuery.of(context).size.height * 0.014,
-                        height: MediaQuery.of(context).size.height * 0.0144,
+                        width: Shared.height * 0.014,
+                        height: Shared.height * 0.0144,
                         color: const Color(0xff111111),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.006,
+                        width: Shared.width * 0.006,
                       ),
                       const Text(
                         'التاريخ',
@@ -146,7 +147,7 @@ class IndebtednessContainer extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.008,
+              height: Shared.height * 0.008,
             ),
             const TransectionRowInIndebtednessContainer(
               image: 'assets/images/BillList.png',
@@ -154,7 +155,7 @@ class IndebtednessContainer extends StatelessWidget {
               color: Color(0xff0056C9),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.008,
+              height: Shared.height * 0.008,
             ),
             const TransectionRowInIndebtednessContainer(
               image: 'assets/images/RestartCircle.png',
@@ -162,7 +163,7 @@ class IndebtednessContainer extends StatelessWidget {
               color: Color(0xff5F480C),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.008,
+              height: Shared.height * 0.008,
             ),
             const TransectionRowInIndebtednessContainer(
               image: 'assets/images/BillList.png',
@@ -170,7 +171,7 @@ class IndebtednessContainer extends StatelessWidget {
               color: Color(0xff0056C9),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.008,
+              height: Shared.height * 0.008,
             ),
             const TransectionRowInIndebtednessContainer(
               image: 'assets/images/MoneyBag.png',
@@ -178,7 +179,7 @@ class IndebtednessContainer extends StatelessWidget {
               color: Color(0xff1D6E4F),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height * 0.008,
+              height: Shared.height * 0.008,
             ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -186,8 +187,8 @@ class IndebtednessContainer extends StatelessWidget {
                   InkWell(
                     onTap: (){},
                     child: Container(
-                      width: MediaQuery.of(context).size.height * 0.2,
-                      height: MediaQuery.of(context).size.height * 0.042,
+                      width: Shared.height * 0.2,
+                      height: Shared.height * 0.042,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -201,10 +202,10 @@ class IndebtednessContainer extends StatelessWidget {
                         children: [
                           Image.asset(
                             'assets/images/fileIndebeness.png',
-                            width: MediaQuery.of(context).size.width * 0.025,
+                            width: Shared.width * 0.025,
                           ),
                           SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.003,
+                    width: Shared.width * 0.003,
                               ),
                           const Opacity(
                             opacity: 0.9,
@@ -223,8 +224,8 @@ class IndebtednessContainer extends StatelessWidget {
                   InkWell(
                     onTap: (){},
                     child: Container(
-                      width: MediaQuery.of(context).size.height * 0.2,
-                      height: MediaQuery.of(context).size.height * 0.042,
+                      width: Shared.height * 0.2,
+                      height: Shared.height * 0.042,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -238,10 +239,10 @@ class IndebtednessContainer extends StatelessWidget {
                         children: [
                           Image.asset(
                             'assets/images/History3.png',
-                            width: MediaQuery.of(context).size.width * 0.025,
+                            width: Shared.width * 0.025,
                           ),
                           SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.003,
+                    width: Shared.width * 0.003,
                               ),
                           const Opacity(
                             opacity: 0.9,

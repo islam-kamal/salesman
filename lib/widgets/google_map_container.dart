@@ -1,5 +1,5 @@
 import 'dart:collection';
-
+import 'package:water/basics/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -19,7 +19,7 @@ BitmapDescriptor? customMarker;
   Widget build(BuildContext context) {
     return Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.27,
+            height: Shared.height * 0.27,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -65,10 +65,10 @@ BitmapDescriptor? customMarker;
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05),
+                              padding: EdgeInsets.only(right: Shared.width * 0.05),
                               child: Container(
-                                  width: MediaQuery.of(context).size.width * 0.135,
-                                  height: MediaQuery.of(context).size.height * 0.019,
+                                  width: Shared.width * 0.135,
+                                  height: Shared.height * 0.019,
                                   decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 243, 243, 244),
                                     border: Border.all(
@@ -86,7 +86,7 @@ BitmapDescriptor? customMarker;
                                 color: const Color(0xff1D6E4F),
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.004,
+                                width: Shared.width * 0.004,
                               ),
                               const Text(
                                 'يبعد 232 ك.م',
@@ -105,7 +105,7 @@ BitmapDescriptor? customMarker;
                       opacity: 0.2,
                       child: Image.asset(
                         'assets/images/Map.png',
-                        height: MediaQuery.of(context).size.height * 0.035,
+                        height: Shared.height * 0.035,
                       ),
                     ),
                           ],
@@ -119,7 +119,7 @@ BitmapDescriptor? customMarker;
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.004,
+                              width: Shared.width * 0.004,
                             ),
                             const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

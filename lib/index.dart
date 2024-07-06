@@ -10,5 +10,6 @@ export 'review_returned_products_screen.dart';
 export 'sold_products_screen.dart';
 export 'trader_details_screen.dart';
 export 'visits_today_screen.dart';
+export 'basics/index.dart';
 export 'widgets/index.dart';
 

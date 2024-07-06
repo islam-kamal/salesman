@@ -1,5 +1,6 @@
 export 'available_items_screen_details.dart';
 export 'available_products_screen_details.dart';
+export 'container_in_store_deal_container.dart';
 export 'drawer_edit_inventory_screen.dart';
 export 'drawer_first_add_inventory_screen.dart';
 export 'drawer_home_screen.dart';
@@ -20,6 +21,7 @@ export 'finish_button_visits_today_screen.dart';
 export 'finish_button_widget.dart';
 export 'first_container_in_financial_collection.dart';
 export 'google_map_container.dart';
+export 'hide_list_container_widget.dart';
 export 'image_number_product_price_container_inventory_screen.dart';
 export 'image_number_product_price_container_invoices_details.dart';
 export 'image_number_product_price_container_review_returned_products.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/review_product_screen.dart';
+import 'package:water/basics/shared.dart';
 
 class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
   const ProductsAndPricesPreviousInvoicesScreen({super.key});
@@ -11,8 +12,8 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * 0.245,
-            height: MediaQuery.of(context).size.height * 0.2,
+            width: Shared.width * 0.245,
+            height: Shared.height * 0.2,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -37,7 +38,7 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.008,
+                    height: Shared.height * 0.008,
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -157,7 +158,7 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.012,
+                    height: Shared.height * 0.012,
                   ),
                   InkWell(
                     onTap: () {
@@ -165,8 +166,8 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                           builder: (context) => const ReviewProductScreen()));
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).size.height * 0.041,
+                      width: Shared.width * 0.23,
+                      height: Shared.height * 0.041,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -182,7 +183,7 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                             Image.asset('assets/images/CheckCircle.png',
                                 color: Colors.blue),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
+                              width: Shared.width * 0.006,
                             ),
                             const Text(
                               'مراجعة المنتجات',

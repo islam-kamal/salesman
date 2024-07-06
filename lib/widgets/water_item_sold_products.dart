@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class WaterItemSoldProducts extends StatelessWidget{
   const WaterItemSoldProducts({super.key});
@@ -9,7 +10,7 @@ class WaterItemSoldProducts extends StatelessWidget{
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
         width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.045,
+              height: Shared.height * 0.045,
               decoration: BoxDecoration(
               color: Colors.white,
                 borderRadius: BorderRadius.circular(8)
@@ -21,7 +22,7 @@ class WaterItemSoldProducts extends StatelessWidget{
                     child: Image.asset('assets/images/IMGggg.png')
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.015,
+                      width: Shared.width * 0.015,
                     ),
                     const Expanded(
                     flex: 1,
@@ -46,7 +47,7 @@ class WaterItemSoldProducts extends StatelessWidget{
                           ),
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.005,
+                          height: Shared.height * 0.005,
                         ),
                         const Text(
                           'مياه مدينة شرنك 15 حبة  600 مل',

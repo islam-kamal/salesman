@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class TransectionRowInIndebtednessContainer extends StatelessWidget{
   const TransectionRowInIndebtednessContainer({
@@ -24,15 +25,15 @@ final Color color;
                           '123414'
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.012,
+                          width: Shared.width * 0.012,
                         ),
                           Image.asset(
                             image,
                             color: color,
-                            height: MediaQuery.of(context).size.height * 0.0144,
+                            height: Shared.height * 0.0144,
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
+                              width: Shared.width * 0.006,
                             ),
                              Text(
                                   name,

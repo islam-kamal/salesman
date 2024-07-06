@@ -1,5 +1,6 @@
 import './water_item_previous_invoices.dart';
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
   const SearchTextFieldInvoicesDetailsScreen({super.key});
@@ -18,7 +19,7 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
               child: const Icon(Icons.arrow_back),
               ),
             SizedBox(
-            width: MediaQuery.of(context).size.width * 0.019,
+            width: Shared.width * 0.019,
           ),
             const Text(
               'الفاتورة رقم 123414',
@@ -30,15 +31,15 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.019,
+            height: Shared.height * 0.019,
           ),
           const WaterItemPreviousInvoices(),
           SizedBox(
-            height: MediaQuery.of(context).size.height * 0.01,
+            height: Shared.height * 0.01,
           ),
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.033,
+          height: Shared.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -68,7 +69,7 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
           )
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
+          padding: EdgeInsets.symmetric(vertical: Shared.height * 0.02),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -81,8 +82,8 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
                   ),
               ),
                Container(
-          width: MediaQuery.of(context).size.width * 0.22,
-          height: MediaQuery.of(context).size.height * 0.033,
+          width: Shared.width * 0.22,
+          height: Shared.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

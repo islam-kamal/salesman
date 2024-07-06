@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class FirstContainerInFinancialCollection extends StatelessWidget{
   const FirstContainerInFinancialCollection({super.key});
@@ -19,7 +20,7 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
           padding: const EdgeInsets.symmetric(vertical: 14),
           child: Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.046,
+            height: Shared.height * 0.046,
             decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

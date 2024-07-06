@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class PillPaymentFinancialCollection extends StatelessWidget{
   const PillPaymentFinancialCollection({super.key});
@@ -19,7 +20,7 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                     children: [
                       Image.asset('assets/images/Banknote2.png'),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.007,
+                        width: Shared.width * 0.007,
                       ),
                       const Text(
                         'متبقى 25,000 ر.س',
@@ -39,8 +40,8 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                       _showFirstAlertDialog(context);
                     },
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                        height: MediaQuery.of(context).size.height * 0.04,
+                      width: Shared.width * 0.23,
+                        height: Shared.height * 0.04,
                         decoration: BoxDecoration(
                         color: Color(0xff1D7AFC),
                         borderRadius: BorderRadius.circular(6)
@@ -53,7 +54,7 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                                     color: Color(0xffF9F9F9)
                                     ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                   const Opacity(
                                     opacity: 0.7,
@@ -89,17 +90,17 @@ void _showFirstAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.19,
+            width: Shared.width * 0.6,
+            height: Shared.height * 0.19,
             child: Column(
               children: [
                 Image.asset(
                   color: Color(0xffDD7208),
                   'assets/images/VectorError.png',
-                  width: MediaQuery.of(context).size.width * 0.12,
+                  width: Shared.width * 0.12,
                   ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.013,
+                  height: Shared.height * 0.013,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -131,8 +132,8 @@ void _showFirstAlertDialog(BuildContext context) {
                           _showSecondAlertDialog(context);
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -152,7 +153,7 @@ void _showFirstAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -165,8 +166,8 @@ void _showFirstAlertDialog(BuildContext context) {
                           Navigator.of(context).pop();
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -186,7 +187,7 @@ void _showFirstAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],
@@ -211,16 +212,16 @@ void _showSecondAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.19,
+            width: Shared.width * 0.6,
+            height: Shared.height * 0.19,
             child: Column(
               children: [
                 Image.asset(
                   'assets/images/imagee-truee.png',
-                  width: MediaQuery.of(context).size.width * 0.12,
+                  width: Shared.width * 0.12,
                   ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.008,
+                  height: Shared.height * 0.008,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -249,8 +250,8 @@ void _showSecondAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -270,7 +271,7 @@ void _showSecondAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -282,8 +283,8 @@ void _showSecondAlertDialog(BuildContext context) {
                           Navigator.of(context).pop();
                         },
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -303,7 +304,7 @@ void _showSecondAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],

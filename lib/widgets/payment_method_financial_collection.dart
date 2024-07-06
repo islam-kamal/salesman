@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/popup_menu_of_payment.dart';
+import 'package:water/basics/shared.dart';
 
 class PaymentMethodFinancialCollection extends StatelessWidget {
   const PaymentMethodFinancialCollection({super.key});
@@ -27,8 +28,8 @@ class PaymentMethodFinancialCollection extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.327,
-                    height: MediaQuery.of(context).size.height * 0.038,
+                    width: Shared.width * 0.327,
+                    height: Shared.height * 0.038,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -74,8 +75,8 @@ class PaymentMethodFinancialCollection extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.327,
-                    height: MediaQuery.of(context).size.height * 0.038,
+                    width: Shared.width * 0.327,
+                    height: Shared.height * 0.038,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(

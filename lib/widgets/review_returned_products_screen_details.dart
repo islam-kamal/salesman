@@ -6,6 +6,7 @@ import 'package:water/widgets/pill_payment_review_returned_products.dart';
 import 'package:water/widgets/review_returned_products_water_item.dart';
 import 'package:water/widgets/search_text_field_review_returned_products.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
+import 'package:water/basics/shared.dart';
 
 
 class ReviewReturnedProductsScreenDetails extends StatelessWidget{
@@ -31,8 +32,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                   height: MediaQuery.of(context).size.height * 0.041,
+                    width: Shared.width * 0.23,
+                   height: Shared.height * 0.041,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -52,7 +53,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               ),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
+                              width: Shared.width * 0.01,
                             ),
                           const Opacity(
                             opacity: 0.8,
@@ -69,11 +70,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const StoreDealContainer(),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.025,
+                    height: Shared.height * 0.025,
                   ),
                   const FinishButtonContainer(),
                 ],
@@ -86,7 +87,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                       children: [
                         const SearchTextFieldReviewReturnedProducts(),
                         SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.015,
+                        height: Shared.height * 0.015,
                       ),
                         const ImageNumberProductPriceContainerReviewReturnedProducts(),
                         ListView.builder(
@@ -101,11 +102,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         }
                         ),
                         SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.006,
+                          height: Shared.height * 0.006,
                         ),
                         Container(
                           width: double.infinity,
-                          height: MediaQuery.of(context).size.height * 0.03,
+                          height: Shared.height * 0.03,
                           decoration: const BoxDecoration(
                             color: Color(0xffEBF7FC),
                             borderRadius: BorderRadius.only(

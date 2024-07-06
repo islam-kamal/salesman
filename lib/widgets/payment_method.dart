@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/popup_menu_of_payment.dart';
+import 'package:water/basics/shared.dart';
 
 class PaymentMethod extends StatelessWidget{
   const PaymentMethod({super.key});
@@ -27,8 +28,8 @@ class PaymentMethod extends StatelessWidget{
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                    height: MediaQuery.of(context).size.height * 0.038,
+                    width: Shared.width * 0.23,
+                    height: Shared.height * 0.038,
                     decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -76,8 +77,8 @@ class PaymentMethod extends StatelessWidget{
                     ),
                   ),
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                    height: MediaQuery.of(context).size.height * 0.038,
+                    width: Shared.width * 0.23,
+                    height: Shared.height * 0.038,
                     decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -123,8 +124,8 @@ class PaymentMethod extends StatelessWidget{
                   InkWell(
                     onTap: (){},
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.17,
-                      height: MediaQuery.of(context).size.height * 0.038,
+                      width: Shared.width * 0.17,
+                      height: Shared.height * 0.038,
                       decoration: BoxDecoration(
                       color: Color.fromARGB(255, 246, 246, 246),
                       border: Border.all(

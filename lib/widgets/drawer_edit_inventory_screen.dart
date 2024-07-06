@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/basics/shared.dart';
+
 
 class DrawerEditInventoryScreen extends StatelessWidget{
   const DrawerEditInventoryScreen({super.key});
@@ -7,7 +9,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -25,7 +27,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'تعديل المنتج',
@@ -37,7 +39,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                   const WaterItemInDrawer(),
                   const Text(
@@ -61,11 +63,11 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            width: Shared.width * 0.13,
+                            height: Shared.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -79,7 +81,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.018,
+                          width: Shared.width * 0.018,
                         ),
                           InkWell(
                             onTap: (){},
@@ -89,7 +91,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.052,
+                          width: Shared.width * 0.052,
                         ),
                         InkWell(
                           onTap: (){},
@@ -101,7 +103,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                           ),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.007,
+                          width: Shared.width * 0.007,
                         ),
                         const Text(
                           'ازالة من الفاتورة',
@@ -115,7 +117,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                       ),
                     ),
                     SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,8 +145,8 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: Shared.width * 0.28,
+                              height: Shared.height * 0.039,
                               decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
@@ -161,7 +163,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                                       color: Color(0xff1D7AFC),
                                       ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                     const Opacity(
                                       opacity: 0.8,

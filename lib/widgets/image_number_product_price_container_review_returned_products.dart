@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class ImageNumberProductPriceContainerReviewReturnedProducts extends StatelessWidget{
   const ImageNumberProductPriceContainerReviewReturnedProducts({super.key});
@@ -9,7 +10,7 @@ class ImageNumberProductPriceContainerReviewReturnedProducts extends StatelessWi
       children: [
         Container(
                       width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.033,
+                      height: Shared.height * 0.033,
                       decoration: const BoxDecoration(
                       color: Color(0xffDCDFE3),
                         borderRadius: BorderRadius.only(

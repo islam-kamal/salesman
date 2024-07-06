@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/basics/shared.dart';
 
 class DrawerSecondAddInventoryScreen extends StatelessWidget{
   DrawerSecondAddInventoryScreen({super.key});
@@ -9,7 +10,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -27,7 +28,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'اضافة المنتج',
@@ -39,11 +40,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                       Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.033,
+          height: Shared.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -73,7 +74,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
           )
         ),
         // SizedBox(
-        //     height: MediaQuery.of(context).size.height * 0.001,
+        //     height: Shared.height * 0.001,
         //   ),
           ListView.builder(
             shrinkWrap: true,

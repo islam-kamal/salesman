@@ -14,12 +14,15 @@ void main() {
   runApp(const MyApp());
 }
 
+GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: AvailableProductsScreen(),   //AvailableItemsScreen(),    //ReviewReturnedProductsScreen(),   //PreviousInvoicesScreen(),   //FinancialCollectionScreen(),   //TraderDetailsScreen(),  //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
+      home: AvailableItemsScreen(),  //AvailableProductsScreen(),    //ReviewReturnedProductsScreen(),   //PreviousInvoicesScreen(),   //FinancialCollectionScreen(),   //TraderDetailsScreen(),  //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),                     //PreviousInvoicesScreen()     ,
     );
   }
 }

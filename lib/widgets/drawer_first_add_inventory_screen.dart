@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/basics/shared.dart';
+import 'package:water/basics/shared.dart';
+
 
 class DrawerFirstAddInventoryScreen extends StatelessWidget{
   const DrawerFirstAddInventoryScreen({super.key});
@@ -7,7 +10,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -25,7 +28,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'اضافة المنتج',
@@ -37,7 +40,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                   const WaterItemInDrawer(),
                   const Text(
@@ -61,11 +64,11 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            width: Shared.width * 0.13,
+                            height: Shared.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -79,7 +82,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.018,
+                          width: Shared.width * 0.018,
                         ),
                           InkWell(
                             onTap: (){},
@@ -92,7 +95,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                       ),
                     ),
                     SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -123,8 +126,8 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                               _showAlertDialog(context);
                             },
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: Shared.width * 0.28,
+                              height: Shared.height * 0.039,
                               decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
@@ -141,7 +144,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                                       color: Color(0xff1D7AFC),
                                       ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                     const Opacity(
                                       opacity:0.8,
@@ -176,17 +179,17 @@ void _showAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: MediaQuery.of(context).size.width * 0.55,
-            height: MediaQuery.of(context).size.height * 0.183,
+            width: Shared.width * 0.55,
+            height: Shared.height * 0.183,
             child: Column(
               children: [
                 Image.asset(
                   color: Color(0xff23A36D),
                   'assets/images/imagee-truee.png',
-                  width: MediaQuery.of(context).size.width * 0.1,
+                  width: Shared.width * 0.1,
                   ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: Shared.height * 0.005,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -213,8 +216,8 @@ void _showAlertDialog(BuildContext context) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width * 0.55,
-                          height: MediaQuery.of(context).size.height * 0.038,
+                        width: Shared.width * 0.55,
+                          height: Shared.height * 0.038,
                           decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -234,7 +237,7 @@ void _showAlertDialog(BuildContext context) {
                                 ),
                               ),
                               SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.006,
+                                width: Shared.width * 0.006,
                               ),
                               Image.asset('assets/images/arrowww.png'),
                             ],

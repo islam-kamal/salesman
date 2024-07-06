@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class TraderDealContainerItem extends StatelessWidget{
   const TraderDealContainerItem({super.key, required this.name, required this.image});
@@ -14,8 +15,8 @@ class TraderDealContainerItem extends StatelessWidget{
               hoverColor: const Color.fromARGB(255, 30, 133, 219),
               onLongPress: () => Colors.blue,
             child: Container(
-              width: MediaQuery.of(context).size.width * 0.23,
-              height: MediaQuery.of(context).size.height * 0.041,
+              width: Shared.width * 0.23,
+              height: Shared.height * 0.041,
               decoration: BoxDecoration(
               color:  Colors.white,
               
@@ -27,7 +28,7 @@ class TraderDealContainerItem extends StatelessWidget{
                   children: [
             Image.asset(image),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.008,
+              width: Shared.width * 0.008,
             ),
              Text(
               name,

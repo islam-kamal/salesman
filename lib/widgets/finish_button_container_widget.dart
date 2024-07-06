@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
+
 
 class FinishButtonContainer extends StatelessWidget{
   const FinishButtonContainer({super.key});
@@ -7,9 +9,10 @@ class FinishButtonContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return Column(
       children: [
+        MediaQuery.of(context).orientation == Orientation.portrait ?
         Container(
-          width: MediaQuery.of(context).size.width * 0.23,
-          height: MediaQuery.of(context).size.height * 0.062,
+          width: Shared.width * 0.23,
+          height: Shared.height * 0.062,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -21,8 +24,8 @@ class FinishButtonContainer extends StatelessWidget{
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Container(
-              width: MediaQuery.of(context).size.width * 0.1,
-              height: MediaQuery.of(context).size.height * 0.04,
+              width: Shared.width * 0.1,
+              height: Shared.height * 0.04,
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(8)
@@ -39,7 +42,7 @@ class FinishButtonContainer extends StatelessWidget{
                       color: Colors.white,
                       ),
                     SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.008,
+                          width: Shared.width * 0.008,
                         ),
                     const Text(
                       'انهاء الزيارة',
@@ -54,7 +57,55 @@ class FinishButtonContainer extends StatelessWidget{
                   ),
               ),
             ),
-        ),
+        )
+        : Container(
+          width: Shared.width * 0.24,
+          height: Shared.height * 0.09,
+          decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(
+            color: Colors.grey,
+            width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(8)
+          ),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Container(
+              width: Shared.width * 0.1,
+              height: Shared.height * 0.04,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(8)
+              ),
+                child: TextButton(
+                clipBehavior: Clip.hardEdge,
+                onPressed: (){
+                  _showAlertDialog(context);
+                },
+                  child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/Icon-Wrapper(2).png',
+                      color: Colors.white,
+                      ),
+                    SizedBox(
+                          width: Shared.width * 0.008,
+                        ),
+                    const Text(
+                      'انهاء الزيارة',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.white
+                      ),
+                      ),
+                  ],
+                  ),
+                  ),
+              ),
+            ),
+        )
       ],
     );
   }
@@ -68,16 +119,16 @@ void _showAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: SizedBox(
-            width: MediaQuery.of(context).size.width * 0.6,
-            height: MediaQuery.of(context).size.height * 0.188,
+            width: Shared.width * 0.6,
+            height: Shared.height * 0.188,
             child: Column(
               children: [
                 Image.asset(
                   'assets/images/InfoCircle.png',
-                  width: MediaQuery.of(context).size.width * 0.12,
+                  width: Shared.width * 0.12,
                   ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.008,
+                  height: Shared.height * 0.008,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -106,8 +157,8 @@ void _showAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: const Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -127,7 +178,7 @@ void _showAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -137,8 +188,8 @@ void _showAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).size.height * 0.038,
+                          width: Shared.width * 0.27,
+                            height: Shared.height * 0.038,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -158,7 +209,7 @@ void _showAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class TraderFileContainer extends StatelessWidget{
   const TraderFileContainer({super.key});
@@ -7,7 +8,7 @@ class TraderFileContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.08,
+      height: Shared.height * 0.08,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -33,11 +34,11 @@ class TraderFileContainer extends StatelessWidget{
                       ),
                     ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.008,
+                          width: Shared.width * 0.008,
                         ),
                     Container(
-                                    width: MediaQuery.of(context).size.width * 0.14,
-                                    height: MediaQuery.of(context).size.height * 0.019,
+                                    width: Shared.width * 0.14,
+                                    height: Shared.height * 0.019,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 243, 243, 244),
                                       border: Border.all(
@@ -55,7 +56,7 @@ class TraderFileContainer extends StatelessWidget{
                                   color: const Color(0xff0056C9),
                                 ),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.004,
+                                  width: Shared.width * 0.004,
                                 ),
                                 const Text(
                                   'في زيارات اليوم',
@@ -74,7 +75,7 @@ class TraderFileContainer extends StatelessWidget{
                 Image.asset(
                   'assets/images/User.png',
                   color: const Color(0xffDCDFE3),
-                  height: MediaQuery.of(context).size.height * 0.032,
+                  height: Shared.height * 0.032,
                 ),
               ],
             ),

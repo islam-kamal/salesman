@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/basics/shared.dart';
+
 
 class DrawerHomeScreen extends StatelessWidget{
   const DrawerHomeScreen({super.key});
@@ -8,7 +10,7 @@ class DrawerHomeScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -26,7 +28,7 @@ class DrawerHomeScreen extends StatelessWidget{
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'اضافة المنتج',
@@ -38,7 +40,7 @@ class DrawerHomeScreen extends StatelessWidget{
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                   const WaterItemInDrawer(),
                   const Text(
@@ -62,11 +64,11 @@ class DrawerHomeScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            width: Shared.width * 0.13,
+                            height: Shared.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -80,7 +82,7 @@ class DrawerHomeScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           InkWell(
                             onTap: (){},
@@ -93,7 +95,7 @@ class DrawerHomeScreen extends StatelessWidget{
                       ),
                     ),
                     SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -121,8 +123,8 @@ class DrawerHomeScreen extends StatelessWidget{
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: Shared.width * 0.28,
+                              height: Shared.height * 0.039,
                               decoration: BoxDecoration(
                               color: const Color(0xff1D7AFC),
                                 borderRadius: BorderRadius.circular(5)
@@ -135,7 +137,7 @@ class DrawerHomeScreen extends StatelessWidget{
                                       color: Colors.white,
                                       ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                     const Text(
                                       'اضافة للفاتورة',

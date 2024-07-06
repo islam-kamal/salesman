@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_invoices_details_drawer.dart';
+import 'package:water/basics/shared.dart';
 
 class DrawerReviewReturnedProductsScreen extends StatelessWidget{
   const DrawerReviewReturnedProductsScreen({super.key});
@@ -7,7 +8,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: Shared.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -25,7 +26,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
+                        width: Shared.width * 0.012,
                       ),
                       const Text(
                         'تعديل الارتجاع',
@@ -37,7 +38,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                     ],
                   ),
                   SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.018,
+                        height: Shared.height * 0.018,
                       ),
                   const WaterItemInvoicesDetailsDrawer(),
                   const Text(
@@ -56,7 +57,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                     ),
                     ),
                     SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.013,
+                          height: Shared.height * 0.013,
                         ),
                   const Text(
                     'العدد المرتجع',
@@ -66,7 +67,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                     ),
                     ),
                      SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.006,
+                          height: Shared.height * 0.006,
                         ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 14),
@@ -82,11 +83,11 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.013,
+                          width: Shared.width * 0.013,
                         ),
                           Container(
-                            width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            width: Shared.width * 0.13,
+                            height: Shared.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -100,7 +101,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.018,
+                          width: Shared.width * 0.018,
                         ),
                           InkWell(
                             onTap: (){},
@@ -110,7 +111,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                             ),
                           ),
                           SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.052,
+                          width: Shared.width * 0.052,
                         ),
                         InkWell(
                           onTap: (){},
@@ -122,7 +123,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                           ),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.007,
+                          width: Shared.width * 0.007,
                         ),
                         const Text(
                           'ازالة من الفاتورة',
@@ -136,7 +137,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                       ),
                     ),
                     SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.01,
+                        height: Shared.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -147,7 +148,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                               children: [
                                 Image.asset('assets/images/Banknote2.png'),
                                 SizedBox(
-                                  width: MediaQuery.of(context).size.width * 0.006,
+                                  width: Shared.width * 0.006,
                                 ),
                                 const Text(
                                   'اجمالي 3,000 ر.س',
@@ -164,8 +165,8 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.22,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: Shared.width * 0.22,
+                              height: Shared.height * 0.039,
                               decoration: BoxDecoration(
                               color: const Color(0xff1D7AFC),
                                 borderRadius: BorderRadius.circular(5)
@@ -178,7 +179,7 @@ class DrawerReviewReturnedProductsScreen extends StatelessWidget{
                                       color: Colors.white,
                                       ),
                                     SizedBox(
-                                    width: MediaQuery.of(context).size.width * 0.006,
+                                    width: Shared.width * 0.006,
                                   ),
                                     const Opacity(
                                       opacity: 0.7,

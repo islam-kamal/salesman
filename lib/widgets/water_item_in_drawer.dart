@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/shared.dart';
 
 class WaterItemInDrawer extends StatelessWidget{
   const WaterItemInDrawer({super.key});
@@ -8,8 +9,8 @@ class WaterItemInDrawer extends StatelessWidget{
     return Column(
       children: [
         Container(
-          width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.08,
+          width: Shared.width * 0.5,
+          height: Shared.height * 0.08,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -24,7 +25,7 @@ class WaterItemInDrawer extends StatelessWidget{
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child:  Image.asset('assets/images/IMG.png')),
                SizedBox(
-            width: MediaQuery.of(context).size.width * 0.012,
+            width: Shared.width * 0.012,
                   ),
                Padding(
                  padding: const EdgeInsets.only(top: 6),
@@ -46,7 +47,7 @@ class WaterItemInDrawer extends StatelessWidget{
                       ),
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.017,
+                        height: Shared.height * 0.017,
                       ),
                       const Text(
                         '42 ر.س',
@@ -63,7 +64,7 @@ class WaterItemInDrawer extends StatelessWidget{
           ),
         
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.012,
+          height: Shared.height * 0.012,
         ),
       ],
     );

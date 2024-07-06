@@ -6,6 +6,7 @@ import 'package:water/widgets/market_information_container.dart';
 import 'package:water/widgets/trader_deal_trader_details_screen.dart';
 import 'package:water/widgets/trader_file_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
+import 'package:water/basics/shared.dart';
 
 class TraderDetailsScreenBody extends StatelessWidget {
   const TraderDetailsScreenBody({super.key});
@@ -27,8 +28,8 @@ class TraderDetailsScreenBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).size.height * 0.041,
+                      width: Shared.width * 0.23,
+                      height: Shared.height * 0.041,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -46,7 +47,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                                   'assets/images/Icon-Wrappppper.png')),
                             ),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
+                              width: Shared.width * 0.01,
                             ),
                             const Opacity(
                               opacity: 0.8,
@@ -61,11 +62,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
+                      height: Shared.height * 0.025,
                     ),
                     const TraderDealTraderDetailsScreen(),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
+                      height: Shared.height * 0.025,
                     ),
                     const FinishButtonDealTraderDetailsScreen(),
                   ],
@@ -92,7 +93,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
+                        height: Shared.height * 0.008,
                       ),
                       const TraderFileContainer(),
                       const Padding(
@@ -129,11 +130,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       ),
                       const IndebtednessContainer(),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
+                        height: Shared.height * 0.014,
                       ),
                       const GoogleMapContainer(),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
+                        height: Shared.height * 0.014,
                       ),
                       const MarketInformationContainer(),
                     ],
