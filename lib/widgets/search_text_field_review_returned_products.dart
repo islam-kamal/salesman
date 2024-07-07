@@ -26,11 +26,13 @@ class SearchTextFieldReviewReturnedProducts extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: Shared.height * 0.019,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
         Container(
           width: double.infinity,
-          height: Shared.height * 0.033,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.033
+          : MediaQuery.of(context).size.height * 0.052,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

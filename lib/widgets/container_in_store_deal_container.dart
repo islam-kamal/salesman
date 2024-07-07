@@ -21,8 +21,8 @@ class ContainerInStoreDealContainer extends StatelessWidget {
       onLongPress: () => Colors.blue,
       child: MediaQuery.of(context).orientation == Orientation.portrait ?
       Container(
-        width: Shared.width * 0.23,
-        height: Shared.height * 0.04,
+        width: MediaQuery.of(context).size.width * 0.23,
+        height: MediaQuery.of(context).size.height * 0.04,
         decoration: BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 14),
@@ -44,8 +44,8 @@ class ContainerInStoreDealContainer extends StatelessWidget {
         ),
       )
       : Container(
-        width: Shared.width * 0.23,
-        height: Shared.height * 0.06,
+        width: MediaQuery.of(context).size.width * 0.23,
+        height: MediaQuery.of(context).size.height * 0.06,
         decoration:
             BoxDecoration(color: color, borderRadius: BorderRadius.circular(8)),
         child: Padding(

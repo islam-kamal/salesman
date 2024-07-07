@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_invoices_details_drawer.dart';
 
-class DrawerInvoicesDetailsScreen extends StatelessWidget {
-  const DrawerInvoicesDetailsScreen({super.key});
+class DrawerAvailableProductsScreen extends StatelessWidget {
+  const DrawerAvailableProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -113,18 +113,46 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
+                  Column(
                     children: [
-                      Image.asset('assets/images/Banknote2.png'),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.006,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset('assets/images/Banknote2.png'),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.006,
+                          ),
+                          const Text(
+                            'اجمالي 3,000 ر.س',
+                            style: TextStyle(
+                                color: Color(0xff07326A),
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300),
+                          ),
+                        ],
                       ),
-                      const Text(
-                        'اجمالي 3,000 ر.س',
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            'assets/images/marketImage.png',
+                            color: Colors.black,
+                            height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.011
+                          : MediaQuery.of(context).size.height * 0.018,
+                            ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.006,
+                          ),
+                           const Text(
+                        'متبقى 20 قطعة',
                         style: TextStyle(
                             color: Color(0xff07326A),
                             fontSize: 14,
                             fontWeight: FontWeight.w300),
+                      ),
+                        ],
                       ),
                     ],
                   ),
@@ -151,7 +179,8 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
                           ),
                           const Opacity(
                             opacity: 0.7,
-                            child: Text('اضافة لفاتورة الارتجاع',
+                            child: Text(
+                              'اضافة للفاتورة',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,

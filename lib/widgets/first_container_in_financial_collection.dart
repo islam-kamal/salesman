@@ -20,7 +20,9 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
           padding: const EdgeInsets.symmetric(vertical: 14),
           child: Container(
             width: double.infinity,
-            height: Shared.height * 0.046,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.046
+             : MediaQuery.of(context).size.height * 0.076,
             decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

@@ -13,8 +13,8 @@ class ProductsAndPricesSoldProducts extends StatelessWidget{
                     crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   Container(
-                width: Shared.width * 0.245,
-                height: Shared.height * 0.21,
+                width: MediaQuery.of(context).size.width * 0.245,
+                height: MediaQuery.of(context).size.height * 0.21,
                 decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -48,7 +48,7 @@ class ProductsAndPricesSoldProducts extends StatelessWidget{
                                 ),
                                 ),
                                 SizedBox(
-                                  height: Shared.height * 0.008,
+                                  height: MediaQuery.of(context).size.height * 0.008,
                                 ),
                                 const Opacity(
                                   opacity: 0.7,
@@ -168,7 +168,7 @@ class ProductsAndPricesSoldProducts extends StatelessWidget{
                         ],
                       ),
                       SizedBox(
-                        height: Shared.height * 0.012,
+                        height: MediaQuery.of(context).size.height * 0.012,
                       ),
                       InkWell(
                         onTap: (){
@@ -177,8 +177,8 @@ class ProductsAndPricesSoldProducts extends StatelessWidget{
                             );
                         },
                         child: Container(
-                          width: Shared.width * 0.23,
-                          height: Shared.height * 0.041,
+                          width: MediaQuery.of(context).size.width * 0.23,
+                          height: MediaQuery.of(context).size.height * 0.041,
                           decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -197,7 +197,7 @@ class ProductsAndPricesSoldProducts extends StatelessWidget{
                                 color: Colors.blue
                                 ),
                                 SizedBox(
-                                width: Shared.width * 0.006,
+                                width: MediaQuery.of(context).size.width * 0.006,
                               ),
                               const Text(
                                 'مراجعة المنتجات',

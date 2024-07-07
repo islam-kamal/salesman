@@ -15,11 +15,12 @@ class TraderDealContainerItem extends StatelessWidget{
               hoverColor: const Color.fromARGB(255, 30, 133, 219),
               onLongPress: () => Colors.blue,
             child: Container(
-              width: Shared.width * 0.23,
-              height: Shared.height * 0.041,
+              width: MediaQuery.of(context).size.width * 0.23,
+              height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.041
+          : MediaQuery.of(context).size.height * 0.07,
               decoration: BoxDecoration(
-              color:  Colors.white,
-              
+              color: Colors.white,
                 borderRadius: BorderRadius.circular(8)
               ),
               child: Padding(
@@ -28,7 +29,7 @@ class TraderDealContainerItem extends StatelessWidget{
                   children: [
             Image.asset(image),
             SizedBox(
-              width: Shared.width * 0.008,
+              width: MediaQuery.of(context).size.width * 0.008,
             ),
              Text(
               name,

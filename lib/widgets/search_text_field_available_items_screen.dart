@@ -17,12 +17,12 @@ class SearchTextFieldAvailableItemsScreen extends StatelessWidget{
           ),
         ),
         SizedBox(
-            height: Shared.height * 0.019,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
           MediaQuery.of(context).orientation == Orientation.portrait ?
         Container(
           width: double.infinity,
-          height: Shared.height * 0.033,
+          height: MediaQuery.of(context).size.height * 0.033,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -53,7 +53,7 @@ class SearchTextFieldAvailableItemsScreen extends StatelessWidget{
         )
         : Container(
           width: double.infinity,
-          height: Shared.height * 0.053,
+          height: MediaQuery.of(context).size.height * 0.053,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(

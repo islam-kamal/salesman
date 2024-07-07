@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/basics/shared.dart';
 
-class ImageNumberProductPriceContainerReviewReturnedProducts extends StatelessWidget{
+class ImageNumberProductPriceContainerReviewReturnedProducts
+    extends StatelessWidget {
   const ImageNumberProductPriceContainerReviewReturnedProducts({super.key});
 
   @override
@@ -9,63 +10,52 @@ class ImageNumberProductPriceContainerReviewReturnedProducts extends StatelessWi
     return Column(
       children: [
         Container(
-                      width: double.infinity,
-                      height: Shared.height * 0.033,
-                      decoration: const BoxDecoration(
-                      color: Color(0xffDCDFE3),
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(9),
-                          topRight: Radius.circular(9),
-                        )
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.only(right: 8),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: Text(
-                                'الصورة',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700
-                                ),
-                              ),
-                              ),
-                              Expanded(
-                              flex: 1,
-                              child: Text(
-                                'العدد',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700
-                                ),
-                              ),
-                              ),
-                              Expanded(
-                              flex: 6,
-                              child: Text(
-                                'المنتج',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700
-                                ),
-                              ),
-                              ),
-                              Expanded(
-                              flex: 1,
-                              child: Text(
-                                'السعر',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700
-                                ),
-                              ),
-                              ),
-                          ],
-                        ),
-                      ),
-                    ),
+          width: double.infinity,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.033
+          : MediaQuery.of(context).size.height * 0.052,
+          decoration: const BoxDecoration(
+              color: Color(0xffDCDFE3),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(9),
+                topRight: Radius.circular(9),
+              )),
+          child: const Padding(
+            padding: EdgeInsets.only(right: 8),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'الصورة',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'العدد',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                Expanded(
+                  flex: 6,
+                  child: Text(
+                    'المنتج',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Text(
+                    'السعر',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
     );
   }

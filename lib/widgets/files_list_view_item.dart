@@ -7,8 +7,8 @@ class FilesListViewItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Shared.height * 0.003,
-      height: Shared.height * 0.04,
+      width: MediaQuery.of(context).size.height * 0.003,
+      height: MediaQuery.of(context).size.height * 0.04,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 222, 23, 23),
               border: Border.all(

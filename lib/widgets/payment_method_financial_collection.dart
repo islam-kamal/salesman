@@ -28,8 +28,10 @@ class PaymentMethodFinancialCollection extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: Shared.width * 0.327,
-                    height: Shared.height * 0.038,
+                    width: MediaQuery.of(context).size.width * 0.327,
+                    height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.063,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(
@@ -75,8 +77,10 @@ class PaymentMethodFinancialCollection extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    width: Shared.width * 0.327,
-                    height: Shared.height * 0.038,
+                    width: MediaQuery.of(context).size.width * 0.327,
+                    height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.063,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(

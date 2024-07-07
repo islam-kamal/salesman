@@ -17,7 +17,7 @@ int _value = 0;
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      width: Shared.width * 0.5,
+      width: MediaQuery.of(context).size.width * 0.5,
       child: Drawer(
         child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18 , vertical: 50),
@@ -35,7 +35,7 @@ int _value = 0;
                         ),
                       ),
                       SizedBox(
-                        width: Shared.width * 0.012,
+                        width: MediaQuery.of(context).size.width * 0.012,
                       ),
                       const Text(
                         'ارتجاع المنتج',
@@ -47,7 +47,7 @@ int _value = 0;
                     ],
                   ),
                   SizedBox(
-                        height: Shared.height * 0.018,
+                        height: MediaQuery.of(context).size.height * 0.018,
                       ),
                   const WaterItemProductReturnDrawer(),
                   const Text(
@@ -71,11 +71,11 @@ int _value = 0;
                             ),
                           ),
                           SizedBox(
-                          width: Shared.width * 0.013,
+                          width: MediaQuery.of(context).size.width * 0.013,
                         ),
                           Container(
-                            width: Shared.width * 0.13,
-                            height: Shared.height * 0.036,
+                            width: MediaQuery.of(context).size.width * 0.13,
+                            height: MediaQuery.of(context).size.height * 0.036,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -89,7 +89,7 @@ int _value = 0;
                             ),
                           ),
                           SizedBox(
-                          width: Shared.width * 0.013,
+                          width: MediaQuery.of(context).size.width * 0.013,
                         ),
                           InkWell(
                             onTap: (){},
@@ -102,7 +102,7 @@ int _value = 0;
                       ),
                     ),
                     SizedBox(
-                        height: Shared.height * 0.01,
+                        height: MediaQuery.of(context).size.height * 0.01,
                       ),
                       const Text(
                         'نوع المرتجع',
@@ -158,8 +158,8 @@ int _value = 0;
                           dashPattern: [10, 14],
                           strokeWidth: 2,
                           child: Container(
-                            width: Shared.width * 0.5,
-                            height: Shared.height * 0.045,
+                            width: MediaQuery.of(context).size.width * 0.5,
+                            height: MediaQuery.of(context).size.height * 0.045,
                             decoration: BoxDecoration(
                             color: Colors.white,
                               borderRadius: BorderRadius.circular(8)
@@ -176,7 +176,7 @@ int _value = 0;
                                 ),
                               ),
                               SizedBox(
-                          width: Shared.width * 0.005,
+                          width: MediaQuery.of(context).size.width * 0.005,
                         ),
                               const Icon(
                                 Icons.add_circle_outline,
@@ -188,7 +188,7 @@ int _value = 0;
                         ),
                       ),
                       SizedBox(
-                        height: Shared.height * 0.01,
+                        height: MediaQuery.of(context).size.height * 0.01,
                       ),
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -216,8 +216,8 @@ int _value = 0;
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: Shared.width * 0.28,
-                              height: Shared.height * 0.039,
+                              width: MediaQuery.of(context).size.width * 0.28,
+                              height: MediaQuery.of(context).size.height * 0.039,
                               decoration: BoxDecoration(
                               color: const Color(0xff1D7AFC),
                                 borderRadius: BorderRadius.circular(5)
@@ -230,7 +230,7 @@ int _value = 0;
                                       color: Colors.white,
                                       ),
                                     SizedBox(
-                                    width: Shared.width * 0.006,
+                                    width: MediaQuery.of(context).size.width * 0.006,
                                   ),
                                     const Opacity(
                                       opacity: 0.8,

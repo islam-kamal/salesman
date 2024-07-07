@@ -7,11 +7,11 @@ class WaterItemAvailableItems extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: Shared.height * 0.013),
+      padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.013),
       child: MediaQuery.of(context).orientation == Orientation.portrait ?
       Container(
         width: double.infinity,
-        height: Shared.height * 0.115,
+        height: MediaQuery.of(context).size.height * 0.115,
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -26,7 +26,7 @@ class WaterItemAvailableItems extends StatelessWidget{
                   'assets/images/waterImagee.png'
                 ),
                 SizedBox(
-                  height: Shared.height * 0.004,
+                  height: MediaQuery.of(context).size.height * 0.004,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -56,10 +56,10 @@ class WaterItemAvailableItems extends StatelessWidget{
                                 children: [
                                   Image.asset(
                                     'assets/images/marketImage.png',
-                                    width: Shared.width * 0.024,
+                                    width: MediaQuery.of(context).size.width * 0.024,
                                     ),
                                   SizedBox(
-                                    width: Shared.width * 0.002,
+                                    width: MediaQuery.of(context).size.width * 0.002,
                                   ),
                                   const Text(
                                     '50 منتج',
@@ -81,7 +81,7 @@ class WaterItemAvailableItems extends StatelessWidget{
       )
       :Container(
         width: double.infinity,
-        height: Shared.height * 0.258,
+        height: MediaQuery.of(context).size.height * 0.258,
         decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -96,7 +96,7 @@ class WaterItemAvailableItems extends StatelessWidget{
                   'assets/images/waterImagee.png'
                 ),
                 SizedBox(
-                  height: Shared.height * 0.004,
+                  height: MediaQuery.of(context).size.height * 0.004,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -126,10 +126,10 @@ class WaterItemAvailableItems extends StatelessWidget{
                                 children: [
                                   Image.asset(
                                     'assets/images/marketImage.png',
-                                    width: Shared.width * 0.024,
+                                    width: MediaQuery.of(context).size.width * 0.024,
                                     ),
                                   SizedBox(
-                                    width: Shared.width * 0.002,
+                                    width: MediaQuery.of(context).size.width * 0.002,
                                   ),
                                   const Text(
                                     '50 منتج',

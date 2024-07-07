@@ -9,7 +9,7 @@ class  MarketInformationContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-            height: Shared.height * 0.4,
+            height: MediaQuery.of(context).size.height * 0.4,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -37,11 +37,11 @@ class  MarketInformationContainer extends StatelessWidget{
                           ),
                         ),
                         SizedBox(
-                          width: Shared.width * 0.008,
+                          width: MediaQuery.of(context).size.width * 0.008,
                         ),
                         Container(
-                                    width: Shared.width * 0.163,
-                                    height: Shared.height * 0.019,
+                                    width: MediaQuery.of(context).size.width * 0.163,
+                                    height: MediaQuery.of(context).size.height * 0.019,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 243, 243, 244),
                                       border: Border.all(
@@ -59,7 +59,7 @@ class  MarketInformationContainer extends StatelessWidget{
                                   color: const Color(0xff0056C9),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.004,
+                                  width: MediaQuery.of(context).size.width * 0.004,
                                 ),
                                 const Text(
                                   'عميل منذ 3 سنين',
@@ -81,7 +81,7 @@ class  MarketInformationContainer extends StatelessWidget{
                           opacity: 0.2,
                           child: Image.asset(
                             'assets/images/Shop.png',
-                            height: Shared.height * 0.035,
+                            height: MediaQuery.of(context).size.height * 0.035,
                           ),
                         ),
                       ),
@@ -105,7 +105,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                   const Opacity(
                     opacity: 0.7,
@@ -125,7 +125,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                    const Opacity(
                     opacity: 0.7,
@@ -145,7 +145,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                    const Opacity(
                     opacity: 0.7,
@@ -165,7 +165,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                   const Opacity(
                     opacity: 0.7,

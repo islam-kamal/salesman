@@ -18,8 +18,8 @@ final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Shared.width * 0.15,
-      height: Shared.height * 0.075,
+      width: MediaQuery.of(context).size.width * 0.15,
+      height: MediaQuery.of(context).size.height * 0.075,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -35,11 +35,11 @@ final Color color;
             children: [
               Image.asset(
                 image,
-                height: Shared.height * 0.021,
+                height: MediaQuery.of(context).size.height * 0.021,
                 color: color,
                 ),
                 SizedBox(
-                  height: Shared.height * 0.003,
+                  height: MediaQuery.of(context).size.height * 0.003,
                 ),
               Text(
                 name,
@@ -50,7 +50,7 @@ final Color color;
                 ),
               ),
               SizedBox(
-                  height: Shared.height * 0.003,
+                  height: MediaQuery.of(context).size.height * 0.003,
                 ),
               Text(
                 price,

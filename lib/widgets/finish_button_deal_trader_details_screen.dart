@@ -9,8 +9,8 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
     return Column(
       children: [
         Container(
-          width: Shared.width * 0.23,
-          height: Shared.height * 0.208,
+          width: MediaQuery.of(context).size.width * 0.23,
+          height: MediaQuery.of(context).size.height * 0.208,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -25,7 +25,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                 children: [
                   Container(
                   width: double.infinity,
-                  height: Shared.height * 0.04,
+                  height: MediaQuery.of(context).size.height * 0.04,
                   decoration: BoxDecoration(
                     color: Colors.black,
                     borderRadius: BorderRadius.circular(8)
@@ -41,7 +41,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                           width: 28,
                           ),
                         SizedBox(
-                              width: Shared.width * 0.008,
+                              width: MediaQuery.of(context).size.width * 0.008,
                             ),
                         const Text(
                           'بدأ المعاملة',
@@ -59,7 +59,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     child: Container(
                                 width: double.infinity,
-                                height: Shared.height * 0.04,
+                                height: MediaQuery.of(context).size.height * 0.04,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
@@ -79,7 +79,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                         width: 28,
                         ),
                       SizedBox(
-                            width: Shared.width * 0.008,
+                            width: MediaQuery.of(context).size.width * 0.008,
                           ),
                       const Text(
                         'الاتجاهات',
@@ -96,7 +96,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                   ),
                   Container(
                     width: double.infinity,
-                    height: Shared.height * 0.04,
+                    height: MediaQuery.of(context).size.height * 0.04,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -116,7 +116,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                         width: 28,
                         ),
                       SizedBox(
-                            width: Shared.width * 0.008,
+                            width: MediaQuery.of(context).size.width * 0.008,
                           ),
                       const Text(
                         'الإتصال بالتاجر',
@@ -134,7 +134,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                       padding: EdgeInsets.only(top: 14),
                       child: Container(
                                 width: double.infinity,
-                                height: Shared.height * 0.04,
+                                height: MediaQuery.of(context).size.height * 0.04,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
@@ -154,7 +154,7 @@ class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
                         width: 28,
                         ),
                       SizedBox(
-                            width: Shared.width * 0.008,
+                            width: MediaQuery.of(context).size.width * 0.008,
                           ),
                       const Text(
                         'تاريخ الزيارات',

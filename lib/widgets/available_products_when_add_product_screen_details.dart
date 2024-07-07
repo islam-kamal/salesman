@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_previous_invoices_screen.dart';
 import 'package:water/widgets/finish_button_container_widget.dart';
-import 'package:water/widgets/products_and_prices_previous_invoices_screen.dart';
-import 'package:water/widgets/search_text_field_previous_invoices_screen.dart';
+import 'package:water/widgets/products_and_prices_available_products_when_add_product_screen.dart';
+import 'package:water/widgets/search_text_field_available_products_screen.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
-import 'package:water/widgets/water_item_previous_invoices.dart';
+import 'package:water/widgets/water_item_available_products.dart';
+import 'package:water/widgets/water_item_available_products_when_add_product.dart';
 
-class PreviousInvoicesScreenDetails extends StatelessWidget{
-  PreviousInvoicesScreenDetails({super.key});
+
+class AvailableProductsWhenAddProductScreenDetails extends StatelessWidget{
+  AvailableProductsWhenAddProductScreenDetails({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -16,7 +17,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        drawer: const DrawerPreviousInvoicesScreen(),
+        //drawer: const DrawerAvailableProductsScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -70,25 +71,36 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   const FinishButtonContainer(),
                 ],
               )),
-           
                 Expanded(
                   flex: 3,
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 const SearchTextFieldPreviousInvoicesScreen(),
+                 const SearchTextFieldAvailableProductsScreen(),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 6,
+                    itemCount: 4,
                     itemBuilder: (context , index){
-                      return const WaterItemPreviousInvoices();
+                      return const WaterItemAvailableProducts();
                     }
                     ),
+                     const Divider(
+                    color: Color.fromARGB(255, 186, 180, 180),
+                    thickness: 0.9,
+                  ),
+                  // ListView.builder(
+                  //   shrinkWrap: true,
+                  //   physics: const NeverScrollableScrollPhysics(),
+                  //   itemCount: 4,
+                  //   itemBuilder: (context , index){
+                  //     return const WaterItemAvailableProductsWhenAddProduct();
+                  //   }
+                  //   ),
                 ],
               ),
                 ),
-               const ProductsAndPricesPreviousInvoicesScreen()
+               const ProductsAndPricesAvailableProductsWhenAddProductScreen()
                ],
           ),
         ),

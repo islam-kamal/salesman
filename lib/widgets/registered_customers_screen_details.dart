@@ -27,8 +27,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                   Container(
-                    width: Shared.width * 0.23,
-                   height: Shared.height * 0.041,
+                    width: MediaQuery.of(context).size.width * 0.23,
+                   height: MediaQuery.of(context).size.height * 0.041,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -48,7 +48,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               ),
                             ),
                             SizedBox(
-                              width: Shared.width * 0.01,
+                              width: MediaQuery.of(context).size.width * 0.01,
                             ),
                           const Opacity(
                             opacity: 0.8,
@@ -65,11 +65,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                    ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.025,
+                    height: MediaQuery.of(context).size.height * 0.025,
                   ),
                   const TraderDealRegisteredCustomersScreen(),
                   SizedBox(
-                    height: Shared.height * 0.025,
+                    height: MediaQuery.of(context).size.height * 0.025,
                   ),
                   const FinishButtonRegisteredCustomersScreen(),
                 ],
@@ -88,7 +88,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         ),
                       ),
                       SizedBox(
-                        height: Shared.height * 0.008,
+                        height: MediaQuery.of(context).size.height * 0.008,
                       ),
                       GridView.builder(
                     physics: const NeverScrollableScrollPhysics(),

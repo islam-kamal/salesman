@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class WaterItemAvailableProducts extends StatelessWidget {
-  const WaterItemAvailableProducts({super.key});
+class WaterItemAvailableProductsWhenAddProduct extends StatelessWidget {
+  const WaterItemAvailableProductsWhenAddProduct({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -73,36 +73,40 @@ class WaterItemAvailableProducts extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.012,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 6),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'مياه',
-                        style:
-                            TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                      ),
-                      const Text(
-                        'مياه مدينة شرنك 15 حبة  600 مل',
-                        style:
-                            TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.017,
-                      ),
-                      const Text(
-                        '42 ر.س',
-                        style:
-                            TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-                      ),
-                    ],
+                Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: const Color.fromARGB(255, 133, 178, 215),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 6),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'مياه',
+                          style:
+                              TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                        ),
+                        const Text(
+                          'مياه مدينة شرنك 15 حبة  600 مل',
+                          style:
+                              TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                        ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.017,
+                        ),
+                        const Text(
+                          '42 ر.س',
+                          style:
+                              TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
             ),
-          )
-         
+          ),
     );
   }
 }

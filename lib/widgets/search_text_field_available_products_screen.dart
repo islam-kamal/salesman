@@ -21,7 +21,7 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
                   child: const Icon(Icons.arrow_back),
                   ),
                 SizedBox(
-                width: Shared.width * 0.012,
+                width: MediaQuery.of(context).size.width * 0.012,
               ),
                 const Text(
                  'المنتجات المتاحة',
@@ -33,11 +33,11 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
               ],
             ),
             SizedBox(
-                height: Shared.height * 0.019,
+                height: MediaQuery.of(context).size.height * 0.019,
               ),
               Container(
               width: double.infinity,
-              height: Shared.height * 0.033,
+              height: MediaQuery.of(context).size.height * 0.033,
               decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -74,10 +74,10 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
                                     children: [
                                       Image.asset(
                                         'assets/images/marketImage.png',
-                                        width: Shared.width * 0.024,
+                                        width: MediaQuery.of(context).size.width * 0.024,
                                         ),
                                       SizedBox(
-                                        width: Shared.width * 0.002,
+                                        width: MediaQuery.of(context).size.width * 0.002,
                                       ),
                                       const Text(
                                         '50 منتج',
@@ -96,11 +96,11 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
               ),
               ),
               SizedBox(
-                height: Shared.height * 0.012,
+                height: MediaQuery.of(context).size.height * 0.012,
               ),
             Container(
               width: double.infinity,
-              height: Shared.height * 0.033,
+              height: MediaQuery.of(context).size.height * 0.033,
               decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -142,7 +142,7 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
                   child: const Icon(Icons.arrow_back),
                   ),
                 SizedBox(
-                width: Shared.width * 0.012,
+                width: MediaQuery.of(context).size.width * 0.012,
               ),
                 const Text(
                  'المنتجات المتاحة',
@@ -154,11 +154,11 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
               ],
             ),
             SizedBox(
-                height: Shared.height * 0.019,
+                height: MediaQuery.of(context).size.height * 0.019,
               ),
               Container(
               width: double.infinity,
-              height: Shared.height * 0.045,
+              height: MediaQuery.of(context).size.height * 0.045,
               decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -195,10 +195,10 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
                                     children: [
                                       Image.asset(
                                         'assets/images/marketImage.png',
-                                        width: Shared.width * 0.014,
+                                        width: MediaQuery.of(context).size.width * 0.014,
                                         ),
                                       SizedBox(
-                                        width: Shared.width * 0.002,
+                                        width: MediaQuery.of(context).size.width * 0.002,
                                       ),
                                       const Text(
                                         '50 منتج',
@@ -217,11 +217,11 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget{
               ),
               ),
               SizedBox(
-                height: Shared.height * 0.012,
+                height: MediaQuery.of(context).size.height * 0.012,
               ),
             Container(
               width: double.infinity,
-              height: Shared.height * 0.053,
+              height: MediaQuery.of(context).size.height * 0.053,
               decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(

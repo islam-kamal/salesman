@@ -1,4 +1,5 @@
 export 'available_items_screen.dart';
+export 'available_products_add_product_screen.dart';
 export 'available_products_screen.dart';
 export 'financial_collection_screen.dart';
 export 'inventory_screen.dart';

@@ -9,8 +9,8 @@ class FinishButtonVisitsTodayScreen extends StatelessWidget{
     return Column(
       children: [
         Container(
-          width: Shared.width * 0.23,
-          height: Shared.height * 0.062,
+          width: MediaQuery.of(context).size.width * 0.23,
+          height: MediaQuery.of(context).size.height * 0.062,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -22,8 +22,8 @@ class FinishButtonVisitsTodayScreen extends StatelessWidget{
             child: Padding(
               padding: const EdgeInsets.all(8),
               child: Container(
-              width: Shared.width * 0.1,
-              height: Shared.height * 0.04,
+              width: MediaQuery.of(context).size.width * 0.1,
+              height: MediaQuery.of(context).size.height * 0.04,
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(8)
@@ -40,7 +40,7 @@ class FinishButtonVisitsTodayScreen extends StatelessWidget{
                       ),
                     ),
                     SizedBox(
-                          width: Shared.width * 0.006,
+                          width: MediaQuery.of(context).size.width * 0.006,
                         ),
                     const Text(
                       'اضافة زيارة',

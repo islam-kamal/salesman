@@ -20,7 +20,7 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                     children: [
                       Image.asset('assets/images/Banknote2.png'),
                       SizedBox(
-                        width: Shared.width * 0.007,
+                        width: MediaQuery.of(context).size.width * 0.007,
                       ),
                       const Text(
                         'متبقى 25,000 ر.س',
@@ -40,10 +40,12 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                       _showFirstAlertDialog(context);
                     },
                     child: Container(
-                      width: Shared.width * 0.23,
-                        height: Shared.height * 0.04,
+                      width: MediaQuery.of(context).size.width * 0.23,
+                        height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.04
+             : MediaQuery.of(context).size.height * 0.068,
                         decoration: BoxDecoration(
-                        color: Color(0xff1D7AFC),
+                        color: const Color(0xff1D7AFC),
                         borderRadius: BorderRadius.circular(6)
                         ),
                         child: Row(
@@ -54,7 +56,7 @@ class PillPaymentFinancialCollection extends StatelessWidget{
                                     color: Color(0xffF9F9F9)
                                     ),
                                     SizedBox(
-                                    width: Shared.width * 0.006,
+                                    width: MediaQuery.of(context).size.width * 0.006,
                                   ),
                                   const Opacity(
                                     opacity: 0.7,
@@ -90,17 +92,19 @@ void _showFirstAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: Shared.width * 0.6,
-            height: Shared.height * 0.19,
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.19
+             : MediaQuery.of(context).size.height * 0.365,
             child: Column(
               children: [
                 Image.asset(
                   color: Color(0xffDD7208),
                   'assets/images/VectorError.png',
-                  width: Shared.width * 0.12,
+                  width: MediaQuery.of(context).size.width * 0.12,
                   ),
                 SizedBox(
-                  height: Shared.height * 0.013,
+                  height: MediaQuery.of(context).size.height * 0.013,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -132,8 +136,10 @@ void _showFirstAlertDialog(BuildContext context) {
                           _showSecondAlertDialog(context);
                         },
                         child: Container(
-                          width: Shared.width * 0.27,
-                            height: Shared.height * 0.038,
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.07,
                             decoration: BoxDecoration(
                             color: Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -153,7 +159,7 @@ void _showFirstAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.006,
+                                  width: MediaQuery.of(context).size.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -166,8 +172,10 @@ void _showFirstAlertDialog(BuildContext context) {
                           Navigator.of(context).pop();
                         },
                         child: Container(
-                          width: Shared.width * 0.27,
-                            height: Shared.height * 0.038,
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.07,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -187,7 +195,7 @@ void _showFirstAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.006,
+                                  width: MediaQuery.of(context).size.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],
@@ -212,16 +220,18 @@ void _showSecondAlertDialog(BuildContext context) {
       builder: (BuildContext context) {
         return AlertDialog(
           content: Container(
-            width: Shared.width * 0.6,
-            height: Shared.height * 0.19,
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.19
+             : MediaQuery.of(context).size.height * 0.375,
             child: Column(
               children: [
                 Image.asset(
                   'assets/images/imagee-truee.png',
-                  width: Shared.width * 0.12,
+                  width: MediaQuery.of(context).size.width * 0.12,
                   ),
                 SizedBox(
-                  height: Shared.height * 0.008,
+                  height: MediaQuery.of(context).size.height * 0.008,
                 ),
                   const Padding(
                     padding: EdgeInsets.only(top: 11),
@@ -250,8 +260,10 @@ void _showSecondAlertDialog(BuildContext context) {
                       InkWell(
                         onTap: (){},
                         child: Container(
-                          width: Shared.width * 0.27,
-                            height: Shared.height * 0.038,
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.07,
                             decoration: BoxDecoration(
                             color: Color(0xff1D7AFC),
                               borderRadius: BorderRadius.circular(5)
@@ -271,7 +283,7 @@ void _showSecondAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.006,
+                                  width: MediaQuery.of(context).size.width * 0.006,
                                 ),
                                 Image.asset('assets/images/PrinterMinimalistic.png'),
                               ],
@@ -283,8 +295,10 @@ void _showSecondAlertDialog(BuildContext context) {
                           Navigator.of(context).pop();
                         },
                         child: Container(
-                          width: Shared.width * 0.27,
-                            height: Shared.height * 0.038,
+                          width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.038
+             : MediaQuery.of(context).size.height * 0.07,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -304,7 +318,7 @@ void _showSecondAlertDialog(BuildContext context) {
                                   ),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.006,
+                                  width: MediaQuery.of(context).size.width * 0.006,
                                 ),
                                 Image.asset('assets/images/arrowww.png'),
                               ],

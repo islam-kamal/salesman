@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class VisitsTodayScreenContainerItem extends StatelessWidget{
   const VisitsTodayScreenContainerItem({super.key});
@@ -9,8 +8,10 @@ class VisitsTodayScreenContainerItem extends StatelessWidget{
     return Column(
       children: [
            Container(
-            width: Shared.width * 0.5,
-            height: Shared.height * 0.08,
+            width: MediaQuery.of(context).size.width * 0.5,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.08
+          : MediaQuery.of(context).size.height * 0.12,
             decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(
@@ -32,7 +33,7 @@ class VisitsTodayScreenContainerItem extends StatelessWidget{
                             'assets/images/VectorShopp.png'
                           ),
                           SizedBox(
-                                width: Shared.width * 0.008,
+                                width: MediaQuery.of(context).size.width * 0.008,
                               ),
                           const Text(
                             'اسم المتجر',
@@ -58,7 +59,7 @@ class VisitsTodayScreenContainerItem extends StatelessWidget{
                             children: [
                               Image.asset('assets/images/Vectormnmn.png'),
                               SizedBox(
-                                width: Shared.width * 0.008,
+                                width: MediaQuery.of(context).size.width * 0.008,
                               ),
                               const Text(
                                 'يبعد 232 ك.م',
@@ -80,7 +81,7 @@ class VisitsTodayScreenContainerItem extends StatelessWidget{
                           children: [
                             Image.asset('assets/images/VectorStrokeCash.png'),
                             SizedBox(
-                              width: Shared.width * 0.008,
+                              width: MediaQuery.of(context).size.width * 0.008,
                             ),
                             const Text(
                               '15,000 مديونية',
@@ -99,7 +100,7 @@ class VisitsTodayScreenContainerItem extends StatelessWidget{
                           children: [
                             Image.asset('assets/images/VectorStrokeTruee.png'),
                             SizedBox(
-                            width: Shared.width * 0.008,
+                            width: MediaQuery.of(context).size.width * 0.008,
                           ),
                             const Text(
                               '30,000 مبيعات شهرية',

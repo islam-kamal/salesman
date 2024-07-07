@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
   const WaterItemInvoicesDetailsDrawer({super.key});
@@ -9,8 +8,10 @@ class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
     return Column(
       children: [
         Container(
-          width: Shared.width * 0.5,
-          height: Shared.height * 0.08,
+          width: MediaQuery.of(context).size.width * 0.5,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.08
+          : MediaQuery.of(context).size.height * 0.13,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -43,11 +44,11 @@ class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
                                 Image.asset(
                                   'assets/images/InfoooCircle.png',
                                   width:
-                                      Shared.width * 0.016,
+                                      MediaQuery.of(context).size.width * 0.016,
                                 ),
                                 SizedBox(
                                   width:
-                                      Shared.width * 0.002,
+                                      MediaQuery.of(context).size.width * 0.002,
                                 ),
                                 const Text(
                                  'الكاتيجوري',
@@ -70,7 +71,7 @@ class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: Shared.width * 0.012,
+                width: MediaQuery.of(context).size.width * 0.012,
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 6),
@@ -88,7 +89,7 @@ class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
                           TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
                     ),
                     SizedBox(
-                      height: Shared.height * 0.017,
+                      height: MediaQuery.of(context).size.height * 0.017,
                     ),
                     const Text(
                       '42 ر.س',
@@ -102,7 +103,7 @@ class WaterItemInvoicesDetailsDrawer extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: Shared.height * 0.012,
+          height: MediaQuery.of(context).size.height * 0.012,
         ),
       ],
     );

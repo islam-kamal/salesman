@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
-import 'package:water/widgets/hide_list_container_widget.dart';
-import 'package:water/widgets/products_and_prices_available_items_screen.dart';
-import 'package:water/widgets/search_text_field_available_items_screen.dart';
-import 'package:water/widgets/store_deal_container_widget.dart';
-import 'package:water/widgets/water_item_available_items.dart';
-import 'package:water/basics/shared.dart';
+import 'package:water/widgets/available_items_screen_details_land_scape.dart';
+import 'package:water/widgets/available_items_screen_details_protrait.dart';
+
 
 class AvailableItemsScreenDetails extends StatelessWidget {
   AvailableItemsScreenDetails({super.key});
@@ -19,47 +15,19 @@ class AvailableItemsScreenDetails extends StatelessWidget {
         child: Scaffold(
           //drawer: const DrawerPreviousInvoicesScreen(),
           key: _key,
-          body: Padding(
-            padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                    flex: 2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        HideListContainer(),
-                        SizedBox(
-                          height: Shared.height * 0.025,
-                        ),
-                        const StoreDealContainer(),
-                        SizedBox(
-                          height: Shared.height * 0.025,
-                        ),
-                        const FinishButtonContainer(),
-                      ],
-                    )),
-                Expanded(
-                  flex: 3,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SearchTextFieldAvailableItemsScreen(),
-                      ListView.builder(
-                          shrinkWrap: true,
-                          // physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 4,
-                          itemBuilder: (context, index) {
-                            return const WaterItemAvailableItems();
-                          }),
-                    ],
-                  ),
-                ),
-                const ProductsAndPricesAvailableItemsScreen()
-              ],
-            ),
+          body: OrientationBuilder(
+            builder: (context , orientation){
+              return  Padding(
+              padding: const EdgeInsets.only(right: 8, left: 8, top: 11),
+              child: orientation == Orientation.portrait ?  AvailableItemsScreenDetailsProtrait()
+              : AvailableItemsScreenDetailsLandScape(),
+            );
+            },
+            
           ),
         ));
   }
 }
+
+
+

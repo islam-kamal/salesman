@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
-import 'package:water/widgets/finish_button_visits_today_screen.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/visits_today_screen_container_item.dart';
 
-class VisitsTodayScreenDetails extends StatelessWidget {
-  VisitsTodayScreenDetails({super.key});
+class VisitsHistoryScreenDetails extends StatelessWidget {
+  VisitsHistoryScreenDetails({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -70,7 +68,6 @@ class VisitsTodayScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonContainer(),
                   ],
                 ),
               ),
@@ -93,12 +90,10 @@ class VisitsTodayScreenDetails extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate:
-                           SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 2 : 3,
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
                               crossAxisSpacing: 16,
-                              childAspectRatio: MediaQuery.of(context).orientation == Orientation.portrait ?
-                              4.3 / 2 : 5/2,
-                              ),
+                              childAspectRatio: 4.3 / 2),
                       itemCount: 8,
                       itemBuilder: (context, index) {
                         return const VisitsTodayScreenContainerItem();

@@ -17,11 +17,11 @@ class SearchTextField extends StatelessWidget{
             ),
           ),
           SizedBox(
-            height: Shared.height * 0.019,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
           Container(
-            width: Shared.width * 0.5,
-            height: Shared.height * 0.033,
+            width: MediaQuery.of(context).size.width * 0.5,
+            height: MediaQuery.of(context).size.height * 0.033,
             decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(

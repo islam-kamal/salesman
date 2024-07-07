@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/review_product_screen.dart';
-import 'package:water/basics/shared.dart';
 
-class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
-  const ProductsAndPricesPreviousInvoicesScreen({super.key});
+class ProductsAndPricesAvailableProductsWhenAddProductScreen extends StatelessWidget {
+  const ProductsAndPricesAvailableProductsWhenAddProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,9 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width * 0.245,
-            height: MediaQuery.of(context).orientation == Orientation.portrait ?
-               MediaQuery.of(context).size.height * 0.2
-               : MediaQuery.of(context).size.height * 0.316,
+            height: MediaQuery.of(context).orientation == Orientation.portrait
+                ? MediaQuery.of(context).size.height * 0.24
+                : MediaQuery.of(context).size.height * 0.37,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -46,13 +45,35 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Opacity(
-                        opacity: 0.7,
+                        opacity: 0.78,
                         child: Text(
-                          '4*مياه',
+                          'المنتج',
                           style: TextStyle(
+                            color: Color(0xff758195),
                             fontWeight: FontWeight.w300,
                             fontSize: 14,
                           ),
+                        ),
+                      ),
+                      Text(
+                        'المبلغ',
+                        style: TextStyle(
+                          color: Color(0xff758195),
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Opacity(
+                        opacity: 0.7,
+                        child: Text(
+                          '  4*مياه',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w300),
                         ),
                       ),
                       Text(
@@ -70,11 +91,9 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                       Opacity(
                         opacity: 0.7,
                         child: Text(
-                          '2*مياه',
+                          '  2*مياه',
                           style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14,
-                          ),
+                              fontSize: 14, fontWeight: FontWeight.w300),
                         ),
                       ),
                       Text(
@@ -92,33 +111,9 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                       Opacity(
                         opacity: 0.7,
                         child: Text(
-                          '25*مياه',
+                          '  2*مياه',
                           style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        '42 ر.س',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Opacity(
-                        opacity: 0.7,
-                        child: Text(
-                          '2*مياه',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                            fontSize: 14,
-                          ),
+                              fontSize: 14, fontWeight: FontWeight.w300),
                         ),
                       ),
                       Text(
@@ -160,44 +155,105 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.012,
+                    height: MediaQuery.of(context).size.height * 0.004,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Opacity(
+                        opacity: 0.7,
+                        child: Text(
+                          'رصيد سابق',
+                          style: TextStyle(
+                              color: Color(0xff0056C9),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.9,
+                        child: Text(
+                          '-42 ر.س',
+                          style: TextStyle(
+                              color: Color(0xff0056C9),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.004,
+                  ),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Opacity(
+                        opacity: 0.7,
+                        child: Text(
+                          'الصافي',
+                          style: TextStyle(
+                              color: Color(0xff0056C9),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Opacity(
+                        opacity: 0.9,
+                        child: Text(
+                          '42 ر.س',
+                          style: TextStyle(
+                              color: Color(0xff0056C9),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.009,
                   ),
                   InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const ReviewProductScreen()));
                     },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).orientation == Orientation.portrait ?
-               MediaQuery.of(context).size.height * 0.041
-               : MediaQuery.of(context).size.height * 0.074,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.blue,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(4)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 18),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset('assets/images/CheckCircle.png',
-                                color: Colors.blue),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
+                    child: Opacity(
+                      opacity: 0.6,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.23,
+                        height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.041
+                            : MediaQuery.of(context).size.height * 0.065,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Color(0xff1D7AFC),
+                              width: 1,
                             ),
-                            const Text(
-                              'مراجعة المنتجات',
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.w300,
-                                fontSize: 14,
+                            borderRadius: BorderRadius.circular(4)),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('assets/images/CheckCircle.png',
+                                  color: Color(0xff1D7AFC)),
+                              SizedBox(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.006,
                               ),
-                            ),
-                          ],
+                              const Text(
+                                'مراجعة المنتجات',
+                                style: TextStyle(
+                                  color: Color(0xff1D7AFC),
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -205,7 +261,7 @@ class ProductsAndPricesPreviousInvoicesScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
+          )
         ],
       ),
     );

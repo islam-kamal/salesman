@@ -9,8 +9,8 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
     return Column(
       children: [
         Container(
-          width: Shared.width * 0.23,
-          height: Shared.height * 0.22,
+          width: MediaQuery.of(context).size.width * 0.23,
+          height: MediaQuery.of(context).size.height * 0.22,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -41,7 +41,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                   ),
                 ),
                 SizedBox(
-          height: Shared.height * 0.011,
+          height: MediaQuery.of(context).size.height * 0.011,
         ),
                 InkWell(
                 onTap: (){},
@@ -49,8 +49,8 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                 hoverColor: const Color.fromARGB(255, 30, 133, 219),
                 onLongPress: () => Colors.blue,
                 child: Container(
-                width: Shared.width * 0.23,
-                height: Shared.height * 0.041,
+                width: MediaQuery.of(context).size.width * 0.23,
+                height: MediaQuery.of(context).size.height * 0.041,
                 decoration: BoxDecoration(
                 color:  Colors.white,
                   borderRadius: BorderRadius.circular(8)
@@ -64,7 +64,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                     color: Colors.black,
                     ),
                   SizedBox(
-                    width: Shared.width * 0.008,
+                    width: MediaQuery.of(context).size.width * 0.008,
                   ),
                   const Text(
                     'امر بيع',
@@ -79,7 +79,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                   ),
                 ),
                 SizedBox(
-          height: Shared.height * 0.011,
+          height: MediaQuery.of(context).size.height * 0.011,
         ),
                 InkWell(
                   onTap: (){},
@@ -87,8 +87,8 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                     hoverColor: const Color.fromARGB(255, 30, 133, 219),
                     onLongPress: () => Colors.blue,
                   child: Container(
-                    width: Shared.width * 0.23,
-                  height: Shared.height * 0.041,
+                    width: MediaQuery.of(context).size.width * 0.23,
+                  height: MediaQuery.of(context).size.height * 0.041,
                   decoration: BoxDecoration(
                   color: Colors.white,
                     borderRadius: BorderRadius.circular(8)
@@ -99,7 +99,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                     children: [
                       Image.asset('assets/images/RestartCircle.png'),
                       SizedBox(
-                       width: Shared.width * 0.008,
+                       width: MediaQuery.of(context).size.width * 0.008,
                       ),
                       Text(
                       'مرتجع',
@@ -114,7 +114,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                   ),
                 ),
                 SizedBox(
-                    height: Shared.height * 0.011,
+                    height: MediaQuery.of(context).size.height * 0.011,
                   ),
           InkWell(
             onTap: (){},
@@ -122,8 +122,8 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
               hoverColor: const Color.fromARGB(255, 30, 133, 219),
               onLongPress: () => Colors.blue,
             child: Container(
-              width: Shared.width * 0.23,
-                              height: Shared.height * 0.041,
+              width: MediaQuery.of(context).size.width * 0.23,
+                              height: MediaQuery.of(context).size.height * 0.041,
                               decoration: BoxDecoration(
                               color:  Colors.white,
                               
@@ -135,7 +135,7 @@ class TraderDealContainerSoldProductsScreen extends StatelessWidget{
                                   children: [
                             Image.asset('assets/images/MoneyBag.png'),
                             SizedBox(
-                              width: Shared.width * 0.008,
+                              width: MediaQuery.of(context).size.width * 0.008,
                             ),
                             Text(
                               'تحصيل',

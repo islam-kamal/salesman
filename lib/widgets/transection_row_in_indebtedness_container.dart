@@ -25,15 +25,15 @@ final Color color;
                           '123414'
                         ),
                         SizedBox(
-                          width: Shared.width * 0.012,
+                          width: MediaQuery.of(context).size.width * 0.012,
                         ),
                           Image.asset(
                             image,
                             color: color,
-                            height: Shared.height * 0.0144,
+                            height: MediaQuery.of(context).size.height * 0.0144,
                             ),
                             SizedBox(
-                              width: Shared.width * 0.006,
+                              width: MediaQuery.of(context).size.width * 0.006,
                             ),
                              Text(
                                   name,

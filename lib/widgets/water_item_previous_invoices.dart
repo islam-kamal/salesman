@@ -19,8 +19,10 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                 );
             },
             child: Container(
-              width: Shared.width * 0.5,
-              height: Shared.height * 0.075,
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).orientation == Orientation.portrait ?
+               MediaQuery.of(context).size.height * 0.075
+               : MediaQuery.of(context).size.height * 0.125,
               decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -58,10 +60,10 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                               children: [
                                 Image.asset(
                                   'assets/images/marketImage.png',
-                                  width: Shared.width * 0.024,
+                                  width: MediaQuery.of(context).size.width * 0.024,
                                   ),
                                 SizedBox(
-                                  width: Shared.width * 0.002,
+                                  width: MediaQuery.of(context).size.width * 0.002,
                                 ),
                                 const Text(
                                   '50 منتج',
@@ -83,7 +85,7 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                             children: [
                               Image.asset('assets/images/VectorSvsds.png'),
                               SizedBox(
-                                width: Shared.width * 0.008,
+                                width: MediaQuery.of(context).size.width * 0.008,
                               ),
                               const Text(
                                 'فاتورة رقم 123414',
@@ -101,7 +103,7 @@ class WaterItemPreviousInvoices extends StatelessWidget{
                             children: [
                               Image.asset('assets/images/VectorPkoik.png'),
                               SizedBox(
-                              width: Shared.width * 0.008,
+                              width: MediaQuery.of(context).size.width * 0.008,
                             ),
                               const Text(
                                 'اصدار بتاريخ 21 / 8 / 2024',

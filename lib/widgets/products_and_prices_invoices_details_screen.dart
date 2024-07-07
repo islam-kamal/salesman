@@ -12,8 +12,10 @@ class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: Shared.width * 0.245,
-            height: Shared.height * 0.2,
+            width: MediaQuery.of(context).size.width * 0.245,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+           MediaQuery.of(context).size.height * 0.2
+           : MediaQuery.of(context).size.height * 0.316,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -38,7 +40,7 @@ class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,7 +162,7 @@ class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: Shared.height * 0.012,
+                        height: MediaQuery.of(context).size.height * 0.012,
                       ),
                       InkWell(
                         onTap: (){
@@ -169,8 +171,10 @@ class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
                             );
                         },
                         child: Container(
-                          width: Shared.width * 0.23,
-                          height: Shared.height * 0.041,
+                          width: MediaQuery.of(context).size.width * 0.23,
+                          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+           MediaQuery.of(context).size.height * 0.041
+           : MediaQuery.of(context).size.height * 0.072,
                           decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -189,7 +193,7 @@ class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
                                 color: Colors.blue
                                 ),
                                 SizedBox(
-                                width: Shared.width * 0.006,
+                                width: MediaQuery.of(context).size.width * 0.006,
                               ),
                               const Text(
                                 'مراجعة المنتجات',
