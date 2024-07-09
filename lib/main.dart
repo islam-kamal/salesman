@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/available_items_screen.dart';
 import 'package:water/available_products_screen.dart';
+import 'package:water/error_in_network_screen.dart';
 import 'package:water/financial_collection_screen.dart';
 import 'package:water/index.dart';
 import 'package:water/inventory_screen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: LoginScreen(),     //VisitDetailsScreen(),    //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()      //PreviousInvoicesScreen(),         //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+      home: ErrorInServiceScreen()    //LoginScreen(),     //VisitDetailsScreen(),    //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()      //PreviousInvoicesScreen(),         //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
     );
   }
 }

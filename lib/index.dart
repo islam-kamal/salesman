@@ -1,6 +1,8 @@
 export 'available_items_screen.dart';
 export 'available_products_add_product_screen.dart';
 export 'available_products_screen.dart';
+export 'error_in_network_screen.dart';
+export 'error_in_service_screen.dart';
 export 'financial_collection_screen.dart';
 export 'inventory_screen.dart';
 export 'invoices_details_screen.dart';
