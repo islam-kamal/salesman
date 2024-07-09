@@ -4,10 +4,13 @@ import 'package:water/available_products_screen.dart';
 import 'package:water/financial_collection_screen.dart';
 import 'package:water/index.dart';
 import 'package:water/inventory_screen.dart';
+import 'package:water/login_screen.dart';
 import 'package:water/previous_invoices_screen.dart';
 import 'package:water/registered_customers_screen.dart';
 import 'package:water/review_returned_products_screen.dart';
 import 'package:water/trader_details_screen.dart';
+import 'package:water/visit_details_screen.dart';
+import 'package:water/visits_history_screen.dart';
 import 'package:water/visits_today_screen.dart';
 
 
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()      //PreviousInvoicesScreen(),         //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+      home: LoginScreen(),     //VisitDetailsScreen(),    //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()      //PreviousInvoicesScreen(),         //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
     );
   }
 }

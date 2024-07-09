@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ImageNumberProductPriceContainerReviewReturnedProducts
-    extends StatelessWidget {
-  const ImageNumberProductPriceContainerReviewReturnedProducts({super.key});
+class ValuePillDateNumberContainer extends StatelessWidget {
+  const ValuePillDateNumberContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,9 +9,9 @@ class ImageNumberProductPriceContainerReviewReturnedProducts
       children: [
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).orientation == Orientation.portrait ?
-          MediaQuery.of(context).size.height * 0.033
-          : MediaQuery.of(context).size.height * 0.052,
+          height: MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.033
+              : MediaQuery.of(context).size.height * 0.052,
           decoration: const BoxDecoration(
               color: Color(0xffDCDFE3),
               borderRadius: BorderRadius.only(

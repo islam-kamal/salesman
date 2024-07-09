@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/visits_today_screen_container_item.dart';
+import 'package:water/widgets/visit_type_containers.dart';
+import 'package:water/widgets/visits_history_screen_container_item.dart';
 
 class VisitsHistoryScreenDetails extends StatelessWidget {
   VisitsHistoryScreenDetails({super.key});
@@ -76,27 +77,56 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Icon(Icons.arrow_back),
+                        ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.012,
+                    ),
                     const Text(
-                      'زيارات اليوم',
+                      'تاريخ الزيارات',
                       style: TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(
+                      ]
+                      ),
+                      SizedBox(
                       height: MediaQuery.of(context).size.height * 0.008,
                     ),
+                    const VisitTypeContainers(),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 16,
-                              childAspectRatio: 4.3 / 2),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 2
+                            : 3,
+                        crossAxisSpacing: 16,
+                        childAspectRatio: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 4.3 / 2
+                            : 4.9 / 2,
+                      ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                        return const VisitsTodayScreenContainerItem();
+                        return const VisitsHistoryScreenContainerItem(
+                          date: '2024 / 5 / 15',
+                          collect: '30,000',
+                          complete: '30,000',
+                          visit: 'في زيارات اليوم',
+                          returned: '30,000',
+                          store: 'للمتجر فلان',
+                          icon: 'assets/images/trueeStyle.png',
+                          iconColor: Color(0xff0056C9),
+                        );
                       },
                     ),
                   ],

@@ -19,7 +19,9 @@ final Color color;
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.15,
-      height: MediaQuery.of(context).size.height * 0.075,
+      height: MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.075
+              : MediaQuery.of(context).size.height * 0.12,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -35,11 +37,15 @@ final Color color;
             children: [
               Image.asset(
                 image,
-                height: MediaQuery.of(context).size.height * 0.021,
+                height: MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.021
+              : MediaQuery.of(context).size.height * 0.03,
                 color: color,
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.003,
+                  height:MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.003
+              : MediaQuery.of(context).size.height * 0.008,
                 ),
               Text(
                 name,
@@ -50,7 +56,9 @@ final Color color;
                 ),
               ),
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.003,
+                  height:MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.003
+              : MediaQuery.of(context).size.height * 0.008,
                 ),
               Text(
                 price,

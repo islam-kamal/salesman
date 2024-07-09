@@ -33,7 +33,7 @@ BitmapDescriptor? customMarker;
                  Expanded(
                   flex: 5,
                   child: GoogleMap(
-                    mapType: MapType.normal,
+                    mapType: MapType.terrain,
                     initialCameraPosition: const CameraPosition(
                         target: LatLng(
                           30.0444,

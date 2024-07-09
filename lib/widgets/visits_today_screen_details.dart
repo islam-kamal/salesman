@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/finish_button_container_widget.dart';
-import 'package:water/widgets/finish_button_visits_today_screen.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/visits_today_screen_container_item.dart';
 

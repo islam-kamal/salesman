@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/files_list_view_item.dart';
-import 'package:water/basics/shared.dart';
+
 
 class  MarketInformationContainer extends StatelessWidget{
   const MarketInformationContainer({super.key});
@@ -177,18 +177,20 @@ class  MarketInformationContainer extends StatelessWidget{
                       ),
                     ),
                   ),
-                // ListView.builder(
-                //   scrollDirection: Axis.horizontal,
-                //    shrinkWrap: true,
-                //    physics: const NeverScrollableScrollPhysics(),
-                //  itemCount: 2,
-                //  itemBuilder: (context , index){
-                //  return const Padding(
-                //         padding: EdgeInsets.symmetric(horizontal: 8),
-                //        child: FilesListViewItem(),
-                //       );
-                //     }
-                //      ),
+               SizedBox(
+              height: MediaQuery.of(context).size.height * 0.12,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: FilesListViewItem(),
+                    );
+                  }),
+                  ),
                 ],
               ),
             ),

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_deal_trader_details_screen.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/google_map_container.dart';
 import 'package:water/widgets/indebtedness_container.dart';
 import 'package:water/widgets/market_information_container.dart';
-import 'package:water/widgets/trader_deal_trader_details_screen.dart';
-import 'package:water/widgets/trader_file_container.dart';
+import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
+import 'package:water/widgets/value_pill_date_number_container.dart';
+import 'package:water/widgets/visit_details_container.dart';
+import 'package:water/widgets/visit_details_market_information_container.dart';
 
-class TraderDetailsScreenBody extends StatelessWidget {
-  const TraderDetailsScreenBody({super.key});
+class VisitDetailsScreenBody extends StatelessWidget {
+  const VisitDetailsScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +29,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).size.height * 0.041,
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.041
+                          : MediaQuery.of(context).size.height * 0.052,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -63,11 +68,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const TraderDealTraderDetailsScreen(),
+                    const NavigateBasicContainer(),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonDealTraderDetailsScreen(),
+                    const VisitDetailsContainer(),
                   ],
                 ),
               ),
@@ -83,7 +88,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                               onPressed: () {},
                               icon: const Icon(Icons.arrow_back)),
                           const Text(
-                            'تفاصيل التاجر',
+                            'تفاصيل الزيارة',
                             style: TextStyle(
                               fontSize: 23,
                               fontWeight: FontWeight.w500,
@@ -94,7 +99,12 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const TraderFileContainer(),
+                      const PublicInformationContainer(
+                        name: 'عبدالرحمن محمد علي',
+                        phone: '+966 4644 4646',
+                        date: '23 / 5 / 2024',
+                        time: '5:30 مساءً',
+                      ),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 22),
                         child: Row(
@@ -127,7 +137,22 @@ class TraderDetailsScreenBody extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const IndebtednessContainer(),
+                      const ValuePillDateNumberContainer(),
+                //        SizedBox(
+                //         height: MediaQuery.of(context).size.height * 0.014,
+                //       ),
+                //       ListView.builder(
+                //   scrollDirection: Axis.horizontal,
+                //    shrinkWrap: true,
+                //    physics: const NeverScrollableScrollPhysics(),
+                //  itemCount: 2,
+                //  itemBuilder: (context , index){
+                //  return const Padding(
+                //         padding: EdgeInsets.symmetric(horizontal: 8),
+                //        child: VisitDetailsListViewItem(),
+                //       );
+                //     }
+                //      ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),
@@ -135,7 +160,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),
-                      const MarketInformationContainer(),
+                      const VisitDetailsMarketInformationContainer(),
                     ],
                   ),
                 ),
