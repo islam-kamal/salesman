@@ -95,7 +95,7 @@ class ReviewProductScreenDetails extends StatelessWidget {
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/VectorAdddd.png',
-                                buttonName: 'اضافة عميل',
+                                buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),
                             ),

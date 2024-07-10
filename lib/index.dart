@@ -1,6 +1,7 @@
 export 'available_items_screen.dart';
 export 'available_products_add_product_screen.dart';
 export 'available_products_screen.dart';
+export 'client_details_visits_history_screen.dart';
 export 'error_in_network_screen.dart';
 export 'error_in_service_screen.dart';
 export 'financial_collection_screen.dart';
@@ -9,6 +10,7 @@ export 'invoices_details_screen.dart';
 export 'login_screen.dart';
 export 'previous_invoices_screen.dart';
 export 'registered_customers_screen.dart';
+export 'return_orders_screen.dart';
 export 'review_product_screen.dart';
 export 'review_returned_products_screen.dart';
 export 'sold_products_screen.dart';
@@ -21,6 +23,4 @@ export 'visit_details_screen_returned.dart';
 export 'visit_details_screen_sales.dart';
 export 'basics/index.dart';
 export 'widgets/index.dart';
-
-
 

@@ -30,49 +30,19 @@ class VisitTypeContainers extends StatelessWidget {
                 width: 0.5,
               ),
               borderRadius: BorderRadius.circular(8)),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
+                  const Text(
                   'نوع الزيارة',
                      style: TextStyle(
                   color: Color(0xff758195),
                   fontSize: 16,
                   fontWeight: FontWeight.w300),
                   ),
-                  Icon(Icons.keyboard_arrow_down_outlined,)
-                ],
-              ),
-            ),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.025,
-            ),
-            Expanded(
-            flex: 2,
-            child: Container(
-              width: MediaQuery.of(context).size.width * 0.07,
-              height: MediaQuery.of(context).orientation == Orientation.portrait
-                ? MediaQuery.of(context).size.height * 0.04
-                : MediaQuery.of(context).size.height * 0.064,
-              decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.grey,
-                width: 0.5,
-              ),
-              borderRadius: BorderRadius.circular(8)),
-              child: const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    'من',
-                     style: TextStyle(
-                  color: Color(0xff758195),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w300),
-                  ),
-                  Icon(Icons.keyboard_arrow_down_outlined,)
+                  InkWell(
+                    onTap: (){},
+                    child: const Icon(Icons.keyboard_arrow_down_outlined,))
                 ],
               ),
             ),
@@ -97,14 +67,50 @@ class VisitTypeContainers extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text(
-                    'الى',
-                     style: const TextStyle(
+                  const Text(
+                    'من',
+                     style: TextStyle(
                   color: Color(0xff758195),
                   fontSize: 16,
                   fontWeight: FontWeight.w300),
                   ),
-                  Icon(Icons.keyboard_arrow_down_outlined,)
+                  InkWell(
+                    onTap: (){},
+                    child: const Icon(Icons.keyboard_arrow_down_outlined,))
+                ],
+              ),
+            ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.025,
+            ),
+            Expanded(
+            flex: 2,
+            child: Container(
+              width: MediaQuery.of(context).size.width * 0.07,
+              height: MediaQuery.of(context).orientation == Orientation.portrait
+                ? MediaQuery.of(context).size.height * 0.04
+                : MediaQuery.of(context).size.height * 0.064,
+              decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.grey,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(8)),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const Text(
+                    'الى',
+                     style: TextStyle(
+                  color: Color(0xff758195),
+                  fontSize: 16,
+                  fontWeight: FontWeight.w300),
+                  ),
+                  InkWell(
+                    onTap: (){},
+                    child: const Icon(Icons.keyboard_arrow_down_outlined,))
                 ],
               ),
             ),

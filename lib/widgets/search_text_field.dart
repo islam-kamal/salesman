@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SearchTextField extends StatelessWidget {
-  const SearchTextField({super.key});
+  const SearchTextField({super.key, required this.hintTextField});
+
+final String hintTextField;
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +11,9 @@ class SearchTextField extends StatelessWidget {
       children: [
         Container(
             width: double.infinity,
-            height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.033
-                            : MediaQuery.of(context).size.height * 0.055,
+            height: MediaQuery.of(context).orientation == Orientation.portrait
+                ? MediaQuery.of(context).size.height * 0.033
+                : MediaQuery.of(context).size.height * 0.055,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -32,7 +33,7 @@ class SearchTextField extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.003,
                       color: Colors.black,
                     ),
-                    hintText: 'البحث عن منتج',
+                    hintText: hintTextField,
                     hintStyle: const TextStyle(
                       color: Color.fromARGB(255, 146, 155, 171),
                     )),

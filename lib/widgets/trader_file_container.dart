@@ -7,7 +7,10 @@ class TraderFileContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.08,
+      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.08
+                          : MediaQuery.of(context).size.height * 0.114,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -36,8 +39,14 @@ class TraderFileContainer extends StatelessWidget{
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),
                     Container(
-                                    width: MediaQuery.of(context).size.width * 0.14,
-                                    height: MediaQuery.of(context).size.height * 0.019,
+                                    width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.width * 0.14
+                          : MediaQuery.of(context).size.width * 0.09,
+                                    height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.019
+                          : MediaQuery.of(context).size.height * 0.032,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 243, 243, 244),
                                       border: Border.all(
@@ -74,7 +83,10 @@ class TraderFileContainer extends StatelessWidget{
                 Image.asset(
                   'assets/images/User.png',
                   color: const Color(0xffDCDFE3),
-                  height: MediaQuery.of(context).size.height * 0.032,
+                  height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.032
+                          : MediaQuery.of(context).size.height * 0.044,
                 ),
               ],
             ),

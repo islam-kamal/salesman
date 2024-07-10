@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/button.dart';
+import 'package:water/widgets/duration_status_contianers.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/registered_customers_screen_container_item.dart';
+import 'package:water/widgets/search_text_field.dart';
+import 'package:water/widgets/visits_history_screen_container_item.dart';
 
-class VisitsTodayScreenDetails extends StatelessWidget {
-  VisitsTodayScreenDetails({super.key});
+class ReturnOrdersScreenDetails extends StatelessWidget {
+  ReturnOrdersScreenDetails({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -69,50 +70,6 @@ class VisitsTodayScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.114
-                          : MediaQuery.of(context).size.height * 0.182,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                        child: Column(
-                          children: [
-                           InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.black,
-                                iconImage: 'assets/images/VectorAdddd.png',
-                                buttonName: 'اضافة عميل',
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.011,
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.white,
-                                iconImage: 'assets/images/timeHistory.png',
-                                buttonName: 'تاريخ الزيارات',
-                                textColor: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -121,33 +78,62 @@ class VisitsTodayScreenDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'زيارات اليوم',
-                      style: TextStyle(
-                        fontSize: 23,
-                        fontWeight: FontWeight.w500,
+                    Row(children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Icon(Icons.arrow_back),
                       ),
-                    ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.012,
+                      ),
+                      const Text(
+                        'اوامر المرتجعات',
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.008,
+                      height: MediaQuery.of(context).size.height * 0.012,
                     ),
+                    const SearchTextField(hintTextField: 'البحث عن فاتورة'),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.012,
+                    ),
+                    const DurationStatusContainers(),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
-                      gridDelegate:
-                           SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 2 : 3,
-                              crossAxisSpacing: 16,
-                              childAspectRatio: MediaQuery.of(context).orientation == Orientation.portrait ?
-                              4.3 / 2 : 5/2,
-                              ),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 2
+                            : 3,
+                        crossAxisSpacing: 16,
+                        childAspectRatio: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 4.3 / 2
+                            : 4.9 / 2,
+                      ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                        return const RegisteredCustomersScreenContainerItem(
-                          storeName: 'اسم المتجر',
-                          sales: '30,000 مبيعات شهرية',
-                          distance: 'يبعد 232 ك.م',
-                          money: '15,000 مديونية',
+                        return const VisitsHistoryScreenContainerItem(
+                          date: 'امر مرتجع 12313',
+                          collect: '50 منتج',
+                          complete: '30,000 ر.س',
+                          visit: 'تم الموافقة',
+                          returned: '3 ساعات',
+                          store: 'اسم المتجر',
+                          icon: 'assets/images/trueeStyle.png',
+                          iconColor: Color(0xff1D6E4F),
+                          iconProductType: 'assets/images/RestartCircle.png',
+                          iconStoreName: 'assets/images/smallShop.png',
+                          iconCompleted: 'assets/images/Banknote2.png',
+                          iconReturned: 'assets/images/timeHistory.png',
+                          iconCollected: 'assets/images/marketImage.png',
                         );
                       },
                     ),

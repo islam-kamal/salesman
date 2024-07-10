@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 class RegisteredCustomersScreenContainerItem extends StatelessWidget {
-  const RegisteredCustomersScreenContainerItem({super.key});
+  const RegisteredCustomersScreenContainerItem(
+      {super.key,
+      required this.storeName,
+      required this.sales,
+      required this.distance,
+      required this.money});
+
+  final String storeName;
+  final String sales;
+  final String distance;
+  final String money;
 
   @override
   Widget build(BuildContext context) {
@@ -32,9 +42,9 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.008,
                           ),
-                          const Text(
-                            'اسم المتجر',
-                            style: TextStyle(
+                          Text(
+                            storeName,
+                            style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.w500),
                           ),
                         ],
@@ -56,9 +66,9 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                                 width:
                                     MediaQuery.of(context).size.width * 0.008,
                               ),
-                              const Text(
-                                'يبعد 232 ك.م',
-                                style: TextStyle(
+                              Text(
+                                distance,
+                                style: const TextStyle(
                                     color: Color(0xff0056C9),
                                     fontSize: 14,
                                     fontWeight: FontWeight.w300),
@@ -77,8 +87,8 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),
-                        const Text(
-                          '15,000 مديونية',
+                        Text(
+                          money,
                           style: TextStyle(
                               color: Color(0xff5F480C),
                               fontSize: 14,
@@ -95,8 +105,8 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),
-                        const Text(
-                          '30,000 مبيعات شهرية',
+                        Text(
+                          sales,
                           style: TextStyle(
                               color: Color(0xff1D6E4F),
                               fontSize: 14,

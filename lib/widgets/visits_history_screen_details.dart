@@ -117,7 +117,7 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                       ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                        return const VisitsHistoryScreenContainerItem(
+                         return const VisitsHistoryScreenContainerItem(
                           date: '2024 / 5 / 15',
                           collect: '30,000',
                           complete: '30,000',
@@ -126,6 +126,11 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                           store: 'للمتجر فلان',
                           icon: 'assets/images/trueeStyle.png',
                           iconColor: Color(0xff0056C9),
+                          iconProductType: 'assets/images/datee.png',
+                          iconStoreName: 'assets/images/smallShop.png',
+                          iconCompleted: 'assets/images/trueInSquare.png',
+                          iconReturned: 'assets/images/RestartCircle.png',
+                          iconCollected: 'assets/images/MoneyBag.png',
                         );
                       },
                     ),

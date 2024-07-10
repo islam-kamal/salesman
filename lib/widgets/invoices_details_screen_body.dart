@@ -88,7 +88,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/VectorAdddd.png',
-                                buttonName: 'اضافة عميل',
+                                buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),
                             ),

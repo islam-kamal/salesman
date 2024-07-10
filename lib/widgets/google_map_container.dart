@@ -21,7 +21,7 @@ BitmapDescriptor? customMarker;
             height: MediaQuery.of(context).orientation ==
                                 Orientation.portrait
                             ? MediaQuery.of(context).size.height * 0.27
-                            : MediaQuery.of(context).size.height * 0.33,
+                            : MediaQuery.of(context).size.height * 0.38,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -113,7 +113,10 @@ BitmapDescriptor? customMarker;
                       opacity: 0.2,
                       child: Image.asset(
                         'assets/images/Map.png',
-                        height: MediaQuery.of(context).size.height * 0.035,
+                        height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.035
+                          : MediaQuery.of(context).size.height * 0.052,
                       ),
                     ),
                           ],

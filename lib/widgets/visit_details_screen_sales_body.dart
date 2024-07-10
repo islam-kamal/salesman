@@ -190,7 +190,7 @@ class VisitDetailsScreenSalesBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      const SearchTextField(),
+                      const SearchTextField(hintTextField: 'البحث عن منتج',),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),

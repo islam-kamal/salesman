@@ -9,7 +9,10 @@ class  MarketInformationContainer extends StatelessWidget{
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.4,
+            height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.4
+                          : MediaQuery.of(context).size.height * 0.49,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -40,8 +43,14 @@ class  MarketInformationContainer extends StatelessWidget{
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),
                         Container(
-                                    width: MediaQuery.of(context).size.width * 0.163,
-                                    height: MediaQuery.of(context).size.height * 0.019,
+                                    width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.width * 0.163
+                          : MediaQuery.of(context).size.width * 0.106,
+                                    height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.019
+                          : MediaQuery.of(context).size.height * 0.033,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 243, 243, 244),
                                       border: Border.all(
@@ -81,7 +90,10 @@ class  MarketInformationContainer extends StatelessWidget{
                           opacity: 0.2,
                           child: Image.asset(
                             'assets/images/Shop.png',
-                            height: MediaQuery.of(context).size.height * 0.035,
+                            height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.035
+                          : MediaQuery.of(context).size.height * 0.05,
                           ),
                         ),
                       ),

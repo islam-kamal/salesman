@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/transection_row_in_indebtedness_container.dart';
 
-
 class IndebtednessContainer extends StatelessWidget {
   const IndebtednessContainer({super.key});
 
@@ -9,7 +8,9 @@ class IndebtednessContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: MediaQuery.of(context).size.height * 0.208,
+      height: MediaQuery.of(context).orientation == Orientation.portrait
+          ? MediaQuery.of(context).size.height * 0.208
+          : MediaQuery.of(context).size.height * 0.299,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -29,8 +30,14 @@ class IndebtednessContainer extends StatelessWidget {
                   padding: EdgeInsets.only(
                       right: MediaQuery.of(context).size.width * 0.034),
                   child: Container(
-                    width: MediaQuery.of(context).size.width * 0.145,
-                    height: MediaQuery.of(context).size.height * 0.019,
+                    width: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.width * 0.17
+                        : MediaQuery.of(context).size.width * 0.095,
+                    height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.height * 0.019
+                        : MediaQuery.of(context).size.height * 0.032,
                     decoration: BoxDecoration(
                       color: Color.fromARGB(255, 243, 243, 244),
                       border: Border.all(
@@ -65,7 +72,10 @@ class IndebtednessContainer extends StatelessWidget {
                 Image.asset(
                   'assets/images/moneyBaggg.png',
                   color: const Color(0xffDCDFE3),
-                  height: MediaQuery.of(context).size.height * 0.03,
+                  height:
+                      MediaQuery.of(context).orientation == Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.03
+                          : MediaQuery.of(context).size.height * 0.044,
                 ),
               ],
             ),
@@ -181,85 +191,93 @@ class IndebtednessContainer extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.008,
             ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  InkWell(
-                    onTap: (){},
-                    child: Container(
-                      width: MediaQuery.of(context).size.height * 0.2,
-                      height: MediaQuery.of(context).size.height * 0.042,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: 0.4,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.2
+                          : MediaQuery.of(context).size.height * 0.52,
+                    height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.042
+                          : MediaQuery.of(context).size.height * 0.072,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 0.4,
+                      ),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/fileIndebeness.png',
+                          width: MediaQuery.of(context).size.width * 0.025,
                         ),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/fileIndebeness.png',
-                            width: MediaQuery.of(context).size.width * 0.025,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.003,
+                        ),
+                        const Opacity(
+                          opacity: 0.9,
+                          child: Text(
+                            'اظهار ملف المديونية',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w300),
                           ),
-                          SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.003,
-                              ),
-                          const Opacity(
-                            opacity: 0.9,
-                            child: Text(
-                              'اظهار ملف المديونية',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                  InkWell(
-                    onTap: (){},
-                    child: Container(
-                      width: MediaQuery.of(context).size.height * 0.2,
-                      height: MediaQuery.of(context).size.height * 0.042,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: 0.4,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.2
+                          : MediaQuery.of(context).size.height * 0.52,
+                    height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.042
+                          : MediaQuery.of(context).size.height * 0.072,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 0.4,
+                      ),
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/History3.png',
+                          width: MediaQuery.of(context).size.width * 0.025,
                         ),
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/images/History3.png',
-                            width: MediaQuery.of(context).size.width * 0.025,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.003,
+                        ),
+                        const Opacity(
+                          opacity: 0.9,
+                          child: Text(
+                            'اظهار تاريخ الزيارات',
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w300),
                           ),
-                          SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.003,
-                              ),
-                          const Opacity(
-                            opacity: 0.9,
-                            child: Text(
-                              'اظهار تاريخ الزيارات',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

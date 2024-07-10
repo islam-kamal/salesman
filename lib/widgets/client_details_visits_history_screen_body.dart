@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
-import 'package:water/widgets/button.dart';
-import 'package:water/widgets/registered_customers_screen_container_item.dart';
+import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/store_name_container.dart';
+import 'package:water/widgets/visit_type_containers.dart';
+import 'package:water/widgets/visits_history_screen_container_item.dart';
 
-class RegisteredCustomersScreenDetails extends StatelessWidget {
-  RegisteredCustomersScreenDetails({super.key});
+class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget{
+  ClientDetailsVisitsHistoryScreenBody({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
+
   @override
   Widget build(BuildContext context) {
-    return Directionality(
+     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         drawer: const Drawer(),
@@ -69,50 +71,6 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.114
-                          : MediaQuery.of(context).size.height * 0.182,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 5),
-                        child: Column(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.black,
-                                iconImage: 'assets/images/VectorAdddd.png',
-                                buttonName: 'اضافة عميل',
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.011,
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.white,
-                                iconImage: 'assets/images/addWithoutBorder.png',
-                                buttonName: 'طلبات اضافة',
-                                textColor: Colors.black,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -121,41 +79,64 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Row(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Icon(Icons.arrow_back),
+                        ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.012,
+                    ),
                     const Text(
-                      'العملاء المسجلين',
+                      'تاريخ الزيارات',
                       style: TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    SizedBox(
+                      ]
+                      ),
+                      SizedBox(
                       height: MediaQuery.of(context).size.height * 0.008,
                     ),
+                    const StoreNameContainer(),
+                      SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.008,
+                    ),
+                    const VisitTypeContainers(),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: MediaQuery.of(context).orientation ==
-                                  Orientation.portrait
-                              ? 2
-                              : 3,
-                          crossAxisSpacing:
-                              MediaQuery.of(context).orientation ==
-                                      Orientation.portrait
-                                  ? 16
-                                  : 11,
-                          childAspectRatio:
-                              MediaQuery.of(context).orientation ==
-                                      Orientation.portrait
-                                  ? 4.3 / 2
-                                  : 5.2 / 2),
+                        crossAxisCount: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 2
+                            : 3,
+                        crossAxisSpacing: 16,
+                        childAspectRatio: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? 4.3 / 2
+                            : 4.9 / 2,
+                      ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                        return const RegisteredCustomersScreenContainerItem(
-                          storeName: 'اسم المتجر',
-                          sales: '30,000 مبيعات شهرية',
-                          distance: 'يبعد 232 ك.م',
-                          money: '15,000 مديونية',
+                        return const VisitsHistoryScreenContainerItem(
+                          date: '2024 / 5 / 15',
+                          collect: '30,000',
+                          complete: '30,000',
+                          visit: 'في زيارات اليوم',
+                          returned: '30,000',
+                          store: 'للمتجر فلان',
+                          icon: 'assets/images/trueeStyle.png',
+                          iconColor: Color(0xff0056C9),
+                          iconProductType: 'assets/images/datee.png',
+                          iconStoreName: 'assets/images/smallShop.png',
+                          iconCompleted: 'assets/images/trueInSquare.png',
+                          iconReturned: 'assets/images/RestartCircle.png',
+                          iconCollected: 'assets/images/MoneyBag.png',
                         );
                       },
                     ),

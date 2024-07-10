@@ -10,7 +10,12 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
       required this.visit,
       required this.complete,
       required this.icon,
-      required this.iconColor});
+      required this.iconColor,
+      required this.iconProductType,
+      required this.iconStoreName,
+      required this.iconCompleted,
+      required this.iconReturned,
+      required this.iconCollected});
 
   final String date;
   final String store;
@@ -19,6 +24,11 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
   final String visit;
   final String complete;
   final String icon;
+  final String iconProductType;
+  final String iconStoreName;
+  final String iconCompleted;
+  final String iconReturned;
+  final String iconCollected;
   final Color iconColor;
 
   @override
@@ -47,7 +57,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                       Row(
                         children: [
                           Image.asset(
-                            'assets/images/datee.png',
+                            iconProductType,
                             height: MediaQuery.of(context).size.height * 0.013,
                           ),
                           SizedBox(
@@ -74,6 +84,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                             children: [
                               Image.asset(
                                 icon,
+                                color: iconColor,
                                 height:
                                     MediaQuery.of(context).size.height * 0.014,
                               ),
@@ -99,7 +110,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                     child: Row(
                       children: [
                         Image.asset(
-                          'assets/images/smallShop.png',
+                          iconStoreName,
                           height: MediaQuery.of(context).size.height * 0.013,
                         ),
                         SizedBox(
@@ -123,7 +134,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                         Row(
                           children: [
                             Image.asset(
-                              'assets/images/trueInSquare.png',
+                              iconCompleted,
                               color: const Color(0xff0056C9),
                               height:
                                   MediaQuery.of(context).size.height * 0.013,
@@ -140,11 +151,15 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(color: Color(0xffDCDFE3), height: 20, width: 2,),
+                        Container(
+                          color: Color(0xffDCDFE3),
+                          height: 20,
+                          width: 2,
+                        ),
                         Row(
                           children: [
                             Image.asset(
-                              'assets/images/RestartCircle.png',
+                              iconReturned,
                               color: const Color(0xffAC6521),
                               height:
                                   MediaQuery.of(context).size.height * 0.013,
@@ -160,11 +175,15 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Container(color: Color(0xffDCDFE3), height: 20, width: 2,),
+                        Container(
+                          color: Color(0xffDCDFE3),
+                          height: 20,
+                          width: 2,
+                        ),
                         Row(
                           children: [
                             Image.asset(
-                              'assets/images/MoneyBag.png',
+                              iconCollected,
                               color: const Color(0xff1D6E4F),
                               height:
                                   MediaQuery.of(context).size.height * 0.013,
