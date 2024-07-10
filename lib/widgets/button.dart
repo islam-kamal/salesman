@@ -17,7 +17,9 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width * 0.223,
-      height: MediaQuery.of(context).size.height * 0.046,
+      height: MediaQuery.of(context).orientation == Orientation.portrait
+          ? MediaQuery.of(context).size.height * 0.046
+          : MediaQuery.of(context).size.height * 0.077,
       decoration: BoxDecoration(
           color: color,
           border: Border.all(
@@ -32,7 +34,9 @@ class Button extends StatelessWidget {
           children: [
             ImageIcon(
               color: textColor,
-              size: MediaQuery.of(context).size.height * 0.018,
+              size: MediaQuery.of(context).orientation == Orientation.portrait
+                  ? MediaQuery.of(context).size.height * 0.018
+                  : MediaQuery.of(context).size.height * 0.032,
               AssetImage(
                 iconImage,
               ),
@@ -42,10 +46,8 @@ class Button extends StatelessWidget {
             ),
             Text(
               buttonName,
-              style:TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 16,
-                  color: textColor),
+              style: TextStyle(
+                  fontWeight: FontWeight.w500, fontSize: 16, color: textColor),
             ),
           ],
         ),

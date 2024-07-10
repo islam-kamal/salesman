@@ -26,8 +26,11 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).size.height * 0.041,
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.041
+                              : MediaQuery.of(context).size.height * 0.052,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -68,7 +71,10 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).size.height * 0.114,
+                      height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.141
+                              : MediaQuery.of(context).size.height * 0.182,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -129,10 +135,14 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
                       gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 16,
-                              childAspectRatio: 4.3 / 2),
+                          SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait
+                              ? 2 : 3,
+                              crossAxisSpacing: MediaQuery.of(context).orientation == Orientation.portrait
+                              ? 16 : 11,
+                              childAspectRatio: MediaQuery.of(context).orientation == Orientation.portrait
+                              ? 4.3 / 2 : 5.2/2
+                              ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
                         return const RegisteredCustomersScreenContainerItem();
