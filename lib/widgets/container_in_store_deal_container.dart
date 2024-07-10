@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class ContainerInStoreDealContainer extends StatelessWidget {
   const ContainerInStoreDealContainer(

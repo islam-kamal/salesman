@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/first_container_in_financial_collection.dart';
 import 'package:water/widgets/payment_method_financial_collection.dart';
 import 'package:water/widgets/pill_payment_financial_collection.dart';
@@ -67,8 +67,35 @@ class FinancialCollectionScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonContainer(),
-                  ],
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).size.height * 0.056,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                           InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/VectorAdddd.png',
+                                buttonName: 'اضافة عميل',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ]
                 ),
               ),
               Expanded(

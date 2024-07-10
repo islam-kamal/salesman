@@ -1,5 +1,4 @@
-import 'package:water/basics/shared.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/products_and_prices_available_items_screen.dart';
 import 'package:water/widgets/search_text_field_available_items_screen.dart';
 import 'package:water/widgets/water_item_available_items.dart';
@@ -29,37 +28,39 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-          width: MediaQuery.of(context).size.width * 0.24,
-          height: MediaQuery.of(context).orientation == Orientation.portrait ?
-          MediaQuery.of(context).size.height * 0.041
-          : MediaQuery.of(context).size.height * 0.052,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.grey,
-                width: 0.5,
-              ),
-              borderRadius: BorderRadius.circular(8)),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 11),
-            child: Row(
-              children: [
-                InkWell(
-                  onTap: () => _key.currentState!.openDrawer(),
-                  child: const ImageIcon(
-                      AssetImage('assets/images/Icon-Wrappppper.png')),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.01,
-                ),
-                const Opacity(
-                  opacity: 0.8,
-                  child: Text('اخفاء القائمة'),
-                ),
-              ],
-            ),
-          ),
-        ),
+                          width: MediaQuery.of(context).size.width * 0.24,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.041
+                              : MediaQuery.of(context).size.height * 0.052,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 11),
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () => _key.currentState!.openDrawer(),
+                                  child: const ImageIcon(AssetImage(
+                                      'assets/images/Icon-Wrappppper.png')),
+                                ),
+                                SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.01,
+                                ),
+                                const Opacity(
+                                  opacity: 0.8,
+                                  child: Text('اخفاء القائمة'),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
@@ -67,7 +68,34 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        const FinishButtonContainer(),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.24,
+                          height: MediaQuery.of(context).size.height * 0.056,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.grey,
+                                width: 0.5,
+                              ),
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 5),
+                            child: Column(
+                              children: [
+                                InkWell(
+                                  onTap: () {},
+                                  child: const Button(
+                                    color: Colors.black,
+                                    iconImage: 'assets/images/VectorAdddd.png',
+                                    buttonName: 'اضافة عميل',
+                                    textColor: Colors.white,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                       ],
                     )),
                 Expanded(
@@ -90,8 +118,6 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
               ],
             ),
           ),
-          
         ));
   }
 }
-

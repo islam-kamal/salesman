@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class FirstContainerInFinancialCollection extends StatelessWidget{
   const FirstContainerInFinancialCollection({super.key});

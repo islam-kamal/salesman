@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/transection_row_in_indebtedness_container.dart';
-import 'package:water/basics/shared.dart';
+
 
 class IndebtednessContainer extends StatelessWidget {
   const IndebtednessContainer({super.key});

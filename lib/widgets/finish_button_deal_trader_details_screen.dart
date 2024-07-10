@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
-
 class FinishButtonDealTraderDetailsScreen extends StatelessWidget{
   const FinishButtonDealTraderDetailsScreen({super.key});
 

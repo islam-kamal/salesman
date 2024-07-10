@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/drawer_review_product_screen.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/payment_method.dart';
 import 'package:water/widgets/pill_payment.dart';
@@ -76,7 +75,34 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonContainer(),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).size.height * 0.056,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/VectorAdddd.png',
+                                buttonName: 'اضافة عميل',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

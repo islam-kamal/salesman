@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
-import 'package:water/basics/shared.dart';
 
 
 class DrawerHomeScreen extends StatelessWidget{

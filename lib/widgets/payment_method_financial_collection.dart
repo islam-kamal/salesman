@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/popup_menu_of_payment.dart';
-import 'package:water/basics/shared.dart';
 
 class PaymentMethodFinancialCollection extends StatelessWidget {
   const PaymentMethodFinancialCollection({super.key});

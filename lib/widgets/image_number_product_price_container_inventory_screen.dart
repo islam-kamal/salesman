@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class ImageNumberProductPriceContainerInventoryScreen extends StatelessWidget{
   const ImageNumberProductPriceContainerInventoryScreen({super.key});

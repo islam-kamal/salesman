@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class RegisteredCustomersScreenContainerItem extends StatelessWidget{
   const RegisteredCustomersScreenContainerItem({super.key});
@@ -64,7 +63,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget{
                               const Text(
                                 'يبعد 232 ك.م',
                                 style: TextStyle(
-                                  color: Color(0xff07326A),
+                                  color: Color(0xff0056C9),
                                   fontSize: 14,
                                   fontWeight: FontWeight.w300
                                 ),

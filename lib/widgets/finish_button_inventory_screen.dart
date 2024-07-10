@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
+
 
 class FinishButtonInventoryScreen extends StatelessWidget{
   const FinishButtonInventoryScreen({super.key});

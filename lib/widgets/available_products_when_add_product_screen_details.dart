@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/products_and_prices_available_products_when_add_product_screen.dart';
 import 'package:water/widgets/search_text_field_available_products_screen.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/water_item_available_products.dart';
-import 'package:water/widgets/water_item_available_products_when_add_product.dart';
 
 
 class AvailableProductsWhenAddProductScreenDetails extends StatelessWidget{
@@ -68,7 +67,34 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonContainer(),
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).size.height * 0.056,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                          InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/VectorAdddd.png',
+                                buttonName: 'اضافة عميل',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                 ],
               )),
                 Expanded(
