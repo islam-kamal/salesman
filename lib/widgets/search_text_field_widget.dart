@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
-class SearchTextField extends StatelessWidget{
-  const SearchTextField({super.key});
+class SearchTextFieldWidget extends StatelessWidget{
+  const SearchTextFieldWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

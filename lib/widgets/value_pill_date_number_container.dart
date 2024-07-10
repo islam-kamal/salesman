@@ -25,29 +25,34 @@ class ValuePillDateNumberContainer extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Text(
-                    'الصورة',
+                    'الرقم',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Text(
-                    'العدد',
+                   'التاريخ',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 3,
                   child: Text(
-                    'المنتج',
+                    'نوع الفاتورة',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Text(
-                    'السعر',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                       'القيمة',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                      ),
+                    ],
                   ),
                 ),
               ],

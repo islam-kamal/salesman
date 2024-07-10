@@ -10,7 +10,9 @@ import 'package:water/previous_invoices_screen.dart';
 import 'package:water/registered_customers_screen.dart';
 import 'package:water/review_returned_products_screen.dart';
 import 'package:water/trader_details_screen.dart';
-import 'package:water/visit_details_screen.dart';
+import 'package:water/visit_details_screen_collected.dart';
+import 'package:water/visit_details_screen_public.dart';
+import 'package:water/visit_details_screen_sales.dart';
 import 'package:water/visits_history_screen.dart';
 import 'package:water/visits_today_screen.dart';
 
@@ -35,7 +37,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: ErrorInServiceScreen()    //LoginScreen(),     //VisitDetailsScreen(),    //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()      //PreviousInvoicesScreen(),         //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+      home: VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()           //FinancialCollectionScreen(),        //TraderDetailsScreen(),        //AvailableProductsScreen(),           //InventoryScreen(), //RegisteredCustomersScreen(),    //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
     );
   }
 }

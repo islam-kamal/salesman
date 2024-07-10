@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
 import 'package:water/widgets/google_map_container.dart';
-import 'package:water/widgets/indebtedness_container.dart';
-import 'package:water/widgets/market_information_container.dart';
+import 'package:water/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
 import 'package:water/widgets/value_pill_date_number_container.dart';
 import 'package:water/widgets/visit_details_container.dart';
+import 'package:water/widgets/visit_details_list_view_item.dart';
 import 'package:water/widgets/visit_details_market_information_container.dart';
 
-class VisitDetailsScreenBody extends StatelessWidget {
-  const VisitDetailsScreenBody({super.key});
+class VisitDetailsScreenPublicBody extends StatelessWidget {
+  const VisitDetailsScreenPublicBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class VisitDetailsScreenBody extends StatelessWidget {
       child: Scaffold(
         // drawer: const Drawer(),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 48),
+          padding: const EdgeInsets.only(left: 18, right: 18,  top: 48),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -138,21 +137,25 @@ class VisitDetailsScreenBody extends StatelessWidget {
                         ),
                       ),
                       const ValuePillDateNumberContainer(),
-                //        SizedBox(
-                //         height: MediaQuery.of(context).size.height * 0.014,
-                //       ),
-                //       ListView.builder(
-                //   scrollDirection: Axis.horizontal,
-                //    shrinkWrap: true,
-                //    physics: const NeverScrollableScrollPhysics(),
-                //  itemCount: 2,
-                //  itemBuilder: (context , index){
-                //  return const Padding(
-                //         padding: EdgeInsets.symmetric(horizontal: 8),
-                //        child: VisitDetailsListViewItem(),
-                //       );
-                //     }
-                //      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.height * 0.014,
+                      ),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 5,
+                          itemBuilder: (context, index) {
+                            return const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              child: VisitDetailsListViewItem(
+                                number: 33,
+                                date: '23/5/2024',
+                                pillType: 'مرتجع',
+                                productNumber: '50 منتج',
+                                productValue: '42 ر.س',
+                              ),
+                            );
+                          }),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),

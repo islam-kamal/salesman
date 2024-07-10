@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'package:water/basics/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -19,7 +18,10 @@ BitmapDescriptor? customMarker;
   Widget build(BuildContext context) {
     return Container(
             width: double.infinity,
-            height: MediaQuery.of(context).size.height * 0.27,
+            height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.27
+                            : MediaQuery.of(context).size.height * 0.33,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -47,7 +49,7 @@ BitmapDescriptor? customMarker;
                     const Marker(
                       markerId: MarkerId('1'),
                     draggable: true,
-                  position: LatLng(37.43296265331129, -122.08832357078792), 
+                  position: LatLng(37.43296265331129, -122.08832357078792),
                   icon: BitmapDescriptor.defaultMarker
                   ));
                 });
@@ -67,8 +69,14 @@ BitmapDescriptor? customMarker;
                             Padding(
                               padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05),
                               child: Container(
-                                  width: MediaQuery.of(context).size.width * 0.135,
-                                  height: MediaQuery.of(context).size.height * 0.019,
+                                  width:  MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.135
+                            : MediaQuery.of(context).size.height * 0.14,
+                                  height:  MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.019
+                            : MediaQuery.of(context).size.height * 0.032,
                                   decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 243, 243, 244),
                                     border: Border.all(

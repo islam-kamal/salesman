@@ -1,59 +1,79 @@
 import 'package:flutter/material.dart';
 
 class VisitDetailsListViewItem extends StatelessWidget {
-  const VisitDetailsListViewItem({super.key});
+  const VisitDetailsListViewItem(
+      {super.key,
+      required this.number,
+      required this.date,
+      required this.pillType,
+      required this.productNumber,
+      required this.productValue});
+
+  final int number;
+  final String date;
+  final String pillType;
+  final String productNumber;
+  final String productValue;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
+          margin: const EdgeInsets.symmetric(vertical: 5),
           width: double.infinity,
           height: MediaQuery.of(context).orientation == Orientation.portrait
-              ? MediaQuery.of(context).size.height * 0.053
+              ? MediaQuery.of(context).size.height * 0.045
               : MediaQuery.of(context).size.height * 0.072,
           decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(4)
-              ),
-          child: const Padding(
-            padding: EdgeInsets.only(right: 8),
+              color: Colors.white, borderRadius: BorderRadius.circular(4)),
+          child: Padding(
+            padding: const EdgeInsets.only(right: 8),
             child: Row(
               children: [
                 Expanded(
                   flex: 1,
                   child: Text(
-                    '33',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    number.toString(),
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Text(
-                    '23/5/2024',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                    date,
+                    style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
                   ),
                 ),
                 Expanded(
-                  flex: 6,
+                  flex: 4,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'مرتجع',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+                        pillType,
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w500),
                       ),
                       Text(
-                        '50 منتج',
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                        productNumber,
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w300),
                       ),
                     ],
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Text(
-                    '50 منتج',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        productValue,
+                        style: const TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w700),
+                      ),
+                    ],
                   ),
                 ),
               ],

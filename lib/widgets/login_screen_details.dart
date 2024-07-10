@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/index.dart';
 import 'package:water/widgets/login_email_text_field.dart';
+import 'package:water/widgets/login_password_text_field.dart';
 
 class LoginScreenDetails extends StatelessWidget {
   const LoginScreenDetails({super.key});
