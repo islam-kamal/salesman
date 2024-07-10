@@ -23,7 +23,6 @@ export 'files_list_view_item.dart';
 export 'financial_collection_screen_details.dart';
 export 'finish_button_deal_trader_details_screen.dart';
 export 'finish_button_inventory_screen.dart';
-export 'finish_button_sold_products_screen.dart';
 export 'finish_button_visits_today_screen.dart';
 export 'finish_button_widget.dart';
 export 'first_container_in_financial_collection.dart';

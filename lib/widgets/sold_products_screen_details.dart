@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_sold_products_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_sold_products.dart';
 import 'package:water/widgets/product_return_drawer.dart';
 import 'package:water/widgets/products_and_prices_sold_products.dart';
 import 'package:water/widgets/search_text_field_sold_products_screen.dart';
 import 'package:water/widgets/trader_deal_container_sold_products_screen.dart';
 import 'package:water/widgets/water_item_sold_products.dart';
-import 'package:water/basics/shared.dart';
 
 class SoldProductsScreenDetails extends StatelessWidget{
   SoldProductsScreenDetails({super.key});
@@ -75,7 +73,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonSoldProductsScreen(),
+                  //const FinishButtonSoldProductsScreen(),
                 ],
               )),
            
