@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class ImageNumberProductPriceContainerInvoicesDetails extends StatelessWidget {
   const ImageNumberProductPriceContainerInvoicesDetails({super.key});
@@ -10,7 +9,9 @@ class ImageNumberProductPriceContainerInvoicesDetails extends StatelessWidget {
       children: [
         Container(
           width: double.infinity,
-          height: Shared.height * 0.033,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+           MediaQuery.of(context).size.height * 0.033
+           : MediaQuery.of(context).size.height * 0.054,
           decoration: const BoxDecoration(
               color: Color(0xffDCDFE3),
               borderRadius: BorderRadius.only(

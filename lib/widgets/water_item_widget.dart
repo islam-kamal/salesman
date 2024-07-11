@@ -9,8 +9,8 @@ class WaterItem extends StatelessWidget{
     return Column(
       children: [
         Container(
-          width: Shared.width * 0.5,
-          height: Shared.height * 0.08,
+          width: MediaQuery.of(context).size.width * 0.5,
+          height: MediaQuery.of(context).size.height * 0.08,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -23,7 +23,7 @@ class WaterItem extends StatelessWidget{
            children: [
              Image.asset('assets/images/IMG.png'),
              SizedBox(
-          width: Shared.width * 0.012,
+          width: MediaQuery.of(context).size.width * 0.012,
         ),
              Padding(
                padding: const EdgeInsets.only(top: 6),
@@ -45,7 +45,7 @@ class WaterItem extends StatelessWidget{
                     ),
                     ),
                     SizedBox(
-                      height: Shared.height * 0.017,
+                      height: MediaQuery.of(context).size.height * 0.017,
                     ),
                     const Text(
                       '42 ر.س',
@@ -61,7 +61,7 @@ class WaterItem extends StatelessWidget{
           ),
         ),
         SizedBox(
-          height: Shared.height * 0.012,
+          height: MediaQuery.of(context).size.height * 0.012,
         ),
       ],
     );

@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/files_list_view_item.dart';
-import 'package:water/basics/shared.dart';
+
 
 class  MarketInformationContainer extends StatelessWidget{
-  const MarketInformationContainer({super.key});
+  const MarketInformationContainer({super.key, this.container = true});
+
+final bool container;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-            height: Shared.height * 0.4,
+            height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.335
+                          : MediaQuery.of(context).size.height * 0.49,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -37,11 +42,18 @@ class  MarketInformationContainer extends StatelessWidget{
                           ),
                         ),
                         SizedBox(
-                          width: Shared.width * 0.008,
+                          width: MediaQuery.of(context).size.width * 0.008,
                         ),
+                        container == true ?
                         Container(
-                                    width: Shared.width * 0.163,
-                                    height: Shared.height * 0.019,
+                                    width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.width * 0.163
+                          : MediaQuery.of(context).size.width * 0.106,
+                                    height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.019
+                          : MediaQuery.of(context).size.height * 0.033,
                                     decoration: BoxDecoration(
                                       color: Color.fromARGB(255, 243, 243, 244),
                                       border: Border.all(
@@ -59,7 +71,7 @@ class  MarketInformationContainer extends StatelessWidget{
                                   color: const Color(0xff0056C9),
                                 ),
                                 SizedBox(
-                                  width: Shared.width * 0.004,
+                                  width: MediaQuery.of(context).size.width * 0.004,
                                 ),
                                 const Text(
                                   'عميل منذ 3 سنين',
@@ -72,7 +84,8 @@ class  MarketInformationContainer extends StatelessWidget{
                               ],
                             ),
                           ),
-                        ),
+                        )
+                        : Container(),
                         ],
                       ),
                       Padding(
@@ -81,7 +94,10 @@ class  MarketInformationContainer extends StatelessWidget{
                           opacity: 0.2,
                           child: Image.asset(
                             'assets/images/Shop.png',
-                            height: Shared.height * 0.035,
+                            height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.035
+                          : MediaQuery.of(context).size.height * 0.05,
                           ),
                         ),
                       ),
@@ -105,7 +121,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                   const Opacity(
                     opacity: 0.7,
@@ -125,7 +141,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                    const Opacity(
                     opacity: 0.7,
@@ -145,7 +161,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                    const Opacity(
                     opacity: 0.7,
@@ -165,7 +181,7 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                   SizedBox(
-                    height: Shared.height * 0.008,
+                    height: MediaQuery.of(context).size.height * 0.008,
                   ),
                   const Opacity(
                     opacity: 0.7,
@@ -177,18 +193,20 @@ class  MarketInformationContainer extends StatelessWidget{
                       ),
                     ),
                   ),
-                // ListView.builder(
-                //   scrollDirection: Axis.horizontal,
-                //    shrinkWrap: true,
-                //    physics: const NeverScrollableScrollPhysics(),
-                //  itemCount: 2,
-                //  itemBuilder: (context , index){
-                //  return const Padding(
-                //         padding: EdgeInsets.symmetric(horizontal: 8),
-                //        child: FilesListViewItem(),
-                //       );
-                //     }
-                //      ),
+               SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+              child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: 8,
+                  itemBuilder: (context, index) {
+                    return const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      child: FilesListViewItem(),
+                    );
+                  }),
+                  ),
                 ],
               ),
             ),

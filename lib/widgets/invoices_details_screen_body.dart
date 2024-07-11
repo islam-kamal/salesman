@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/drawer_invoices_details_screen.dart';
-import 'package:water/widgets/finish_button_container_widget.dart';
-import 'package:water/widgets/hide_list_container_widget.dart';
 import 'package:water/widgets/image_number_product_price_container_invoices_details.dart';
 import 'package:water/widgets/products_and_prices_invoices_details_screen.dart';
 import 'package:water/widgets/search_text_field_invoices_details_screen.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/water_item_invoices_details.dart';
-import 'package:water/basics/shared.dart';
 
 class InvoicesDetailsScreenBody extends StatelessWidget{
   InvoicesDetailsScreenBody({super.key});
@@ -31,15 +29,73 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  HideListContainer(),
+                  Container(
+          width: MediaQuery.of(context).size.width * 0.24,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.041
+          : MediaQuery.of(context).size.height * 0.052,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.grey,
+                width: 0.5,
+              ),
+              borderRadius: BorderRadius.circular(8)),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 11),
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () => _key.currentState!.openDrawer(),
+                  child: const ImageIcon(
+                      AssetImage('assets/images/Icon-Wrappppper.png')),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.01,
+                ),
+                const Opacity(
+                  opacity: 0.8,
+                  child: Text('اخفاء القائمة'),
+                ),
+              ],
+            ),
+          ),
+        ),
                   SizedBox(
-                    height: Shared.height * 0.025,
+                    height: MediaQuery.of(context).size.height * 0.025,
                   ),
                   const StoreDealContainer(),
                   SizedBox(
-                    height: Shared.height * 0.025,
+                    height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButtonContainer(),
+                  Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).size.height * 0.056,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                           InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/VectorAdddd.png',
+                                buttonName: 'انهاء الزيارة',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                 ],
               )),
            

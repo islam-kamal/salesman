@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class TransactionDetailsContainer extends StatelessWidget{
   const TransactionDetailsContainer({
@@ -18,8 +17,10 @@ final Color color;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Shared.width * 0.15,
-      height: Shared.height * 0.075,
+      width: MediaQuery.of(context).size.width * 0.15,
+      height: MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.075
+              : MediaQuery.of(context).size.height * 0.12,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(
@@ -35,11 +36,15 @@ final Color color;
             children: [
               Image.asset(
                 image,
-                height: Shared.height * 0.021,
+                height: MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.021
+              : MediaQuery.of(context).size.height * 0.03,
                 color: color,
                 ),
                 SizedBox(
-                  height: Shared.height * 0.003,
+                  height:MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.003
+              : MediaQuery.of(context).size.height * 0.008,
                 ),
               Text(
                 name,
@@ -50,7 +55,9 @@ final Color color;
                 ),
               ),
               SizedBox(
-                  height: Shared.height * 0.003,
+                  height:MediaQuery.of(context).orientation == Orientation.portrait
+              ? MediaQuery.of(context).size.height * 0.003
+              : MediaQuery.of(context).size.height * 0.008,
                 ),
               Text(
                 price,

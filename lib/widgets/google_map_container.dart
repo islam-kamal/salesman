@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'package:water/basics/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -19,7 +18,10 @@ BitmapDescriptor? customMarker;
   Widget build(BuildContext context) {
     return Container(
             width: double.infinity,
-            height: Shared.height * 0.27,
+            height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.27
+                            : MediaQuery.of(context).size.height * 0.38,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -33,7 +35,7 @@ BitmapDescriptor? customMarker;
                  Expanded(
                   flex: 5,
                   child: GoogleMap(
-                    mapType: MapType.normal,
+                    mapType: MapType.terrain,
                     initialCameraPosition: const CameraPosition(
                         target: LatLng(
                           30.0444,
@@ -47,7 +49,7 @@ BitmapDescriptor? customMarker;
                     const Marker(
                       markerId: MarkerId('1'),
                     draggable: true,
-                  position: LatLng(37.43296265331129, -122.08832357078792), 
+                  position: LatLng(37.43296265331129, -122.08832357078792),
                   icon: BitmapDescriptor.defaultMarker
                   ));
                 });
@@ -64,11 +66,27 @@ BitmapDescriptor? customMarker;
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: Shared.width * 0.05),
-                              child: Container(
-                                  width: Shared.width * 0.135,
-                                  height: Shared.height * 0.019,
+                            Row(
+                              children: [
+                                const Text(
+                                  'العنوان',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.006,
+                              ),
+                             Container(
+                                  width:  MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.width * 0.135
+                            : MediaQuery.of(context).size.width * 0.14,
+                                  height:  MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.019
+                            : MediaQuery.of(context).size.height * 0.032,
                                   decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 243, 243, 244),
                                     border: Border.all(
@@ -86,7 +104,7 @@ BitmapDescriptor? customMarker;
                                 color: const Color(0xff1D6E4F),
                               ),
                               SizedBox(
-                                width: Shared.width * 0.004,
+                                width: MediaQuery.of(context).size.width * 0.004,
                               ),
                               const Text(
                                 'يبعد 232 ك.م',
@@ -100,12 +118,16 @@ BitmapDescriptor? customMarker;
                           ),
                         ),
                       ),
-                    ),
+                      ],
+                            ),
                     Opacity(
                       opacity: 0.2,
                       child: Image.asset(
                         'assets/images/Map.png',
-                        height: Shared.height * 0.035,
+                        height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.035
+                          : MediaQuery.of(context).size.height * 0.052,
                       ),
                     ),
                           ],
@@ -119,7 +141,7 @@ BitmapDescriptor? customMarker;
                               ),
                             ),
                             SizedBox(
-                              width: Shared.width * 0.004,
+                              width: MediaQuery.of(context).size.width * 0.004,
                             ),
                             const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
-class SearchTextField extends StatelessWidget{
-  const SearchTextField({super.key});
+class SearchTextFieldWidget extends StatelessWidget{
+  const SearchTextFieldWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class SearchTextField extends StatelessWidget{
             ),
           ),
           SizedBox(
-            height: Shared.height * 0.019,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
           Container(
-            width: Shared.width * 0.5,
-            height: Shared.height * 0.033,
+            width: MediaQuery.of(context).size.width * 0.5,
+            height: MediaQuery.of(context).size.height * 0.033,
             decoration: BoxDecoration(
             color: Colors.white,
             border: Border.all(

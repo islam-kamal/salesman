@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/finish_button_deal_trader_details_screen.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/google_map_container.dart';
 import 'package:water/widgets/indebtedness_container.dart';
 import 'package:water/widgets/market_information_container.dart';
-import 'package:water/widgets/trader_deal_trader_details_screen.dart';
+import 'package:water/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/trader_file_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
-import 'package:water/basics/shared.dart';
 
 class TraderDetailsScreenBody extends StatelessWidget {
   const TraderDetailsScreenBody({super.key});
@@ -18,7 +17,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
       child: Scaffold(
         // drawer: const Drawer(),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 48),
+          padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -28,8 +27,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      width: Shared.width * 0.23,
-                      height: Shared.height * 0.041,
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.041
+                          : MediaQuery.of(context).size.height * 0.052,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -47,7 +49,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                                   'assets/images/Icon-Wrappppper.png')),
                             ),
                             SizedBox(
-                              width: Shared.width * 0.01,
+                              width: MediaQuery.of(context).size.width * 0.01,
                             ),
                             const Opacity(
                               opacity: 0.8,
@@ -62,13 +64,69 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: Shared.height * 0.025,
+                      height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const TraderDealTraderDetailsScreen(),
+                    NavigateBasicContainer(),
                     SizedBox(
-                      height: Shared.height * 0.025,
+                      height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const FinishButtonDealTraderDetailsScreen(),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.17
+                          : MediaQuery.of(context).size.height * 0.27,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/startVisit.png',
+                                buttonName: 'بدأ الزيارة',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.011,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.white,
+                                iconImage: 'assets/images/Route.png',
+                                buttonName: 'الاتجاهات',
+                                textColor: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.011,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.white,
+                                iconImage: 'assets/images/phonee.png',
+                                buttonName: 'الإتصال بالتاجر',
+                                textColor: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -93,9 +151,15 @@ class TraderDetailsScreenBody extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: Shared.height * 0.008,
+                        height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const TraderFileContainer(),
+                      const TraderFileContainer(
+                      traderName: 'عبدالرحمن محمد علي',
+                      phone: '+966 4644 4646',
+                      textSmallContainer: 'في زيارات اليوم',
+                      iconSmallContainer:  'assets/images/VerifiedCheck.png',
+                      color: Color(0xff0056C9),
+                    ),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 22),
                         child: Row(
@@ -130,11 +194,11 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       ),
                       const IndebtednessContainer(),
                       SizedBox(
-                        height: Shared.height * 0.014,
+                        height: MediaQuery.of(context).size.height * 0.014,
                       ),
                       const GoogleMapContainer(),
                       SizedBox(
-                        height: Shared.height * 0.014,
+                        height: MediaQuery.of(context).size.height * 0.014,
                       ),
                       const MarketInformationContainer(),
                     ],

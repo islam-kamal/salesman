@@ -10,7 +10,9 @@ class ReviewReturnedProductsWaterItem extends StatelessWidget{
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Container(
         width: double.infinity,
-              height: Shared.height * 0.045,
+              height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.045
+          : MediaQuery.of(context).size.height * 0.065,
               decoration: BoxDecoration(
               color: Colors.white,
                 borderRadius: BorderRadius.circular(8)
@@ -22,7 +24,7 @@ class ReviewReturnedProductsWaterItem extends StatelessWidget{
                     child: Image.asset('assets/images/IMGggg.png')
                     ),
                     SizedBox(
-                      width: Shared.width * 0.015,
+                      width: MediaQuery.of(context).size.width * 0.015,
                     ),
                     const Expanded(
                     flex: 1,
