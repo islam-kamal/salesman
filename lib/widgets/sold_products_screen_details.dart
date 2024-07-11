@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_home_screen.dart';
-import 'package:water/widgets/finish_button_widget.dart';
-import 'package:water/widgets/products_and_prices.dart';
-import 'package:water/widgets/search_text_field_widget.dart';
-import 'package:water/widgets/trader_deal_container.dart';
-import 'package:water/widgets/water_item_widget.dart';
+import 'package:water/widgets/image_number_product_price_container_sold_products.dart';
+import 'package:water/widgets/product_return_drawer.dart';
+import 'package:water/widgets/products_and_prices_sold_products.dart';
+import 'package:water/widgets/search_text_field_sold_products_screen.dart';
+import 'package:water/widgets/trader_deal_container_sold_products_screen.dart';
+import 'package:water/widgets/water_item_sold_products.dart';
 
-class HomeScreenDetails extends StatelessWidget{
-  HomeScreenDetails({super.key});
+class SoldProductsScreenDetails extends StatelessWidget{
+  SoldProductsScreenDetails({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -16,7 +16,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        drawer: const DrawerHomeScreen(),
+        drawer: const ProductReturnDrawer(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -55,7 +55,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                           const Opacity(
                             opacity: 0.8,
                               child: Text(
-                                'اخفاء القائمة'
+                                'اخفاء القائمة',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300
+                                ),
                                 ),
                             ),
                            ],
@@ -65,11 +69,11 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const TraderDealContainer(),
+                  const TraderDealContainerSoldProductsScreen(),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.025,
                   ),
-                  const FinishButton(),
+                  //const FinishButtonSoldProductsScreen(),
                 ],
               )),
            
@@ -78,20 +82,23 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                 child:   Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 const SearchTextField(),
-              
+                 const SearchTextFieldSoldProductsScreen(),
+                 SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.015,
+                  ),
+                const ImageNumberProductPriceContainerSoldProducts(),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: 6,
                     itemBuilder: (context , index){
-                      return const WaterItem();
+                      return const WaterItemSoldProducts();
                     }
                     ),
                 ],
               ),
                 ),
-               const ProductsAndPrices()
+               const ProductsAndPricesSoldProducts()
                ],
           ),
         ),

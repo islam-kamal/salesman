@@ -25,11 +25,13 @@ class SearchTextFieldReviewProduct extends StatelessWidget{
           ],
         ),
         SizedBox(
-            height: MediaQuery.of(context).size.height * 0.014,
+            height: MediaQuery.of(context).size.height * 0.019,
           ),
         Container(
           width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.033,
+          height: MediaQuery.of(context).orientation == Orientation.portrait ?
+          MediaQuery.of(context).size.height * 0.03
+          : MediaQuery.of(context).size.height * 0.052,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -38,20 +40,23 @@ class SearchTextFieldReviewProduct extends StatelessWidget{
             ),
             borderRadius: BorderRadius.circular(8)
           ),
-          child:  TextField(
-            cursorColor: Color.fromARGB(255, 66, 64, 64),
-            decoration: InputDecoration(
-                    contentPadding: EdgeInsets.zero,
-                border: InputBorder.none,
-              prefixIcon: Image.asset(
-                'assets/images/search.png',
-                color: Colors.black,
-                ),
-                
-              hintText: 'البحث عن منتج',
-              hintStyle: TextStyle(
-                color: Color(0xff758195),
-              )
+          child:  Padding(
+            padding: const EdgeInsets.symmetric(vertical: 1.5),
+            child: TextField(
+              cursorColor: Color.fromARGB(255, 66, 64, 64),
+              decoration: InputDecoration(
+                      contentPadding: EdgeInsets.zero,
+                  border: InputBorder.none,
+                prefixIcon: Image.asset(
+                  'assets/images/search.png',
+                  color: Colors.black,
+                  ),
+                  
+                hintText: 'البحث عن منتج',
+                hintStyle: TextStyle(
+                  color: Color(0xff758195),
+                )
+              ),
             ),
           )
         ),

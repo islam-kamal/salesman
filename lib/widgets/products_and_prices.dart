@@ -54,7 +54,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   'المنتج',
                                   style: TextStyle(
-                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                 ),
                                   ),
                                 ),
@@ -63,7 +64,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  4*مياه',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                   ),
                                   ),
                                 ),
@@ -72,7 +74,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  2*مياه',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                   ),
                                   ),
                                 ),
@@ -81,7 +84,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  25*مياه',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                   ),
                                   ),
                                 ),
@@ -90,7 +94,8 @@ class ProductsAndPrices extends StatelessWidget{
                                   child: Text(
                                   '  2*مياه',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w300,
+                                fontSize: 14,
                                   ),
                                   ),
                                 ),
@@ -113,32 +118,37 @@ class ProductsAndPrices extends StatelessWidget{
                                 child: Text(
                                   'المبلغ',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                fontSize: 14,
                                   ),
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                 fontWeight: FontWeight.w500,
+                                fontSize: 14,
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                fontSize: 14,
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                fontSize: 14,
                                 ),
                               ),
                               Text(
                                 '42ر.س',
                                 style: TextStyle(
-                                  fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
                                 ),
                               ),
                             ],
@@ -157,7 +167,9 @@ class ProductsAndPrices extends StatelessWidget{
                             child: Text(
                               'الاجمالي',
                               style: TextStyle(
-                                fontSize: 18
+                                color: Color(0xff07326A),
+                                fontWeight: FontWeight.w300,
+                                fontSize: 16,
                               ),
                             ),
                           ),
@@ -166,7 +178,9 @@ class ProductsAndPrices extends StatelessWidget{
                             child: Text(
                               '42ر.س',
                               style: TextStyle(
-                                fontSize: 17
+                                color: Color(0xff07326A),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
                               ),
                             ),
                           ),
@@ -188,13 +202,14 @@ class ProductsAndPrices extends StatelessWidget{
                           color: Colors.white,
                           border: Border.all(
                             color: Colors.blue,
-                            width: 0.5,
+                            width: 1,
                                         ),
                                         borderRadius: BorderRadius.circular(4)
                                       ),
                          child: Padding(
                            padding: const EdgeInsets.symmetric(horizontal: 18),
                            child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
                                 'assets/images/CheckCircle.png',

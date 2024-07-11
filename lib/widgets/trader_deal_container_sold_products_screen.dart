@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TraderDealReviewProductScreen extends StatelessWidget{
-  const TraderDealReviewProductScreen({super.key});
+class TraderDealContainerSoldProductsScreen extends StatelessWidget{
+  const TraderDealContainerSoldProductsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-     return Column(
+    return Column(
       children: [
         Container(
           width: MediaQuery.of(context).size.width * 0.23,
-          height: MediaQuery.of(context).size.height * 0.23,
+          height: MediaQuery.of(context).size.height * 0.22,
           decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -87,29 +87,29 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                     onLongPress: () => Colors.blue,
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.23,
-                                    height: MediaQuery.of(context).size.height * 0.041,
-                                    decoration: BoxDecoration(
-                                    color: Colors.white,
-                                      borderRadius: BorderRadius.circular(8)
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(14),
-                                      child: Row(
-                                      children: [
-                                        Image.asset('assets/images/RestartCircle.png'),
-                                        SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.008,
-                                        ),
-                                        const Text(
-                  'مرتجع',
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500
-                    ),
+                  height: MediaQuery.of(context).size.height * 0.041,
+                  decoration: BoxDecoration(
+                  color: Colors.white,
+                    borderRadius: BorderRadius.circular(8)
                   ),
-                                      ],
-                                      ),
-                                    ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Row(
+                    children: [
+                      Image.asset('assets/images/RestartCircle.png'),
+                      SizedBox(
+                       width: MediaQuery.of(context).size.width * 0.008,
+                      ),
+                      Text(
+                      'مرتجع',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500
+                        ),
+                      ),
+                        ],
+                        ),
+                      ),
                   ),
                 ),
                 SizedBox(
@@ -136,7 +136,7 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.008,
                             ),
-                            const Text(
+                            Text(
                               'تحصيل',
                               style: TextStyle(
                                 fontSize: 16,
@@ -154,5 +154,5 @@ class TraderDealReviewProductScreen extends StatelessWidget{
                   ),
       ],
     );
-}
+  }
 }

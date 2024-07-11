@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FinishButtonReviewProductScreen extends StatelessWidget{
-  const FinishButtonReviewProductScreen({super.key});
+class FinishButtonVisitsTodayScreen extends StatelessWidget{
+  const FinishButtonVisitsTodayScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,15 +32,17 @@ class FinishButtonReviewProductScreen extends StatelessWidget{
                 onPressed: (){},
                   child: Row(
                   children: [
-                    Image.asset(
-                      'assets/images/Icon-Wrapper(2).png',
-                      color: Colors.white,
+                    const ImageIcon(
+                       color: Colors.white,
+                      AssetImage(
+                        'assets/images/VectorAdddd.png',
                       ),
+                    ),
                     SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.008,
+                          width: MediaQuery.of(context).size.width * 0.006,
                         ),
                     const Text(
-                      'انهاء الزيارة',
+                      'اضافة زيارة',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 16,
