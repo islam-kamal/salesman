@@ -4,15 +4,14 @@ import 'package:water/widgets/store_name_container.dart';
 import 'package:water/widgets/visit_type_containers.dart';
 import 'package:water/widgets/visits_history_screen_container_item.dart';
 
-class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget{
+class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget {
   ClientDetailsVisitsHistoryScreenBody({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
-
   @override
   Widget build(BuildContext context) {
-     return Directionality(
+    return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         drawer: const Drawer(),
@@ -67,7 +66,7 @@ class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget{
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const NavigateBasicContainer(),
+                    NavigateBasicContainer(),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
@@ -79,34 +78,36 @@ class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Icon(Icons.arrow_back),
-                        ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.012,
-                    ),
-                    const Text(
-                      'تاريخ الزيارات',
-                      style: TextStyle(
-                        fontSize: 23,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                      ]
+                    Row(children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Icon(Icons.arrow_back),
                       ),
                       SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.012,
+                      ),
+                      const Text(
+                        'تاريخ الزيارات',
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.008,
                     ),
                     const StoreNameContainer(),
-                      SizedBox(
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.008,
                     ),
-                    const VisitTypeContainers(),
+                    const VisitTypeContainers(
+                      textFirstContainer: 'نوع الزيارة',
+                      textSecondContainer: 'من',
+                      textThirdContainer: 'الى',
+                    ),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
@@ -137,6 +138,7 @@ class ClientDetailsVisitsHistoryScreenBody extends StatelessWidget{
                           iconCompleted: 'assets/images/trueInSquare.png',
                           iconReturned: 'assets/images/RestartCircle.png',
                           iconCollected: 'assets/images/MoneyBag.png',
+                          collectedColor: Color(0xff1D6E4F),
                         );
                       },
                     ),

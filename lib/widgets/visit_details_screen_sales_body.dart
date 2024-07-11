@@ -69,7 +69,7 @@ class VisitDetailsScreenSalesBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.025,
                       ),
-                      const NavigateBasicContainer(),
+                      NavigateBasicContainer(),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.025,
                       ),
@@ -194,7 +194,7 @@ class VisitDetailsScreenSalesBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      const PillContainer(),
+                      const PillContainer(containerName: 'الفاتورة',),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
@@ -220,3 +220,4 @@ class VisitDetailsScreenSalesBody extends StatelessWidget {
     );
   }
 }
+

@@ -66,7 +66,7 @@ class ErrorInNetworkScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const Opacity(
+                    Opacity(
                         opacity: 0.55, child: NavigateBasicContainer()),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,

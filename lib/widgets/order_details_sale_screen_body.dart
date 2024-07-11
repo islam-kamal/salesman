@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/google_map_container.dart';
+import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/public_information_container.dart';
-import 'package:water/widgets/transaction_details_container.dart';
-import 'package:water/widgets/value_pill_date_number_container.dart';
-import 'package:water/widgets/visit_details_container.dart';
-import 'package:water/widgets/visit_details_list_view_item.dart';
-import 'package:water/widgets/visit_details_market_information_container.dart';
+import 'package:water/widgets/returned_details_container.dart';
+import 'package:water/widgets/review_product_water_item.dart';
+import 'package:water/widgets/search_text_field.dart';
 
-class VisitDetailsScreenPublicBody extends StatelessWidget {
-  const VisitDetailsScreenPublicBody({super.key});
+class OrderDetailsSaleScreenBody extends StatelessWidget{
+  const OrderDetailsSaleScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
       child: Scaffold(
         // drawer: const Drawer(),
         body: Padding(
-          padding: const EdgeInsets.only(left: 18, right: 18,  top: 48),
+          padding: const EdgeInsets.only(left: 18, right: 18, top: 48),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -67,18 +64,16 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    NavigateBasicContainer(),
+                    NavigateBasicContainer(userType: 'B2B'),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const VisitDetailsContainer(),
                   ],
                 ),
               ),
               Expanded(
                 flex: 5,
-                child: SingleChildScrollView(
-                  child: Column(
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -87,7 +82,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                               onPressed: () {},
                               icon: const Icon(Icons.arrow_back)),
                           const Text(
-                            'تفاصيل الزيارة',
+                            'تفاصيل امر البيع',
                             style: TextStyle(
                               fontSize: 23,
                               fontWeight: FontWeight.w500,
@@ -96,78 +91,43 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
+                        height: MediaQuery.of(context).size.height * 0.01,
                       ),
-                      const PublicInformationContainer(
-                        name: 'عبدالرحمن محمد علي',
-                        phone: '+966 4644 4646',
+                      const ReturnedDetailsContainer(
+                        iconReturned: 'assets/images/trueInSquare.png',
+                        nameReturned: 'امر مرتجع',
+                        icon: 'assets/images/trueeStyle.png',
+                        traderName: 'عبدالرحمن محمد علي',
                         date: '23 / 5 / 2024',
+                        phone: '+966 4644 4646',
+                        cost: '30,000 ر.س',
                         time: '5:30 مساءً',
+                        number: '50 منتج',
+                        textSmallContainer: 'تم الموافقة',
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 22),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TransactionDetailsContainer(
-                              image: 'assets/images/BillList.png',
-                              color: Color(0xff0056C9),
-                              name: 'مبيعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
-                              name: 'مرتجعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/moneyBaggg.png',
-                              color: Color(0xff1D6E4F),
-                              name: 'تحصيل',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/DangerTriangle.png',
-                              color: Color(0xffAF2A1A),
-                              name: 'مديونية',
-                              price: '25,000 ر.س',
-                            ),
-                          ],
-                        ),
-                      ),
-                      const ValuePillDateNumberContainer(),
                       SizedBox(
-                        width: MediaQuery.of(context).size.height * 0.014,
+                        height: MediaQuery.of(context).size.height * 0.012,
                       ),
+                      const SearchTextField(
+                        hintTextField: 'البحث عن منتج',
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.018,
+                      ),
+                      const ImageNumberProductPriceContainer(),
                       ListView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 5,
                           itemBuilder: (context, index) {
-                            return const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8),
-                              child: VisitDetailsListViewItem(
-                                number: 33,
-                                date: '23/5/2024',
-                                pillType: 'مرتجع',
-                                productNumber: '50 منتج',
-                                productValue: '42 ر.س',
-                              ),
+                            return InkWell(
+                              onTap: () {},
+                              child: const ReviewProductWaterItem(),
                             );
                           }),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const GoogleMapContainer(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const VisitDetailsMarketInformationContainer(),
                     ],
                   ),
                 ),
-              ),
             ],
           ),
         ),

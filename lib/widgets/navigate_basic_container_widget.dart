@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
 
 class NavigateBasicContainer extends StatelessWidget {
-  const NavigateBasicContainer({super.key});
+   NavigateBasicContainer({super.key, this.userType = "B2C"});
+
+String userType ;
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +48,13 @@ class NavigateBasicContainer extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-                const TraderDealContainerItem(
+             userType == 'B2C' ?   const TraderDealContainerItem(
                   name: 'مرتجعات',
                   image: 'assets/images/overView.png',
+                )
+                : const TraderDealContainerItem(
+                  name: 'اوامر الشغل',
+                  image: 'assets/images/IconWrapperrrrr.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,

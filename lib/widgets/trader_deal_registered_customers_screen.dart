@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
-import 'package:water/basics/shared.dart';
 
 class TraderDealRegisteredCustomersScreen extends StatelessWidget{
   const TraderDealRegisteredCustomersScreen({super.key});

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PillContainer extends StatelessWidget{
-  const PillContainer({super.key});
+  const PillContainer({super.key, required this.containerName});
+
+final String containerName;
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +34,13 @@ class PillContainer extends StatelessWidget{
                   ),
                   borderRadius: BorderRadius.circular(10)),
               child:  Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'الفاتورة',
-                      style: TextStyle(
+                    Text(
+                      containerName,
+                      style: const TextStyle(
                         color: Color(0xff758195),
                         fontSize: 16,
                         fontWeight: FontWeight.w300,

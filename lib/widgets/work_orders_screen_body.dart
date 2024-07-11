@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/duration_status_contianers.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/search_text_field.dart';
+import 'package:water/widgets/visit_type_containers.dart';
 import 'package:water/widgets/visits_history_screen_container_item.dart';
 
-class ReturnOrdersScreenDetails extends StatelessWidget {
-  ReturnOrdersScreenDetails({super.key});
+class WorkOrdersScreenBody extends StatelessWidget {
+  WorkOrdersScreenBody({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -66,7 +66,7 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    NavigateBasicContainer(),
+                    NavigateBasicContainer(userType: 'B2B'),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
@@ -89,7 +89,7 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
                         width: MediaQuery.of(context).size.width * 0.012,
                       ),
                       const Text(
-                        'اوامر المرتجعات',
+                        'اوامر الشغل',
                         style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w500,
@@ -97,13 +97,17 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
                       ),
                     ]),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.012,
+                      height: MediaQuery.of(context).size.height * 0.008,
                     ),
                     const SearchTextField(hintTextField: 'البحث عن فاتورة'),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.012,
+                      height: MediaQuery.of(context).size.height * 0.008,
                     ),
-                    const DurationStatusContainers(),
+                    const VisitTypeContainers(
+                      textFirstContainer: 'الفترة',
+                      textSecondContainer: 'الحالة',
+                      textThirdContainer: 'نوع الأمر',
+                    ),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
@@ -120,21 +124,28 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
                       ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                        return const VisitsHistoryScreenContainerItem(
-                          date: 'امر مرتجع 12313',
-                          collect: '50 منتج',
-                          complete: '30,000 ر.س',
-                          visit: 'تم الموافقة',
-                          returned: '3 ساعات',
-                          store: 'اسم المتجر',
-                          icon: 'assets/images/trueeStyle.png',
-                          iconColor: Color(0xff1D6E4F),
-                          iconProductType: 'assets/images/RestartCircle.png',
-                          iconStoreName: 'assets/images/smallShop.png',
-                          iconCompleted: 'assets/images/Banknote2.png',
-                          iconReturned: 'assets/images/timeHistory.png',
-                          iconCollected: 'assets/images/marketImage.png',
-                          collectedColor: Colors.black,
+                        return InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const OrderDetailsSaleScreen()));
+                          },
+                          child: const VisitsHistoryScreenContainerItem(
+                            date: 'امر بيع 2313',
+                            collect: '50 منتج',
+                            complete: '30,000 ر.س',
+                            visit: 'تم الموافقة',
+                            returned: '3 ساعات',
+                            store: 'اسم المتجر',
+                            icon: 'assets/images/trueeStyle.png',
+                            iconColor: Color(0xff1D6E4F),
+                            iconProductType: 'assets/images/trueInSquare.png',
+                            iconStoreName: 'assets/images/smallShop.png',
+                            iconCompleted: 'assets/images/Banknote2.png',
+                            iconReturned: 'assets/images/timeHistory.png',
+                            iconCollected: 'assets/images/marketImage.png',
+                            collectedColor: Colors.black,
+                          ),
                         );
                       },
                     ),

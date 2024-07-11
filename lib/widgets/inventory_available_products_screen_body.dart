@@ -1,18 +1,21 @@
-import 'package:water/widgets/error_interface_widget.dart';
-
-import './navigate_basic_container_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:water/widgets/image_number_product_price_container_Widget.dart';
+import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/pill_container.dart';
+import 'package:water/widgets/review_product_water_item.dart';
+import 'package:water/widgets/search_text_field.dart';
 
-class ErrorInServiceScreenDetails extends StatelessWidget {
-  const ErrorInServiceScreenDetails({super.key});
+class InventoryAvailableProductsScreenBody extends StatelessWidget {
+  const InventoryAvailableProductsScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        // drawer: const Drawer(),
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 48),
+          padding: const EdgeInsets.only(left: 18, right: 18, top: 48),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,7 +64,7 @@ class ErrorInServiceScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    NavigateBasicContainer(),
+                    NavigateBasicContainer(userType: 'B2B'),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
@@ -70,21 +73,48 @@ class ErrorInServiceScreenDetails extends StatelessWidget {
               ),
               Expanded(
                 flex: 5,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: MediaQuery.of(context).size.height * 0.03,
-                  ),
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ErrorInterface(
-                          errorImage: 'assets/images/errorInService.png',
-                          errorTitle: 'خطأ في الخادم',
-                          errorSubTitle:
-                              'لا يمكن الاتصال بالشبكة. يرجى التحقق من الاتصال بالإنترنت',
-                              imageSize: 0.4,),
-                    ],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_back)),
+                        const Text(
+                          'المنتجات المتاحة',
+                          style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.01,
+                    ),
+                    const SearchTextField(
+                      hintTextField: 'البحث عن منتج',
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.018,
+                    ),
+                    const PillContainer(containerName: 'الصنف'),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.018,
+                    ),
+                    const ImageNumberProductPriceContainer(),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return InkWell(
+                            onTap: () {},
+                            child: const ReviewProductWaterItem(),
+                          );
+                        }),
+                  ],
                 ),
               ),
             ],

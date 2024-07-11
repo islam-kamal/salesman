@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/google_map_container.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/public_information_container.dart';
-import 'package:water/widgets/transaction_details_container.dart';
+import 'package:water/widgets/store_name_container.dart';
 import 'package:water/widgets/value_pill_date_number_container.dart';
-import 'package:water/widgets/visit_details_container.dart';
 import 'package:water/widgets/visit_details_list_view_item.dart';
-import 'package:water/widgets/visit_details_market_information_container.dart';
 
-class VisitDetailsScreenPublicBody extends StatelessWidget {
-  const VisitDetailsScreenPublicBody({super.key});
+class ClientDetailsIndebtScreenBody extends StatelessWidget {
+  const ClientDetailsIndebtScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
       child: Scaffold(
         // drawer: const Drawer(),
         body: Padding(
-          padding: const EdgeInsets.only(left: 18, right: 18,  top: 48),
+          padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -71,14 +68,69 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const VisitDetailsContainer(),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.17
+                          : MediaQuery.of(context).size.height * 0.27,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/startVisit.png',
+                                buttonName: 'بدأ المعاملة',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.011,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.white,
+                                iconImage: 'assets/images/Route.png',
+                                buttonName: 'الاتجاهات',
+                                textColor: Colors.black,
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.011,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.white,
+                                iconImage: 'assets/images/phonee.png',
+                                buttonName: 'الإتصال بالتاجر',
+                                textColor: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
               Expanded(
                 flex: 5,
-                child: SingleChildScrollView(
-                  child: Column(
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -87,7 +139,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                               onPressed: () {},
                               icon: const Icon(Icons.arrow_back)),
                           const Text(
-                            'تفاصيل الزيارة',
+                            'ملف المديونية',
                             style: TextStyle(
                               fontSize: 23,
                               fontWeight: FontWeight.w500,
@@ -98,43 +150,32 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const PublicInformationContainer(
-                        name: 'عبدالرحمن محمد علي',
-                        phone: '+966 4644 4646',
-                        date: '23 / 5 / 2024',
-                        time: '5:30 مساءً',
+                      const StoreNameContainer(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 22),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TransactionDetailsContainer(
-                              image: 'assets/images/BillList.png',
-                              color: Color(0xff0056C9),
-                              name: 'مبيعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
-                              name: 'مرتجعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/moneyBaggg.png',
-                              color: Color(0xff1D6E4F),
-                              name: 'تحصيل',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/DangerTriangle.png',
-                              color: Color(0xffAF2A1A),
-                              name: 'مديونية',
-                              price: '25,000 ر.س',
-                            ),
-                          ],
+
+
+
+
+
+                      Container(
+                        width: double.infinity,
+                        height: 444,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5
+                          )
                         ),
+                      ),
+
+
+
+
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.008,
                       ),
                       const ValuePillDateNumberContainer(),
                       SizedBox(
@@ -156,18 +197,9 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                               ),
                             );
                           }),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const GoogleMapContainer(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const VisitDetailsMarketInformationContainer(),
                     ],
                   ),
                 ),
-              ),
             ],
           ),
         ),

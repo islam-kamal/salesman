@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/google_map_container.dart';
-import 'package:water/widgets/indebtedness_container.dart';
 import 'package:water/widgets/market_information_container.dart';
 import 'package:water/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/trader_file_container.dart';
-import 'package:water/widgets/transaction_details_container.dart';
 
-class TraderDetailsScreenBody extends StatelessWidget {
-  const TraderDetailsScreenBody({super.key});
+class ClientDetailsPendingScreenBody extends StatelessWidget {
+  const ClientDetailsPendingScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,8 +72,8 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.24,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.17
-                          : MediaQuery.of(context).size.height * 0.27,
+                          ? MediaQuery.of(context).size.height * 0.114
+                          : MediaQuery.of(context).size.height * 0.182,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -88,19 +86,6 @@ class TraderDetailsScreenBody extends StatelessWidget {
                             horizontal: 5, vertical: 5),
                         child: Column(
                           children: [
-                            InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.black,
-                                iconImage: 'assets/images/startVisit.png',
-                                buttonName: 'بدأ الزيارة',
-                                textColor: Colors.white,
-                              ),
-                            ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.011,
-                            ),
                             InkWell(
                               onTap: () {},
                               child: const Button(
@@ -132,77 +117,42 @@ class TraderDetailsScreenBody extends StatelessWidget {
               ),
               Expanded(
                 flex: 5,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.arrow_back)),
-                          const Text(
-                            'تفاصيل التاجر',
-                            style: TextStyle(
-                              fontSize: 23,
-                              fontWeight: FontWeight.w500,
-                            ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.arrow_back)),
+                        const Text(
+                          'تفاصيل التاجر',
+                          style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.w500,
                           ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
-                      ),
-                      const TraderFileContainer(
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.008,
+                    ),
+                    const TraderFileContainer(
                       traderName: 'عبدالرحمن محمد علي',
                       phone: '+966 4644 4646',
-                      textSmallContainer: 'في زيارات اليوم',
+                      textSmallContainer: 'تحت المراجعة',
                       iconSmallContainer:  'assets/images/VerifiedCheck.png',
-                      color: Color(0xff0056C9),
+                      color: Color(0xffAC6521),
                     ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 22),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TransactionDetailsContainer(
-                              image: 'assets/images/BillList.png',
-                              color: Color(0xff0056C9),
-                              name: 'مبيعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
-                              name: 'مرتجعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/moneyBaggg.png',
-                              color: Color(0xff1D6E4F),
-                              name: 'تحصيل',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/DangerTriangle.png',
-                              color: Color(0xffAF2A1A),
-                              name: 'مديونية',
-                              price: '25,000 ر.س',
-                            ),
-                          ],
-                        ),
-                      ),
-                      const IndebtednessContainer(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const GoogleMapContainer(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      const MarketInformationContainer(),
-                    ],
-                  ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.014,
+                    ),
+                    const GoogleMapContainer(),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.014,
+                    ),
+                    const MarketInformationContainer(container: false),
+                  ],
                 ),
               ),
             ],

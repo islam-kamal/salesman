@@ -65,7 +65,7 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    const NavigateBasicContainer(),
+                    NavigateBasicContainer(),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
@@ -77,30 +77,32 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Icon(Icons.arrow_back),
-                        ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.012,
-                    ),
-                    const Text(
-                      'تاريخ الزيارات',
-                      style: TextStyle(
-                        fontSize: 23,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                      ]
+                    Row(children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: const Icon(Icons.arrow_back),
                       ),
                       SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.012,
+                      ),
+                      const Text(
+                        'تاريخ الزيارات',
+                        style: TextStyle(
+                          fontSize: 23,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
+                    SizedBox(
                       height: MediaQuery.of(context).size.height * 0.008,
                     ),
-                    const VisitTypeContainers(),
+                    const VisitTypeContainers(
+                      textFirstContainer: 'نوع الزيارة',
+                      textSecondContainer: 'من',
+                      textThirdContainer: 'الى',
+                    ),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
@@ -117,7 +119,7 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                       ),
                       itemCount: 8,
                       itemBuilder: (context, index) {
-                         return const VisitsHistoryScreenContainerItem(
+                        return const VisitsHistoryScreenContainerItem(
                           date: '2024 / 5 / 15',
                           collect: '30,000',
                           complete: '30,000',
@@ -131,6 +133,7 @@ class VisitsHistoryScreenDetails extends StatelessWidget {
                           iconCompleted: 'assets/images/trueInSquare.png',
                           iconReturned: 'assets/images/RestartCircle.png',
                           iconCollected: 'assets/images/MoneyBag.png',
+                          collectedColor: Color(0xff1D6E4F),
                         );
                       },
                     ),

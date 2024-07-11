@@ -35,7 +35,9 @@ final String hintTextField;
                     ),
                     hintText: hintTextField,
                     hintStyle: const TextStyle(
-                      color: Color.fromARGB(255, 146, 155, 171),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w300,
+                      color: Color(0xff758195),
                     )),
               ),
             )),

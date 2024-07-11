@@ -66,13 +66,23 @@ BitmapDescriptor? customMarker;
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Padding(
-                              padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.05),
-                              child: Container(
+                            Row(
+                              children: [
+                                const Text(
+                                  'العنوان',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.006,
+                              ),
+                             Container(
                                   width:  MediaQuery.of(context).orientation ==
                                 Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.135
-                            : MediaQuery.of(context).size.height * 0.14,
+                            ? MediaQuery.of(context).size.width * 0.135
+                            : MediaQuery.of(context).size.width * 0.14,
                                   height:  MediaQuery.of(context).orientation ==
                                 Orientation.portrait
                             ? MediaQuery.of(context).size.height * 0.019
@@ -108,7 +118,8 @@ BitmapDescriptor? customMarker;
                           ),
                         ),
                       ),
-                    ),
+                      ],
+                            ),
                     Opacity(
                       opacity: 0.2,
                       child: Image.asset(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/client_details_indebt_screen.dart';
 import 'package:water/widgets/transection_row_in_indebtedness_container.dart';
 
 class IndebtednessContainer extends StatelessWidget {
@@ -26,48 +27,58 @@ class IndebtednessContainer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      right: MediaQuery.of(context).size.width * 0.034),
-                  child: Container(
-                    width: MediaQuery.of(context).orientation ==
-                            Orientation.portrait
-                        ? MediaQuery.of(context).size.width * 0.17
-                        : MediaQuery.of(context).size.width * 0.095,
-                    height: MediaQuery.of(context).orientation ==
-                            Orientation.portrait
-                        ? MediaQuery.of(context).size.height * 0.019
-                        : MediaQuery.of(context).size.height * 0.032,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 243, 243, 244),
-                      border: Border.all(
-                        color: Colors.grey,
-                        width: 0.5,
-                      ),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(3),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            'assets/images/DangerTriangle.png',
-                            color: const Color(0xffDD7208),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.004,
-                          ),
-                          const Text(
-                            'مديونية مرتفعة',
-                            style: TextStyle(
-                                color: Color(0xff5F480C),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w300),
-                          ),
-                        ],
+                Row(
+                  children: [
+                    const Text(
+                      'ملف المديونية',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.006,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.width * 0.17
+                          : MediaQuery.of(context).size.width * 0.095,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.019
+                          : MediaQuery.of(context).size.height * 0.032,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 243, 243, 244),
+                        border: Border.all(
+                          color: Colors.grey,
+                          width: 0.5,
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(3),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/DangerTriangle.png',
+                              color: const Color(0xffDD7208),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.004,
+                            ),
+                            const Text(
+                              'مديونية مرتفعة',
+                              style: TextStyle(
+                                  color: Color(0xff5F480C),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 Image.asset(
                   'assets/images/moneyBaggg.png',
@@ -83,29 +94,29 @@ class IndebtednessContainer extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 8,
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                        right: MediaQuery.of(context).size.width * 0.06),
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/BillList.png',
-                          color: const Color(0xff111111),
-                          width: MediaQuery.of(context).size.height * 0.014,
-                          height: MediaQuery.of(context).size.height * 0.0144,
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.006,
-                        ),
-                        const Text(
-                          'نوع الفاتورة',
-                          style: TextStyle(
-                              color: Color(0xff111111),
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    children: [
+                      Image.asset('assets/images/threeDash.png'),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.033,
+                      ),
+                      Image.asset(
+                        'assets/images/BillList.png',
+                        color: const Color(0xff111111),
+                        width: MediaQuery.of(context).size.height * 0.014,
+                        height: MediaQuery.of(context).size.height * 0.0144,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.006,
+                      ),
+                      const Text(
+                        'نوع الفاتورة',
+                        style: TextStyle(
+                            color: Color(0xff111111),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    ],
                   ),
                 ),
                 Expanded(
@@ -195,16 +206,20 @@ class IndebtednessContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) =>
+                            const ClientDetailsIndebtScreen()));
+                  },
                   child: Container(
                     width: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.2
-                          : MediaQuery.of(context).size.height * 0.52,
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.height * 0.2
+                        : MediaQuery.of(context).size.height * 0.52,
                     height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.042
-                          : MediaQuery.of(context).size.height * 0.072,
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.height * 0.042
+                        : MediaQuery.of(context).size.height * 0.072,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(
@@ -239,13 +254,13 @@ class IndebtednessContainer extends StatelessWidget {
                   onTap: () {},
                   child: Container(
                     width: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.2
-                          : MediaQuery.of(context).size.height * 0.52,
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.height * 0.2
+                        : MediaQuery.of(context).size.height * 0.52,
                     height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.042
-                          : MediaQuery.of(context).size.height * 0.072,
+                            Orientation.portrait
+                        ? MediaQuery.of(context).size.height * 0.042
+                        : MediaQuery.of(context).size.height * 0.072,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(

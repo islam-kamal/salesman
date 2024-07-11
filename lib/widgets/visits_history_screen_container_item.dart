@@ -15,7 +15,8 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
       required this.iconStoreName,
       required this.iconCompleted,
       required this.iconReturned,
-      required this.iconCollected});
+      required this.iconCollected,
+      required this.collectedColor});
 
   final String date;
   final String store;
@@ -30,6 +31,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
   final String iconReturned;
   final String iconCollected;
   final Color iconColor;
+  final Color collectedColor;
 
   @override
   Widget build(BuildContext context) {
@@ -58,6 +60,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                         children: [
                           Image.asset(
                             iconProductType,
+                            color: Colors.black,
                             height: MediaQuery.of(context).size.height * 0.013,
                           ),
                           SizedBox(
@@ -184,7 +187,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                           children: [
                             Image.asset(
                               iconCollected,
-                              color: const Color(0xff1D6E4F),
+                              color: collectedColor,
                               height:
                                   MediaQuery.of(context).size.height * 0.013,
                             ),
@@ -193,8 +196,8 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                             ),
                             Text(
                               collect,
-                              style: const TextStyle(
-                                  color: Color(0xff1D6E4F),
+                              style: TextStyle(
+                                  color: collectedColor,
                                   fontSize: 14,
                                   fontWeight: FontWeight.w300),
                             ),

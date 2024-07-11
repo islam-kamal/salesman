@@ -3,7 +3,9 @@ import 'package:water/widgets/files_list_view_item.dart';
 
 
 class  MarketInformationContainer extends StatelessWidget{
-  const MarketInformationContainer({super.key});
+  const MarketInformationContainer({super.key, this.container = true});
+
+final bool container;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class  MarketInformationContainer extends StatelessWidget{
       width: double.infinity,
             height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.4
+                          ? MediaQuery.of(context).size.height * 0.335
                           : MediaQuery.of(context).size.height * 0.49,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -42,6 +44,7 @@ class  MarketInformationContainer extends StatelessWidget{
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),
+                        container == true ?
                         Container(
                                     width: MediaQuery.of(context).orientation ==
                               Orientation.portrait
@@ -81,7 +84,8 @@ class  MarketInformationContainer extends StatelessWidget{
                               ],
                             ),
                           ),
-                        ),
+                        )
+                        : Container(),
                         ],
                       ),
                       Padding(
@@ -190,12 +194,12 @@ class  MarketInformationContainer extends StatelessWidget{
                     ),
                   ),
                SizedBox(
-              height: MediaQuery.of(context).size.height * 0.12,
+              height: MediaQuery.of(context).size.height * 0.1,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: 5,
+                  itemCount: 8,
                   itemBuilder: (context, index) {
                     return const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 8),
