@@ -91,7 +91,7 @@ class AvailableProductsScreenDetails extends StatelessWidget {
                                     child: const Button(
                                       color: Colors.black,
                                       iconImage:
-                                          'assets/images/VectorAdddd.png',
+                                          'assets/images/CheckCircle.png',
                                       buttonName: 'انهاء الزيارة',
                                       textColor: Colors.white,
                                     ),

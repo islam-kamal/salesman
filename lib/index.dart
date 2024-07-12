@@ -1,6 +1,7 @@
 export 'available_items_screen.dart';
 export 'available_products_add_product_screen.dart';
 export 'available_products_screen.dart';
+export 'change_password_screen.dart';
 export 'client_details_indebt_screen.dart';
 export 'client_details_pending_screen.dart';
 export 'client_details_screen.dart';
@@ -15,6 +16,7 @@ export 'login_screen.dart';
 export 'order_details_return_screen.dart';
 export 'order_details_sale_Screen.dart';
 export 'previous_invoices_screen.dart';
+export 'profile_screen.dart';
 export 'registered_customers_screen.dart';
 export 'return_orders_screen.dart';
 export 'review_product_screen.dart';

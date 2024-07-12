@@ -16,6 +16,9 @@ class Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.015,
+      ),
       width: MediaQuery.of(context).size.width * 0.223,
       height: MediaQuery.of(context).orientation == Orientation.portrait
           ? MediaQuery.of(context).size.height * 0.046
@@ -23,14 +26,11 @@ class Button extends StatelessWidget {
       decoration: BoxDecoration(
           color: color,
           border: Border.all(
-            color: Color(0xff758195),
+            color: const Color(0xff758195),
             width: 0.9,
           ),
           borderRadius: BorderRadius.circular(8)),
-      child: TextButton(
-        clipBehavior: Clip.hardEdge,
-        onPressed: () {},
-        child: Row(
+      child: Row(
           children: [
             ImageIcon(
               color: textColor,
@@ -42,7 +42,7 @@ class Button extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.006,
+              width: MediaQuery.of(context).size.width * 0.007,
             ),
             Text(
               buttonName,
@@ -51,7 +51,6 @@ class Button extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }

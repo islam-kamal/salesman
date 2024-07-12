@@ -74,7 +74,7 @@ class _LoginPasswordTextFieldState extends State<LoginPasswordTextField> {
                       child: InkWell(
                         onTap: _togglePasswordView,
                         child: Icon(
-                          _isHidden ? Icons.visibility : Icons.visibility_off,
+                          _isHidden ? Icons.visibility_off_outlined : Icons.visibility_outlined,
                         ),
                       ),
                     ),
