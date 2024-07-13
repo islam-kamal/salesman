@@ -1,6 +1,6 @@
 import 'package:water/widgets/error_interface_widget.dart';
 
-import './navigate_basic_container_widget.dart';
+import 'navigate_basic_container.dart';
 import 'package:flutter/material.dart';
 
 class ErrorInServiceScreenDetails extends StatelessWidget {
@@ -26,7 +26,7 @@ class ErrorInServiceScreenDetails extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

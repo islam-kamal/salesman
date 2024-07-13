@@ -1,3 +1,4 @@
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import './products_and_prices_available_items_screen.dart';
 import './store_deal_container_widget.dart';
@@ -84,7 +85,7 @@ class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
                             child: Column(
                               children: [
                                 InkWell(
-                              onTap: () {},
+                              onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/CheckCircle.png',

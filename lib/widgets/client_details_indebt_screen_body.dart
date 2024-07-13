@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/google_map_container.dart';
-import 'package:water/widgets/indebtedness_container.dart';
-import 'package:water/widgets/market_information_container.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
-import 'package:water/widgets/trader_file_container.dart';
-import 'package:water/widgets/transaction_details_container.dart';
+import 'package:water/widgets/store_name_container.dart';
+import 'package:water/widgets/value_pill_date_number_container.dart';
+import 'package:water/widgets/visit_details_list_view_item.dart';
 
-class TraderDetailsScreenBody extends StatelessWidget {
-  const TraderDetailsScreenBody({super.key});
+class ClientDetailsIndebtScreenBody extends StatelessWidget {
+  const ClientDetailsIndebtScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +91,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/startVisit.png',
-                                buttonName: 'بدأ الزيارة',
+                                buttonName: 'بدأ المعاملة',
                                 textColor: Colors.white,
                               ),
                             ),
@@ -132,8 +130,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
               ),
               Expanded(
                 flex: 5,
-                child: SingleChildScrollView(
-                  child: Column(
+                child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
@@ -142,7 +139,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                               onPressed: () {},
                               icon: const Icon(Icons.arrow_back)),
                           const Text(
-                            'تفاصيل التاجر',
+                            'ملف المديونية',
                             style: TextStyle(
                               fontSize: 23,
                               fontWeight: FontWeight.w500,
@@ -153,58 +150,56 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const TraderFileContainer(
-                      traderName: 'عبدالرحمن محمد علي',
-                      phone: '+966 4644 4646',
-                      textSmallContainer: 'في زيارات اليوم',
-                      iconSmallContainer:  'assets/images/VerifiedCheck.png',
-                      color: Color(0xff0056C9),
-                    ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 22),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            TransactionDetailsContainer(
-                              image: 'assets/images/BillList.png',
-                              color: Color(0xff0056C9),
-                              name: 'مبيعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
-                              name: 'مرتجعات',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/moneyBaggg.png',
-                              color: Color(0xff1D6E4F),
-                              name: 'تحصيل',
-                              price: '25,000 ر.س',
-                            ),
-                            TransactionDetailsContainer(
-                              image: 'assets/images/DangerTriangle.png',
-                              color: Color(0xffAF2A1A),
-                              name: 'مديونية',
-                              price: '25,000 ر.س',
-                            ),
-                          ],
+                      const StoreNameContainer(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.008,
+                      ),
+
+
+
+
+
+                      Container(
+                        width: double.infinity,
+                        height: 444,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5
+                          )
                         ),
                       ),
-                      const IndebtednessContainer(),
+
+
+
+
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
+                        height: MediaQuery.of(context).size.height * 0.008,
                       ),
-                      const GoogleMapContainer(),
+                      const ValuePillDateNumberContainer(),
                       SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.014,
+                        width: MediaQuery.of(context).size.height * 0.014,
                       ),
-                      const MarketInformationContainer(),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: 5,
+                          itemBuilder: (context, index) {
+                            return const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 8),
+                              child: VisitDetailsListViewItem(
+                                number: 33,
+                                date: '23/5/2024',
+                                pillType: 'مرتجع',
+                                productNumber: '50 منتج',
+                                productValue: '42 ر.س',
+                              ),
+                            );
+                          }),
                     ],
                   ),
                 ),
-              ),
             ],
           ),
         ),

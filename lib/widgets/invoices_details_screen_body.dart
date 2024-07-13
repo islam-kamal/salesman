@@ -33,7 +33,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
           width: MediaQuery.of(context).size.width * 0.24,
           height: MediaQuery.of(context).orientation == Orientation.portrait ?
           MediaQuery.of(context).size.height * 0.041
-          : MediaQuery.of(context).size.height * 0.052,
+          : MediaQuery.of(context).size.height * 0.063,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(

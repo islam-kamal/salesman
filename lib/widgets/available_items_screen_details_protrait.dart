@@ -1,3 +1,4 @@
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/products_and_prices_available_items_screen.dart';
 import 'package:water/widgets/search_text_field_available_items_screen.dart';
@@ -79,12 +80,12 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 5, vertical: 5),
                             child: Column(
                               children: [
                                 InkWell(
-                                  onTap: () {},
+                                 onTap: () => Dialogs.showDialogFinishVisit(context),
                                   child: const Button(
                                     color: Colors.black,
                                     iconImage: 'assets/images/CheckCircle.png',

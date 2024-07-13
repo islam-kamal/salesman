@@ -1,3 +1,4 @@
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/drawer_review_returned_products_screen.dart';
@@ -34,7 +35,7 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -85,11 +86,11 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8)),
                       child: Padding(
                         padding:
-                            EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                            const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                         child: Column(
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/CheckCircle.png',

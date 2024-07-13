@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/first_container_in_financial_collection.dart';
 import 'package:water/widgets/payment_method_financial_collection.dart';
@@ -32,7 +33,7 @@ class FinancialCollectionScreenDetails extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.24,
           height: MediaQuery.of(context).orientation == Orientation.portrait ?
           MediaQuery.of(context).size.height * 0.041
-          : MediaQuery.of(context).size.height * 0.052,
+          : MediaQuery.of(context).size.height * 0.063,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -83,7 +84,7 @@ class FinancialCollectionScreenDetails extends StatelessWidget {
                         child: Column(
                           children: [
                            InkWell(
-                              onTap: () {},
+                              onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/CheckCircle.png',

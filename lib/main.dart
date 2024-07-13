@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/add_client_location_screen.dart';
+import 'package:water/add_store_information_screen.dart';
 import 'package:water/available_items_screen.dart';
 import 'package:water/available_products_screen.dart';
 import 'package:water/change_password_screen.dart';
@@ -8,6 +10,7 @@ import 'package:water/client_details_screen.dart';
 import 'package:water/client_details_visits_history_screen.dart';
 import 'package:water/error_in_network_screen.dart';
 import 'package:water/financial_collection_screen.dart';
+import 'package:water/index.dart';
 import 'package:water/inventory_available_products_Screen.dart';
 import 'package:water/inventory_screen.dart';
 import 'package:water/login_screen.dart';
@@ -48,7 +51,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: ProfileScreen(),      //ChangePasswordScreen()           //ClientDetailsScreen(),       //ClientDetailsIndebtScreen(),       //ClientDetailsPendingScreen(),       //InventoryAvailableProductsScreen(),       //WorkOrdersOrderDetailsReturnScreen()    //WorkOrdersScreen(),    //OrderDetailsSaleScreen(),    //OrderDetailsReturnScreen()       //ReturnOrdersScreen()     //ClientDetailsVisitsHistoryScreen(),      //TraderDetailsScreen(),     //VisitsTodayScreenDetails()     //VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()           //FinancialCollectionScreen(),       //AvailableProductsScreen(),           //InventoryScreen(),     //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+      home: AvailableProductsScreen()    //AddClientLocationScreen()       //AddStoreInformationScreen()     //AddMerchantInformationScreen()      //LoginScreen(),        //ProfileScreen(),      //ChangePasswordScreen()           //ClientDetailsScreen(),       //ClientDetailsIndebtScreen(),       //ClientDetailsPendingScreen(),       //InventoryAvailableProductsScreen(),       //WorkOrdersOrderDetailsReturnScreen()    //WorkOrdersScreen(),    //OrderDetailsSaleScreen(),    //OrderDetailsReturnScreen()       //ReturnOrdersScreen()     //ClientDetailsVisitsHistoryScreen(),      //TraderDetailsScreen(),     //VisitsTodayScreenDetails()     //VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()           //FinancialCollectionScreen(),       //AvailableProductsScreen(),           //InventoryScreen(),     //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
     );
   }
 }

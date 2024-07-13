@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/profile_details.dart';
 import 'package:water/widgets/profile_note_container.dart';
 
@@ -32,7 +32,7 @@ class ProfileScreenBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
