@@ -1001,4 +1001,85 @@ class Dialogs {
 
 
 
+  static Future<void>? showDialogSendPhotos(parentContext) {
+    return showDialog(
+      context: parentContext,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Container(
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.19
+             : MediaQuery.of(context).size.height * 0.38,
+            child: Column(
+              children: [
+                Image.asset(
+                  color: Color(0xff23A36D),
+                  'assets/images/imagee-truee.png',
+                  width: MediaQuery.of(context).size.width * 0.12,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.004,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 11),
+                  child: Text(
+                   'تم ارسال الصور للادارة',
+                    style: TextStyle(
+                        color: Color(0xff1D6E4F),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 16, top: 10),
+                  child: Text(
+                   'تم ارسال 4 صور للإدارة',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.07,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Color.fromARGB(255, 198, 195, 195),
+                              width: 0.8,
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'الرجوع للزيارة',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+              ],
+            ),
+              ]
+          ),
+          ),
+        );
+      },
+    );
+  }
+
+
+
+
 }

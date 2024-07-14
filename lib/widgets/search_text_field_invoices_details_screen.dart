@@ -1,6 +1,5 @@
 import './water_item_previous_invoices.dart';
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
   const SearchTextFieldInvoicesDetailsScreen({super.key});

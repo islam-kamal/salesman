@@ -19,7 +19,7 @@ class WaterItemPreviousInvoices extends StatelessWidget {
               );
             },
             child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: double.infinity,
                 height:
                     MediaQuery.of(context).orientation == Orientation.portrait
                         ? MediaQuery.of(context).size.height * 0.075

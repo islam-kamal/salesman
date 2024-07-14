@@ -78,7 +78,9 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).size.height * 0.056,
+                      height: MediaQuery.of(context).orientation == Orientation.portrait ?
+                             MediaQuery.of(context).size.height * 0.056
+                            : MediaQuery.of(context).size.height * 0.092,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

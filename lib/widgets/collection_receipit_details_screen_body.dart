@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/products_and_prices_available_products_when_add_product_screen.dart';
-import 'package:water/widgets/search_text_field_available_products_screen.dart';
+import 'package:water/widgets/drawer_invoices_details_screen.dart';
+import 'package:water/widgets/image_number_product_price_container_invoices_details.dart';
+import 'package:water/widgets/search_text_field.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
-import 'package:water/widgets/water_item_available_products.dart';
+import 'package:water/widgets/water_item_invoices_details.dart';
 
-
-class AvailableProductsWhenAddProductScreenDetails extends StatelessWidget{
-  AvailableProductsWhenAddProductScreenDetails({super.key});
+class CollectionReceipitDetailsScreenBody extends StatelessWidget{
+  CollectionReceipitDetailsScreenBody({super.key});
 
 final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -17,7 +17,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        //drawer: const DrawerAvailableProductsScreen(),
+         drawer: const DrawerInvoicesDetailsScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -33,7 +33,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
           width: MediaQuery.of(context).size.width * 0.24,
           height: MediaQuery.of(context).orientation == Orientation.portrait ?
           MediaQuery.of(context).size.height * 0.041
-          : MediaQuery.of(context).size.height * 0.052,
+          : MediaQuery.of(context).size.height * 0.063,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -85,8 +85,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                             const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                         child: Column(
                           children: [
-                          InkWell(
-                              onTap: () => Dialogs.showDialogFinishVisit(context),
+                           InkWell(
+                              onTap: () {},
                               child: const Button(
                                 color: Colors.black,
                                 iconImage: 'assets/images/CheckCircle.png',
@@ -100,36 +100,58 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                     ),
                 ],
               )),
-                Expanded(
-                  flex: 3,
+                 Expanded(
+                  flex: 5,
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 const SearchTextFieldAvailableProductsScreen(),
+                   Row(
+          children: [
+            InkWell(
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+              child: const Icon(Icons.arrow_back),
+              ),
+            SizedBox(
+            width: MediaQuery.of(context).size.width * 0.019,
+          ),
+            const Text(
+              'الفاتورة رقم 123414',
+              style: TextStyle(
+                fontSize: 23,
+                fontWeight: FontWeight.w500
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+            height: MediaQuery.of(context).size.height * 0.011,
+          ),
+                  WaterItemPreviousInvoices(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.011,
+                  ),
+                 const SearchTextField(hintTextField: 'البحث عن منتج',),
+                 SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.011,
+                  ),
+                 PillContainer(containerName: 'الصنف'),
+                 SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.011,
+                  ),
+                 const ImageNumberProductPriceContainerInvoicesDetails(),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 4,
+                    itemCount: 6,
                     itemBuilder: (context , index){
-                      return const WaterItemAvailableProducts();
+                      return const WaterItemInvoicesDetails();
                     }
                     ),
-                     const Divider(
-                    color: Color.fromARGB(255, 186, 180, 180),
-                    thickness: 0.9,
-                  ),
-                  // ListView.builder(
-                  //   shrinkWrap: true,
-                  //   physics: const NeverScrollableScrollPhysics(),
-                  //   itemCount: 4,
-                  //   itemBuilder: (context , index){
-                  //     return const WaterItemAvailableProductsWhenAddProduct();
-                  //   }
-                  //   ),
                 ],
               ),
                 ),
-               const ProductsAndPricesAvailableProductsWhenAddProductScreen()
                ],
           ),
         ),

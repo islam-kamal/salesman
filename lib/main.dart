@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:water/add_client_location_screen.dart';
 import 'package:water/add_store_information_screen.dart';
@@ -8,6 +10,7 @@ import 'package:water/client_details_indebt_screen.dart';
 import 'package:water/client_details_pending_screen.dart';
 import 'package:water/client_details_screen.dart';
 import 'package:water/client_details_visits_history_screen.dart';
+import 'package:water/collection_receipit_details_screen.dart';
 import 'package:water/error_in_network_screen.dart';
 import 'package:water/financial_collection_screen.dart';
 import 'package:water/index.dart';
@@ -27,6 +30,7 @@ import 'package:water/visit_details_screen_public.dart';
 import 'package:water/visit_details_screen_sales.dart';
 import 'package:water/visits_history_screen.dart';
 import 'package:water/visits_today_screen.dart';
+import 'package:water/widgets/attach_photos_screen_body.dart';
 import 'package:water/work_orders_order_details_return_screen.dart';
 import 'package:water/work_orders_screen.dart';
 
@@ -51,7 +55,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily:'GE Dinar One'
       ),
-      home: AvailableProductsScreen()    //AddClientLocationScreen()       //AddStoreInformationScreen()     //AddMerchantInformationScreen()      //LoginScreen(),        //ProfileScreen(),      //ChangePasswordScreen()           //ClientDetailsScreen(),       //ClientDetailsIndebtScreen(),       //ClientDetailsPendingScreen(),       //InventoryAvailableProductsScreen(),       //WorkOrdersOrderDetailsReturnScreen()    //WorkOrdersScreen(),    //OrderDetailsSaleScreen(),    //OrderDetailsReturnScreen()       //ReturnOrdersScreen()     //ClientDetailsVisitsHistoryScreen(),      //TraderDetailsScreen(),     //VisitsTodayScreenDetails()     //VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()           //FinancialCollectionScreen(),       //AvailableProductsScreen(),           //InventoryScreen(),     //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+      home: AttachPhotosScreen()      //PreviousInvoicesScreen()         //CollectionReceipitDetailsScreen(),      //FinancialCollectionScreen(),     //AvailableProductsScreen()    //AddClientLocationScreen()       //AddStoreInformationScreen()     //AddMerchantInformationScreen()      //LoginScreen(),        //ProfileScreen(),      //ChangePasswordScreen()           //ClientDetailsScreen(),       //ClientDetailsIndebtScreen(),       //ClientDetailsPendingScreen(),       //InventoryAvailableProductsScreen(),       //WorkOrdersOrderDetailsReturnScreen()    //WorkOrdersScreen(),    //OrderDetailsSaleScreen(),    //OrderDetailsReturnScreen()       //ReturnOrdersScreen()     //ClientDetailsVisitsHistoryScreen(),      //TraderDetailsScreen(),     //VisitsTodayScreenDetails()     //VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()       //AvailableProductsScreen(),           //InventoryScreen(),     //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
     );
   }
 }

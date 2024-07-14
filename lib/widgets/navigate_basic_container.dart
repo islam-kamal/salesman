@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/navigate_basic_container_item.dart';
 
+// ignore: must_be_immutable
 class NavigateBasicContainer extends StatelessWidget {
    NavigateBasicContainer({super.key, this.userType = "B2C"});
 
