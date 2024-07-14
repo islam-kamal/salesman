@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/duration_status_contianers.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/search_text_field.dart';
 import 'package:water/widgets/visits_history_screen_container_item.dart';
 

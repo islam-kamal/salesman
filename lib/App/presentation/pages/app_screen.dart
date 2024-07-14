@@ -1,8 +1,12 @@
 
+
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
+import 'package:water/Base/connectivity/network_indicator.dart';
+import 'package:water/Base/safe_area/page_container.dart';
 
 import '../../../widgets/drawer_review_product_screen.dart';
-import '../widgets/app_list_widget.dart';
 
 
 class AppScreen extends StatelessWidget {
@@ -13,7 +17,13 @@ class AppScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return NetworkIndicator(
+        child: PageContainer(
+        child: Directionality(
+        textDirection: LocalizeAndTranslate.getLanguageCode() == 'ar'
+        ? TextDirection.rtl
+        : TextDirection.ltr,
+    child:Scaffold(
       key: _key,
       drawer: const DrawerReviewProductScreen(),
 
@@ -29,19 +39,15 @@ class AppScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
-                          flex:6,
+                          flex: MediaQuery.of(context).orientation == Orientation.portrait ? 8 :11,
                           child:   child!
                       ),
                       Expanded(
-                          flex: 2,
-                          child:  Directionality(
-                              textDirection: TextDirection.rtl,
-                              child:Column(
+                          flex: 3,
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width * 0.23,
-                                height: MediaQuery.of(context).size.height * 0.041,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
                                     border: Border.all(
@@ -51,8 +57,10 @@ class AppScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8)
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 11),
-                                  child:  Row(
+                                  padding: const EdgeInsets.symmetric(horizontal: 11,vertical: 5),
+                                  child:  Row(textDirection: LocalizeAndTranslate.getLanguageCode() == 'en'
+                                      ? TextDirection.rtl
+                                      : TextDirection.ltr,
                                     children: [
                                       InkWell(
                                         onTap: () => _key.currentState!.openDrawer(),
@@ -76,13 +84,13 @@ class AppScreen extends StatelessWidget {
                               SizedBox(
                                 height: MediaQuery.of(context).size.height * 0.025,
                               ),
-                              const AppListWidget(),
+                              NavigateBasicContainer(),
                               SizedBox(
                                 height: MediaQuery.of(context).size.height * 0.025,
                               ),
                               button!
                             ],
-                              ))),
+                              )),
 
 
                     ],
@@ -91,6 +99,10 @@ class AppScreen extends StatelessWidget {
               ),
             ),
           )),
+                  ))
+   )
     );
   }
 }
+
+

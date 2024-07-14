@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/collected_button.dart';
 import 'package:water/widgets/collected_list_view_item.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/invoices_container.dart';
 import 'package:water/widgets/visit_details_container.dart';

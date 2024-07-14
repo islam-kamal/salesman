@@ -47,7 +47,7 @@ export 'login_email_text_field.dart';
 export 'login_password_text_field.dart';
 export 'login_screen_details.dart';
 export 'market_information_container.dart';
-export 'navigate_basic_container_widget.dart';
+export '../App/presentation/widgets/navigate_basic_container_widget.dart';
 export 'order_details_return_screen_body.dart';
 export 'order_details_sale_screen_body.dart';
 export 'payment_method.dart';

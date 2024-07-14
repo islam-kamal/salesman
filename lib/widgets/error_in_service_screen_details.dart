@@ -1,6 +1,6 @@
 import 'package:water/widgets/error_interface_widget.dart';
 
-import './navigate_basic_container_widget.dart';
+import '../App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:flutter/material.dart';
 
 class ErrorInServiceScreenDetails extends StatelessWidget {

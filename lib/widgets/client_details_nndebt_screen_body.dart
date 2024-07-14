@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/store_name_container.dart';
 import 'package:water/widgets/value_pill_date_number_container.dart';
 import 'package:water/widgets/visit_details_list_view_item.dart';

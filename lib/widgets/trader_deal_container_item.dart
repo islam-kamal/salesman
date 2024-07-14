@@ -1,42 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:water/Base/common/theme.dart';
 
 class TraderDealContainerItem extends StatelessWidget {
   const TraderDealContainerItem(
-      {super.key, required this.name, required this.image});
+      {super.key, required this.name, required this.image, this.onClickStatus});
 
   final String name;
   final String image;
+  final bool? onClickStatus;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+
+      },
       focusColor: const Color.fromARGB(255, 30, 133, 219),
       hoverColor: const Color.fromARGB(255, 30, 133, 219),
       onLongPress: () => Colors.blue,
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.23,
-        height: MediaQuery.of(context).orientation == Orientation.portrait
-            ? MediaQuery.of(context).size.height * 0.041
-            : MediaQuery.of(context).size.height * 0.07,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(8)),
+            color: onClickStatus! ? kBlueColor : Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Padding(
-          padding: const EdgeInsets.all(14),
+          padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
           child: Row(
             children: [
               Image.asset(
                 image,
-                color: Colors.black,
+                color: onClickStatus! ? kWhiteColor : kBlackColor,
+                scale: 1.5,
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.008,
+                width: MediaQuery.of(context).size.width * 0.01,
               ),
-              Text(
+          Flexible(
+            child:   Text(
                 name,
                 style:
-                    const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-              ),
+                     TextStyle(fontSize: 16, fontWeight: FontWeight.w500,
+                    color: onClickStatus! ? kWhiteColor : kBlackColor),
+                maxLines: 2,
+            )  ),
             ],
           ),
         ),

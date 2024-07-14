@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/invoices_container.dart';

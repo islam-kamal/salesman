@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/google_map_container.dart';
 import 'package:water/widgets/market_information_container.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/trader_file_container.dart';
 
 class ClientDetailsPendingScreenBody extends StatelessWidget {

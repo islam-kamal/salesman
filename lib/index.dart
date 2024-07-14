@@ -29,6 +29,5 @@ export 'visit_details_screen_returned.dart';
 export 'visit_details_screen_sales.dart';
 export 'work_orders_order_details_return_screen.dart';
 export 'work_orders_screen.dart';
-export 'basics/index.dart';
 export 'widgets/index.dart';
 

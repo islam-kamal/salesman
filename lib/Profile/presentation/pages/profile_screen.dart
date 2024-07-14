@@ -12,7 +12,9 @@ class ProfileScreen extends StatelessWidget {
       button: AppButtonWidget(
         asset: 'assets/images/add.png',
         text: 'اضافة منتج',
-        onClick: () {},
+        onClick: () {
+
+        },
       ),
     );
   }
