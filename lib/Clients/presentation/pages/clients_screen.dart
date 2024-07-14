@@ -9,11 +9,13 @@ class ClientsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreen(
       child: _Page(),
-      button: AppButtonWidget(
-        asset: 'assets/images/add.png',
-        text: 'اضافة عميل',
-        onClick: () {},
-      ),
+      button:[
+        AppButtonWidget(
+          asset: 'assets/images/add.png',
+          text: 'اضافة عميل',
+          onClick: () {},
+        ),
+      ]
     );
   }
 }

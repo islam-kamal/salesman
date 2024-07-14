@@ -22,12 +22,11 @@ export 'review_returned_products_screen.dart';
 export 'sold_products_screen.dart';
 export 'trader_details_screen.dart';
 export 'visits_history_screen.dart';
-export 'visits_today_screen.dart';
+export 'Visits/presentation/pages/Today/visits_today_screen.dart';
 export 'visit_details_screen_collected.dart';
 export 'visit_details_screen_public.dart';
 export 'visit_details_screen_returned.dart';
 export 'visit_details_screen_sales.dart';
 export 'work_orders_order_details_return_screen.dart';
 export 'work_orders_screen.dart';
-export 'widgets/index.dart';
 

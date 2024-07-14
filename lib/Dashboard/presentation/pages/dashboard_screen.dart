@@ -10,14 +10,17 @@ class DashboardScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
       child: _Page(),
-      button: AppButtonWidget(
-        asset: 'assets/images/add.png',
-        text: 'اضافة',
-        onClick: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
+      button: [
+        AppButtonWidget(
+          asset: 'assets/images/add.png',
+          text: 'اضافة',
+          onClick: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
 
-        },
-      ),
+          },
+        ),
+
+      ]
     );
   }
 

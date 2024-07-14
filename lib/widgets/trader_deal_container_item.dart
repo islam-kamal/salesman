@@ -12,14 +12,7 @@ class TraderDealContainerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-
-      },
-      focusColor: const Color.fromARGB(255, 30, 133, 219),
-      hoverColor: const Color.fromARGB(255, 30, 133, 219),
-      onLongPress: () => Colors.blue,
-      child: Container(
+    return  Container(
         decoration: BoxDecoration(
             color: onClickStatus! ? kBlueColor : Colors.white, borderRadius: BorderRadius.circular(8)),
         child: Padding(
@@ -45,7 +38,6 @@ class TraderDealContainerItem extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }

@@ -103,7 +103,7 @@ export 'transection_row_in_indebtedness_container.dart';
 export 'value_pill_date_number_container.dart';
 export 'visits_history_screen_container_item.dart';
 export 'visits_history_screen_details.dart';
-export 'visits_today_screen_details.dart';
+export '../Visits/presentation/pages/Today/visits_today_screen_details.dart';
 export 'visit_details_container.dart';
 export 'visit_details_container_item.dart';
 export 'visit_details_list_view_item.dart';

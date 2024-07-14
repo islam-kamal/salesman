@@ -13,44 +13,46 @@ class AppButtonWidget extends StatelessWidget{
         textDirection: LocalizeAndTranslate.getLanguageCode() == 'en'
         ? TextDirection.rtl
         : TextDirection.ltr,
-    child:  Container(
-      decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            color: Colors.grey,
-            width: 0.5,
-          ),
-          borderRadius: BorderRadius.circular(8)
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Container(
-          decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(8)
-          ),
-          child: TextButton(
-            clipBehavior: Clip.hardEdge,
-            onPressed: onClick,
-            child: Row(
-              children: [
-                Image.asset(
-                  asset, //  'assets/images/Icon-Wrapper(2).png'
-                  color: Colors.white,
-                  scale: 2,
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.008,
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: Colors.white
+    child:  Flexible(
+      child: Container(
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.grey,
+              width: 0.5,
+            ),
+            borderRadius: BorderRadius.circular(8)
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Container(
+            decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(8)
+            ),
+            child: TextButton(
+              clipBehavior: Clip.hardEdge,
+              onPressed: onClick,
+              child: Row(
+                children: [
+                  Image.asset(
+                    asset, //  'assets/images/Icon-Wrapper(2).png'
+                    color: Colors.white,
+                    scale: 2,
                   ),
-                ),
-              ],
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.008,
+                  ),
+                  Text(
+                    text,
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                        color: Colors.white
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

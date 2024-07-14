@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:water/Clients/presentation/pages/clients_screen.dart';
+import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
+import 'package:water/Profile/presentation/pages/profile_screen.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
 
 class NavigateBasicContainer extends StatefulWidget {
@@ -19,18 +23,27 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
 @override
   void initState() {
   elements = [
-    ElementEntity(title: 'الرئيسية', image: 'assets/images/VectorHome.png', onClickStatus: index == 0),
-    ElementEntity(title: 'الزيارات', image: 'assets/images/VectorVisits.png', onClickStatus: index == 1),
+    ElementEntity(title: 'الرئيسية', image: 'assets/images/VectorHome.png', screenIndex:  0),
+    ElementEntity(title: 'الزيارات', image: 'assets/images/VectorVisits.png', screenIndex:  1),
     ElementEntity(
         title: widget.userType == 'B2C' ? 'مرتجعات' : 'اوامر الشغل',
         image: widget.userType == 'B2C' ? 'assets/images/overView.png' : 'assets/images/IconWrapperrrrr.png',
-        onClickStatus: index == 2),
-    ElementEntity(title: 'العملاء', image: 'assets/images/VectorClints.png', onClickStatus: index == 3),
-    ElementEntity(title: 'المخزن', image: 'assets/images/VectorBuild.png', onClickStatus: index == 4),
-    ElementEntity(title: 'الحساب', image: 'assets/images/Vvvectorss.png', onClickStatus: index == 5),
+        screenIndex:  2),
+    ElementEntity(title: 'العملاء', image: 'assets/images/VectorClints.png', screenIndex:  3),
+    ElementEntity(title: 'المخزن', image: 'assets/images/VectorBuild.png', screenIndex:  4),
+    ElementEntity(title: 'الحساب', image: 'assets/images/Vvvectorss.png', screenIndex:  5),
   ];
     super.initState();
   }
+
+  List<Widget> _buildScreens = [
+    DashboardScreen(),
+    VisitsTodayScreen(),
+    ReturnOrdersScreen(),
+    ClientsScreen(),
+    InventoryScreen(),
+    ProfileScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -68,13 +81,15 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
                           onTap: () {
                             setState(() {
                               index = i;
+                              print("index : ${index}");
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> _buildScreens[index]));
                             });
-                            print("index : ${index}");
+
                           },
                           child: TraderDealContainerItem(
                             name: elements[i].title,
                             image: elements[i].image,
-                            onClickStatus: elements[i].onClickStatus,
+                            onClickStatus: elements[i].screenIndex == index,
                           ),
                         ),
                       );
@@ -93,9 +108,9 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
 class ElementEntity {
   final String title;
   final String image;
-  final bool onClickStatus;
+  final int screenIndex;
 
-  ElementEntity({required this.title, required this.image, required this.onClickStatus});
+  ElementEntity({required this.title, required this.image, required this.screenIndex});
 }
 
 
