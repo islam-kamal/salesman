@@ -91,7 +91,7 @@ class PreviousInvoicesScreenDetails extends StatelessWidget {
                               onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/CheckCircle.png',
+                                iconImage: 'assets/images/ChCircle.png',
                                 buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),
@@ -113,7 +113,14 @@ class PreviousInvoicesScreenDetails extends StatelessWidget {
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: 6,
                           itemBuilder: (context, index) {
-                            return const WaterItemPreviousInvoices();
+                            return const WaterItemPreviousInvoices(
+                        saleName: 'مبيعات 500 ر.س',
+                        pill: 'فاتورة رقم 123414',
+                        date: 'اصدار بتاريخ 21 / 8 / 2024',
+                        icon: 'assets/images/marketImage.png',
+                        color: Color(0xff0056C9),
+                        textIcon: '50 منتج',
+                      );
                           }),
                     ],
                   ),

@@ -91,7 +91,7 @@ class AttachPhotosScreenBody extends StatelessWidget {
                                     child: const Button(
                                       color: Colors.black,
                                       iconImage:
-                                          'assets/images/CheckCircle.png',
+                                          'assets/images/ChCircle.png',
                                       buttonName: 'انهاء الزيارة',
                                       textColor: Colors.white,
                                     ),

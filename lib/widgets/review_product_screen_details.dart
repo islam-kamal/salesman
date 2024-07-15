@@ -97,7 +97,7 @@ class ReviewProductScreenDetails extends StatelessWidget {
                              onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/CheckCircle.png',
+                                iconImage: 'assets/images/ChCircle.png',
                                 buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),
@@ -161,7 +161,7 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.006,
                     ),
-                    const PillPayment(),
+                    const PillPayment(textButton: 'اصدار الفاتورة',),
                   ],
                 ),
               ),

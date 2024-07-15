@@ -1,13 +1,13 @@
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
-import './products_and_prices_available_items_screen.dart';
-import './store_deal_container_widget.dart';
-import './water_item_available_items.dart';
-import 'package:flutter/material.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
+import 'package:water/widgets/products_and_prices_inventory_add_request_screen.dart';
 import 'package:water/widgets/search_text_field_available_items_screen.dart';
+import 'package:water/widgets/water_item_available_items.dart';
+import 'package:flutter/material.dart';
 
-class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
-  AvailableItemsScreenDetailsLandScape({super.key});
+class InventoryAddRequestScreenBody extends StatelessWidget {
+  InventoryAddRequestScreenBody({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -65,15 +65,16 @@ class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
-                        const StoreDealContainer(),
+                        NavigateBasicContainer(),
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.025,
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width * 0.24,
-                          height: MediaQuery.of(context).orientation == Orientation.portrait ?
-                             MediaQuery.of(context).size.height * 0.056
-                            : MediaQuery.of(context).size.height * 0.092,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.056
+                              : MediaQuery.of(context).size.height * 0.092,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
@@ -82,19 +83,20 @@ class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 5, vertical: 5),
                             child: Column(
                               children: [
                                 InkWell(
-                              onTap: () => Dialogs.showDialogFinishVisit(context),
-                              child: const Button(
-                                color: Colors.black,
-                                iconImage: 'assets/images/ChCircle.png',
-                                buttonName: 'انهاء الزيارة',
-                                textColor: Colors.white,
-                              ),
-                            ),
+                                  onTap: () =>
+                                      Dialogs.showDialogFinishVisit(context),
+                                  child: const Button(
+                                    color: Colors.white,
+                                    iconImage: 'assets/images/cancell.png',
+                                    buttonName: 'إلغاء الطلب',
+                                    textColor: Colors.black,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
@@ -106,7 +108,9 @@ class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SearchTextFieldAvailableItemsScreen(hintText: 'البحث عن صنف أو منتج',),
+                      const SearchTextFieldAvailableItemsScreen(
+                        hintText: 'البحث عن منتج',
+                      ),
                       ListView.builder(
                           shrinkWrap: true,
                           // physics: const NeverScrollableScrollPhysics(),
@@ -117,7 +121,7 @@ class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
                     ],
                   ),
                 ),
-                const ProductsAndPricesAvailableItemsScreen()
+                const ProductsAndPricesInventoryAddRequestScreen()
               ],
             ),
           ),

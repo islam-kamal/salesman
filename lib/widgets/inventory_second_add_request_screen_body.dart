@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/drawer_available_products_screen.dart';
-import 'package:water/widgets/products_and_prices_available_products_screen.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
+import 'package:water/widgets/products_and_prices_inventory_add_request_screen.dart';
+import 'package:water/widgets/search_text_field.dart';
 import 'package:water/widgets/search_text_field_available_products_screen.dart';
-import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/water_item_available_products.dart';
 
-class AvailableProductsScreenDetails extends StatelessWidget {
-  AvailableProductsScreenDetails({super.key});
+class InventorySecondAddRequestScreenBody extends StatelessWidget {
+  InventorySecondAddRequestScreenBody({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -68,15 +69,16 @@ class AvailableProductsScreenDetails extends StatelessWidget {
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.025,
                           ),
-                          const StoreDealContainer(),
+                          NavigateBasicContainer(),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.025,
                           ),
                           Container(
                             width: MediaQuery.of(context).size.width * 0.24,
-                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
-                             MediaQuery.of(context).size.height * 0.056
-                            : MediaQuery.of(context).size.height * 0.092,
+                            height: MediaQuery.of(context).orientation ==
+                                    Orientation.portrait
+                                ? MediaQuery.of(context).size.height * 0.056
+                                : MediaQuery.of(context).size.height * 0.092,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
@@ -90,13 +92,13 @@ class AvailableProductsScreenDetails extends StatelessWidget {
                               child: Column(
                                 children: [
                                   InkWell(
-                                    onTap: () => Dialogs.showDialogFinishVisit(context),
+                                    onTap: () =>
+                                        Dialogs.showDialogFinishVisit(context),
                                     child: const Button(
-                                      color: Colors.black,
-                                      iconImage:
-                                          'assets/images/ChCircle.png',
-                                      buttonName: 'انهاء الزيارة',
-                                      textColor: Colors.white,
+                                      color: Colors.white,
+                                      iconImage: 'assets/images/cancell.png',
+                                      buttonName: 'إلغاء الطلب',
+                                      textColor: Colors.black,
                                     ),
                                   ),
                                 ],
@@ -109,7 +111,28 @@ class AvailableProductsScreenDetails extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SearchTextFieldAvailableProductsScreen(),
+                      Row(
+                        children: [
+                          InkWell(
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+              child: const Icon(Icons.arrow_back),
+              ),
+            SizedBox(
+            width: MediaQuery.of(context).size.width * 0.019,
+          ),
+                          const Text(
+                            'المنتجات المتاحة',
+                            style: TextStyle(
+                                fontSize: 23, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.019,
+                      ),
+                      SearchTextField(hintTextField: 'البحث عن منتج'),
                       ListView.builder(
                           shrinkWrap: true,
                           physics: const NeverScrollableScrollPhysics(),
@@ -120,7 +143,7 @@ class AvailableProductsScreenDetails extends StatelessWidget {
                     ],
                   ),
                 ),
-                const ProductsAndPricesAvailableProductsScreen()
+                const ProductsAndPricesInventoryAddRequestScreen()
               ],
             ),
           ),

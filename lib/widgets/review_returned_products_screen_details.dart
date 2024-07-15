@@ -95,7 +95,7 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
                               onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/CheckCircle.png',
+                                iconImage: 'assets/images/ChCircle.png',
                                 buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),

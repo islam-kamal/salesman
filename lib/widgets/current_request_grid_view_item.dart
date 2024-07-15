@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:water/invoices_details_screen.dart';
 
-class WaterItemPreviousInvoices extends StatelessWidget {
-  const WaterItemPreviousInvoices(
+class CurrentRequestGridViewItem extends StatelessWidget {
+  const CurrentRequestGridViewItem(
       {super.key,
       required this.saleName,
       required this.pill,
       required this.date,
       required this.icon,
       required this.textIcon,
-      required this.color});
+      required this.color, required this.productNumber});
 
   final String saleName;
   final String pill;
   final String date;
   final String icon;
   final String textIcon;
+  final String productNumber;
   final Color color;
 
   @override
@@ -36,8 +37,8 @@ class WaterItemPreviousInvoices extends StatelessWidget {
                 width: double.infinity,
                 height:
                     MediaQuery.of(context).orientation == Orientation.portrait
-                        ? MediaQuery.of(context).size.height * 0.075
-                        : MediaQuery.of(context).size.height * 0.125,
+                        ? MediaQuery.of(context).size.height * 0.093
+                        : MediaQuery.of(context).size.height * 0.148,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(
@@ -73,8 +74,8 @@ class WaterItemPreviousInvoices extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     icon,
-                                    width: MediaQuery.of(context).size.width *
-                                        0.024,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.013,
                                     color: color,
                                   ),
                                   SizedBox(
@@ -120,6 +121,26 @@ class WaterItemPreviousInvoices extends StatelessWidget {
                             ),
                             Text(
                               date,
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 5),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/images/marketImage.png',
+                              height: MediaQuery.of(context).size.height * 0.012,
+                            color: Colors.black,
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.008,
+                            ),
+                            Text(
+                              productNumber,
                               style: const TextStyle(
                                   fontSize: 14, fontWeight: FontWeight.w300),
                             ),
