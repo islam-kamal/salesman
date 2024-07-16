@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
 
-class DrawerHomeScreen extends StatelessWidget {
-  const DrawerHomeScreen({super.key});
+class DrawerHomeScreenEdit extends StatelessWidget {
+  const DrawerHomeScreenEdit({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class DrawerHomeScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.012,
                   ),
                   const Text(
-                    'اضافة المنتج',
+                   'تعديل المنتج',
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -99,6 +99,29 @@ class DrawerHomeScreen extends StatelessWidget {
                           color: Colors.blue,
                           AssetImage('assets/images/AddCircle.png')),
                     ),
+                      SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.052,
+                        ),
+                        InkWell(
+                          onTap: (){},
+                          child: const ImageIcon(
+                            color: Colors.red,
+                            AssetImage(
+                              'assets/images/deleteee.png'
+                              ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.007,
+                        ),
+                        const Text(
+                          'ازالة من الفاتورة',
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
                   ],
                 ),
               ),

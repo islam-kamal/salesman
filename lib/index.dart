@@ -14,6 +14,7 @@ export 'collection_receipit_details_screen.dart';
 export 'error_in_network_screen.dart';
 export 'error_in_service_screen.dart';
 export 'financial_collection_screen.dart';
+export 'inventory_add_request_confirm_screen.dart';
 export 'inventory_add_request_screen.dart';
 export 'inventory_available_products_screen.dart';
 export 'inventory_current_request_details_screen.dart';

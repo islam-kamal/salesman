@@ -1161,6 +1161,7 @@ class Dialogs {
   }
 
 
+
 static Future<void>? showDialogAddProduct(parentContext) {
     return showDialog(
       context: parentContext,
@@ -1245,5 +1246,235 @@ static Future<void>? showDialogAddProduct(parentContext) {
       }
       );
       }
+
+
+
+  static Future<void>? showDialogSendRequest(parentContext) {
+    return showDialog(
+      context: parentContext,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Container(
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+             MediaQuery.of(context).size.height * 0.2
+             : MediaQuery.of(context).size.height * 0.38,
+            child: Column(
+              children: [
+                Image.asset(
+                  color: const Color(0xff23A36D),
+                  'assets/images/imagee-truee.png',
+                  width: MediaQuery.of(context).size.width * 0.12,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.004,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 11),
+                  child: Text(
+                   'تم ارسال الطلب',
+                    style: TextStyle(
+                        color: Color(0xff1D6E4F),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 16, top: 10),
+                  child: Column(
+                    children: [
+                      Text(
+                       'تم ارسال طلب بمبلغ 10,000 ر.س و50 منتج',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                       'سيتم الآن مراجعة الطلب',
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.07,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Color.fromARGB(255, 198, 195, 195),
+                              width: 0.8,
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'الرجوع للزيارة',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+              ],
+            ),
+              ]
+          ),
+          ),
+        );
+      },
+    );
+  }
+
+
+
+
+  static Future<void>? showDialogCancelRequest(parentContext) {
+    return showDialog(
+      context: parentContext,
+      builder: (context) {
+        return AlertDialog(
+          content: Container(
+            width: MediaQuery.of(context).size.width * 0.6,
+            height: MediaQuery.of(context).orientation == Orientation.portrait
+                ? MediaQuery.of(context).size.height * 0.19
+                : MediaQuery.of(context).size.height * 0.37,
+            child: Column(
+              children: [
+                Image.asset(
+                  color: Color(0xffDD7208),
+                  'assets/images/VectorError.png',
+                  width: MediaQuery.of(context).size.width * 0.12,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.013,
+                ),
+                const Text(
+                  'الغاء الطلب',
+                  style: TextStyle(
+                      color: Color(0xffAC6521),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 11),
+                  child: Text(
+                    'هل انت متأكد من إلغاء الطلب؟',
+                    style: TextStyle(
+                        color: Color(0xff5F480C),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300),
+                  ),
+                ),
+                const Text(
+                  'تحتاج الى ملئ البيانات من البداية في حالة الطلب مجدداً.',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 14),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          showSecondDialogFinancialCollection(context);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.038
+                              : MediaQuery.of(context).size.height * 0.07,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Color(0xffE34935),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Opacity(
+                                opacity: 0.8,
+                                child: Text(
+                                  'الغاء الطلب',
+                                  style: TextStyle(
+                                      color: Color(0xffAF2A1A),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ),
+                              SizedBox(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.006,
+                              ),
+                              Image.asset(
+                                'assets/images/cancell.png',
+                                color: const Color(0xffE34935),
+                                height:
+                                    MediaQuery.of(context).size.height * 0.015,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.038
+                              : MediaQuery.of(context).size.height * 0.07,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Color(0xffDCDFE3),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                               'استمرار الطلب',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                              ),
+                              SizedBox(
+                                width:
+                                    MediaQuery.of(context).size.width * 0.006,
+                              ),
+                              Image.asset('assets/images/arrowww.png'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+
+
 
 }

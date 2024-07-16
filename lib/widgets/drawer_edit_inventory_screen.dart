@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_available_products.dart';
-import 'package:water/widgets/water_item_in_drawer.dart';
 
 
 class DrawerEditInventoryScreen extends StatelessWidget{

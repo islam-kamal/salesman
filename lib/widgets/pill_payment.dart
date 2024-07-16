@@ -36,9 +36,14 @@ class PillPayment extends StatelessWidget {
               Expanded(
                 flex: 3,
                 child: InkWell(
-                  onTap: () => dialogName == 'pill' ? 
-                  Dialogs.showDialogReviewProducts(context)
-                  : Dialogs.showDialogSaveEdits(context),
+                  onTap: () {if(dialogName == 'pill'){
+                    Dialogs.showDialogReviewProducts(context);
+                  }else if(dialogName == 'edit'){
+                    Dialogs.showDialogSaveEdits(context);
+                  }else if(dialogName == 'send'){
+                    Dialogs.showDialogSendRequest(context);
+                  }
+                  },
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.23,
                     height: MediaQuery.of(context).orientation ==
