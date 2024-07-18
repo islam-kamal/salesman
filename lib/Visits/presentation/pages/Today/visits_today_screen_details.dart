@@ -21,7 +21,7 @@ class VisitsTodayDetailsScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
         child: _page(),
-        button: [
+        screenButtons: [
           AppButtonWidget(
             asset: 'assets/images/startVisit.png',
             text: 'بدأ الزيارة',

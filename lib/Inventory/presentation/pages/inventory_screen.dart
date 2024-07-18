@@ -9,7 +9,7 @@ class InventoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreen(
       child: _Page(),
-      button: [AppButtonWidget(
+      screenButtons: [AppButtonWidget(
         asset: 'assets/images/add.png',
         text: 'اضافة منتج',
         onClick: () {},

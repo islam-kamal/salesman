@@ -9,9 +9,9 @@ import '../../../widgets/drawer_review_product_screen.dart';
 
 class AppScreen extends StatelessWidget {
   final Widget? child;
-  final List<Widget>? button;
+  final List<Widget>? screenButtons;
 
-  AppScreen({this.child, this.button});
+  AppScreen({this.child, this.screenButtons});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -104,9 +104,9 @@ class AppScreen extends StatelessWidget {
                               Expanded(
                                 child: ListView.builder(
                                   shrinkWrap: true,
-                                  itemCount: button!.length,
+                                  itemCount: screenButtons!.length,
                                   itemBuilder: (context, index) {
-                                    return button![index];
+                                    return screenButtons![index];
                                   },
                                 ),
                               ),
