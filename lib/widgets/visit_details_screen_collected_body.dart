@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/collected_button.dart';
 import 'package:water/widgets/collected_list_view_item.dart';
-import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/invoices_container.dart';
 import 'package:water/widgets/visit_details_container.dart';
@@ -30,7 +30,7 @@ class VisitDetailsScreenCollectedBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

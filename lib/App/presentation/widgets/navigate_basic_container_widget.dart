@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
+import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Profile/presentation/pages/profile_screen.dart';
-import 'package:water/index.dart';
+import 'package:water/Visits/presentation/pages/Today/visits_today_screen.dart';
+import 'package:water/return_orders_screen.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
 
 class NavigateBasicContainer extends StatefulWidget {

@@ -1,3 +1,4 @@
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/products_and_prices_available_items_screen.dart';
 import 'package:water/widgets/search_text_field_available_items_screen.dart';
@@ -70,7 +71,10 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                         ),
                         Container(
                           width: MediaQuery.of(context).size.width * 0.24,
-                          height: MediaQuery.of(context).size.height * 0.056,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.056
+                              : MediaQuery.of(context).size.height * 0.092,
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
@@ -79,15 +83,16 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                               ),
                               borderRadius: BorderRadius.circular(8)),
                           child: Padding(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 5, vertical: 5),
                             child: Column(
                               children: [
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () =>
+                                      Dialogs.showDialogFinishVisit(context),
                                   child: const Button(
                                     color: Colors.black,
-                                    iconImage: 'assets/images/VectorAdddd.png',
+                                    iconImage: 'assets/images/ChCircle.png',
                                     buttonName: 'انهاء الزيارة',
                                     textColor: Colors.white,
                                   ),
@@ -103,7 +108,9 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SearchTextFieldAvailableItemsScreen(),
+                      const SearchTextFieldAvailableItemsScreen(
+                        hintText: 'البحث عن صنف أو منتج',
+                      ),
                       ListView.builder(
                           shrinkWrap: true,
                           // physics: const NeverScrollableScrollPhysics(),

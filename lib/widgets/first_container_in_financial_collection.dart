@@ -25,7 +25,7 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
             decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
-            color: const Color(0xffDD7208),
+            color: const Color(0xffE34935),
             width: 1,
             ),
             borderRadius: BorderRadius.circular(8)
@@ -34,6 +34,7 @@ class FirstContainerInFinancialCollection extends StatelessWidget{
           child: Text(
             'مستحق  25,000 ر.س',
             style: TextStyle(
+              color: Color(0xffAF2A1A),
               fontSize: 18,
               fontWeight: FontWeight.w500,
             ),

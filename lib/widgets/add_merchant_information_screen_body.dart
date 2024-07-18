@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/dialogs.dart';
+import 'package:water/widgets/add_merchant_text_field.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/store_name_container.dart';
-import 'package:water/widgets/value_pill_date_number_container.dart';
-import 'package:water/widgets/visit_details_list_view_item.dart';
+import 'package:water/widgets/navigate_add_merchant_container.dart';
 
-class ClientDetailsIndebtScreenBody extends StatelessWidget {
-  const ClientDetailsIndebtScreenBody({super.key});
+class AddMerchantInformationScreenBody extends StatelessWidget {
+  AddMerchantInformationScreenBody({super.key});
+
+  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // drawer: const Drawer(),
+        drawer: const Drawer(),
+        key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(
@@ -29,7 +31,7 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -42,7 +44,7 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () => _key.currentState!.openDrawer(),
                               child: const ImageIcon(AssetImage(
                                   'assets/images/Icon-Wrappppper.png')),
                             ),
@@ -64,7 +66,10 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    NavigateBasicContainer(),
+                    const NavigateAddMerchantContainer(
+                      merchantSecondImage: 'assets/images/IconIndicator.png',
+                      storeSecondImage: 'assets/images/IconIndicator.png',
+                    ),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
@@ -72,8 +77,8 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.24,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.17
-                          : MediaQuery.of(context).size.height * 0.27,
+                          ? MediaQuery.of(context).size.height * 0.114
+                          : MediaQuery.of(context).size.height * 0.182,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -87,11 +92,12 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                         child: Column(
                           children: [
                             InkWell(
-                              onTap: () {},
+                              onTap: () =>
+                                  Dialogs.showDialogSaveClient(context),
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/startVisit.png',
-                                buttonName: 'بدأ المعاملة',
+                                iconImage: 'assets/images/CheckCircle.png',
+                                buttonName: 'حفظ العميل',
                                 textColor: Colors.white,
                               ),
                             ),
@@ -100,24 +106,12 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                                   MediaQuery.of(context).size.height * 0.011,
                             ),
                             InkWell(
-                              onTap: () {},
+                              onTap: () =>
+                                  Dialogs.showDialogCancelClient(context),
                               child: const Button(
                                 color: Colors.white,
-                                iconImage: 'assets/images/Route.png',
-                                buttonName: 'الاتجاهات',
-                                textColor: Colors.black,
-                              ),
-                            ),
-                            SizedBox(
-                              height:
-                                  MediaQuery.of(context).size.height * 0.011,
-                            ),
-                            InkWell(
-                              onTap: () {},
-                              child: const Button(
-                                color: Colors.white,
-                                iconImage: 'assets/images/phonee.png',
-                                buttonName: 'الإتصال بالتاجر',
+                                iconImage: 'assets/images/cancell.png',
+                                buttonName: 'الغاء العميل',
                                 textColor: Colors.black,
                               ),
                             ),
@@ -131,75 +125,47 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
               Expanded(
                 flex: 5,
                 child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'اضافة معلومات التاجر',
+                      style: TextStyle(
+                        fontSize: 23,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.02,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.241
+                          : MediaQuery.of(context).size.height * 0.182,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(14)),
+                      child: const Column(
                         children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: const Icon(Icons.arrow_back)),
-                          const Text(
-                            'ملف المديونية',
-                            style: TextStyle(
-                              fontSize: 23,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                          AddMerchantTextField(
+                              hintTextField: 'ادخل الاسم ثلاثي',
+                              nameTextField: 'اسم التاجر',
+                              input: TextInputType.name),
+                          AddMerchantTextField(
+                              hintTextField: 'ادخل الرقم السعودي',
+                              nameTextField: 'رقم التليفون',
+                              input: TextInputType.phone),
+                          AddMerchantTextField(
+                              hintTextField: 'ادخل البريد الكتروني',
+                              nameTextField: 'البريد الالكتروني',
+                              input: TextInputType.emailAddress),
                         ],
                       ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
-                      ),
-                      const StoreNameContainer(),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
-                      ),
-
-
-
-
-
-                      Container(
-                        width: double.infinity,
-                        height: 444,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 0.5
-                          )
-                        ),
-                      ),
-
-
-
-
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.008,
-                      ),
-                      const ValuePillDateNumberContainer(),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.height * 0.014,
-                      ),
-                      ListView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 5,
-                          itemBuilder: (context, index) {
-                            return const Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 8),
-                              child: VisitDetailsListViewItem(
-                                number: 33,
-                                date: '23/5/2024',
-                                pillType: 'مرتجع',
-                                productNumber: '50 منتج',
-                                productValue: '42 ر.س',
-                              ),
-                            );
-                          }),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ),
             ],
           ),
         ),

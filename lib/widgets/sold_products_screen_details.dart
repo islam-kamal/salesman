@@ -29,8 +29,8 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.23,
-                   height: MediaQuery.of(context).size.height * 0.041,
+                    width: MediaQuery.of(context).size.width * 0.24,
+                   height: MediaQuery.of(context).size.height * 0.063,
                    decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(

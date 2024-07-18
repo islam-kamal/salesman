@@ -94,21 +94,21 @@ class _MyAppState extends State<MyApp> {
         MyApp.app_langauge = value;
       }
     });
- /*   String? device_token = await FirebaseMessaging.instance.getToken();
+    /*   String? device_token = await FirebaseMessaging.instance.getToken();
     sharedPreferenceManager.writeData(CachingKey.DEVICE_TOKEN, device_token);*/
   }
 
   @override
   void initState() {
     get_Static_data();
-   // _fcmConfigure(context);
+    // _fcmConfigure(context);
 
   }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
         locale: local,
         supportedLocales: LocalizeAndTranslate.getLocals(),
 
@@ -119,14 +119,14 @@ class _MyAppState extends State<MyApp> {
           DefaultCupertinoLocalizations.delegate,
         ],
         key: navigatorKey,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        fontFamily:'GE Dinar One'
-      ),
-    home: LocalizedApp(
-    child: DashboardScreen(),
-    ));
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+            fontFamily:'GE Dinar One'
+        ),
+        home: LocalizedApp(
+          child: DashboardScreen(),
+        ));
   }
 
 /*

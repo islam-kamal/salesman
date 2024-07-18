@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/returned_details_container.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/search_text_field.dart';
@@ -29,7 +29,7 @@ class OrderDetailsReturnScreenBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

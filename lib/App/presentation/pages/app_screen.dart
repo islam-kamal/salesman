@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
+import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
 
@@ -63,7 +64,7 @@ class AppScreen extends StatelessWidget {
                                 ),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                      horizontal: 11, vertical: 5),
+                                      horizontal: 11, vertical: 8),
                                   child: Row(
                                     textDirection:
                                     LocalizeAndTranslate.getLanguageCode() ==
@@ -101,15 +102,23 @@ class AppScreen extends StatelessWidget {
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
-                              Expanded(
-                                child: ListView.builder(
-                                  shrinkWrap: true,
-                                  itemCount: screenButtons!.length,
-                                  itemBuilder: (context, index) {
-                                    return screenButtons![index];
-                                  },
+                              Container(
+                                  decoration: BoxDecoration(
+                                    color: kWhiteColor,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: kInactiveColor)
+                                  ),
+                                  padding: EdgeInsets.all(5),
+                                  child: ListView.builder(
+                                      shrinkWrap: true,
+                                      itemCount: screenButtons!.length,
+                                      itemBuilder: (context, index) {
+                                        return  screenButtons![index];
+                                      },
+                                    ),
+
                                 ),
-                              ),
+
                             ],
                           ),
                         ),

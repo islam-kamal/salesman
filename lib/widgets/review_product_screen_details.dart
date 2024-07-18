@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/drawer_review_product_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
@@ -36,7 +37,7 @@ class ReviewProductScreenDetails extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -77,7 +78,9 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).size.height * 0.056,
+                      height: MediaQuery.of(context).orientation == Orientation.portrait ?
+                             MediaQuery.of(context).size.height * 0.056
+                            : MediaQuery.of(context).size.height * 0.092,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -91,10 +94,10 @@ class ReviewProductScreenDetails extends StatelessWidget {
                         child: Column(
                           children: [
                             InkWell(
-                              onTap: () {},
+                             onTap: () => Dialogs.showDialogFinishVisit(context),
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/VectorAdddd.png',
+                                iconImage: 'assets/images/ChCircle.png',
                                 buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),
@@ -158,7 +161,7 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.006,
                     ),
-                    const PillPayment(),
+                    const PillPayment(textButton: 'اصدار الفاتورة',),
                   ],
                 ),
               ),
