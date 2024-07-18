@@ -20,6 +20,7 @@ class AppScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return NetworkIndicator(
       child: PageContainer(
+
         child: Directionality(
           textDirection: LocalizeAndTranslate.getLanguageCode() == 'ar'
               ? TextDirection.rtl
