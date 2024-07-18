@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/trader_deal_container_item.dart';
+import 'package:water/widgets/navigate_basic_container_item.dart';
 
+// ignore: must_be_immutable
 class NavigateBasicContainer extends StatelessWidget {
    NavigateBasicContainer({super.key, this.userType = "B2C"});
 
@@ -34,46 +35,46 @@ String userType ;
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.014,
                 ),
-                const TraderDealContainerItem(
+                const NavigateBasicContainerItem(
                   name: 'الرئيسية',
                   image: 'assets/images/VectorHome.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-                const TraderDealContainerItem(
+                const NavigateBasicContainerItem(
                   name: 'الزيارات',
                   image: 'assets/images/VectorVisits.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-             userType == 'B2C' ?   const TraderDealContainerItem(
+             userType == 'B2C' ?   const NavigateBasicContainerItem(
                   name: 'مرتجعات',
                   image: 'assets/images/overView.png',
                 )
-                : const TraderDealContainerItem(
+                : const NavigateBasicContainerItem(
                   name: 'اوامر الشغل',
                   image: 'assets/images/IconWrapperrrrr.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-                const TraderDealContainerItem(
+                const NavigateBasicContainerItem(
                   name: 'العملاء',
                   image: 'assets/images/VectorClints.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-                const TraderDealContainerItem(
+                const NavigateBasicContainerItem(
                   name: 'المخزن',
                   image: 'assets/images/VectorBuild.png',
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.011,
                 ),
-                const TraderDealContainerItem(
+                const NavigateBasicContainerItem(
                   name: 'الحساب',
                   image: 'assets/images/Vvvectorss.png',
                 ),

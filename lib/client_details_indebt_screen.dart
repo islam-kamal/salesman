@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/client_details_nndebt_screen_body.dart';
+import 'package:water/widgets/client_details_indebt_screen_body.dart';
 
 class ClientDetailsIndebtScreen extends StatelessWidget{
   const ClientDetailsIndebtScreen({super.key});

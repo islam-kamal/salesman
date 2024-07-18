@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:water/widgets/button.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
-import 'package:water/widgets/pill_container.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/search_text_field.dart';
 
@@ -29,7 +29,7 @@ class InventoryAvailableProductsScreenBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -64,9 +64,53 @@ class InventoryAvailableProductsScreenBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
                     ),
-                    NavigateBasicContainer(userType: 'B2B'),
+                    NavigateBasicContainer(),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.025,
+                    ),
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.24,
+                      height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.height * 0.114
+                          : MediaQuery.of(context).size.height * 0.182,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          borderRadius: BorderRadius.circular(8)),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 5),
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.black,
+                                iconImage: 'assets/images/VectorAdddd.png',
+                                buttonName: 'طلب تحويل',
+                                textColor: Colors.white,
+                              ),
+                            ),
+                            SizedBox(
+                              height:
+                                  MediaQuery.of(context).size.height * 0.011,
+                            ),
+                            InkWell(
+                              onTap: () {},
+                              child: const Button(
+                                color: Colors.white,
+                                iconImage: 'assets/images/fileImage.png',
+                                buttonName: 'الطلبات الحالية',
+                                textColor: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -97,11 +141,7 @@ class InventoryAvailableProductsScreenBody extends StatelessWidget {
                       hintTextField: 'البحث عن منتج',
                     ),
                     SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.018,
-                    ),
-                    const PillContainer(containerName: 'الصنف'),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.018,
+                      height: MediaQuery.of(context).size.height * 0.014,
                     ),
                     const ImageNumberProductPriceContainer(),
                     ListView.builder(

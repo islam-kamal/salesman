@@ -60,9 +60,9 @@ _takePicture() async{
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.005,
               ),
-              const Icon(
-                Icons.add_circle_outline,
-                color: Color(0xff1D7AFC),
+              Image.asset(
+                'assets/images/AddCCCircle.png',
+                height: MediaQuery.of(context).size.height * 0.017,
               ),
             ],
           ),

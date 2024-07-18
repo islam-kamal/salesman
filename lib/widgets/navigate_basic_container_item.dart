@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TraderDealContainerItem extends StatelessWidget {
-  const TraderDealContainerItem(
+class NavigateBasicContainerItem extends StatelessWidget {
+  const NavigateBasicContainerItem(
       {super.key, required this.name, required this.image});
 
   final String name;

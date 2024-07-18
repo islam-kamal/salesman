@@ -33,7 +33,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
           width: MediaQuery.of(context).size.width * 0.24,
           height: MediaQuery.of(context).orientation == Orientation.portrait ?
           MediaQuery.of(context).size.height * 0.041
-          : MediaQuery.of(context).size.height * 0.052,
+          : MediaQuery.of(context).size.height * 0.063,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(
@@ -70,7 +70,10 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   ),
                   Container(
                       width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).size.height * 0.056,
+                      height: MediaQuery.of(context).orientation == Orientation.portrait ?
+                             MediaQuery.of(context).size.height * 0.056
+                            : MediaQuery.of(context).size.height * 0.092,
+                            
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -87,7 +90,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                               onTap: () {},
                               child: const Button(
                                 color: Colors.black,
-                                iconImage: 'assets/images/VectorAdddd.png',
+                                iconImage: 'assets/images/ChCircle.png',
                                 buttonName: 'انهاء الزيارة',
                                 textColor: Colors.white,
                               ),

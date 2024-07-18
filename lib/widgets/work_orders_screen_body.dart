@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/index.dart';
-import 'package:water/widgets/navigate_basic_container_widget.dart';
+import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/visit_type_containers.dart';
 import 'package:water/widgets/visits_history_screen_container_item.dart';
 
@@ -31,7 +31,7 @@ class WorkOrdersScreenBody extends StatelessWidget {
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.052,
+                          : MediaQuery.of(context).size.height * 0.063,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(

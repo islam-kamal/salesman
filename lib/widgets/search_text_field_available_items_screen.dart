@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class SearchTextFieldAvailableItemsScreen extends StatelessWidget{
-  const SearchTextFieldAvailableItemsScreen({super.key});
+  const SearchTextFieldAvailableItemsScreen({super.key, required this.hintText});
+
+final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,7 @@ class SearchTextFieldAvailableItemsScreen extends StatelessWidget{
                   color: Colors.black,
                   ),
                   
-                hintText: 'البحث عن صنف أو منتج',
+                hintText: hintText,
                 hintStyle: const TextStyle(
                   color: Color.fromARGB(255, 146, 155, 171),
                 )

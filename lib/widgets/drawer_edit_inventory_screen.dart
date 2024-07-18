@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/widgets/water_item_available_products.dart';
 
 
 class DrawerEditInventoryScreen extends StatelessWidget{
@@ -29,7 +29,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                         width: MediaQuery.of(context).size.width * 0.012,
                       ),
                       const Text(
-                        'تعديل المنتج',
+                        'تعديل الطلب',
                         style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w500
@@ -40,7 +40,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                   SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                  const WaterItemInDrawer(),
+                  const WaterItemAvailableProducts(),
                   const Text(
                     'العدد',
                     style: TextStyle(
@@ -121,30 +121,52 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Column(
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'الاجمالي',
-                              style: TextStyle(
-                                color: Color(0xff07326A),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300
-                              ),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/Banknote2.png'
+                                ),
+                                SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                                const Text(
+                                  'اجمالي 3,000 ر.س',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              '42 ر.س',
-                              style: TextStyle(
-                                 color: Color(0xff07326A),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500
-                              ),
+                            Row(
+                              children: [
+                                 Image.asset(
+                                  'assets/images/MoneyBag.png',
+                                  height: MediaQuery.of(context).size.height * 0.012,
+                                  color: const Color(0xffAC6521),
+                                ),
+                                 SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                                const Text(
+                                  'متبقى 200،000 المديونية',
+                                  style: TextStyle(
+                                     color: Color(0xffAC6521),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                           ),
                           GestureDetector(
                             onTap: (){},
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
+                              width: MediaQuery.of(context).size.width * 0.24,
                               height: MediaQuery.of(context).size.height * 0.039,
                               decoration: BoxDecoration(
                               color: Colors.white,
@@ -159,7 +181,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                                   children: [
                                     Image.asset(
                                       'assets/images/CheckCircle.png',
-                                      color: Color(0xff1D7AFC),
+                                      color: const Color(0xff1D7AFC),
                                       ),
                                     SizedBox(
                                     width: MediaQuery.of(context).size.width * 0.006,

@@ -1,6 +1,5 @@
 import './water_item_previous_invoices.dart';
 import 'package:flutter/material.dart';
-import 'package:water/basics/shared.dart';
 
 class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
   const SearchTextFieldInvoicesDetailsScreen({super.key});
@@ -33,7 +32,14 @@ class SearchTextFieldInvoicesDetailsScreen extends StatelessWidget{
         SizedBox(
             height: MediaQuery.of(context).size.height * 0.019,
           ),
-          const WaterItemPreviousInvoices(),
+          const WaterItemPreviousInvoices(
+                        saleName: 'مبيعات 500 ر.س',
+                        pill: 'فاتورة رقم 123414',
+                        date: 'اصدار بتاريخ 21 / 8 / 2024',
+                        icon: 'assets/images/marketImage.png',
+                        color: Color(0xff0056C9),
+                        textIcon: '50 منتج',
+                      ),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.01,
           ),

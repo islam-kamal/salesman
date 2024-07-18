@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_in_drawer.dart';
-
-
-
+import 'package:water/basics/dialogs.dart';
+import 'package:water/widgets/water_item_available_products.dart';
 
 class DrawerFirstAddInventoryScreen extends StatelessWidget{
   const DrawerFirstAddInventoryScreen({super.key});
@@ -31,7 +29,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                         width: MediaQuery.of(context).size.width * 0.012,
                       ),
                       const Text(
-                        'اضافة المنتج',
+                        'طلب تحويل',
                         style: TextStyle(
                           fontSize: 23,
                           fontWeight: FontWeight.w500
@@ -42,7 +40,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                   SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                  const WaterItemInDrawer(),
+                  const WaterItemAvailableProducts(),
                   const Text(
                     'العدد',
                     style: TextStyle(
@@ -68,7 +66,10 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                         ),
                           Container(
                             width: MediaQuery.of(context).size.width * 0.13,
-                            height: MediaQuery.of(context).size.height * 0.036,
+                            height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.036
+                            : MediaQuery.of(context).size.height * 0.07,
                             decoration: BoxDecoration(
                             color: Colors.white,
                             border: Border.all(
@@ -100,34 +101,59 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                      Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Column(
+                         Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              'الاجمالي',
-                              style: TextStyle(
-                                color: Color(0xff07326A),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300
-                              ),
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/Banknote2.png'
+                                ),
+                                SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                                const Text(
+                                  'اجمالي 3,000 ر.س',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
                             ),
-                            Text(
-                              '42 ر.س',
-                              style: TextStyle(
-                                 color: Color(0xff07326A),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500
-                              ),
+                            Row(
+                              children: [
+                                 Image.asset(
+                                  'assets/images/MoneyBag.png',
+                                  height: MediaQuery.of(context).size.height * 0.012,
+                                  color: const Color(0xffAC6521),
+                                ),
+                                 SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
+                      ),
+                                const Text(
+                                  'متبقى 200،000 المديونية',
+                                  style: TextStyle(
+                                     color: Color(0xffAC6521),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                           ),
                           GestureDetector(
                             onTap: (){
                               Navigator.of(context).pop();
-                              _showAlertDialog(context);
+                              Dialogs.showDialogAddProduct(context);
                             },
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 0.28,
-                              height: MediaQuery.of(context).size.height * 0.039,
+                              width: MediaQuery.of(context).size.width * 0.24,
+                              height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.039
+                            : MediaQuery.of(context).size.height * 0.07,
                               decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(
@@ -141,7 +167,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                                   children: [
                                     Image.asset(
                                       'assets/images/CheckCircle.png',
-                                      color: Color(0xff1D7AFC),
+                                      color: const Color(0xff1D7AFC),
                                       ),
                                     SizedBox(
                                     width: MediaQuery.of(context).size.width * 0.006,
@@ -149,7 +175,7 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                                     const Opacity(
                                       opacity:0.8,
                                       child: Text(
-                                        'اضافة للمخزن',
+                                        'أضافة المنتج للطلب',
                                         style: TextStyle(
                                           color: Color(0xff1D7AFC),
                                           fontSize: 14,
@@ -161,7 +187,6 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
                                 ),
                               ),
                           ),
-                          
                       ],
                     ),
                 ],
@@ -171,84 +196,3 @@ class DrawerFirstAddInventoryScreen extends StatelessWidget{
     );
   }
 }
-
-void _showAlertDialog(BuildContext context) {
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: Container(
-            width: MediaQuery.of(context).size.width * 0.55,
-            height: MediaQuery.of(context).size.height * 0.183,
-            child: Column(
-              children: [
-                Image.asset(
-                  color: Color(0xff23A36D),
-                  'assets/images/imagee-truee.png',
-                  width: MediaQuery.of(context).size.width * 0.1,
-                  ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 11),
-                    child: Text(
-                      'تم اضافة المنتج الى المخزن',
-                      style: TextStyle(
-                        color: Color(0xff1D6E4F),
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500
-                      ),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 16 , top: 10),
-                    child: Text(
-                      'تم اضافة عدد 2 مياه',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.55,
-                          height: MediaQuery.of(context).size.height * 0.038,
-                          decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                          color: Color.fromARGB(255, 215, 211, 211),
-                          width: 1.3,
-                          ),
-                            borderRadius: BorderRadius.circular(8)
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'الرجوع للمخزن',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300
-                                ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.006,
-                              ),
-                              Image.asset('assets/images/arrowww.png'),
-                            ],
-                          ),
-                      ),
-                    ],
-                  ),
-              ],
-            ),
-          ),
-        );
-      },
-    );
-  }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/widgets/water_item_available_products.dart';
 
 class DrawerSecondAddInventoryScreen extends StatelessWidget{
   DrawerSecondAddInventoryScreen({super.key});
@@ -72,9 +72,6 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
             ),
           )
         ),
-        // SizedBox(
-        //     height: MediaQuery.of(context).size.height * 0.001,
-        //   ),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -82,7 +79,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
             itemBuilder: (context , index){
               return InkWell(
                 onTap: () => _key.currentState!.openDrawer(),
-                child: const WaterItemInDrawer(),
+                child: const WaterItemAvailableProducts(),
                 );
                     }
                     ),
