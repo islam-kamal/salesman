@@ -15,39 +15,37 @@ class AppButtonWidget extends StatelessWidget{
         textDirection: LocalizeAndTranslate.getLanguageCode() == 'en'
         ? TextDirection.rtl
         : TextDirection.ltr,
-    child:  Flexible(
-      child: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Container(
-          decoration: BoxDecoration(
-              color: color == kBlackColor ? kBlackColor : kWhiteColor,
-              borderRadius: BorderRadius.circular(8),
-            border: Border.all(color:  kBlackColor)
-          ),
-          padding: EdgeInsets.all(3),
-          child: TextButton(
-            clipBehavior: Clip.hardEdge,
-            onPressed: onClick,
-            child: Row(
-              children: [
-                Image.asset(
-                  asset, //  'assets/images/Icon-Wrapper(2).png'
-                  color: color == kBlackColor ?  kWhiteColor : kBlackColor ,
-                  scale: 2,
+    child:  Padding(
+      padding: const EdgeInsets.all(8),
+      child: Container(
+        decoration: BoxDecoration(
+            color: color == kBlackColor ? kBlackColor : kWhiteColor,
+            borderRadius: BorderRadius.circular(8),
+          border: Border.all(color:  kBlackColor)
+        ),
+        padding: EdgeInsets.all(3),
+        child: TextButton(
+          clipBehavior: Clip.hardEdge,
+          onPressed: onClick,
+          child: Row(
+            children: [
+              Image.asset(
+                asset, //  'assets/images/Icon-Wrapper(2).png'
+                color: color == kBlackColor ?  kWhiteColor : kBlackColor ,
+                scale: 1.3,
+              ),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.008,
+              ),
+              Text(
+                text,
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: color == kBlackColor ?  kWhiteColor : kBlackColor
                 ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.008,
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      color: color == kBlackColor ?  kWhiteColor : kBlackColor
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

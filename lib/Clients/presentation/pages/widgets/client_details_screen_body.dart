@@ -16,16 +16,16 @@ class ClientDetailsScreenBody extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         // drawer: const Drawer(),
-        body: Padding(
-          padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
-          child: SingleChildScrollView(
+        body: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
                         icon: const Icon(Icons.arrow_back)),
                     const Text(
                       'تفاصيل التاجر',
@@ -91,7 +91,6 @@ class ClientDetailsScreenBody extends StatelessWidget {
             ),
           ),
         ),
-      ),
     );
   }
 }

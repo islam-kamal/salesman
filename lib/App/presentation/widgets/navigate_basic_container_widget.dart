@@ -7,7 +7,8 @@ import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
 import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Profile/presentation/pages/profile_screen.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen.dart';
-import 'package:water/return_orders_screen.dart';
+import 'package:water/inventory_available_products_screen.dart';
+import 'package:water/returns/presentation/pages/return_orders_screen.dart';
 import 'package:water/widgets/trader_deal_container_item.dart';
 
 class NavigateBasicContainer extends StatefulWidget {
@@ -43,7 +44,7 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
     VisitsTodayScreen(),
     ReturnOrdersScreen(),
     ClientsScreen(),
-    InventoryScreen(),
+    InventoryAvailableProductsScreen(),
     ProfileScreen()
   ];
   @override

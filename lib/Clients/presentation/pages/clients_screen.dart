@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/Clients/presentation/widgets/registered_customers_screen_container_item.dart';
+import 'package:water/Clients/presentation/pages/widgets/registered_customers_screen_container_item.dart';
 
 import '../../../App/presentation/pages/app_screen.dart';
 import '../../../App/presentation/widgets/app_home_button_widget.dart';
@@ -18,7 +18,7 @@ class ClientsScreen extends StatelessWidget {
           onClick: () {},
         ),
         AppButtonWidget(
-          asset: 'assets/images/add.png',
+          asset: 'assets/images/addWithoutBorder.png',
           text: 'طلبات اضافة',
           onClick: () {},
           color: kWhiteColor,
@@ -71,8 +71,8 @@ class _PageState extends State<_Page> {
               childAspectRatio:
               MediaQuery.of(context).orientation ==
                   Orientation.portrait
-                  ? 4.3 / 2
-                  : 5.2 / 2),
+                  ? 5.1 / 2
+                  : 5.9 / 2),
           itemCount: 8,
           itemBuilder: (context, index) {
             return const RegisteredCustomersScreenContainerItem(

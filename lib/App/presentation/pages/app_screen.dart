@@ -104,21 +104,21 @@ class AppScreen extends StatelessWidget {
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
                               Container(
-                                  decoration: BoxDecoration(
-                                    color: kWhiteColor,
+                                decoration: BoxDecoration(
+                                    color:  screenButtons!.length ==0 ? kTransparentColor : kWhiteColor,
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(color: kInactiveColor)
-                                  ),
-                                  padding: EdgeInsets.all(5),
-                                  child: ListView.builder(
-                                      shrinkWrap: true,
-                                      itemCount: screenButtons!.length,
-                                      itemBuilder: (context, index) {
-                                        return  screenButtons![index];
-                                      },
-                                    ),
-
+                                    border: Border.all(color: screenButtons!.length ==0 ? kTransparentColor : kInactiveColor)
                                 ),
+                                padding: EdgeInsets.all(5),
+                                child: ListView.builder(
+                                  shrinkWrap: true,
+                                  itemCount: screenButtons!.length,
+                                  itemBuilder: (context, index) {
+                                    return  screenButtons![index];
+                                  },
+                                ),
+
+                              ),
 
                             ],
                           ),

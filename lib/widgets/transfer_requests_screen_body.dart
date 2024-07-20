@@ -7,106 +7,12 @@ import 'package:water/widgets/visit_type_containers.dart';
 class TransferRequestsScreenBody extends StatelessWidget {
   TransferRequestsScreenBody({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        drawer: const Drawer(),
-        key: _key,
-        body: Padding(
-          padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.063,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 11),
-                        child: Row(
-                          children: [
-                            InkWell(
-                              onTap: () => _key.currentState!.openDrawer(),
-                              child: const ImageIcon(AssetImage(
-                                  'assets/images/Icon-Wrappppper.png')),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
-                            ),
-                            const Opacity(
-                              opacity: 0.8,
-                              child: Text(
-                                'اخفاء القائمة',
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    NavigateBasicContainer(),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    Container(
-                            width: MediaQuery.of(context).size.width * 0.24,
-                            height: MediaQuery.of(context).orientation == Orientation.portrait ?
-                             MediaQuery.of(context).size.height * 0.056
-                            : MediaQuery.of(context).size.height * 0.092,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Colors.grey,
-                                  width: 0.5,
-                                ),
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 5, vertical: 5),
-                              child: Column(
-                                children: [
-                                  InkWell(
-                                    onTap: (){},
-                                    child: const Button(
-                                      color: Colors.black,
-                                      iconImage:
-                                          'assets/images/AddCCCircle.png',
-                                      buttonName: 'طلب تحويل',
-                                      textColor: Colors.white,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 5,
-                child: Column(
+        body:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(children: [
@@ -146,7 +52,7 @@ class TransferRequestsScreenBody extends StatelessWidget {
                         crossAxisSpacing: 16,
                         childAspectRatio: MediaQuery.of(context).orientation ==
                                 Orientation.portrait
-                            ? 3.9 / 2
+                            ? 4.15 / 2
                             : 4.25 / 2,
                       ),
                       itemCount: 8,
@@ -164,10 +70,6 @@ class TransferRequestsScreenBody extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

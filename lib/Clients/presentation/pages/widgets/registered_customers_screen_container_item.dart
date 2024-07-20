@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
+import 'package:water/Clients/presentation/pages/client_details_screen.dart';
 
 class RegisteredCustomersScreenContainerItem extends StatelessWidget {
   const RegisteredCustomersScreenContainerItem(
@@ -23,7 +23,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
         builder: (context, constraints) {
           return InkWell(
             onTap: (){
-              customAnimatedPushNavigation(context, VisitsTodayDetailsScreen());
+              customAnimatedPushNavigation(context, const ClientDetailsScreen());
             },
             child: Container(
               decoration: BoxDecoration(
@@ -63,8 +63,12 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                         ),
                         Flexible(
                           child: Container(
+                            width: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                              ? MediaQuery.of(context).size.width * 0.111
+                            : MediaQuery.of(context).size.width * 0.072,
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 247, 245, 245),
+                              color: const Color.fromARGB(255, 247, 245, 245),
                               border: Border.all(
                                 color: Colors.grey,
                                 width: 0.5,
@@ -107,7 +111,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                           ),
                           Text(
                             money,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xff5F480C),
                               fontSize: 14,
                               fontWeight: FontWeight.w300,
@@ -126,7 +130,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                           ),
                           Text(
                             sales,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Color(0xff1D6E4F),
                               fontSize: 14,
                               fontWeight: FontWeight.w300,

@@ -121,7 +121,7 @@ class _MyAppState extends State<MyApp> {
         key: navigatorKey,
         theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-            useMaterial3: true,
+            useMaterial3: false,
             fontFamily:'GE Dinar One'
         ),
         home: LocalizedApp(

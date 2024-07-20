@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:water/client_details_indebt_screen.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Clients/presentation/pages/client_details_indebt_screen.dart';
+import 'package:water/Clients/presentation/pages/client_details_visits_history_screen.dart';
 import 'package:water/widgets/transection_row_in_indebtedness_container.dart';
 
 class IndebtednessContainer extends StatelessWidget {
@@ -10,7 +12,7 @@ class IndebtednessContainer extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: MediaQuery.of(context).orientation == Orientation.portrait
-          ? MediaQuery.of(context).size.height * 0.208
+          ? MediaQuery.of(context).size.height * 0.214
           : MediaQuery.of(context).size.height * 0.299,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -207,9 +209,7 @@ class IndebtednessContainer extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) =>
-                            const ClientDetailsIndebtScreen()));
+                    customAnimatedPushNavigation(context, const ClientDetailsIndebtScreen());
                   },
                   child: Container(
                     width: MediaQuery.of(context).orientation ==
@@ -251,7 +251,9 @@ class IndebtednessContainer extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    customAnimatedPushNavigation(context, const ClientDetailsVisitsHistoryScreen());
+                  },
                   child: Container(
                     width: MediaQuery.of(context).orientation ==
                             Orientation.portrait
