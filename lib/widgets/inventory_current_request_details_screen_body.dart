@@ -28,9 +28,14 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                   children: [
                     Row(
                       children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.arrow_back)),
+                        InkWell(
+                            onTap: (){
+                              Navigator.of(context).pop();
+                            },
+                            child: Icon(Icons.arrow_back)),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.008,
+                        ),
                         const Text(
                           'تفاصيل الطلب',
                           style: TextStyle(
@@ -56,7 +61,9 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         itemCount: 5,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              _key.currentState!.openDrawer();
+                            },
                             child: const ReviewProductWaterItem(),
                           );
                         }),

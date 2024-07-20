@@ -50,7 +50,6 @@ export 'inventory_add_request_screen_body.dart';
 export 'inventory_available_products_screen_body.dart';
 export 'inventory_current_request_details_screen_body.dart';
 export 'inventory_screen_water_item.dart';
-export 'inventory_second_add_request_screen_body.dart';
 export 'invoices_container.dart';
 export 'invoices_details_screen_body.dart';
 export 'location_container_widget.dart';

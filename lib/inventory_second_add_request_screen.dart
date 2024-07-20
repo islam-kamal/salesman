@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/pages/app_screen.dart';
+import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Base/common/theme.dart';
+import 'package:water/inventory_available_products_screen.dart';
 import 'package:water/widgets/inventory_second_add_request_screen_body.dart';
 
 class InventorySecondAddRequestScreen extends StatelessWidget{
@@ -6,6 +11,18 @@ class InventorySecondAddRequestScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return InventorySecondAddRequestScreenBody();
+    return AppScreen(
+      child: InventorySecondAddRequestScreenBody(),
+      screenButtons:[
+      AppButtonWidget(
+      asset: 'assets/images/addWithoutBorder.png',
+      text: 'إلغاء الطلب',
+      onClick: () {
+        customAnimatedPushNavigation(context, InventoryAvailableProductsScreen());
+      },
+      color: kWhiteColor,
+    ),
+    ]
+    );
   }
 }

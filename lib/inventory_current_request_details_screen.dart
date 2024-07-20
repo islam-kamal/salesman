@@ -13,13 +13,13 @@ class InventoryCurrentRequestDetailsScreen extends StatelessWidget{
         child: InventoryCurrentRequestDetailsScreenBody(),
         screenButtons:[
           AppButtonWidget(
-            asset: 'assets/images/add.png',
-            text: 'اضافة عميل',
+            asset: 'assets/images/VectorAdddd.png',
+            text: 'اضف منتج',
             onClick: () {},
           ),
           AppButtonWidget(
-            asset: 'assets/images/addWithoutBorder.png',
-            text: 'طلبات اضافة',
+            asset: 'assets/images/cancell.png',
+            text: 'إلغاء الطلب',
             onClick: () {},
             color: kWhiteColor,
           ),

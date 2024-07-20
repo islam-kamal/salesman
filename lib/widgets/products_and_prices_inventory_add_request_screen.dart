@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:water/index.dart';
 import 'package:water/review_product_screen.dart';
 
 class ProductsAndPricesInventoryAddRequestScreen extends StatelessWidget {
   const ProductsAndPricesInventoryAddRequestScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +145,7 @@ class ProductsAndPricesInventoryAddRequestScreen extends StatelessWidget {
                     child: InkWell(
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const ReviewProductScreen()));
+                            builder: (context) => const InventoryAddRequestConfirmScreen()));
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.23,

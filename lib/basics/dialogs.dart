@@ -1137,34 +1137,39 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: Color.fromARGB(255, 198, 195, 195),
-                              width: 0.8,
-                            ),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'الرجوع للزيارة',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w300),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset('assets/images/arrowww.png'),
-                          ],
+                    InkWell(
+                      onTap: (){
+                        customAnimatedPushNavigation(context, InventoryAddRequestScreen());
+                      },
+                      child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                          height: MediaQuery.of(context).orientation ==
+                                  Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.038
+                              : MediaQuery.of(context).size.height * 0.07,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Color.fromARGB(255, 198, 195, 195),
+                                width: 0.8,
+                              ),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'الرجوع للزيارة',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                              ),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width * 0.006,
+                              ),
+                              Image.asset('assets/images/arrowww.png'),
+                            ],
+                          ),
                         ),
-                      ),
+                    ),
               ],
             ),
               ]
@@ -1403,10 +1408,7 @@ static Future<void>? showDialogAddProduct(parentContext) {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                          showSecondDialogFinancialCollection(context);
-                        },
+                        onTap: () {},
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.27,
                           height: MediaQuery.of(context).orientation ==
