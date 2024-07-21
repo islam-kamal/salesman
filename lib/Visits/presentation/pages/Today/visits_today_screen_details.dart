@@ -4,7 +4,10 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Base/common/theme.dart';
 import 'package:water/Profile/presentation/pages/profile_screen.dart';
+import 'package:water/available_items_screen.dart';
 
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/google_map_container.dart';
@@ -20,14 +23,13 @@ class VisitsTodayDetailsScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-        child: _page(),
+        child: const _page(),
         screenButtons: [
           AppButtonWidget(
             asset: 'assets/images/startVisit.png',
             text: 'بدأ الزيارة',
             onClick: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
-
+              customAnimatedPushNavigation(context, AvailableItemsScreen());
             },
           ),
           AppButtonWidget(
@@ -38,11 +40,13 @@ class VisitsTodayDetailsScreen extends StatelessWidget{
               double longitude = -122.4194;  // Example longitude
               launchGoogleMaps(latitude, longitude);
             },
+            color: kWhiteColor,
           ),
           AppButtonWidget(
             asset: 'assets/images/phonee.png',
             text: 'الإتصال بالتاجر',
             onClick: ()=> launchUrlString("tel://21213123123"),
+            color: kWhiteColor,
           ),
         ]);
   }
@@ -69,11 +73,16 @@ class _page extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+               Row(
                 children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.arrow_back)),
+                   InkWell(
+                       onTap: (){
+                         Navigator.of(context).pop();
+                       },
+                       child: const Icon(Icons.arrow_back)),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width * 0.01,
+                  ),
                   const Text(
                     'تفاصيل التاجر',
                     style: TextStyle(

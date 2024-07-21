@@ -3,9 +3,9 @@ import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/inventory_add_request_screen.dart';
+import 'package:water/Inventory/presentation/pages/inventory_add_request_screen.dart';
+import 'package:water/Inventory/presentation/pages/widgets/inventory_available_products_screen_body.dart';
 import 'package:water/transfer_requests_screen.dart';
-import 'package:water/widgets/inventory_available_products_screen_body.dart';
 
 class InventoryAvailableProductsScreen extends StatelessWidget{
   const InventoryAvailableProductsScreen({super.key});

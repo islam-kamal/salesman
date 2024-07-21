@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/pages/app_screen.dart';
+import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
+import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/review_returned_products_screen_details.dart';
 
 class ReviewReturnedProductsScreen extends StatelessWidget{
@@ -6,6 +9,16 @@ class ReviewReturnedProductsScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return ReviewReturnedProductsScreenDetails();
+    return AppScreen(
+      child: ReviewReturnedProductsScreenDetails(),
+      screenButtons: [
+        AppButtonWidget(
+          asset: 'assets/images/VectorAdddd.png',
+          text: 'انهاء الزيارة',
+          onClick: () => Dialogs.showDialogFinishVisit(context),
+        ),
+      ],
+      subMenu: true,
+    );
   }
 }

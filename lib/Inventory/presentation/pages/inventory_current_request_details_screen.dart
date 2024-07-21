@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/widgets/inventory_current_request_details_screen_body.dart';
+import 'package:water/Inventory/presentation/pages/widgets/inventory_current_request_details_screen_body.dart';
 
 class InventoryCurrentRequestDetailsScreen extends StatelessWidget{
   const InventoryCurrentRequestDetailsScreen({super.key});

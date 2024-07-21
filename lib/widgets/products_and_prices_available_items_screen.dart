@@ -13,8 +13,8 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
           Container(
             width: MediaQuery.of(context).size.width * 0.245,
             height: MediaQuery.of(context).orientation == Orientation.portrait ?
-            MediaQuery.of(context).size.height * 0.193
-            : MediaQuery.of(context).size.height * 0.3,
+            MediaQuery.of(context).size.height * 0.18
+            : MediaQuery.of(context).size.height * 0.28,
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(

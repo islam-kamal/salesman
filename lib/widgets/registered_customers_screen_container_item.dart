@@ -63,6 +63,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                         ),
                         Flexible(
                           child: Container(
+                            width: MediaQuery.of(context).size.width * 0.114,
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 247, 245, 245),
                               border: Border.all(

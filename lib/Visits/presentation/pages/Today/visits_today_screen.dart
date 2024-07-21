@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/theme.dart';
 import 'package:water/Visits/presentation/pages/History/visits_history_screen.dart';
 import '../../../../App/presentation/pages/app_screen.dart';
 import '../../../../App/presentation/widgets/app_home_button_widget.dart';
@@ -26,8 +27,8 @@ class VisitsTodayScreen extends StatelessWidget{
           text: ' تاريخ الزيارات',
           onClick: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=> VisitsHistoryScreen()));
-
           },
+          color: kWhiteColor,
         ),
       ]);
   }
@@ -66,7 +67,7 @@ class _page extends StatelessWidget {
                 crossAxisCount: MediaQuery.of(context).orientation == Orientation.portrait ? 2 : 3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                childAspectRatio: MediaQuery.of(context).orientation == Orientation.portrait ? 3.7 / 2 : 4.5 / 2,
+                childAspectRatio: MediaQuery.of(context).orientation == Orientation.portrait ? 5.1 / 2 : 4.5 / 2,
               ),
               itemCount: 8,
               itemBuilder: (context, index) {

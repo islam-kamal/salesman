@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Inventory/presentation/pages/inventory_add_request_screen.dart';
+import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
 import 'package:water/index.dart';
 
 class Dialogs {
@@ -45,42 +47,7 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                        showSecondDialogFinancialCollection(context);
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: Color(0xff1D7AFC),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Opacity(
-                              opacity: 0.8,
-                              child: Text(
-                                'تم استلام المبلغ',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset(
-                                'assets/images/PrinterMinimalistic.png'),
-                          ],
-                        ),
-                      ),
-                    ),
+
                     InkWell(
                       onTap: () {
                         Navigator.of(context).pop();
@@ -110,6 +77,42 @@ class Dialogs {
                               width: MediaQuery.of(context).size.width * 0.006,
                             ),
                             Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        showSecondDialogFinancialCollection(context);
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.07,
+                        decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                'تم استلام المبلغ',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset(
+                                'assets/images/PrinterMinimalistic.png'),
                           ],
                         ),
                       ),
@@ -166,39 +169,7 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: Color(0xff1D7AFC),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Opacity(
-                              opacity: 0.8,
-                              child: Text(
-                                'طباعة الفاتورة',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset(
-                                'assets/images/PrinterMinimalistic.png'),
-                          ],
-                        ),
-                      ),
-                    ),
+
                     InkWell(
                       onTap: () {
                         Navigator.of(context).pop();
@@ -228,6 +199,39 @@ class Dialogs {
                               width: MediaQuery.of(context).size.width * 0.006,
                             ),
                             Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.07,
+                        decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                'طباعة الفاتورة',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset(
+                                'assets/images/PrinterMinimalistic.png'),
                           ],
                         ),
                       ),
@@ -287,40 +291,9 @@ class Dialogs {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.065,
-                        decoration: BoxDecoration(
-                            color: Color(0xff1D7AFC),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Opacity(
-                              opacity: 0.8,
-                              child: Text(
-                                'طباعة الفاتورة',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset(
-                                'assets/images/PrinterMinimalistic.png'),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        customAnimatedPushNavigation(context, InvoicesDetailsScreen());
+                      },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.27,
                         height: MediaQuery.of(context).orientation ==
@@ -346,6 +319,39 @@ class Dialogs {
                               width: MediaQuery.of(context).size.width * 0.006,
                             ),
                             Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.065,
+                        decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                'طباعة الفاتورة',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset(
+                                'assets/images/PrinterMinimalistic.png'),
                           ],
                         ),
                       ),
@@ -384,7 +390,7 @@ class Dialogs {
                 const Padding(
                   padding: EdgeInsets.only(top: 11),
                   child: Text(
-                    'تم اصدار الفاتورة رقم 12314 للتاجر فلان',
+                    'تم اصدار فاتورة البيع',
                     style: TextStyle(
                         color: Color(0xff1D6E4F),
                         fontSize: 18,
@@ -401,55 +407,61 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.27,
-                      height: MediaQuery.of(context).size.height * 0.038,
-                      decoration: BoxDecoration(
-                          color: Color(0xff1D7AFC),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Opacity(
-                            opacity: 0.8,
-                            child: Text(
-                              'طباعة الفاتورة',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300),
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).size.height * 0.038,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Color.fromARGB(255, 198, 195, 195),
+                              width: 0.8,
                             ),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.006,
-                          ),
-                          Image.asset('assets/images/PrinterMinimalistic.png'),
-                        ],
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'الرجوع للزيارة',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
                       ),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.27,
-                      height: MediaQuery.of(context).size.height * 0.038,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Color.fromARGB(255, 198, 195, 195),
-                            width: 0.8,
-                          ),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'الرجوع للزيارة',
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w300),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.006,
-                          ),
-                          Image.asset('assets/images/arrowww.png'),
-                        ],
+                    InkWell(
+                      onTap: (){},
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).size.height * 0.038,
+                        decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                'طباعة الفاتورة',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300),
+                              ),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset('assets/images/PrinterMinimalistic.png'),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -899,6 +911,7 @@ class Dialogs {
       context: parentContext,
       builder: (BuildContext context) {
         return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(33)),
           content: Container(
             width: MediaQuery.of(context).size.width * 0.6,
             height: MediaQuery.of(context).orientation == Orientation.portrait
@@ -934,7 +947,42 @@ class Dialogs {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation ==
+                            Orientation.portrait
+                            ? MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.07,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Color.fromARGB(255, 198, 195, 195),
+                              width: 0.8,
+                            ),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              'الرجوع للزيارة',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.w300),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
+                            ),
+                            Image.asset('assets/images/arrowww.png'),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        customAnimatedPushNavigation(context, VisitsTodayDetailsScreen());
+                      },
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.27,
                         height: MediaQuery.of(context).orientation ==
@@ -964,39 +1012,6 @@ class Dialogs {
                                'assets/images/CheckCircle.png',
                                color: Colors.white,
                                ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: Color.fromARGB(255, 198, 195, 195),
-                              width: 0.8,
-                            ),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'الرجوع للزيارة',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w300),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset('assets/images/arrowww.png'),
                           ],
                         ),
                       ),

@@ -11,8 +11,9 @@ import '../../../widgets/drawer_review_product_screen.dart';
 class AppScreen extends StatelessWidget {
   final Widget? child;
   final List<Widget>? screenButtons;
+  final bool subMenu;
 
-  AppScreen({this.child, this.screenButtons});
+  AppScreen({this.child, this.screenButtons,this.subMenu = false});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -98,7 +99,9 @@ class AppScreen extends StatelessWidget {
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
-                              NavigateBasicContainer(),
+                              NavigateBasicContainer(
+                                subMenu: subMenu,
+                              ),
                               SizedBox(
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,

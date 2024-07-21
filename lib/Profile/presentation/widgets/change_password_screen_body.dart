@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/navigtor.dart';
 import 'package:water/basics/dialogs.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/change_password_text_field.dart';
-import 'package:water/widgets/navigate_basic_container.dart';
 
 class ChangePasswordScreenBody extends StatelessWidget {
   ChangePasswordScreenBody({super.key});
@@ -47,7 +48,7 @@ class ChangePasswordScreenBody extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                        onTap: () => Dialogs.showDialogChangePassword(context),
+                       onTap: () => Dialogs.showDialogChangePassword(context),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.33,
                             height: MediaQuery.of(context).orientation ==
