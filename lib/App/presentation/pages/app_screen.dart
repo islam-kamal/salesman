@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
+import 'package:water/App/presentation/widgets/navigate_in_visit_details_container_widget.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
@@ -12,8 +13,9 @@ class AppScreen extends StatelessWidget {
   final Widget? child;
   final List<Widget>? screenButtons;
   final bool subMenu;
+  final bool container;
 
-  AppScreen({this.child, this.screenButtons,this.subMenu = false});
+  AppScreen({this.child, this.screenButtons,this.subMenu = false , this.container = false});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -106,6 +108,7 @@ class AppScreen extends StatelessWidget {
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
+                              container == false ?
                               Container(
                                 decoration: BoxDecoration(
                                     color:  screenButtons!.length ==0 ? kTransparentColor : kWhiteColor,
@@ -120,8 +123,10 @@ class AppScreen extends StatelessWidget {
                                     return  screenButtons![index];
                                   },
                                 ),
-
-                              ),
+                              )
+                                  : NavigateInVisitDetailsContainer(
+                                subMenu: subMenu,
+                              )
 
                             ],
                           ),

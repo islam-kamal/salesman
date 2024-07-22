@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/attach_photos_screen_body.dart';
+import 'package:water/widgets/previous_invoices_screen_details.dart';
 
-class AttachPhotosScreen extends StatelessWidget{
-  const AttachPhotosScreen({super.key});
+class PreviousInvoicesScreen extends StatelessWidget{
+  const PreviousInvoicesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      subMenu: true,
-      child: AttachPhotosScreenBody(),
+      child: PreviousInvoicesScreenDetails(),
       screenButtons: [
         AppButtonWidget(
-          asset: 'assets/images/VectorAdddd.png',
+          asset: 'assets/images/ChCircle.png',
           text: 'انهاء الزيارة',
           onClick: () => Dialogs.showDialogFinishVisit(context),
         ),
       ],
+      subMenu: true,
     );
   }
 }

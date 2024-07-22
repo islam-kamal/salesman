@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/available_items_screen_details_land_scape.dart';
-import 'package:water/widgets/available_items_screen_details_protrait.dart';
+import 'package:water/Visits/presentation/pages/Today/widgets/available_items_screen_details_land_scape.dart';
+import 'package:water/Visits/presentation/pages/Today/widgets/available_items_screen_details_protrait.dart';
 
 
 class AvailableItemsScreenDetails extends StatelessWidget {

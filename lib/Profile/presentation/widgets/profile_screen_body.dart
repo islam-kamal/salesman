@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/button.dart';
-import 'package:water/widgets/navigate_basic_container.dart';
-import 'package:water/widgets/profile_details.dart';
-import 'package:water/widgets/profile_note_container.dart';
+import 'package:water/Profile/presentation/widgets/profile_details.dart';
+import 'package:water/Profile/presentation/widgets/profile_note_container.dart';
 
 class ProfileScreenBody extends StatelessWidget {
   const ProfileScreenBody({super.key});

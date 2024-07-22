@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/review_returned_products_screen_details.dart';
+import 'package:water/Visits/presentation/pages/Today/widgets/available_items_screen_details.dart';
 
-class ReviewReturnedProductsScreen extends StatelessWidget{
-  const ReviewReturnedProductsScreen({super.key});
+class AvailableItemsScreen extends StatelessWidget{
+  const AvailableItemsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      child: ReviewReturnedProductsScreenDetails(),
+      subMenu: true,
+      child: AvailableItemsScreenDetails(),
       screenButtons: [
         AppButtonWidget(
-          asset: 'assets/images/VectorAdddd.png',
+          asset: 'assets/images/ChCircle.png',
           text: 'انهاء الزيارة',
           onClick: () => Dialogs.showDialogFinishVisit(context),
         ),
       ],
-      subMenu: true,
     );
   }
 }

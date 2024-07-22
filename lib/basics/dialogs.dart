@@ -1172,15 +1172,15 @@ class Dialogs {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
-                                'الرجوع للزيارة',
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w300),
-                              ),
+                              Image.asset('assets/images/arrowww.png'),
                               SizedBox(
                                 width: MediaQuery.of(context).size.width * 0.006,
                               ),
-                              Image.asset('assets/images/arrowww.png'),
+                              const Text(
+                                'الرجوع للمخزن',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                              ),
                             ],
                           ),
                         ),
@@ -1423,6 +1423,40 @@ static Future<void>? showDialogAddProduct(parentContext) {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       InkWell(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.27,
+                          height: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                              ? MediaQuery.of(context).size.height * 0.038
+                              : MediaQuery.of(context).size.height * 0.07,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Color(0xffDCDFE3),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'استمرار الطلب',
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w300),
+                              ),
+                              SizedBox(
+                                width:
+                                MediaQuery.of(context).size.width * 0.006,
+                              ),
+                              Image.asset('assets/images/arrowww.png'),
+                            ],
+                          ),
+                        ),
+                      ),
+                      InkWell(
                         onTap: () {},
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.27,
@@ -1460,40 +1494,6 @@ static Future<void>? showDialogAddProduct(parentContext) {
                                 height:
                                     MediaQuery.of(context).size.height * 0.015,
                               ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 0.27,
-                          height: MediaQuery.of(context).orientation ==
-                                  Orientation.portrait
-                              ? MediaQuery.of(context).size.height * 0.038
-                              : MediaQuery.of(context).size.height * 0.07,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                color: Color(0xffDCDFE3),
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                               'استمرار الطلب',
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w300),
-                              ),
-                              SizedBox(
-                                width:
-                                    MediaQuery.of(context).size.width * 0.006,
-                              ),
-                              Image.asset('assets/images/arrowww.png'),
                             ],
                           ),
                         ),

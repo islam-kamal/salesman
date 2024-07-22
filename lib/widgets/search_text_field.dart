@@ -22,7 +22,7 @@ final String hintTextField;
                 ),
                 borderRadius: BorderRadius.circular(8)),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 1.5),
+              padding: const EdgeInsets.symmetric(vertical: 3.5),
               child: TextField(
                 cursorColor: Color.fromARGB(255, 66, 64, 64),
                 decoration: InputDecoration(

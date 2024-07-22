@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/index.dart';
-import 'package:water/review_product_screen.dart';
 
 class ProductsAndPricesInventoryAddRequestScreen extends StatelessWidget {
   const ProductsAndPricesInventoryAddRequestScreen({super.key});

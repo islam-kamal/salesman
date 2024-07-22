@@ -1,10 +1,10 @@
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/available_products_screen.dart';
+import 'package:water/Visits/presentation/pages/Today/available_products_screen.dart';
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
-import './products_and_prices_available_items_screen.dart';
-import './store_deal_container_widget.dart';
-import './water_item_available_items.dart';
+import '../../../../../widgets/products_and_prices_available_items_screen.dart';
+import '../../../../../widgets/store_deal_container_widget.dart';
+import '../../../../../widgets/water_item_available_items.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/search_text_field_available_items_screen.dart';
 

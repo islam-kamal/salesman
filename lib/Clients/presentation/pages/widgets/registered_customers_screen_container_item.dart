@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Clients/presentation/pages/client_details_screen.dart';
+import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
 
 class RegisteredCustomersScreenContainerItem extends StatelessWidget {
   const RegisteredCustomersScreenContainerItem(
@@ -23,7 +24,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
         builder: (context, constraints) {
           return InkWell(
             onTap: (){
-              customAnimatedPushNavigation(context, const ClientDetailsScreen());
+              customAnimatedPushNavigation(context, const VisitsTodayDetailsScreen());
             },
             child: Container(
               decoration: BoxDecoration(

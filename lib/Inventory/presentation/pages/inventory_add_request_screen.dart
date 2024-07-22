@@ -15,7 +15,7 @@ class InventoryAddRequestScreen extends StatelessWidget{
         child: InventoryAddRequestScreenBody(),
         screenButtons:[
           AppButtonWidget(
-            asset: 'assets/images/addWithoutBorder.png',
+            asset: 'assets/images/cancell.png',
             text: 'إلغاء الطلب',
             onClick: () {
               customAnimatedPushNavigation(context, InventoryAvailableProductsScreen());

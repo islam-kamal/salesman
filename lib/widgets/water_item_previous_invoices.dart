@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/invoices_details_screen.dart';
+import 'package:water/Visits/presentation/pages/Today/invoices_details_screen.dart';
 
 class WaterItemPreviousInvoices extends StatelessWidget {
   const WaterItemPreviousInvoices(

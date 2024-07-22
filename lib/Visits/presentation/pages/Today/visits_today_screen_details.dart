@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -6,16 +5,14 @@ import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/Profile/presentation/pages/profile_screen.dart';
-import 'package:water/available_items_screen.dart';
-
-import 'package:water/widgets/button.dart';
+import 'package:water/Visits/presentation/pages/Today/available_items_screen.dart';
+import 'package:water/index.dart';
 import 'package:water/widgets/google_map_container.dart';
 import 'package:water/widgets/indebtedness_container.dart';
 import 'package:water/widgets/market_information_container.dart';
-import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/widgets/trader_file_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
+
 
 class VisitsTodayDetailsScreen extends StatelessWidget{
   const VisitsTodayDetailsScreen({super.key});
@@ -77,7 +74,7 @@ class _page extends StatelessWidget {
                 children: [
                    InkWell(
                        onTap: (){
-                         Navigator.of(context).pop();
+                         customAnimatedPushNavigation(context, VisitsTodayScreen());
                        },
                        child: const Icon(Icons.arrow_back)),
                   SizedBox(

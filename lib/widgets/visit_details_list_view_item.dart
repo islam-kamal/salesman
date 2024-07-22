@@ -47,20 +47,23 @@ class VisitDetailsListViewItem extends StatelessWidget {
                 ),
                 Expanded(
                   flex: 4,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        pillType,
-                        style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w500),
-                      ),
-                      Text(
-                        productNumber,
-                        style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w300),
-                      ),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.007),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          pillType,
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w500),
+                        ),
+                        Text(
+                          productNumber,
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w300),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(

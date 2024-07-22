@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/button.dart';
-import 'package:water/widgets/drawer_edit_inventory_screen.dart';
-import 'package:water/widgets/drawer_first_add_inventory_screen.dart';
-import 'package:water/widgets/drawer_second_add_inventory_screen.dart';
+import 'package:water/Inventory/presentation/pages/widgets/drawer_edit_inventory_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/pill_payment.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/search_text_field.dart';
@@ -32,7 +28,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                             onTap: (){
                               Navigator.of(context).pop();
                             },
-                            child: Icon(Icons.arrow_back)),
+                            child: const Icon(Icons.arrow_back)),
                         SizedBox(
                           width: MediaQuery.of(context).size.width * 0.008,
                         ),

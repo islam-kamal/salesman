@@ -14,7 +14,7 @@ class FinancialCollectionScreen extends StatelessWidget{
       child: FinancialCollectionScreenDetails(),
       screenButtons: [
         AppButtonWidget(
-          asset: 'assets/images/VectorAdddd.png',
+          asset: 'assets/images/ChCircle.png',
           text: 'انهاء الزيارة',
           onClick: () => Dialogs.showDialogFinishVisit(context),
         ),

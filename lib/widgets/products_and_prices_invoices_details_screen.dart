@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
-import 'package:water/review_product_screen.dart';
+import 'package:water/Visits/presentation/pages/Today/review_returned_products_screen.dart';
+
 class ProductsAndPricesInvoicesDetailsScreen extends StatelessWidget {
   const ProductsAndPricesInvoicesDetailsScreen({super.key});
 

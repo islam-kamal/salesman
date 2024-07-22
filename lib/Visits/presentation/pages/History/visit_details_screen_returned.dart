@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/widgets/visit_details_screen_returned_body.dart';
 
 class VisitDetailsScreenReturned extends StatelessWidget{
@@ -6,6 +7,9 @@ class VisitDetailsScreenReturned extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return const VisitDetailsScreenReturnedBody();
+    return AppScreen(
+      child: VisitDetailsScreenReturnedBody(),
+      container: true,
+    );
   }
 }
