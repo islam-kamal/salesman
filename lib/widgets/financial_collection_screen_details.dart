@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Visits/presentation/pages/Today/widgets/deserved_invoices_item.dart';
 import 'package:water/collection_receipit_details_screen.dart';
-import 'package:water/widgets/button.dart';
-import 'package:water/widgets/deserved_invoices_item.dart';
 import 'package:water/widgets/first_container_in_financial_collection.dart';
 import 'package:water/widgets/payment_method_financial_collection.dart';
 import 'package:water/widgets/pill_payment_financial_collection.dart';
-import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/take_photo_widget.dart';
 
 class FinancialCollectionScreenDetails extends StatelessWidget {
