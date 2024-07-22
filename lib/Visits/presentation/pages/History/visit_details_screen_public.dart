@@ -9,7 +9,7 @@ class VisitDetailsScreenPublic extends StatelessWidget{
   Widget build(BuildContext context) {
    return AppScreen(
       child: VisitDetailsScreenPublicBody(),
-     container: true,
+     visitDetails: true,
     );
   }
 }

@@ -11,7 +11,7 @@ class ReviewProductScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      subMenu: true,
+      MenuType:  "subMenu",
       child: ReviewProductScreenDetails(),
       screenButtons: [
         AppButtonWidget(

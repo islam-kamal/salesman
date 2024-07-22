@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/Clients/presentation/pages/widgets/registered_customers_screen_container_item.dart';
+import 'package:water/Clients/presentation/pages/add_merchant_information_screen.dart';
+import 'package:water/Clients/presentation/widgets/registered_customers_screen_container_item.dart';
 
 import '../../../App/presentation/pages/app_screen.dart';
 import '../../../App/presentation/widgets/app_home_button_widget.dart';
@@ -15,12 +17,16 @@ class ClientsScreen extends StatelessWidget {
         AppButtonWidget(
           asset: 'assets/images/add.png',
           text: 'اضافة عميل',
-          onClick: () {},
+          onClick: () {
+            customAnimatedPushNavigation(context, AddMerchantInformationScreen());
+          },
         ),
         AppButtonWidget(
           asset: 'assets/images/addWithoutBorder.png',
           text: 'طلبات اضافة',
-          onClick: () {},
+          onClick: () {
+
+          },
           color: kWhiteColor,
         ),
       ]

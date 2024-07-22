@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
+import 'package:water/Authentication/presentation/pages/login_screen.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Profile/presentation/pages/profile_screen.dart';
 
@@ -12,10 +13,10 @@ class DashboardScreen extends StatelessWidget{
       child: _Page(),
       screenButtons: [
         AppButtonWidget(
-          asset: 'assets/images/add.png',
-          text: 'اضافة',
+          asset: 'assets/images/LogOut.png',
+          text: 'تسجيل خروج',
           onClick: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
 
           },
         ),

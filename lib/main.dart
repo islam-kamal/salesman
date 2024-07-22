@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
+import 'package:water/index.dart';
 import 'dart:io';
 import 'Base/Notifications/local_notification_service.dart';
 import 'Base/common/shared_preference_manger.dart';
@@ -125,7 +126,7 @@ class _MyAppState extends State<MyApp> {
             fontFamily:'GE Dinar One'
         ),
         home: LocalizedApp(
-          child: DashboardScreen(),
+          child: LoginScreen(),
         ));
   }
 

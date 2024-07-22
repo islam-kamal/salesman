@@ -75,4 +75,5 @@ class Shared {
 
   static double width = ScreenUtil.defaultSize.width;
   static double height = ScreenUtil.defaultSize.height;
+  static String userType = "B2C";
 }

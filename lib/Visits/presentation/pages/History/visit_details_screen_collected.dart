@@ -9,7 +9,7 @@ class VisitDetailsScreenCollected extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
       child: VisitDetailsScreenCollectedBody(),
-      container: true,
+      visitDetails: true,
     );
   }
 }

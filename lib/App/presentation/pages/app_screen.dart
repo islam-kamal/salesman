@@ -12,10 +12,12 @@ import '../../../widgets/drawer_review_product_screen.dart';
 class AppScreen extends StatelessWidget {
   final Widget? child;
   final List<Widget>? screenButtons;
-  final bool subMenu;
-  final bool container;
+  final String MenuType;
+  final bool visitDetails;
 
-  AppScreen({this.child, this.screenButtons,this.subMenu = false , this.container = false});
+
+  AppScreen({this.child, this.screenButtons,this.MenuType = "mainMenu" ,
+    this.visitDetails = false});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
 
@@ -102,13 +104,13 @@ class AppScreen extends StatelessWidget {
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
                               NavigateBasicContainer(
-                                subMenu: subMenu,
+                                menuType: MenuType,
                               ),
                               SizedBox(
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
-                              container == false ?
+                              visitDetails == false ?
                               Container(
                                 decoration: BoxDecoration(
                                     color:  screenButtons!.length ==0 ? kTransparentColor : kWhiteColor,
@@ -125,7 +127,6 @@ class AppScreen extends StatelessWidget {
                                 ),
                               )
                                   : NavigateInVisitDetailsContainer(
-                                subMenu: subMenu,
                               )
 
                             ],

@@ -18,7 +18,7 @@ class PreviousInvoicesScreen extends StatelessWidget{
           onClick: () => Dialogs.showDialogFinishVisit(context),
         ),
       ],
-      subMenu: true,
+      MenuType:  "subMenu",
     );
   }
 }

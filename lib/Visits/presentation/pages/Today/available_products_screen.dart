@@ -10,7 +10,7 @@ class AvailableProductsScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      subMenu: true,
+      MenuType:  "subMenu",
       child: AvailableProductsScreenDetails(),
       screenButtons: [
         AppButtonWidget(

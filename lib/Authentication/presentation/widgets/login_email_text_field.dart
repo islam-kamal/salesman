@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LoginEmailTextField extends StatelessWidget {
-  const LoginEmailTextField({super.key});
-
+   LoginEmailTextField({super.key});
+TextEditingController controller = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,6 +48,7 @@ class LoginEmailTextField extends StatelessWidget {
               Expanded(
                 flex: 20,
                 child: TextField(
+                  controller: controller,
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(

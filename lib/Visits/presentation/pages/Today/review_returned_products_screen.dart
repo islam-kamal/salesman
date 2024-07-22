@@ -18,7 +18,7 @@ class ReviewReturnedProductsScreen extends StatelessWidget{
           onClick: () => Dialogs.showDialogFinishVisit(context),
         ),
       ],
-      subMenu: true,
+      MenuType:  "subMenu",
     );
   }
 }

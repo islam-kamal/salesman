@@ -10,7 +10,7 @@ class AttachPhotosScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      subMenu: true,
+      MenuType: "subMenu",
       child: AttachPhotosScreenBody(),
       screenButtons: [
         AppButtonWidget(
