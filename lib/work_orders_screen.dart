@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/widgets/work_orders_screen_body.dart';
 
 class WorkOrdersScreen extends StatelessWidget{
@@ -6,6 +7,9 @@ class WorkOrdersScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return WorkOrdersScreenBody();
+    return AppScreen(
+      child: WorkOrdersScreenBody(),
+       screenButtons: [],
+    );
   }
 }
