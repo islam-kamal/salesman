@@ -124,7 +124,7 @@ class VisitsHistoryScreenContainerItem extends StatelessWidget {
                           Text(
                             store,
                             style: const TextStyle(
-                                color: Color(0xff5F480C),
+                                color: Color(0xFFAC6521),
                                 fontSize: 14,
                                 fontWeight: FontWeight.w300),
                           ),

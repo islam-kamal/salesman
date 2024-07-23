@@ -32,7 +32,7 @@ class Dialogs {
                   child: Text(
                     'تأكد من استلام المبلغ قبل اصدار الفاتورة',
                     style: TextStyle(
-                        color: Color(0xff5F480C),
+                        color: Color(0xFFAC6521),
                         fontSize: 18,
                         fontWeight: FontWeight.w500),
                   ),
@@ -512,7 +512,7 @@ class Dialogs {
                     child: Text(
                       'هل انت متأكد من تسجيل الخروج من التطبيق؟',
                       style: TextStyle(
-                          color: Color(0xff5F480C),
+                          color: Color(0xFFAC6521),
                           fontSize: 14,
                           fontWeight: FontWeight.w300),
                     ),
@@ -715,7 +715,7 @@ class Dialogs {
                   child: Text(
                     'هل انت متأكد من اضافة العميل؟',
                     style: TextStyle(
-                        color: Color(0xff5F480C),
+                        color: Color(0xFFAC6521),
                         fontSize: 14,
                         fontWeight: FontWeight.w300),
                   ),
@@ -1408,7 +1408,7 @@ static Future<void>? showDialogAddProduct(parentContext) {
                   child: Text(
                     'هل انت متأكد من إلغاء الطلب؟',
                     style: TextStyle(
-                        color: Color(0xff5F480C),
+                        color: Color(0xFFAC6521),
                         fontSize: 14,
                         fontWeight: FontWeight.w300),
                   ),

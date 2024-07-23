@@ -72,7 +72,7 @@ class IndebtednessContainer extends StatelessWidget {
                             const Text(
                               'مديونية مرتفعة',
                               style: TextStyle(
-                                  color: Color(0xff5F480C),
+                                  color: Color(0xFFAC6521),
                                   fontSize: 14,
                                   fontWeight: FontWeight.w300),
                             ),
@@ -183,7 +183,7 @@ class IndebtednessContainer extends StatelessWidget {
             const TransectionRowInIndebtednessContainer(
               image: 'assets/images/RestartCircle.png',
               name: 'مرتجع',
-              color: Color(0xff5F480C),
+              color: Color(0xFFAC6521),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.008,

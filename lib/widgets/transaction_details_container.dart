@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class TransactionDetailsContainer extends StatelessWidget{
@@ -6,13 +8,15 @@ class TransactionDetailsContainer extends StatelessWidget{
      required this.image,
       required this.color,
        required this.name,
-        required this.price
+        required this.price,
+    this.hasBorder = true
         });
 
 final String image;
 final String name;
 final String price;
 final Color color;
+final bool hasBorder;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +27,10 @@ final Color color;
               : MediaQuery.of(context).size.height * 0.12,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(
+        border: hasBorder ? Border.all(
               color: Colors.grey,
               width: 0.5,
-              ),
+              ) : Border(),
               borderRadius: BorderRadius.circular(8),
       ),
         child: Padding(

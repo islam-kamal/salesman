@@ -60,7 +60,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                             ),
                             TransactionDetailsContainer(
                               image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
+                              color: Color(0xFFAC6521),
                               name: 'مرتجعات',
                               price: '25,000 ر.س',
                             ),
