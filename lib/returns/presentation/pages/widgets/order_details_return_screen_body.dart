@@ -20,11 +20,14 @@ class OrderDetailsReturnScreenBody extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          IconButton(
-                              onPressed: () {
+                          InkWell(
+                              onTap: (){
                                 Navigator.of(context).pop();
                               },
-                              icon: const Icon(Icons.arrow_back)),
+                              child: Icon(Icons.arrow_back)),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 0.01,
+                          ),
                           const Text(
                             'تفاصيل امر المرتجع',
                             style: TextStyle(
