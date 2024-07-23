@@ -16,15 +16,6 @@ class DashboardScreen extends StatelessWidget{
     return AppScreen(
       child: _Page(),
       screenButtons: [
-        AppButtonWidget(
-          asset: 'assets/images/LogOut.png',
-          text: 'تسجيل خروج',
-          onClick: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
-
-          },
-        ),
-
       ]
     );
   }

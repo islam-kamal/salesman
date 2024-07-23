@@ -562,7 +562,7 @@ class Dialogs {
                         ),
                         InkWell(
                           onTap: () {
-                            customAnimatedPushNavigation(context, LoginScreen());
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.27,
@@ -648,29 +648,34 @@ class Dialogs {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.01,
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width * 0.27,
-                  height: MediaQuery.of(context).size.height * 0.038,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Color.fromARGB(255, 198, 195, 195),
-                        width: 0.8,
-                      ),
-                      borderRadius: BorderRadius.circular(5)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'الرجوع للتطبيق',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w300),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.006,
-                      ),
-                      Image.asset('assets/images/arrowww.png'),
-                    ],
+                InkWell(
+                  onTap: (){
+                    customAnimatedPushNavigation(context, ProfileScreen());
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width * 0.27,
+                    height: MediaQuery.of(context).size.height * 0.038,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Color.fromARGB(255, 198, 195, 195),
+                          width: 0.8,
+                        ),
+                        borderRadius: BorderRadius.circular(5)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'الرجوع للتطبيق',
+                          style: TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w300),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.006,
+                        ),
+                        Image.asset('assets/images/arrowww.png'),
+                      ],
+                    ),
                   ),
                 ),
               ],
