@@ -11,16 +11,19 @@ class LinearProgressIndicatorWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(8.0),
-
+          border: Border.all(color: kInactiveColor)
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'مبيعات يوم الاثنين 2024/5/28',
-              style: TextStyle(
-                fontSize: 14.0,
-                fontWeight: FontWeight.bold,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5),
+              child: Text(
+                'مبيعات يوم الاثنين 2024/5/28',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
             SizedBox(height: 8.0),

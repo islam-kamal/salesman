@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/shared.dart';
+import 'package:water/Visits/presentation/widgets/photo_gallery_widget.dart';
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
@@ -33,7 +35,11 @@ class AttachPhotosScreenBody extends StatelessWidget {
                               fontWeight: FontWeight.w300),
                         ),
                       ),
+
+
+
                       const TakePhoto(),
+
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Row(

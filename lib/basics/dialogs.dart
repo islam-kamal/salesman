@@ -528,6 +528,50 @@ class Dialogs {
                       children: [
                         InkWell(
                           onTap: () {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.27,
+                            height: MediaQuery.of(context).orientation ==
+                                Orientation.portrait
+                                ? MediaQuery.of(context).size.height * 0.038
+                                : MediaQuery.of(context).size.height * 0.07,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                  color: Color(0xffE34935),
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Opacity(
+                                  opacity: 0.8,
+                                  child: Text(
+                                    'تسجيل خروج من التطبيق',
+                                    style: TextStyle(
+                                        color: Color(0xffAF2A1A),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width:
+                                  MediaQuery.of(context).size.width * 0.006,
+                                ),
+                                Image.asset(
+                                  'assets/images/LogOut.png',
+                                  color: const Color(0xffE34935),
+                                  height:
+                                  MediaQuery.of(context).size.height * 0.015,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        InkWell(
+                          onTap: () {
                             Navigator.of(context).pop();
                           },
                           child: Container(
@@ -560,50 +604,7 @@ class Dialogs {
                             ),
                           ),
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
-                          },
-                          child: Container(
-                            width: MediaQuery.of(context).size.width * 0.27,
-                            height: MediaQuery.of(context).orientation ==
-                                    Orientation.portrait
-                                ? MediaQuery.of(context).size.height * 0.038
-                                : MediaQuery.of(context).size.height * 0.07,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Color(0xffE34935),
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(5)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Opacity(
-                                  opacity: 0.8,
-                                  child: Text(
-                                    'تسجيل خروج من التطبيق',
-                                    style: TextStyle(
-                                        color: Color(0xffAF2A1A),
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                ),
-                                SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.006,
-                                ),
-                                Image.asset(
-                                  'assets/images/LogOut.png',
-                                  color: const Color(0xffE34935),
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.015,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+
           
                       ],
                     ),
@@ -1075,34 +1076,39 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                        width: MediaQuery.of(context).size.width * 0.27,
-                        height: MediaQuery.of(context).orientation ==
-                                Orientation.portrait
-                            ? MediaQuery.of(context).size.height * 0.038
-                            : MediaQuery.of(context).size.height * 0.07,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              color: Color.fromARGB(255, 198, 195, 195),
-                              width: 0.8,
-                            ),
-                            borderRadius: BorderRadius.circular(5)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'الرجوع للزيارة',
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w300),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.006,
-                            ),
-                            Image.asset('assets/images/arrowww.png'),
-                          ],
-                        ),
-                      ),
+                   InkWell(
+                     onTap: (){
+                       Navigator.pop(context);
+                     },
+                     child:  Container(
+                       width: MediaQuery.of(context).size.width * 0.27,
+                       height: MediaQuery.of(context).orientation ==
+                           Orientation.portrait
+                           ? MediaQuery.of(context).size.height * 0.038
+                           : MediaQuery.of(context).size.height * 0.07,
+                       decoration: BoxDecoration(
+                           color: Colors.white,
+                           border: Border.all(
+                             color: Color.fromARGB(255, 198, 195, 195),
+                             width: 0.8,
+                           ),
+                           borderRadius: BorderRadius.circular(5)),
+                       child: Row(
+                         mainAxisAlignment: MainAxisAlignment.center,
+                         children: [
+                           const Text(
+                             'الرجوع للزيارة',
+                             style: TextStyle(
+                                 fontSize: 14, fontWeight: FontWeight.w300),
+                           ),
+                           SizedBox(
+                             width: MediaQuery.of(context).size.width * 0.006,
+                           ),
+                           Image.asset('assets/images/arrowww.png'),
+                         ],
+                       ),
+                     ),
+                   ),
               ],
             ),
               ]

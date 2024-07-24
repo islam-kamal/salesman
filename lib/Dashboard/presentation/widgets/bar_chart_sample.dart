@@ -9,7 +9,8 @@ class BarChartSample extends StatelessWidget {
       aspectRatio: 1.5,
       child: Card(
         elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),
+        side: BorderSide(color: kInactiveColor)),
         color: const Color(0xffffffff),
         child: Directionality(
           textDirection: TextDirection.rtl,
@@ -35,7 +36,8 @@ class BarChartSample extends StatelessWidget {
                           icon: Icon(Icons.arrow_back_ios),
                           onPressed: () {},
                         ),
-                        Text('اكتوبر 2023 - مارس 2024'),
+                        Text('اكتوبر 2023 - مارس 2024',
+                        style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14),),
                         IconButton(
                           icon: Icon(Icons.arrow_forward_ios),
                           onPressed: () {},
@@ -182,7 +184,7 @@ class BarChartSample extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.04,
                             height: MediaQuery.of(context).size.width * 0.04,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               color: Colors.orange,
                             ),
                           ),
@@ -206,7 +208,7 @@ class BarChartSample extends StatelessWidget {
                            width: MediaQuery.of(context).size.width * 0.04,
                            height: MediaQuery.of(context).size.width * 0.04,
                            decoration: BoxDecoration(
-                             borderRadius: BorderRadius.circular(10),
+                             borderRadius: BorderRadius.circular(5),
                              color: kBlueColor,
                            ),
                          ),
@@ -229,7 +231,7 @@ class BarChartSample extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.04,
                             height: MediaQuery.of(context).size.width * 0.04,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(5),
                               color: Colors.green,
                             ),
                           ),

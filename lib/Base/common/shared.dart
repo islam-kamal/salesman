@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:multi_image_picker_plus/multi_image_picker_plus.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/main.dart';
 
@@ -76,4 +79,8 @@ class Shared {
   static double width = ScreenUtil.defaultSize.width;
   static double height = ScreenUtil.defaultSize.height;
   static String userType = "B2C";
+  static List<File> images_list = [];
+  static List<Asset> assets_list = [];
+
+
 }

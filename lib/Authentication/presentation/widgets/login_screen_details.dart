@@ -324,9 +324,12 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
                 ),
                 Expanded(
                   flex: 2,
-                  child: Image.asset(
-                    'assets/images/loginImage.png',
-                    fit: BoxFit.fill,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16.0), // Set the radius as needed
+                    child: Image.asset(
+                      'assets/images/loginImage.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ],

@@ -15,8 +15,7 @@ class DashboardScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
       child: _Page(),
-      screenButtons: [
-      ]
+      screenButtons: []
     );
   }
 
@@ -50,13 +49,14 @@ class _PageState extends State<_Page> {
             child: Container(
                      decoration: BoxDecoration(
                        color: kWhiteColor,
-                       borderRadius: BorderRadius.circular(10)
+                       borderRadius: BorderRadius.circular(10),
+                       border: Border.all(color: kInactiveColor)
                      ),
                       height: MediaQuery.of(context).size.height * 0.11,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(padding: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+                          Padding(padding: EdgeInsets.symmetric(horizontal: 5,vertical: 10),
                           child: Text(
                             'احصائيات شهر مارس',
                             style: TextStyle(

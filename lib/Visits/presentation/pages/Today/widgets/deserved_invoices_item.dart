@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/theme.dart';
 
 class DeservedInvoicesItem extends StatelessWidget {
   const DeservedInvoicesItem({super.key});
@@ -34,9 +35,47 @@ class DeservedInvoicesItem extends StatelessWidget {
                     fontWeight: FontWeight.w500),
               ),
             ),
-            const Expanded(
+             Expanded(
               flex: 1,
-              child: CircularProgressIndicator.adaptive()
+              child:Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+            /*      Container(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(
+                        value: 20,
+                        backgroundColor: kGreenColor,
+                        color: kGreenColor,
+                      ) ),*/
+                Container(
+                width: 20,
+                height: 20,
+                child:  ShaderMask(
+                    shaderCallback: (rect) {
+                      return RadialGradient(
+                        colors: [Colors.green, Colors.greenAccent],
+                        radius: 0.5,
+                        tileMode: TileMode.mirror,
+                      ).createShader(rect);
+                    },
+                    child: CircularProgressIndicator(
+                      strokeWidth:3.0,
+                      value: 20,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.greenAccent), // No need for color here
+                      backgroundColor: Colors.grey,
+                    ),
+                ) ),
+               Padding(padding: EdgeInsets.symmetric(horizontal: 10),
+               child:    const Text(
+                 ' % 30',
+                 style: TextStyle(
+                     color: Color(0xffAC6521),
+                     fontSize: 18,
+                     fontWeight: FontWeight.w300),
+               ),),
+                ],
+              )
             ),
             Expanded(
               flex: 1,
