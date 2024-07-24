@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:water/Base/common/theme.dart';
 
 class BarChartSample extends StatelessWidget {
+  final String title;
+  BarChartSample({required this.title});
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -23,7 +25,7 @@ class BarChartSample extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      'احصائيات شهرية',
+                      title ,
                       style: TextStyle(
                         color: const Color(0xff0f4a3c),
                         fontSize: 18,

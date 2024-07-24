@@ -175,9 +175,9 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
                       setState(() {
                         index = i;
                         print("index : ${index}");
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> _mainMenuBuildScreens[index]));
+                       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> _mainMenuBuildScreens[index]));
                       });
-
+                      navigateToScreen(context,index,_mainMenuBuildScreens);
                     },
                     child: TraderDealContainerItem(
                       name: MainMenu[i].title,
@@ -220,11 +220,11 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
                       setState(() {
                         index = i;
                         print("index : ${index}");
-                        Navigator.pushReplacement(context, MaterialPageRoute(
+               /*         Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context)=>  _subMenuBuildScreens[index]
-                              ));
+                              ));*/
                       });
-
+                      navigateToScreen(context,index,_subMenuBuildScreens);
                     },
                     child: TraderDealContainerItem(
                       name: subMenu[i].title,
@@ -271,11 +271,11 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
                       setState(() {
                         index = i;
                         print("index : ${index}");
-                        Navigator.pushReplacement(context, MaterialPageRoute(
+              /*          Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context)=>  _clientMenuBuildScreens[index]
-                        ));
+                        ));*/
                       });
-
+                      navigateToScreen(context,index,_clientMenuBuildScreens);
                     },
                     child: ClientMenuContainerItem(
                       name: clientMenu[i].title,
@@ -316,5 +316,27 @@ class ClientMenuElement {
 
   ClientMenuElement({required this.title, required this.image,
     required this.screenIndex,required this.primaryImage,required this.secondary});
+}
+
+void navigateToScreen(BuildContext context , int index, List<Widget> screens) {
+  Navigator.push(
+    context,
+    PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => screens[index],
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(1.0, 0.0);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+
+        );
+      },
+    ),
+  );
 }
 

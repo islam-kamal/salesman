@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
@@ -12,11 +13,11 @@ import '../../../widgets/drawer_review_product_screen.dart';
 class AppScreen extends StatelessWidget {
   final Widget? child;
   final List<Widget>? screenButtons;
-  final String MenuType;
+  final String menuType;
   final bool visitDetails;
 
 
-  AppScreen({this.child, this.screenButtons,this.MenuType = "mainMenu" ,
+  AppScreen({this.child, this.screenButtons,this.menuType = "mainMenu" ,
     this.visitDetails = false});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey();
@@ -104,7 +105,7 @@ class AppScreen extends StatelessWidget {
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
                               NavigateBasicContainer(
-                                menuType: MenuType,
+                                menuType: menuType,
                               ),
                               SizedBox(
                                 height:
@@ -143,5 +144,10 @@ class AppScreen extends StatelessWidget {
       ),
     );
   }
+
+
+
 }
+
+
 

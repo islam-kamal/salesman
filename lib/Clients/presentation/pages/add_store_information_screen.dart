@@ -13,7 +13,7 @@ class AddStoreInformationScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
       child: AddStoreInformationScreenBody(),
-      MenuType: "clientMenu",
+      menuType: "clientMenu",
       screenButtons: [
         AppButtonWidget(
           asset: 'assets/images/ChCircle.png',

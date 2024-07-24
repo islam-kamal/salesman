@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
-import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
-import 'package:water/Authentication/presentation/pages/login_screen.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Dashboard/presentation/widgets/bar_chart_sample.dart';
 import 'package:water/Dashboard/presentation/widgets/linear_progress_indicator_widget.dart';
-import 'package:water/Profile/presentation/pages/profile_screen.dart';
 import 'package:water/widgets/transaction_details_container.dart';
 
 class DashboardScreen extends StatelessWidget{
@@ -112,7 +108,9 @@ class _PageState extends State<_Page> {
 
           Padding(
             padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-            child:  BarChartSample())
+            child:  BarChartSample(
+              title: 'احصائيات شهرية',
+            ))
                   ],
                 ),
               )),

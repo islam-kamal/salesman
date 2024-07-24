@@ -13,7 +13,7 @@ class AddClientLocationScreen extends StatelessWidget{
   Widget build(BuildContext context) {
     return AppScreen(
       child: AddClientLocationScreenBody(),
-      MenuType: "clientMenu",
+      menuType: "clientMenu",
       screenButtons: [
         AppButtonWidget(
           asset: 'assets/images/ChCircle.png',

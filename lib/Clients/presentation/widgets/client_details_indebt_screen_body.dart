@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/widgets/button.dart';
-import 'package:water/widgets/navigate_basic_container.dart';
+import 'package:water/Dashboard/presentation/widgets/bar_chart_sample.dart';
 import 'package:water/widgets/store_name_container.dart';
 import 'package:water/widgets/value_pill_date_number_container.dart';
 import 'package:water/widgets/visit_details_list_view_item.dart';
@@ -46,10 +45,7 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                       ),
 
 
-
-
-
-                      Container(
+                     /* Container(
                         width: double.infinity,
                         height: 444,
                         decoration: BoxDecoration(
@@ -59,9 +55,14 @@ class ClientDetailsIndebtScreenBody extends StatelessWidget {
                             width: 0.5
                           )
                         ),
+                      ),*/
+
+                      Padding(
+                          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+                          child:  BarChartSample(
+                            title: 'تاريخ الفواتير',
+                          )
                       ),
-
-
 
 
                       SizedBox(
