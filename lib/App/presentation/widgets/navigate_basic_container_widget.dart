@@ -103,28 +103,6 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
 
     super.initState();
   }
-
-/*  List<Widget> _mainMenuBuildScreens = [
-    DashboardScreen(),
-    VisitsTodayScreen(),
-     ReturnOrdersScreen(),
-    ClientsScreen(),
-    InventoryAvailableProductsScreen(),
-    ProfileScreen()
-  ];
-  List<Widget> _subMenuBuildScreens = [
-    AvailableItemsScreen(),
-    PreviousInvoicesScreen(),
-    PreviousInvoicesScreen(),
-    FinancialCollectionScreen(),
-    AttachPhotosScreen(),
-  ];
-  List<Widget> _clientMenuBuildScreens = [
-    AddMerchantInformationScreen(),
-    AddStoreInformationScreen(),
-    AddClientLocationScreen(),
-
-  ];*/
   @override
   Widget build(BuildContext context) {
     return Directionality(

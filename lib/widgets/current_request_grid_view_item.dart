@@ -32,10 +32,6 @@ class CurrentRequestGridViewItem extends StatelessWidget {
             },
             child: Container(
                 width: double.infinity,
-                height:
-                    MediaQuery.of(context).orientation == Orientation.portrait
-                        ? MediaQuery.of(context).size.height * 0.093
-                        : MediaQuery.of(context).size.height * 0.148,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(

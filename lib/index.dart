@@ -27,6 +27,5 @@ export 'Visits/presentation/pages/Today/visits_today_screen.dart';
 export 'Visits/presentation/pages/History/visit_details_screen_public.dart';
 export 'Visits/presentation/pages/History/visit_details_screen_returned.dart';
 export 'Visits/presentation/pages/History/visit_details_screen_sales.dart';
-export 'work_orders_order_details_return_screen.dart';
-export 'work_orders_screen.dart';
+export 'WorkOrders/presentation/pages/work_orders_screen.dart';
 

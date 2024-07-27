@@ -104,8 +104,11 @@ class AppScreen extends StatelessWidget {
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
-                              NavigateBasicContainer(
-                                menuType: menuType,
+                              Container(
+                                height: MediaQuery.of(context).size.width * 0.5,
+                                child: NavigateBasicContainer(
+                                  menuType: menuType,
+                                ),
                               ),
                               SizedBox(
                                 height:
