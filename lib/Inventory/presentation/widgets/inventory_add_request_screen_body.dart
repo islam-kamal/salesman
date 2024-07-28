@@ -11,15 +11,12 @@ import 'package:flutter/material.dart';
 class InventoryAddRequestScreenBody extends StatelessWidget {
   InventoryAddRequestScreenBody({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          //drawer: const DrawerPreviousInvoicesScreen(),
-          key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

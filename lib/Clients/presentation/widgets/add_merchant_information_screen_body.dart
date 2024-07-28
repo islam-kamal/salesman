@@ -12,7 +12,7 @@ class AddMerchantInformationScreenBody extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        drawer: const Drawer(),
+          endDrawer: const Drawer(),
         key: _key,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

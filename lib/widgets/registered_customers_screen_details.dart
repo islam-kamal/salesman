@@ -13,7 +13,7 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        drawer: const Drawer(),
+        endDrawer: const Drawer(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
@@ -43,7 +43,7 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: () => _key.currentState!.openDrawer(),
+                              onTap: () => _key.currentState!.openEndDrawer(),
                               child: const ImageIcon(AssetImage(
                                   'assets/images/Icon-Wrappppper.png')),
                             ),

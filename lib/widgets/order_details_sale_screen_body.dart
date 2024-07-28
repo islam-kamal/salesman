@@ -13,7 +13,7 @@ class OrderDetailsSaleScreenBody extends StatelessWidget{
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // drawer: const Drawer(),
+        // endDrawer: const Drawer(),
         body: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

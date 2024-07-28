@@ -17,7 +17,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        //drawer: const DrawerAvailableProductsScreen(),
+        //endDrawer: const DrawerAvailableProductsScreen(),
         key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
@@ -46,7 +46,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
             child: Row(
               children: [
                 InkWell(
-                  onTap: () => _key.currentState!.openDrawer(),
+                  onTap: () => _key.currentState!.openEndDrawer(),
                   child: const ImageIcon(
                       AssetImage('assets/images/Icon-Wrappppper.png')),
                 ),

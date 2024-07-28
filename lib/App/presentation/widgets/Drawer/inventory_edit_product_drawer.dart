@@ -1,15 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_invoices_details_drawer.dart';
+import 'package:water/widgets/water_item_in_drawer.dart';
 
-class DrawerInvoicesDetailsScreen extends StatelessWidget {
-  const DrawerInvoicesDetailsScreen({super.key});
+class InventoryEditProductDrawer extends StatelessWidget {
+  const InventoryEditProductDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
-      child: Drawer(
+      child: Directionality(
+          textDirection: TextDirection.rtl,
+          child:Drawer(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 50),
           child: Column(
@@ -29,7 +30,7 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.012,
                   ),
                   const Text(
-                    'ارتجاع المنتج',
+                    'تعديل المنتج',
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -37,27 +38,10 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.018,
               ),
-              const WaterItemInvoicesDetailsDrawer(),
+              const WaterItemInDrawer(),
               const Text(
-                'الكمية المباعة',
-                style: TextStyle(
-                    color: Color(0xff25292E),
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300),
-              ),
-              const Text(
-                '24 قطعة',
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.013,
-              ),
-              const Text(
-                'العدد المرتجع',
+                'العدد',
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.006,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 14),
@@ -96,13 +80,37 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.013,
+                      width: MediaQuery.of(context).size.width * 0.018,
                     ),
                     InkWell(
                       onTap: () {},
                       child: const ImageIcon(
                           color: Colors.blue,
                           AssetImage('assets/images/AddCircle.png')),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait ?
+                              MediaQuery.of(context).size.width * 0.052
+                              : MediaQuery.of(context).size.width * 0.18,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const ImageIcon(
+                        color: Colors.red,
+                        AssetImage('assets/images/deleteee.png'),
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.007,
+                    ),
+                    const Text(
+                      'ازالة من الطلب',
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ],
                 ),
@@ -113,25 +121,28 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
+                  const Column(
                     children: [
-                      Image.asset('assets/images/Banknote2.png'),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.006,
-                      ),
-                      const Text(
-                        'اجمالي 3,000 ر.س',
+                      Text(
+                        'الاجمالي',
                         style: TextStyle(
                             color: Color(0xff07326A),
-                            fontSize: 14,
+                            fontSize: 16,
                             fontWeight: FontWeight.w300),
+                      ),
+                      Text(
+                        '42 ر.س',
+                        style: TextStyle(
+                            color: Color(0xff07326A),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500),
                       ),
                     ],
                   ),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.22,
+                      width: MediaQuery.of(context).size.width * 0.28,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.039
@@ -149,14 +160,11 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.006,
                           ),
-                          const Opacity(
-                            opacity: 0.7,
-                            child: Text('اضافة لفاتورة الارتجاع',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300)),
-                          ),
+                          const Text('حفظ التعديلات',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300)),
                         ],
                       ),
                     ),
@@ -166,7 +174,7 @@ class DrawerInvoicesDetailsScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }

@@ -15,7 +15,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // drawer: const Drawer(),
+        // endDrawer: const Drawer(),
         body: Padding(
           padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(

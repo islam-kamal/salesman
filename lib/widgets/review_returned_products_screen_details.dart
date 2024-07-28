@@ -1,12 +1,10 @@
-import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/button.dart';
+import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
+
 import 'package:flutter/material.dart';
-import 'package:water/widgets/drawer_review_returned_products_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_review_returned_products.dart';
 import 'package:water/widgets/pill_payment_review_returned_products.dart';
 import 'package:water/widgets/review_returned_products_water_item.dart';
 import 'package:water/widgets/search_text_field_review_returned_products.dart';
-import 'package:water/widgets/store_deal_container_widget.dart';
 
 class ReviewReturnedProductsScreenDetails extends StatelessWidget {
   ReviewReturnedProductsScreenDetails({super.key});
@@ -18,7 +16,7 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        drawer: const DrawerReviewReturnedProductsScreen(),
+        drawer: const GoodReturnsEditProductDrawer(),
         key: _key,
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +32,7 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
                         itemCount: 6,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () => _key.currentState!.openDrawer(),
+                            onTap: () => _key.currentState!.openEndDrawer(),
                             child: const ReviewReturnedProductsWaterItem(),
                           );
                         }),

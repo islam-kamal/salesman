@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_in_drawer.dart';
 
-class DrawerReviewProductScreen extends StatelessWidget {
-  const DrawerReviewProductScreen({super.key});
+class SalesEditProductDrawer extends StatelessWidget {
+  const SalesEditProductDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
-      child: Drawer(
+      child: Directionality(
+          textDirection: TextDirection.rtl,
+          child:Drawer(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 50),
           child: Column(
@@ -28,7 +30,7 @@ class DrawerReviewProductScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.012,
                   ),
                   const Text(
-                    'تعديل المنتج',
+                   'تعديل المنتج',
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -37,9 +39,25 @@ class DrawerReviewProductScreen extends StatelessWidget {
                 height: MediaQuery.of(context).size.height * 0.018,
               ),
               const WaterItemInDrawer(),
-              const Text(
-                'العدد',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              Row(
+                children: [
+                  const Text(
+                    'العدد',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Image.asset(
+                      'assets/images/marketImage.png',
+                      height: MediaQuery.of(context).size.height * 0.011,
+                      color: Colors.black,
+                    ),
+                  ),
+                  const Text(
+                    'متاح30 قطعة',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 14),
@@ -58,14 +76,11 @@ class DrawerReviewProductScreen extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.013,
                     ),
                     Container(
-                      width: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.width * 0.13
-                          : MediaQuery.of(context).size.width * 0.1,
+                      width: MediaQuery.of(context).size.width * 0.13,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.036
-                          : MediaQuery.of(context).size.height * 0.055,
+                          : MediaQuery.of(context).size.height * 0.064,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -78,7 +93,7 @@ class DrawerReviewProductScreen extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.018,
+                      width: MediaQuery.of(context).size.width * 0.013,
                     ),
                     InkWell(
                       onTap: () {},
@@ -86,30 +101,29 @@ class DrawerReviewProductScreen extends StatelessWidget {
                           color: Colors.blue,
                           AssetImage('assets/images/AddCircle.png')),
                     ),
-                    SizedBox(
-                      width: MediaQuery.of(context).orientation ==
-                              Orientation.portrait ?
-                              MediaQuery.of(context).size.width * 0.052
-                              : MediaQuery.of(context).size.width * 0.18,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: const ImageIcon(
-                        color: Colors.red,
-                        AssetImage('assets/images/deleteee.png'),
-                      ),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.007,
-                    ),
-                    const Text(
-                      'ازالة من الفاتورة',
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
+                      SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.052,
+                        ),
+                        InkWell(
+                          onTap: (){},
+                          child: const ImageIcon(
+                            color: Colors.red,
+                            AssetImage(
+                              'assets/images/deleteee.png'
+                              ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.007,
+                        ),
+                        const Text(
+                          'ازالة من الفاتورة',
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
                   ],
                 ),
               ),
@@ -119,32 +133,55 @@ class DrawerReviewProductScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'الاجمالي',
-                        style: TextStyle(
-                            color: Color(0xff07326A),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300),
+                      Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/Banknote2.png'
+                                ),
+                                SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
                       ),
-                      Text(
-                        '42 ر.س',
-                        style: TextStyle(
-                            color: Color(0xff07326A),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500),
+                                const Text(
+                                  'اجمالي 3,000 ر.س',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                 Image.asset(
+                                  'assets/images/asssa.png',
+                                  height: MediaQuery.of(context).size.height * 0.012,
+                                  color: const Color(0xff111111),
+                                ),
+                                 SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.005,
                       ),
+                                const Text(
+                                  'متبقى 25,000 ر.س',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
+                            ),
                     ],
                   ),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.28,
+                      width: MediaQuery.of(context).size.width * 0.24,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.039
-                          : MediaQuery.of(context).size.height * 0.064,
+                          : MediaQuery.of(context).size.height * 0.066,
                       decoration: BoxDecoration(
                           color: const Color(0xff1D7AFC),
                           borderRadius: BorderRadius.circular(5)),
@@ -158,7 +195,7 @@ class DrawerReviewProductScreen extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.006,
                           ),
-                          const Text('اضافة للفاتورة',
+                          const Text('اضافة للطلب',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 14,
@@ -172,7 +209,7 @@ class DrawerReviewProductScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }

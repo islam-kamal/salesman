@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/App/presentation/widgets/navigate_in_visit_details_container_widget.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
 
-import '../../../widgets/drawer_review_product_screen.dart';
 
 class AppScreen extends StatelessWidget {
   final Widget? child;
@@ -33,7 +33,7 @@ class AppScreen extends StatelessWidget {
               : TextDirection.ltr,
           child: Scaffold(
             key: _key,
-            drawer: const DrawerReviewProductScreen(),
+            endDrawer: const GoodReturnsEditProductDrawer(),
             body: Container(
               child: SafeArea(
                 child: GestureDetector(
@@ -81,7 +81,7 @@ class AppScreen extends StatelessWidget {
                                     children: [
                                       InkWell(
                                         onTap: () =>
-                                            _key.currentState!.openDrawer(),
+                                            _key.currentState!.openEndDrawer(),
                                         child: const ImageIcon(
                                           AssetImage(
                                               'assets/images/Icon-Wrappppper.png'),

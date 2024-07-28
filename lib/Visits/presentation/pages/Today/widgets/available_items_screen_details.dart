@@ -13,7 +13,7 @@ class AvailableItemsScreenDetails extends StatelessWidget {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          //drawer: const DrawerPreviousInvoicesScreen(),
+          //endDrawer: const DrawerPreviousInvoicesScreen(),
           key: _key,
           body: OrientationBuilder(
             builder: (context , orientation){

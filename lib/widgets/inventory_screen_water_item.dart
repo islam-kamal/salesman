@@ -10,7 +10,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: InkWell(
-        onTap: () => _key.currentState!.openDrawer(),
+        onTap: () => _key.currentState!.openEndDrawer(),
         child: Container(
           width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.045,

@@ -13,44 +13,68 @@ import 'package:water/Visits/presentation/pages/Today/available_items_screen.dar
 import 'package:water/index.dart';
 import 'package:water/returns/presentation/pages/return_orders_screen.dart';
 import 'package:water/App/presentation/widgets/trader_deal_container_item.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class NavigateBasicContainer extends StatefulWidget {
-  NavigateBasicContainer({super.key,this.menuType="mainMenu"});
-final String menuType;
+  NavigateBasicContainer({super.key, this.menuType = "mainMenu"});
+  final String menuType;
 
   @override
   State<NavigateBasicContainer> createState() => _NavigateBasicContainerState();
 }
 
 class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
-  int index = 0;
-  List<MenuElement> MainMenu =[];
-  List<MenuElement> subMenu =[];
-  List<ClientMenuElement> clientMenu =[];
+  int mainIndex = 0;
+  int subIndex = 0;
+  int clientIndex = 0;
+
+  List<MenuElement> MainMenu = [];
+  List<MenuElement> subMenu = [];
+  List<ClientMenuElement> clientMenu = [];
 
   List<Widget> _mainMenuBuildScreens = [];
   List<Widget> _subMenuBuildScreens = [];
   List<Widget> _clientMenuBuildScreens = [];
+
   @override
   void initState() {
+    super.initState();
+    _loadSavedIndex();
 
-    switch(widget.menuType){
+    switch (widget.menuType) {
       case 'mainMenu':
         MainMenu = [
-          MenuElement(title: 'الرئيسية', image: 'assets/images/VectorHome.png', screenIndex:  0),
-          MenuElement(title: 'الزيارات', image: 'assets/images/VectorVisits.png', screenIndex:  1),
+          MenuElement(
+              title: 'الرئيسية',
+              image: 'assets/images/VectorHome.png',
+              screenIndex: 0),
+          MenuElement(
+              title: 'الزيارات',
+              image: 'assets/images/VectorVisits.png',
+              screenIndex: 1),
           MenuElement(
               title: Shared.userType == 'B2C' ? 'مرتجعات' : 'اوامر الشغل',
-              image: Shared.userType == 'B2C' ? 'assets/images/overView.png' : 'assets/images/IconWrapperrrrr.png',
-              screenIndex:  2),
-          MenuElement(title: 'العملاء', image: 'assets/images/VectorClints.png', screenIndex:  3),
-          MenuElement(title: 'المخزن', image: 'assets/images/VectorBuild.png', screenIndex:  4),
-          MenuElement(title: 'الحساب', image: 'assets/images/Vvvectorss.png', screenIndex:  5),
+              image: Shared.userType == 'B2C'
+                  ? 'assets/images/overView.png'
+                  : 'assets/images/IconWrapperrrrr.png',
+              screenIndex: 2),
+          MenuElement(
+              title: 'العملاء',
+              image: 'assets/images/VectorClints.png',
+              screenIndex: 3),
+          MenuElement(
+              title: 'المخزن',
+              image: 'assets/images/VectorBuild.png',
+              screenIndex: 4),
+          MenuElement(
+              title: 'الحساب',
+              image: 'assets/images/Vvvectorss.png',
+              screenIndex: 5),
         ];
         _mainMenuBuildScreens = [
           DashboardScreen(),
           VisitsTodayScreen(),
-          Shared.userType == 'B2C' ?  ReturnOrdersScreen() : WorkOrdersScreen(),
+          Shared.userType == 'B2C' ? ReturnOrdersScreen() : WorkOrdersScreen(),
           ClientsScreen(),
           InventoryAvailableProductsScreen(),
           ProfileScreen()
@@ -58,11 +82,26 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
         break;
       case 'subMenu':
         subMenu = [
-          MenuElement(title: 'بيع', image: 'assets/images/IconWrapperrrrr.png', screenIndex:  0),
-          MenuElement(title: 'مرتجع جيد', image: 'assets/images/RestartCircle.png', screenIndex:  1),
-          MenuElement(title: 'مرتجع سيء', image: 'assets/images/badReturned.png', screenIndex:  2),
-          MenuElement(title: 'تحصيل', image: 'assets/images/MoneyBag.png', screenIndex:  3),
-          MenuElement(title: 'صور', image: 'assets/images/camera.png', screenIndex:  4),
+          MenuElement(
+              title: 'بيع',
+              image: 'assets/images/IconWrapperrrrr.png',
+              screenIndex: 0),
+          MenuElement(
+              title: 'مرتجع جيد',
+              image: 'assets/images/RestartCircle.png',
+              screenIndex: 1),
+          MenuElement(
+              title: 'مرتجع سيء',
+              image: 'assets/images/badReturned.png',
+              screenIndex: 2),
+          MenuElement(
+              title: 'تحصيل',
+              image: 'assets/images/MoneyBag.png',
+              screenIndex: 3),
+          MenuElement(
+              title: 'صور',
+              image: 'assets/images/camera.png',
+              screenIndex: 4),
         ];
         _subMenuBuildScreens = [
           AvailableItemsScreen(),
@@ -74,39 +113,60 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
         break;
       case 'clientMenu':
         clientMenu = [
-          ClientMenuElement(title: "التاجر",
-              image: 'assets/images/User.png',
-              screenIndex: 0,
-              primaryImage: 'assets/images/IconIndicator.png',
-              secondary: 'assets/images/IconMerchant.png',),
-          ClientMenuElement(title: "المتجر",
+          ClientMenuElement(
+            title: "التاجر",
+            image: 'assets/images/User.png',
+            screenIndex: 0,
+            primaryImage: 'assets/images/IconIndicator.png',
+            secondary: 'assets/images/IconMerchant.png',
+          ),
+          ClientMenuElement(
+            title: "المتجر",
             image: 'assets/images/Shop.png',
             screenIndex: 1,
             primaryImage: 'assets/images/IconIndicator.png',
-            secondary: 'assets/images/IconMerchant.png',),
-          ClientMenuElement(title: "العنوان",
+            secondary: 'assets/images/IconMerchant.png',
+          ),
+          ClientMenuElement(
+            title: "العنوان",
             image: 'assets/images/markk.png',
             screenIndex: 2,
             primaryImage: 'assets/images/IconIndicator.png',
-            secondary: 'assets/images/IconMerchant.png',),
-
+            secondary: 'assets/images/IconMerchant.png',
+          ),
         ];
         _clientMenuBuildScreens = [
           AddMerchantInformationScreen(),
           AddStoreInformationScreen(),
           AddClientLocationScreen(),
-
         ];
         break;
     }
-
-
-    super.initState();
   }
+
+  void _loadSavedIndex() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      mainIndex = prefs.getInt('mainIndex') ?? 0;
+      subIndex = prefs.getInt('subIndex') ?? 0;
+      clientIndex = prefs.getInt('clientIndex') ?? 0;
+    });
+  }
+
+  void _saveIndex(int newIndex) async {
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setInt('mainIndex', mainIndex);
+    prefs.setInt('subIndex', subIndex);
+    prefs.setInt('clientIndex', clientIndex);
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: LocalizeAndTranslate.getLanguageCode() == 'en' ? TextDirection.rtl : TextDirection.ltr,
+      textDirection: LocalizeAndTranslate.getLanguageCode() == 'en'
+          ? TextDirection.rtl
+          : TextDirection.ltr,
       child: Column(
         children: [
           Container(
@@ -127,62 +187,58 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
     );
   }
 
-  Widget menuTypeDesign(String menuType){
-
-    switch(widget.menuType){
+  Widget menuTypeDesign(String menuType) {
+    switch (widget.menuType) {
       case 'mainMenu':
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              ' أهلا محمود ',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.014,
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: MainMenu.length,
-              itemBuilder: (context, i) {
-                return Padding(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.011),
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        index = i;
-                        print("index : ${index}");
-                       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> _mainMenuBuildScreens[index]));
-                      });
-                      navigateToScreen(context,index,_mainMenuBuildScreens);
-                    },
-                    child: TraderDealContainerItem(
-                      name: MainMenu[i].title,
-                      image: MainMenu[i].image,
-                      onClickStatus: MainMenu[i].screenIndex == index,
-                    ),
+        return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const Text(
+            ' أهلا محمود ',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.014,
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: MainMenu.length,
+            itemBuilder: (context, i) {
+              return Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).size.height * 0.011),
+                child: InkWell(
+                  onTap: () {
+                    setState(() {
+                      mainIndex = i;
+                      _saveIndex(mainIndex);
+                    });
+                    navigateToScreen(context, mainIndex, _mainMenuBuildScreens);
+                  },
+                  child: TraderDealContainerItem(
+                    name: MainMenu[i].title,
+                    image: MainMenu[i].image,
+                    onClickStatus: MainMenu[i].screenIndex == mainIndex,
                   ),
-                );
-              },
-            )
-            ]);
-        break;
+                ),
+              );
+            },
+          )
+        ]);
       case 'subMenu':
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
-          children: [
-            const Text(
-              'بدأ المعاملة مع ',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            const Text(
-              ' اسم المتجر',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
-            ),
-            ]),
+                children: [
+                  const Text(
+                    'بدأ المعاملة مع ',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
+                  const Text(
+                    ' اسم المتجر',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+                  ),
+                ]),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.014,
             ),
@@ -192,22 +248,20 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
               itemCount: subMenu.length,
               itemBuilder: (context, i) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.011),
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).size.height * 0.011),
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        index = i;
-                        print("index : ${index}");
-               /*         Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context)=>  _subMenuBuildScreens[index]
-                              ));*/
+                        subIndex = i;
+                        _saveIndex(subIndex);
                       });
-                      navigateToScreen(context,index,_subMenuBuildScreens);
+                      navigateToScreen(context, subIndex, _subMenuBuildScreens);
                     },
                     child: TraderDealContainerItem(
                       name: subMenu[i].title,
                       image: subMenu[i].image,
-                      onClickStatus: subMenu[i].screenIndex == index,
+                      onClickStatus: subMenu[i].screenIndex == subIndex,
                     ),
                   ),
                 );
@@ -215,24 +269,31 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
             )
           ],
         );
-        break;
       case 'clientMenu':
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   const Text(
                     'اضافة عميل جديد ',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500,color: Color(0xFF25292E)),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF25292E)),
                   ),
-
-                  Padding(padding: EdgeInsets.symmetric(vertical: 2),child: const Text(
-                    'ادخل معلومات العميل',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300,color: Color(0xFF25292E)),
-                  ),)
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 2),
+                    child: const Text(
+                      'ادخل معلومات العميل',
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: Color(0xFF25292E)),
+                    ),
+                  )
                 ]),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.014,
@@ -243,22 +304,20 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
               itemCount: clientMenu.length,
               itemBuilder: (context, i) {
                 return Padding(
-                  padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * 0.011),
+                  padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).size.height * 0.011),
                   child: InkWell(
                     onTap: () {
                       setState(() {
-                        index = i;
-                        print("index : ${index}");
-              /*          Navigator.pushReplacement(context, MaterialPageRoute(
-                            builder: (context)=>  _clientMenuBuildScreens[index]
-                        ));*/
+                        clientIndex = i;
+                        _saveIndex(clientIndex);
                       });
-                      navigateToScreen(context,index,_clientMenuBuildScreens);
+                      navigateToScreen(context, clientIndex, _clientMenuBuildScreens);
                     },
                     child: ClientMenuContainerItem(
                       name: clientMenu[i].title,
                       image: clientMenu[i].image,
-                      onClickStatus: clientMenu[i].screenIndex == index,
+                      onClickStatus: clientMenu[i].screenIndex == clientIndex,
                       primaryImage: clientMenu[i].primaryImage,
                       secondaryImage: clientMenu[i].secondary,
                     ),
@@ -268,8 +327,6 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
             )
           ],
         );
-
-        break;
       default:
         return Container();
     }
@@ -291,30 +348,33 @@ class ClientMenuElement {
   final String primaryImage;
   final String secondary;
 
-
-  ClientMenuElement({required this.title, required this.image,
-    required this.screenIndex,required this.primaryImage,required this.secondary});
+  ClientMenuElement(
+      {required this.title,
+        required this.image,
+        required this.screenIndex,
+        required this.primaryImage,
+        required this.secondary});
 }
 
-void navigateToScreen(BuildContext context , int index, List<Widget> screens) {
+void navigateToScreen(BuildContext context, int index, List<Widget> screens) {
   Navigator.push(
     context,
     PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => screens[index],
+      pageBuilder: (context, animation, secondaryAnimation) =>
+      screens[index],
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(1.0, 0.0);
         const end = Offset.zero;
         const curve = Curves.ease;
 
-        var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+        var tween =
+        Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
         return SlideTransition(
           position: animation.drive(tween),
           child: child,
-
         );
       },
     ),
   );
 }
-

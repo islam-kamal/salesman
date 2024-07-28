@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
 import 'package:water/index.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/drawer_invoices_details_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_invoices_details.dart';
 import 'package:water/widgets/pill_container.dart';
 import 'package:water/widgets/search_text_field.dart';
@@ -19,7 +19,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          drawer: const DrawerInvoicesDetailsScreen(),
+          endDrawer: const GoodReturnsEditProductDrawer(),
           key: _key,
           body: Padding(
             padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
@@ -49,7 +49,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
                             child: Row(
                               children: [
                                 InkWell(
-                                  onTap: () => _key.currentState!.openDrawer(),
+                                  onTap: () => _key.currentState!.openEndDrawer(),
                                   child: const ImageIcon(AssetImage(
                                       'assets/images/Icon-Wrappppper.png')),
                                 ),

@@ -16,7 +16,7 @@ class PreviousInvoicesScreenDetails extends StatelessWidget {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          drawer: const DrawerPreviousInvoicesScreen(),
+          endDrawer: const DrawerPreviousInvoicesScreen(),
           key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

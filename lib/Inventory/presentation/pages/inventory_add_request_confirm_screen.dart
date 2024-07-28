@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/Inventory/presentation/pages/widgets/inventory_add_request_confirm_screen_body.dart';
+import 'package:water/Inventory/presentation/widgets/inventory_add_request_confirm_screen_body.dart';
 
 class InventoryAddRequestConfirmScreen extends StatelessWidget{
   const InventoryAddRequestConfirmScreen({super.key});

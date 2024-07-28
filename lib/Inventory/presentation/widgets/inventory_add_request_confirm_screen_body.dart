@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/widgets/Drawer/sales_edit_product_drawer.dart';
 import 'package:water/basics/dialogs.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/drawer_home_screen.dart';
-import 'package:water/widgets/drawer_home_screen_edit.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/pill_payment.dart';
@@ -12,16 +11,12 @@ import 'package:water/widgets/search_text_field.dart';
 class InventoryAddRequestConfirmScreenBody extends StatelessWidget {
   InventoryAddRequestConfirmScreenBody({super.key});
 
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        key: _key,
-        drawer: const DrawerHomeScreenEdit(),
-        //DrawerHomeScreen(),
         body: Padding(
           padding: const EdgeInsets.only(left: 18, right: 18, top: 48),
           child: Row(
@@ -50,7 +45,9 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: ()  => _key.currentState!.openDrawer(),
+                              onTap: () {
+                               /* _key.currentState!.openEndDrawer();*/
+                              },
                               child: const ImageIcon(AssetImage(
                                   'assets/images/Icon-Wrappppper.png')),
                             ),
@@ -118,7 +115,9 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                     Row(
                       children: [
                         IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             icon: const Icon(Icons.arrow_back)),
                         const Text(
                           'تفاصيل الطلب',

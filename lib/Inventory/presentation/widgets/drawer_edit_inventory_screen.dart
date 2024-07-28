@@ -40,7 +40,7 @@ class DrawerEditInventoryScreen extends StatelessWidget{
                   SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                  const WaterItemAvailableProducts(),
+                   WaterItemAvailableProducts(),
                   const Text(
                     'العدد',
                     style: TextStyle(

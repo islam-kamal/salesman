@@ -4,7 +4,6 @@ import 'package:water/widgets/water_item_available_products.dart';
 class DrawerSecondAddInventoryScreen extends StatelessWidget{
   DrawerSecondAddInventoryScreen({super.key});
 
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +76,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
             physics: const NeverScrollableScrollPhysics(),
             itemCount: 4,
             itemBuilder: (context , index){
-              return InkWell(
-                onTap: () => _key.currentState!.openDrawer(),
-                child: const WaterItemAvailableProducts(),
-                );
+              return  WaterItemAvailableProducts();
                     }
                     ),
                   ],

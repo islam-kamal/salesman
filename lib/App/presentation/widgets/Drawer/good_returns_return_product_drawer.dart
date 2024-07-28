@@ -1,14 +1,17 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:water/widgets/water_item_in_drawer.dart';
+import 'package:water/widgets/water_item_invoices_details_drawer.dart';
 
-class DrawerHomeScreenEdit extends StatelessWidget {
-  const DrawerHomeScreenEdit({super.key});
+class GoodReturnsReturnProductDrawer extends StatelessWidget {
+  const GoodReturnsReturnProductDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.5,
-      child: Drawer(
+      child: Directionality(
+          textDirection: TextDirection.rtl,
+          child:Drawer(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 50),
           child: Column(
@@ -28,7 +31,7 @@ class DrawerHomeScreenEdit extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * 0.012,
                   ),
                   const Text(
-                   'تعديل المنتج',
+                    'ارتجاع المنتج',
                     style: TextStyle(fontSize: 23, fontWeight: FontWeight.w500),
                   ),
                 ],
@@ -36,26 +39,27 @@ class DrawerHomeScreenEdit extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.018,
               ),
-              const WaterItemInDrawer(),
-              Row(
-                children: [
-                  const Text(
-                    'العدد',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: Image.asset(
-                      'assets/images/marketImage.png',
-                      height: MediaQuery.of(context).size.height * 0.011,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const Text(
-                    'متاح30 قطعة',
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-                  ),
-                ],
+              const WaterItemInvoicesDetailsDrawer(),
+              const Text(
+                'الكمية المباعة',
+                style: TextStyle(
+                    color: Color(0xff25292E),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w300),
+              ),
+              const Text(
+                '24 قطعة',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.013,
+              ),
+              const Text(
+                'العدد المرتجع',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.006,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 14),
@@ -74,11 +78,14 @@ class DrawerHomeScreenEdit extends StatelessWidget {
                       width: MediaQuery.of(context).size.width * 0.013,
                     ),
                     Container(
-                      width: MediaQuery.of(context).size.width * 0.13,
+                      width: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? MediaQuery.of(context).size.width * 0.13
+                          : MediaQuery.of(context).size.width * 0.1,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.036
-                          : MediaQuery.of(context).size.height * 0.064,
+                          : MediaQuery.of(context).size.height * 0.055,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           border: Border.all(
@@ -99,29 +106,6 @@ class DrawerHomeScreenEdit extends StatelessWidget {
                           color: Colors.blue,
                           AssetImage('assets/images/AddCircle.png')),
                     ),
-                      SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.052,
-                        ),
-                        InkWell(
-                          onTap: (){},
-                          child: const ImageIcon(
-                            color: Colors.red,
-                            AssetImage(
-                              'assets/images/deleteee.png'
-                              ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.007,
-                        ),
-                        const Text(
-                          'ازالة من الفاتورة',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
                   ],
                 ),
               ),
@@ -131,55 +115,29 @@ class DrawerHomeScreenEdit extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
                     children: [
-                      Row(
-                              children: [
-                                Image.asset(
-                                  'assets/images/Banknote2.png'
-                                ),
-                                SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.005,
+                      Image.asset('assets/images/Banknote2.png'),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.006,
                       ),
-                                const Text(
-                                  'اجمالي 3,000 ر.س',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                 Image.asset(
-                                  'assets/images/asssa.png',
-                                  height: MediaQuery.of(context).size.height * 0.012,
-                                  color: const Color(0xff111111),
-                                ),
-                                 SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.005,
+                      const Text(
+                        'اجمالي 3,000 ر.س',
+                        style: TextStyle(
+                            color: Color(0xff07326A),
+                            fontSize: 14,
+                            fontWeight: FontWeight.w300),
                       ),
-                                const Text(
-                                  'متبقى 25,000 ر.س',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300
-                                  ),
-                                ),
-                              ],
-                            ),
                     ],
                   ),
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 0.24,
+                      width: MediaQuery.of(context).size.width * 0.22,
                       height: MediaQuery.of(context).orientation ==
                               Orientation.portrait
                           ? MediaQuery.of(context).size.height * 0.039
-                          : MediaQuery.of(context).size.height * 0.066,
+                          : MediaQuery.of(context).size.height * 0.064,
                       decoration: BoxDecoration(
                           color: const Color(0xff1D7AFC),
                           borderRadius: BorderRadius.circular(5)),
@@ -193,11 +151,14 @@ class DrawerHomeScreenEdit extends StatelessWidget {
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.006,
                           ),
-                          const Text('اضافة للطلب',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300)),
+                          const Opacity(
+                            opacity: 0.7,
+                            child: Text('اضافة لفاتورة الارتجاع',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300)),
+                          ),
                         ],
                       ),
                     ),
@@ -207,7 +168,7 @@ class DrawerHomeScreenEdit extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      )),
     );
   }
 }

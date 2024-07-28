@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/Inventory/presentation/pages/widgets/drawer_edit_inventory_screen.dart';
+import 'package:water/Inventory/presentation/widgets/drawer_edit_inventory_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/pill_payment.dart';
 import 'package:water/widgets/review_product_water_item.dart';
@@ -16,7 +16,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
       textDirection: TextDirection.rtl,
       child: Scaffold(
         key: _key,
-        drawer: const DrawerEditInventoryScreen(),
+        endDrawer: const DrawerEditInventoryScreen(),
         //DrawerFirstAddInventoryScreen(),
         //DrawerSecondAddInventoryScreen(),
         body: Column(
@@ -58,7 +58,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: () {
-                              _key.currentState!.openDrawer();
+                              _key.currentState!.openEndDrawer();
                             },
                             child: const ReviewProductWaterItem(),
                           );
