@@ -3,7 +3,7 @@ import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Visits/presentation/pages/History/visits_history_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
-import 'package:water/widgets/pill_container.dart';
+import 'package:water/widgets/bill_container.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/invoices_container.dart';
@@ -136,7 +136,7 @@ class VisitDetailsScreenSalesBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),
-                      const PillContainer(containerName: 'الفاتورة',),
+                      const BillContainer(containerName: 'الفاتورة',),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.018,
                       ),

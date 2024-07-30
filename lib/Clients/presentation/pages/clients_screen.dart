@@ -86,6 +86,7 @@ class _PageState extends State<_Page> {
               sales: '30,000 مبيعات شهرية',
               distance: 'يبعد 232 ك.م',
               money: '15,000 مديونية',
+              type: "client",
             );
           },
         ),

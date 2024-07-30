@@ -9,12 +9,14 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
       required this.storeName,
       required this.sales,
       required this.distance,
-      required this.money});
+      required this.money,
+       this.type = "visit"});
 
   final String storeName;
   final String sales;
   final String distance;
   final String money;
+  final String type;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,9 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
         builder: (context, constraints) {
           return InkWell(
             onTap: (){
-              customAnimatedPushNavigation(context, const VisitsTodayDetailsScreen());
+              customAnimatedPushNavigation(context,
+                  type == "visit" ? const VisitsTodayDetailsScreen()
+              : const ClientDetailsScreen() );
             },
             child: Container(
               decoration: BoxDecoration(
