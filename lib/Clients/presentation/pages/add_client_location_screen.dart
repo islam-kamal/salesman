@@ -5,6 +5,7 @@ import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Clients/presentation/widgets/add_client_location_screen_body.dart';
+import 'package:water/basics/dialogs.dart';
 
 class AddClientLocationScreen extends StatelessWidget{
   const AddClientLocationScreen({super.key});
@@ -18,7 +19,9 @@ class AddClientLocationScreen extends StatelessWidget{
         AppButtonWidget(
           asset: 'assets/images/ChCircle.png',
           text: 'حفظ العميل',
-          onClick: () {},
+          onClick: () {
+            Dialogs.showDialogSaveClient(context);
+          },
         ),
         AppButtonWidget(
           asset: 'assets/images/cancell.png',

@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 class InventoryScreenWaterItem extends StatelessWidget{
   InventoryScreenWaterItem({super.key});
 
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: InkWell(
-        onTap: () => _key.currentState!.openEndDrawer(),
+        onTap: (){
+
+        },
         child: Container(
           width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.045,

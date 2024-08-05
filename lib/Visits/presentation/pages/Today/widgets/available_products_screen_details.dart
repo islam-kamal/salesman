@@ -7,15 +7,12 @@ import 'package:water/widgets/water_item_available_products.dart';
 class AvailableProductsScreenDetails extends StatelessWidget {
   AvailableProductsScreenDetails({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           drawer: const DrawerAvailableProductsScreen(),
-          key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

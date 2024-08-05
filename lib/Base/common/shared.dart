@@ -37,7 +37,7 @@ class Shared {
   );
 
   // use this function to show message to user
-  static void showSnackBarView(
+/*  static void showSnackBarView(
       {String? message,
       String? backend_message,
       bool? error_status,
@@ -63,7 +63,7 @@ class Shared {
     );
     // Step 3
     ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(snackBar);
-  }
+  }*/
 
   static Widget text_widget({String? text, TextStyle? textStyle}) {
     return Row(
@@ -81,6 +81,7 @@ class Shared {
   static String userType = "B2C";
   static List<File> images_list = [];
   static List<Asset> assets_list = [];
+  static String inventoryCurrentRequeststype = 'editProduct';
 
 
 }

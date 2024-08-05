@@ -13,15 +13,12 @@ import 'package:water/widgets/water_item_previous_invoices.dart';
 class CollectionReceipitDetailsScreenBody extends StatelessWidget {
   CollectionReceipitDetailsScreenBody({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           endDrawer: const GoodReturnsEditProductDrawer(),
-          key: _key,
           body: Padding(
             padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
             child: Row(
@@ -50,7 +47,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
                             child: Row(
                               children: [
                                 InkWell(
-                                  onTap: () => _key.currentState!.openEndDrawer(),
+                                  onTap: (){},
                                   child: const ImageIcon(AssetImage(
                                       'assets/images/Icon-Wrappppper.png')),
                                 ),

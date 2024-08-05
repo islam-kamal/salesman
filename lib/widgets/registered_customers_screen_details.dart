@@ -6,7 +6,6 @@ import 'package:water/widgets/registered_customers_screen_container_item.dart';
 class RegisteredCustomersScreenDetails extends StatelessWidget {
   RegisteredCustomersScreenDetails({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +13,6 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         endDrawer: const Drawer(),
-        key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(
@@ -43,7 +41,7 @@ class RegisteredCustomersScreenDetails extends StatelessWidget {
                         child: Row(
                           children: [
                             InkWell(
-                              onTap: () => _key.currentState!.openEndDrawer(),
+                              onTap: (){},
                               child: const ImageIcon(AssetImage(
                                   'assets/images/Icon-Wrappppper.png')),
                             ),

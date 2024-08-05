@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Inventory/presentation/pages/inventory_add_request_screen.dart';
+import 'package:water/Clients/presentation/pages/clients_screen.dart';
+import 'package:water/Inventory/presentation/pages/transfer_request/inventory_add_request_screen.dart';
+import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
 import 'package:water/index.dart';
 
@@ -868,36 +870,41 @@ class Dialogs {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.27,
-                      height: MediaQuery.of(context).orientation == Orientation.portrait ?
-             MediaQuery.of(context).size.height * 0.038
-             : MediaQuery.of(context).size.height * 0.074,
-                      decoration: BoxDecoration(
-                          color: Color(0xff1D7AFC),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Opacity(
-                            opacity: 0.8,
-                            child: Text(
-                              'اظهار صفحة العميل',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300),
+                    InkWell(
+                      onTap: (){
+                        customAnimatedPushReplacementNavigation(context, ClientsScreen());
+                      },
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.27,
+                        height: MediaQuery.of(context).orientation == Orientation.portrait ?
+                        MediaQuery.of(context).size.height * 0.038
+                            : MediaQuery.of(context).size.height * 0.074,
+                        decoration: BoxDecoration(
+                            color: Color(0xff1D7AFC),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Opacity(
+                              opacity: 0.8,
+                              child: Text(
+                                'اظهار صفحة العميل',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width * 0.006,
-                          ),
-                          Image.asset(
-                            'assets/images/InfoCircle.png',
-                            height: MediaQuery.of(context).size.height * 0.015,
-                            color: Colors.white,
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.006,
                             ),
-                        ],
+                            Image.asset(
+                              'assets/images/InfoCircle.png',
+                              height: MediaQuery.of(context).size.height * 0.015,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
               ],
@@ -1165,7 +1172,7 @@ class Dialogs {
                   children: [
                     InkWell(
                       onTap: (){
-                        customAnimatedPushNavigation(context, InventoryAddRequestScreen());
+                        customAnimatedPushNavigation(context, InventoryScreen());
                       },
                       child: Container(
                           width: MediaQuery.of(context).size.width * 0.27,
@@ -1267,21 +1274,26 @@ static Future<void>? showDialogAddProduct(parentContext) {
                           ),
                             borderRadius: BorderRadius.circular(8)
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Text(
-                                'الرجوع للمخزن',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w300
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.pop(context);
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text(
+                                  'الرجوع للمخزن',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300
+                                  ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width * 0.006,
-                              ),
-                              Image.asset('assets/images/arrowww.png'),
-                            ],
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width * 0.006,
+                                ),
+                                Image.asset('assets/images/arrowww.png'),
+                              ],
+                            ),
                           ),
                       ),
                     ],
@@ -1468,7 +1480,9 @@ static Future<void>? showDialogAddProduct(parentContext) {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          customAnimatedPushNavigation(context, InventoryScreen());
+                        },
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.27,
                           height: MediaQuery.of(context).orientation ==

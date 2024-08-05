@@ -8,16 +8,12 @@ import 'package:water/widgets/water_item_previous_invoices.dart';
 
 class PreviousInvoicesScreenDetails extends StatelessWidget {
   PreviousInvoicesScreenDetails({super.key});
-
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           endDrawer: const DrawerPreviousInvoicesScreen(),
-          key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

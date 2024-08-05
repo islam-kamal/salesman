@@ -222,7 +222,7 @@ class LoginScreenDetails extends StatefulWidget {
 }
 
 class _LoginScreenDetailsState extends State<LoginScreenDetails> {
-  final _formKey = GlobalKey<FormState>();
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>(debugLabel: '_LoginScreenkey');
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 

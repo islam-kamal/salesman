@@ -6,16 +6,13 @@ import 'package:water/widgets/visits_history_screen_container_item.dart';
 
 class WorkOrdersScreenBody extends StatelessWidget {
   WorkOrdersScreenBody({super.key});
-  
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-  
+
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         endDrawer: const Drawer(),
-        key: _key,
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

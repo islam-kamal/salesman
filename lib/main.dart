@@ -56,7 +56,7 @@ void main() async{
 
   runApp(const MyApp());
 }
-GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+//GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -119,7 +119,7 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
           DefaultCupertinoLocalizations.delegate,
         ],
-        key: navigatorKey,
+    //    key: navigatorKey,
         theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: false,

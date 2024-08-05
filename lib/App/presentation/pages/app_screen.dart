@@ -3,24 +3,24 @@
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
+import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/App/presentation/widgets/navigate_in_visit_details_container_widget.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
 
-
+//GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 class AppScreen extends StatelessWidget {
   final Widget? child;
+  final Widget? drawer;
   final List<Widget>? screenButtons;
   final String menuType;
   final bool visitDetails;
 
 
-  AppScreen({this.child, this.screenButtons,this.menuType = "mainMenu" ,
+  AppScreen({this.child, this.drawer,this.screenButtons,this.menuType = "mainMenu" ,
     this.visitDetails = false});
-
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +32,8 @@ class AppScreen extends StatelessWidget {
               ? TextDirection.rtl
               : TextDirection.ltr,
           child: Scaffold(
-            key: _key,
-            endDrawer: const GoodReturnsEditProductDrawer(),
+          // key: scaffoldKey,
+            endDrawer: drawer,
             body: Container(
               child: SafeArea(
                 child: GestureDetector(
@@ -80,8 +80,7 @@ class AppScreen extends StatelessWidget {
                                         : TextDirection.ltr,
                                     children: [
                                       InkWell(
-                                        onTap: () =>
-                                            _key.currentState!.openEndDrawer(),
+                                        onTap: (){},
                                         child: const ImageIcon(
                                           AssetImage(
                                               'assets/images/Icon-Wrappppper.png'),

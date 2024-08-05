@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Inventory/presentation/pages/inventory_current_request_details_screen.dart';
+import 'package:water/Inventory/presentation/pages/current_requests/inventory_current_request_details_screen.dart';
 
 class CurrentRequestGridViewItem extends StatelessWidget {
   const CurrentRequestGridViewItem(

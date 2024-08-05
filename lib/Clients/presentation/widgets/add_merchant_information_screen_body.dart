@@ -5,15 +5,12 @@ import 'package:water/Clients/presentation/widgets/add_merchant_text_field.dart'
 class AddMerchantInformationScreenBody extends StatelessWidget {
   AddMerchantInformationScreenBody({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-          endDrawer: const Drawer(),
-        key: _key,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

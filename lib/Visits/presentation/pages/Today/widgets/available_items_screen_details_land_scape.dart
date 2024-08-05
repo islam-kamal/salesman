@@ -8,15 +8,11 @@ import 'package:water/widgets/search_text_field_available_items_screen.dart';
 class AvailableItemsScreenDetailsLandScape extends StatelessWidget {
   AvailableItemsScreenDetailsLandScape({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          //endDrawer: const DrawerPreviousInvoicesScreen(),
-          key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

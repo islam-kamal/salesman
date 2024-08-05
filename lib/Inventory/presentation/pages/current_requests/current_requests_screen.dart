@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
-import 'package:water/widgets/transfer_requests_screen_body.dart';
+import 'package:water/Inventory/presentation/pages/current_requests/current_requests_screen_body.dart';
 
-class TransferRequestsScreen extends StatelessWidget{
-  const TransferRequestsScreen({super.key});
+class CurrentRequestsScreen extends StatelessWidget{
+  const CurrentRequestsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-        child: TransferRequestsScreenBody(),
+        child: CurrentRequestsScreenBody(),
         screenButtons:[
           AppButtonWidget(
             asset: 'assets/images/VectorAdddd.png',

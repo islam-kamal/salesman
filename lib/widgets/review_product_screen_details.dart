@@ -10,7 +10,6 @@ import 'package:water/widgets/take_photo_widget.dart';
 class ReviewProductScreenDetails extends StatelessWidget {
   ReviewProductScreenDetails({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,6 @@ class ReviewProductScreenDetails extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         drawer: const InventoryEditProductDrawer(),
-        key: _key,
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -33,7 +31,9 @@ class ReviewProductScreenDetails extends StatelessWidget {
                         itemCount: 5,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () => _key.currentState!.openEndDrawer(),
+                            onTap: (){
+                              //TODO SHOW DRAWER
+                            },
                             child: const ReviewProductWaterItem(),
                           );
                         }),

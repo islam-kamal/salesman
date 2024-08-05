@@ -7,7 +7,6 @@ import 'package:water/widgets/water_item_invoices_details.dart';
 class InvoicesDetailsScreenBody extends StatelessWidget{
   InvoicesDetailsScreenBody({super.key});
 
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,6 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
       textDirection: TextDirection.rtl,
        child: Scaffold(
          endDrawer: const GoodReturnsReturnProductDrawer(),
-        key: _key,
         body: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

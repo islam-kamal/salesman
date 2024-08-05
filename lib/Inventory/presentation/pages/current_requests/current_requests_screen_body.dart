@@ -4,8 +4,8 @@ import 'package:water/widgets/current_request_grid_view_item.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/visit_type_containers.dart';
 
-class TransferRequestsScreenBody extends StatelessWidget {
-  TransferRequestsScreenBody({super.key});
+class CurrentRequestsScreenBody extends StatelessWidget {
+  CurrentRequestsScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +36,13 @@ class TransferRequestsScreenBody extends StatelessWidget {
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.014,
                     ),
-                    const VisitTypeContainers(
-                      textFirstContainer: 'الحالة',
-                      textSecondContainer: 'من',
-                      textThirdContainer: 'الى',
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 5),
+                      child: const VisitTypeContainers(
+                        textFirstContainer: 'الحالة',
+                        textSecondContainer: 'من',
+                        textThirdContainer: 'الى',
+                      ),
                     ),
                     GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),

@@ -19,16 +19,12 @@ class VisitsHistoryScreen extends StatelessWidget{
 
 class _page extends StatelessWidget {
   _page({super.key});
-
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         drawer: const Drawer(),
-        key: _key,
         body:Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

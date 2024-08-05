@@ -8,15 +8,11 @@ import 'package:flutter/material.dart';
 class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
   AvailableItemsScreenDetailsProtrait({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          //endDrawer: const DrawerPreviousInvoicesScreen(),
-          key: _key,
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -31,3 +31,9 @@ class ErrorLoading extends AppState{
   }
 
 }
+
+
+class AppDrawerDoneState extends AppState{
+  final String drawerType ;
+  AppDrawerDoneState({required this.drawerType});
+}

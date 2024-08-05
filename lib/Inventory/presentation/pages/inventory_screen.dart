@@ -1,42 +1,36 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/pages/app_screen.dart';
+import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Base/common/theme.dart';
+import 'package:water/Inventory/presentation/pages/transfer_request/inventory_add_request_screen.dart';
+import 'package:water/Inventory/presentation/widgets/inventory_screen_body.dart';
+import 'package:water/Inventory/presentation/pages/current_requests/current_requests_screen.dart';
 
-import '../../../App/presentation/pages/app_screen.dart';
-import '../../../App/presentation/widgets/app_home_button_widget.dart';
+class InventoryScreen extends StatelessWidget{
+  const InventoryScreen({super.key});
 
-class InventoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScreen(
-      child: _Page(),
-      screenButtons: [AppButtonWidget(
-        asset: 'assets/images/add.png',
-        text: 'اضافة منتج',
-        onClick: () {},
-      ),]
+        child: InventoryScreenBody(),
+        screenButtons:[
+          AppButtonWidget(
+            asset: 'assets/images/VectorAdddd.png',
+            text: 'طلب تحويل',
+            onClick: () {
+              customAnimatedPushNavigation(context, InventoryAddRequestScreen());
+            },
+          ),
+          AppButtonWidget(
+            asset: 'assets/images/fileImage.png',
+            text: 'الطلبات الحالية',
+            onClick: () {
+              customAnimatedPushNavigation(context, const CurrentRequestsScreen());
+            },
+            color: kWhiteColor,
+          ),
+        ]
     );
-  }
-}
-
-class _Page extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return _PageState();
-  }
-}
-
-class _PageState extends State<_Page> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Padding(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-            child: Container(
-              color: Colors.grey.shade200,
-              child: Center(
-                child: Text("Inventory"),
-              ),
-            )));
   }
 }

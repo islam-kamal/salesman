@@ -3,15 +3,14 @@ import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/search_text_field.dart';
 
-class InventoryAvailableProductsScreenBody extends StatelessWidget {
-  const InventoryAvailableProductsScreenBody({super.key});
+class InventoryScreenBody extends StatelessWidget {
+  const InventoryScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // drawer: const Drawer(),
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

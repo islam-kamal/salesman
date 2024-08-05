@@ -5,7 +5,7 @@ import 'package:water/Base/common/shared.dart';
 import 'package:water/Clients/presentation/pages/add_merchant_information_screen.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
-import 'package:water/Inventory/presentation/pages/inventory_available_products_screen.dart';
+import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Profile/presentation/pages/profile_screen.dart';
 import 'package:water/Visits/presentation/pages/Today/previous_invoices_screen.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen.dart';
@@ -76,7 +76,7 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
           VisitsTodayScreen(),
           Shared.userType == 'B2C' ? ReturnOrdersScreen() : WorkOrdersScreen(),
           ClientsScreen(),
-          InventoryAvailableProductsScreen(),
+          InventoryScreen(),
           ProfileScreen()
         ];
         break;

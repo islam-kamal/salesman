@@ -10,15 +10,12 @@ import 'package:water/widgets/water_item_available_products.dart';
 class AvailableProductsWhenAddProductScreenDetails extends StatelessWidget{
   AvailableProductsWhenAddProductScreenDetails({super.key});
 
-final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
        child: Scaffold(
-        //endDrawer: const DrawerAvailableProductsScreen(),
-        key: _key,
         body: Padding(
           padding: const EdgeInsets.only(right: 18 ,left: 18 , top: 48 ),
           child: Row(
@@ -46,7 +43,7 @@ final GlobalKey<ScaffoldState> _key = GlobalKey();
             child: Row(
               children: [
                 InkWell(
-                  onTap: () => _key.currentState!.openEndDrawer(),
+                  onTap: () {},
                   child: const ImageIcon(
                       AssetImage('assets/images/Icon-Wrappppper.png')),
                 ),

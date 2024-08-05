@@ -9,14 +9,11 @@ import 'package:water/widgets/take_photo_widget.dart';
 class AttachPhotosScreenBody extends StatelessWidget {
   AttachPhotosScreenBody({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          key: _key,
           body: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

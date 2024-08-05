@@ -7,16 +7,12 @@ import 'package:water/widgets/navigate_add_merchant_container.dart';
 
 class AddClientLocationScreenBody extends StatelessWidget {
   AddClientLocationScreenBody({super.key});
-
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         endDrawer: const Drawer(),
-        key: _key,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

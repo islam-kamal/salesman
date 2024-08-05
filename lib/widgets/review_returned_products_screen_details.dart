@@ -9,7 +9,6 @@ import 'package:water/widgets/search_text_field_review_returned_products.dart';
 class ReviewReturnedProductsScreenDetails extends StatelessWidget {
   ReviewReturnedProductsScreenDetails({super.key});
 
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,6 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         drawer: const GoodReturnsEditProductDrawer(),
-        key: _key,
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -32,7 +30,10 @@ class ReviewReturnedProductsScreenDetails extends StatelessWidget {
                         itemCount: 6,
                         itemBuilder: (context, index) {
                           return InkWell(
-                            onTap: () => _key.currentState!.openEndDrawer(),
+                            onTap: (){
+                              // TODO
+                              //show drawer
+                            },
                             child: const ReviewReturnedProductsWaterItem(),
                           );
                         }),
