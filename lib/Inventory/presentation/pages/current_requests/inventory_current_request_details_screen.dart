@@ -3,17 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:water/App/presentation/bloc/app_bloc.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/Base/Helper/app_event.dart';
 import 'package:water/Base/Helper/app_state.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Base/common/shared.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Inventory/presentation/pages/current_requests/inventory_current_request_details_screen_body.dart';
 import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Inventory/presentation/widgets/drawer_edit_inventory_current_request.dart';
+import 'package:water/Inventory/presentation/widgets/drawer_inventory_current_request_transfer_request.dart';
 import 'package:water/Inventory/presentation/widgets/drawer_inventory_current_requests_add_product.dart';
-import 'package:water/Inventory/presentation/widgets/drawer_inventorycurrent_request_transfer_request.dart';
 
 class InventoryCurrentRequestDetailsScreen extends StatefulWidget{
    const InventoryCurrentRequestDetailsScreen({super.key});
@@ -38,7 +36,9 @@ class _InventoryCurrentRequestDetailsScreenState extends State<InventoryCurrentR
                   return AppScreen(
                 child: InventoryCurrentRequestDetailsScreenBody(),
                 drawer: state.drawerType == 'addProduct'?
-                DrawerInventoryCurrentRequestsAddProduct()
+                DrawerInventoryCurrentRequestsAddProduct(
+                  type: "CurrentRequest",
+                )
                     : state.drawerType  == 'editProduct'?
                 const DrawerEditInventoryCurrentRequest()
                     : const DrawerCurrentRequestSTransferRequest() ,
@@ -48,7 +48,7 @@ class _InventoryCurrentRequestDetailsScreenState extends State<InventoryCurrentR
                     text: 'اضف منتج',
                     onClick: () {
                       appBloc.add(AppDrawrEvent(drawerType: 'addProduct'));
-                     //scaffoldKey.currentState!.openEndDrawer();
+                    scaffoldKey!.currentState!.openEndDrawer();
                     },
                   ),
                   AppButtonWidget(

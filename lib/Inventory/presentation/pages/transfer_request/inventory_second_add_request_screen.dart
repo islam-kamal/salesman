@@ -35,7 +35,9 @@ class _InventorySecondAddRequestScreenState extends State<InventorySecondAddRequ
             return AppScreen(
                 child: InventorySecondAddRequestScreenBody(),
                 drawer: state.drawerType == 'addProduct'?
-                DrawerInventoryCurrentRequestsAddProduct()
+                DrawerInventoryCurrentRequestsAddProduct(
+                  type: "transfer_request",
+                )
                     : Drawer(),
                 screenButtons:[
                   AppButtonWidget(

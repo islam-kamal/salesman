@@ -1,12 +1,8 @@
 import 'package:water/App/presentation/bloc/app_bloc.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/Base/Helper/app_event.dart';
-import 'package:water/Base/common/navigtor.dart';
-import 'package:water/index.dart';
 import 'package:water/widgets/products_and_prices_inventory_add_request_screen.dart';
 import 'package:water/widgets/search_text_field.dart';
-import 'package:water/widgets/search_text_field_available_items_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:water/widgets/water_item_available_products.dart';
 
@@ -61,7 +57,7 @@ class InventorySecondAddRequestScreenBody extends StatelessWidget {
                         return InkWell(
                             onTap: (){
                             appBloc.add(AppDrawrEvent(drawerType: 'addProduct'));
-                         //   scaffoldKey.currentState?.openEndDrawer();
+                            scaffoldKey!.currentState?.openEndDrawer();
                             },
                             child: const WaterItemAvailableProducts());
                       }),

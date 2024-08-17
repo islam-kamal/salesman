@@ -2,16 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
-import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/App/presentation/widgets/navigate_basic_container_widget.dart';
 import 'package:water/App/presentation/widgets/navigate_in_visit_details_container_widget.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
 
-//GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-class AppScreen extends StatelessWidget {
+ GlobalKey<ScaffoldState>? scaffoldKey ;
+class AppScreen extends StatefulWidget {
   final Widget? child;
   final Widget? drawer;
   final List<Widget>? screenButtons;
@@ -23,6 +21,17 @@ class AppScreen extends StatelessWidget {
     this.visitDetails = false});
 
   @override
+  State<AppScreen> createState() => _AppScreenState();
+}
+
+class _AppScreenState extends State<AppScreen> {
+
+  @override
+  void initState() {
+    scaffoldKey = GlobalKey<ScaffoldState>();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return NetworkIndicator(
       child: PageContainer(
@@ -32,8 +41,8 @@ class AppScreen extends StatelessWidget {
               ? TextDirection.rtl
               : TextDirection.ltr,
           child: Scaffold(
-          // key: scaffoldKey,
-            endDrawer: drawer,
+           key: scaffoldKey,
+            endDrawer: widget.drawer,
             body: Container(
               child: SafeArea(
                 child: GestureDetector(
@@ -52,7 +61,7 @@ class AppScreen extends StatelessWidget {
                               : 11,
                           child: Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: child!,
+                            child: widget.child!,
                           ),
                         ),
                         Expanded(
@@ -106,26 +115,26 @@ class AppScreen extends StatelessWidget {
                               Container(
                                 height: MediaQuery.of(context).size.width * 0.5,
                                 child: NavigateBasicContainer(
-                                  menuType: menuType,
+                                  menuType: widget.menuType,
                                 ),
                               ),
                               SizedBox(
                                 height:
                                 MediaQuery.of(context).size.height * 0.025,
                               ),
-                              visitDetails == false ?
+                              widget.visitDetails == false ?
                               Container(
                                 decoration: BoxDecoration(
-                                    color:  screenButtons!.length ==0 ? kTransparentColor : kWhiteColor,
+                                    color:  widget.screenButtons!.length ==0 ? kTransparentColor : kWhiteColor,
                                     borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(color: screenButtons!.length ==0 ? kTransparentColor : kInactiveColor)
+                                    border: Border.all(color: widget.screenButtons!.length ==0 ? kTransparentColor : kInactiveColor)
                                 ),
                                 padding: EdgeInsets.all(5),
                                 child: ListView.builder(
                                   shrinkWrap: true,
-                                  itemCount: screenButtons!.length,
+                                  itemCount: widget.screenButtons!.length,
                                   itemBuilder: (context, index) {
-                                    return  screenButtons![index];
+                                    return  widget.screenButtons![index];
                                   },
                                 ),
                               )
@@ -146,9 +155,6 @@ class AppScreen extends StatelessWidget {
       ),
     );
   }
-
-
-
 }
 
 

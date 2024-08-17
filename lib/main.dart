@@ -1,13 +1,10 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:localize_and_translate/localize_and_translate.dart';
-import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
 import 'package:water/index.dart';
 import 'dart:io';
-import 'Base/Notifications/local_notification_service.dart';
 import 'Base/common/shared_preference_manger.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -56,7 +53,6 @@ void main() async{
 
   runApp(const MyApp());
 }
-//GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -101,6 +97,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    super.initState();
     get_Static_data();
     // _fcmConfigure(context);
 

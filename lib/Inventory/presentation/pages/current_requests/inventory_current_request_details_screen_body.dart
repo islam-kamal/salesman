@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/bloc/app_bloc.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/Base/Helper/app_event.dart';
-import 'package:water/Base/common/shared.dart';
-import 'package:water/Inventory/presentation/widgets/drawer_edit_inventory_current_request.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/pill_payment.dart';
 import 'package:water/widgets/review_product_water_item.dart';
@@ -65,7 +62,7 @@ class _InventoryCurrentRequestDetailsScreenBodyState
                   return InkWell(
                     onTap: () {
                       appBloc.add(AppDrawrEvent(drawerType: 'editProduct'));
-                   //   scaffoldKey.currentState!.openEndDrawer();
+                    scaffoldKey!.currentState!.openEndDrawer();
                     },
                     child: const ReviewProductWaterItem(),
                   );

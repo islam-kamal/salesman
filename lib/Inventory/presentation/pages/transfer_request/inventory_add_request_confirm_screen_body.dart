@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/bloc/app_bloc.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
-import 'package:water/App/presentation/widgets/Drawer/sales_edit_product_drawer.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/Base/Helper/app_event.dart';
-import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/button.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
-import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/pill_payment.dart';
 import 'package:water/widgets/review_product_water_item.dart';
 import 'package:water/widgets/search_text_field.dart';
@@ -60,7 +55,7 @@ class InventoryAddRequestConfirmScreenBody extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                          appBloc.add(AppDrawrEvent(drawerType: 'editProduct'));
-                   //   scaffoldKey.currentState?.openEndDrawer();
+                      scaffoldKey!.currentState?.openEndDrawer();
                       },
                       child: const ReviewProductWaterItem(),
                     );

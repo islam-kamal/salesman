@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/bloc/app_bloc.dart';
 import 'package:water/App/presentation/pages/app_screen.dart';
-import 'package:water/App/presentation/widgets/global_key_manager.dart';
 import 'package:water/Base/Helper/app_event.dart';
-import 'package:water/Base/common/shared.dart';
 import 'package:water/widgets/water_item_available_products.dart';
 
 class DrawerInventoryCurrentRequestsAddProduct extends StatefulWidget{
-  DrawerInventoryCurrentRequestsAddProduct({super.key});
+  final String? type;
+  DrawerInventoryCurrentRequestsAddProduct({this.type });
 
   @override
   State<DrawerInventoryCurrentRequestsAddProduct> createState() => _DrawerInventoryCurrentRequestsAddProductState();
@@ -92,8 +91,11 @@ class _DrawerInventoryCurrentRequestsAddProductState extends State<DrawerInvento
                     itemBuilder: (context , index){
                       return  InkWell(
                           onTap: (){
-                            appBloc.add(AppDrawrEvent(drawerType: 'transferRequest'));
-                       //   scaffoldKey.currentState!.openEndDrawer();
+                            if(widget.type != "transfer_request"){
+                              appBloc.add(AppDrawrEvent(drawerType: 'transferRequest'));
+                              scaffoldKey!.currentState!.openEndDrawer();
+                            }
+
                           },
                           child: WaterItemAvailableProducts());
                     }
