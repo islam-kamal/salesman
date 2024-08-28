@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Clients/presentation/widgets/add_merchant_text_field.dart';
-import 'package:water/basics/dialogs.dart';
-import 'package:water/widgets/button.dart';
 import 'package:water/widgets/location_container_widget.dart';
-import 'package:water/widgets/navigate_add_merchant_container.dart';
 
 class AddClientLocationScreenBody extends StatelessWidget {
   AddClientLocationScreenBody({super.key});

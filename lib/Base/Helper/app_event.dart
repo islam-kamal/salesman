@@ -1,3 +1,5 @@
+import 'package:water/Authentication/domain/entities/login_entity.dart';
+
 abstract class AppEvent {}
 
 class click extends AppEvent{
@@ -10,7 +12,12 @@ class AppDrawrEvent extends AppEvent{
 
 }
 
+class loginClickEvent extends AppEvent{
+  final LoginEntity  loginEntity;
+  loginClickEvent({required this.loginEntity});
+}
 
+class GetProfileEvent extends AppEvent{}
 
 
 

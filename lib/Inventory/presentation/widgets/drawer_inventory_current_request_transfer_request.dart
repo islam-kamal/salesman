@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 import 'package:water/widgets/water_item_available_products.dart';
 
 class DrawerCurrentRequestSTransferRequest extends StatelessWidget{

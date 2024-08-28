@@ -1,13 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:multi_image_picker_plus/multi_image_picker_plus.dart';
-import 'package:water/Base/common/theme.dart';
-import 'package:water/main.dart';
 
 class Shared {
   static showLoadingDialog({required BuildContext context}) {
@@ -83,5 +79,6 @@ class Shared {
   static List<Asset> assets_list = [];
   static String inventoryCurrentRequeststype = 'editProduct';
 
+  static  String device_token = '';
 
 }

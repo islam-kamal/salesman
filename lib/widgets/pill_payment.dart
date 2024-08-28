@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 
 class PillPayment extends StatelessWidget {
   const PillPayment({super.key, required this.textButton, this.dialogName = 'pill'});

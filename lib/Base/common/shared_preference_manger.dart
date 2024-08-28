@@ -62,12 +62,10 @@ abstract class Enum<T> {
 class CachingKey extends Enum<String> {
   const CachingKey(String val) : super(val);
   static const CachingKey APP_LANGUAGE = const CachingKey('APP_LANGUAGE');
-  static const CachingKey AUTH_TOKEN = CachingKey('AUTH_TOKEN');
+  static const CachingKey TYPE = CachingKey('TYPE');
   static const CachingKey DEVICE_TOKEN = CachingKey('DEVICE_TOKEN');
-
-  static const CachingKey FRIST_TIME = const CachingKey('FRIST_TIME');
-  static const CachingKey FRIST_LOGIN = const CachingKey('FRIST_LOGIN');
   static const CachingKey USER_ID = const CachingKey('USER_ID');
+  static const CachingKey USER_NAME = const CachingKey('USER_NAME');
 }
 
 final sharedPreferenceManager = SharedPreferenceManager();

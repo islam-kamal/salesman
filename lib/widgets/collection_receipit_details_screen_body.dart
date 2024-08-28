@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
-import 'package:water/basics/dialogs.dart';
-import 'package:water/index.dart';
+import 'package:water/Base/common/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/image_number_product_price_container_invoices_details.dart';
 import 'package:water/widgets/bill_container.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Visits/presentation/pages/Today/widgets/products_and_prices_available_products_when_add_product_screen.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 import 'package:water/widgets/button.dart';
 import 'package:water/widgets/search_text_field_available_products_screen.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';

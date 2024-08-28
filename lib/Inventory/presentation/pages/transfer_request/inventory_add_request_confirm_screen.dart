@@ -5,12 +5,10 @@ import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/Helper/app_event.dart';
 import 'package:water/Base/Helper/app_state.dart';
-import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
-import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Inventory/presentation/pages/transfer_request/inventory_add_request_confirm_screen_body.dart';
 import 'package:water/Inventory/presentation/widgets/drawer_edit_inventory_current_request.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 
 class InventoryAddRequestConfirmScreen extends StatefulWidget{
   const InventoryAddRequestConfirmScreen({super.key});

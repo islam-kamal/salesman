@@ -208,8 +208,13 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
 */
 
 import 'package:flutter/material.dart';
-import 'package:water/Authentication/presentation/widgets/login_password_text_field.dart';
-import 'package:water/Authentication/presentation/widgets/login_email_text_field.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quickalert/models/quickalert_type.dart';
+import 'package:quickalert/widgets/quickalert_dialog.dart';
+import 'package:water/Authentication/domain/entities/login_entity.dart';
+import 'package:water/Authentication/presentation/bloc/login_bloc.dart';
+import 'package:water/Base/Helper/app_event.dart';
+import 'package:water/Base/Helper/app_state.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/shared.dart';
 import 'package:water/Dashboard/presentation/pages/dashboard_screen.dart';
@@ -228,7 +233,44 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
+    return BlocListener(
+        bloc: loginBloc,
+        listener: (context, state) {
+          if(state is Loading){
+            QuickAlert.show(
+              context: context,
+              type: QuickAlertType.loading,
+            );
+          }
+          else if(state is LoginDone){
+            print("Done");
+            Shared.dismissDialog(context: context);
+            if (state.model!.result!.data!.type == "b2c") {
+              Shared.userType = "B2C";
+
+            } else {
+              Shared.userType = "B2B";
+            }
+            customAnimatedPushNavigation(
+              context,
+              DashboardScreen(),
+            );
+
+          }
+          else if(state is LoginErrorLoading){
+            print("ErrorLoading");
+            print("state.message : ${state.message}");
+
+            Shared.dismissDialog(context: context);
+            QuickAlert.show(
+              context: context,
+              type: QuickAlertType.error,
+              title: "خطا ...",
+              text: state.message,
+            );
+          }
+        },
+        child:Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
         body: Padding(
@@ -274,16 +316,12 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
                       InkWell(
                         onTap: () {
                           if (_formKey.currentState!.validate()) {
-                            if (emailController.text == "b2c@gmail.com") {
-                              Shared.userType = "B2C";
-
-                            } else {
-                              Shared.userType = "B2B";
-                            }
-                            customAnimatedPushNavigation(
-                              context,
-                              DashboardScreen(),
-                            );
+                            loginBloc.add(loginClickEvent(
+                                loginEntity:LoginEntity(
+                                    userName:  emailController.text,
+                                    password:  passwordController.text
+                                )
+                            ));
                           }
                         },
                         child: Container(
@@ -337,7 +375,7 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
           ),
         ),
       ),
-    );
+    ));
   }
 
   Widget usernameTextField(BuildContext context) {

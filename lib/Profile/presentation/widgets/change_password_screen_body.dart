@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/Base/common/navigtor.dart';
-import 'package:water/basics/dialogs.dart';
-import 'package:water/index.dart';
+import 'package:water/Base/common/dialogs.dart';
 import 'package:water/widgets/change_password_text_field.dart';
 
 class ChangePasswordScreenBody extends StatelessWidget {

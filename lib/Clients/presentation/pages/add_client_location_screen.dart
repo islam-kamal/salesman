@@ -5,7 +5,7 @@ import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
 import 'package:water/Clients/presentation/widgets/add_client_location_screen_body.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 
 class AddClientLocationScreen extends StatelessWidget{
   const AddClientLocationScreen({super.key});
