@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Clients/presentation/pages/clients_screen.dart';
-import 'package:water/Inventory/presentation/pages/transfer_request/inventory_add_request_screen.dart';
 import 'package:water/Inventory/presentation/pages/inventory_screen.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
 import 'package:water/index.dart';

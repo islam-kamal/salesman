@@ -66,6 +66,7 @@ class CachingKey extends Enum<String> {
   static const CachingKey DEVICE_TOKEN = CachingKey('DEVICE_TOKEN');
   static const CachingKey USER_ID = const CachingKey('USER_ID');
   static const CachingKey USER_NAME = const CachingKey('USER_NAME');
+  static const CachingKey EMAIL = const CachingKey('EMAIL');
 }
 
 final sharedPreferenceManager = SharedPreferenceManager();

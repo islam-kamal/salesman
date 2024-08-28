@@ -1,5 +1,6 @@
 import 'package:water/Authentication/data/models/login_model.dart';
 import 'package:water/Profile/data/models/profile_model.dart';
+import 'package:water/Profile/data/models/resetPassword_model.dart';
 
 abstract class AppState {
   get model =>null;
@@ -51,6 +52,28 @@ class GetProfileDone extends AppState{
 class GetProfileErrorLoading extends AppState{
   final String? message;
   GetProfileErrorLoading({this.message});
+}
+
+class RestPasswordDone extends AppState{
+  ResetPasswordModel? model;
+  RestPasswordDone({this.model});
+
+  @override
+  String toString() {
+    return model!.toString();
+  }
+
+}
+
+class RestPasswordErrorLoading extends AppState{
+  String? message;
+  RestPasswordErrorLoading({this.message});
+  @override
+  String toString() {
+    return message!;
+    // TODO: implement toString
+  }
+
 }
 
 class AppDrawerDoneState extends AppState{
