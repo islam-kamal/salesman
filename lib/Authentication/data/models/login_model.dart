@@ -63,7 +63,7 @@ class Data {
   String? name;
   String? mobile;
   bool? isManager;
-  int? managerId;
+  bool? managerId;
   String? type;
 
   Data(

@@ -19,13 +19,14 @@ class LoginBloc extends Bloc<AppEvent,AppState> with Validator {
     var response = await loginRepository.login(
         siginEntity: event.loginEntity
     );
-
+print("response : ${response}");
    try{
       if (response.result!.status ==  "success") {
+        print("USER ID : ${ response.result!.data!.id}");
         sharedPreferenceManager.writeData(CachingKey.TYPE, response.result!.data!.type);
         sharedPreferenceManager.writeData(CachingKey.USER_ID, response.result!.data!.id);
         sharedPreferenceManager.writeData(CachingKey.USER_NAME, response.result!.data!.name);
-
+        sharedPreferenceManager.writeData(CachingKey.MOBILE, response.result!.data!.mobile);
         emit(LoginDone(model: response));
       } else {
         emit(LoginErrorLoading(message: response.result!.message));

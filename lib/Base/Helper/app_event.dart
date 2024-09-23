@@ -25,4 +25,10 @@ class ResetPasswordClickEvent extends AppEvent{
 }
 
 
+// TODAY VISITS
+class GetTodayVisitsEvent extends AppEvent{}
+class GetTodayVisitsDetailsEvent extends AppEvent{
+  final String? visit_id;
+  GetTodayVisitsDetailsEvent({this.visit_id});
+}
 

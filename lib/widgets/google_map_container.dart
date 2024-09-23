@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class GoogleMapContainer extends StatefulWidget{
-  const GoogleMapContainer({super.key});
+  final String? address;
+   GoogleMapContainer({super.key,this.address });
 
   @override
   State<GoogleMapContainer> createState() => _GoogleMapContainerState();
@@ -143,33 +144,19 @@ BitmapDescriptor? customMarker;
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.004,
                             ),
-                            const Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Opacity(
-                                  opacity: 0.9,
-                                  child: Text(
-                                    '١٢٣٤٥ طريق الملك فهد، حي العليا،',
-                                    style: TextStyle(
-                                      color: Color(0xff25292E),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300,
-                                    ),
-                                  ),
+                            Opacity(
+                              opacity: 0.9,
+                              child: Text(
+                             widget.address != null ? widget.address!
+                             :'١٢٣٤٥ طريق الملك فهد، حي العليا،',
+                                style: TextStyle(
+                                  color: Color(0xff25292E),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w300,
+
                                 ),
-                                Opacity(
-                                  opacity: 0.9,
-                                  child: Text(
-                                    'الرياض ١٢٢١٢، المملكة العربية السعودية',
-                                    style: TextStyle(
-                                      color: Color(0xff25292E),
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w300,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            )
+                              ),
+                            ),
                           ],
                         )
                       ],

@@ -83,9 +83,9 @@ class _PageState extends State<_Page> {
           itemBuilder: (context, index) {
             return const RegisteredCustomersScreenContainerItem(
               storeName: 'اسم المتجر',
-              sales: '30,000 مبيعات شهرية',
-              distance: 'يبعد 232 ك.م',
-              money: '15,000 مديونية',
+              sales: '30,000 ',
+              distance: 'يبعد 23 ك.م',
+              money: '15,000 ',
               type: "client",
             );
           },

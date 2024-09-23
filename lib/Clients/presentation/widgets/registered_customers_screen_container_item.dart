@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
 import 'package:water/Clients/presentation/pages/client_details_screen.dart';
+import 'package:water/Visits/data/models/today_visits_model.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
 
 class RegisteredCustomersScreenContainerItem extends StatelessWidget {
   const RegisteredCustomersScreenContainerItem(
       {super.key,
+         this.visit,
       required this.storeName,
       required this.sales,
       required this.distance,
@@ -17,7 +19,7 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
   final String distance;
   final String money;
   final String type;
-
+final Visit? visit ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,7 +29,9 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
           return InkWell(
             onTap: (){
               customAnimatedPushNavigation(context,
-                  type == "visit" ? const VisitsTodayDetailsScreen()
+                  type == "visit" ?  VisitsTodayDetailsScreen(
+                    visitId: visit?.visitId.toString(),
+                  )
               : const ClientDetailsScreen() );
             },
             child: Container(
@@ -55,7 +59,8 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                               ),
                               Flexible(
                                 child: Text(
-                                  storeName,
+                                  type == "visit" ?   visit!.visitName!
+                                  : storeName,
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w500,
@@ -115,7 +120,8 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                             width: constraints.maxWidth * 0.008,
                           ),
                           Text(
-                            money,
+                            "${type == "visit" ?  visit!.totalAmountDue!.toString()
+                                : money} مديونية ",
                             style: const TextStyle(
                               color: Color(0xFFAC6521),
                               fontSize: 14,
@@ -134,7 +140,8 @@ class RegisteredCustomersScreenContainerItem extends StatelessWidget {
                             width: constraints.maxWidth * 0.008,
                           ),
                           Text(
-                            sales,
+                           "${ type == "visit" ?  visit!.monthOrders!.toString()
+                               : sales }  مبيعات شهرية ",
                             style: const TextStyle(
                               color: Color(0xff1D6E4F),
                               fontSize: 14,

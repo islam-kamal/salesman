@@ -102,7 +102,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),
-                      const GoogleMapContainer(),
+                       GoogleMapContainer(),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),

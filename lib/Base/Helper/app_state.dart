@@ -1,6 +1,8 @@
 import 'package:water/Authentication/data/models/login_model.dart';
 import 'package:water/Profile/data/models/profile_model.dart';
 import 'package:water/Profile/data/models/resetPassword_model.dart';
+import 'package:water/Visits/data/models/today_visits_details_model.dart';
+import 'package:water/Visits/data/models/today_visits_model.dart';
 
 abstract class AppState {
   get model =>null;
@@ -79,4 +81,28 @@ class RestPasswordErrorLoading extends AppState{
 class AppDrawerDoneState extends AppState{
   final String drawerType ;
   AppDrawerDoneState({required this.drawerType});
+}
+
+
+//TODAY VISITS
+class GeTodayVisitsDone extends AppState{
+  final  List<Visit>? visits;
+  GeTodayVisitsDone({this.visits});
+}
+
+class GetTodayVisitsErrorLoading extends AppState{
+  final String? message;
+  GetTodayVisitsErrorLoading({this.message});
+}
+
+
+//TODAY VISITS Details
+class GeTodayVisitDetailsDone extends AppState{
+  final   List<VisitDetails>? visitDetails;
+  GeTodayVisitDetailsDone({this.visitDetails});
+}
+
+class GetTodayVisitDetailsErrorLoading extends AppState{
+  final String? message;
+  GetTodayVisitDetailsErrorLoading({this.message});
 }

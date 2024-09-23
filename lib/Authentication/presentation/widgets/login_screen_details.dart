@@ -237,10 +237,11 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
         bloc: loginBloc,
         listener: (context, state) {
           if(state is Loading){
-            QuickAlert.show(
+         /*   QuickAlert.show(
               context: context,
               type: QuickAlertType.loading,
-            );
+            );*/
+            Shared.showLoadingDialog(context: context);
           }
           else if(state is LoginDone){
             print("Done");
@@ -268,6 +269,7 @@ class _LoginScreenDetailsState extends State<LoginScreenDetails> {
               title: "خطا ...",
               text: state.message,
             );
+
           }
         },
         child:Directionality(
