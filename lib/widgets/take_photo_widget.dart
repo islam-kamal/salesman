@@ -2,6 +2,8 @@ import 'dart:io';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:water/Base/common/shared.dart';
+import 'package:water/Visits/presentation/widgets/photo_gallery_widget.dart';
 
 class TakePhoto extends StatefulWidget {
   const TakePhoto({super.key});
@@ -25,15 +27,14 @@ _takePicture() async{
     }
    setState(() {
       _selectImage = File(pickedImage.path);
+      Shared.images_list.add(_selectImage!);
    });
    
 }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: _takePicture,
-      child: DottedBorder(
+    return DottedBorder(
         borderType: BorderType.RRect,
         radius: const Radius.circular(8),
         color: Color.fromARGB(255, 228, 224, 224),
@@ -41,34 +42,44 @@ _takePicture() async{
         strokeWidth: 2,
         child: Container(
           width: double.infinity,
-          height: MediaQuery.of(context).orientation == Orientation.portrait ?
-             MediaQuery.of(context).size.height * 0.044
-             : MediaQuery.of(context).size.height * 0.066,
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(8)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
             children: [
-              const Text(
-                'اضف صورة',
-                style: TextStyle(
-                  color: Color(0xff1D7AFC),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w300,
+              Shared.images_list.length > 0
+                  ? PhotoGalleryWidget()
+                  : Container(),
+        InkWell(
+          onTap: _takePicture,
+          child:  Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'اضف صورة',
+                      style: TextStyle(
+                        color: Color(0xff1D7AFC),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w300,
+                      ),
+                    ),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * 0.005,
+                    ),
+                    Image.asset(
+                      'assets/images/AddCCCircle.png',
+                      height: MediaQuery.of(context).size.height * 0.017,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.005,
-              ),
-              Image.asset(
-                'assets/images/AddCCCircle.png',
-                height: MediaQuery.of(context).size.height * 0.017,
-              ),
+              )),
             ],
-          ),
+          )
+
+
         ),
-      ),
-    );
+      );
   }
 }
 

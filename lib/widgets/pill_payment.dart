@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 
 class PillPayment extends StatelessWidget {
   const PillPayment({super.key, required this.textButton, this.dialogName = 'pill'});
@@ -47,7 +47,7 @@ class PillPayment extends StatelessWidget {
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.23,
                     height: MediaQuery.of(context).orientation ==
-                            Orientation.portrait
+                        Orientation.portrait
                         ? MediaQuery.of(context).size.height * 0.038
                         : MediaQuery.of(context).size.height * 0.065,
                     decoration: BoxDecoration(

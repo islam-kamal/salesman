@@ -1,64 +1,242 @@
-import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:water/add_client_location_screen.dart';
-import 'package:water/add_store_information_screen.dart';
-import 'package:water/available_items_screen.dart';
-import 'package:water/available_products_screen.dart';
-import 'package:water/change_password_screen.dart';
-import 'package:water/client_details_indebt_screen.dart';
-import 'package:water/client_details_pending_screen.dart';
-import 'package:water/client_details_screen.dart';
-import 'package:water/client_details_visits_history_screen.dart';
-import 'package:water/collection_receipit_details_screen.dart';
-import 'package:water/error_in_network_screen.dart';
-import 'package:water/financial_collection_screen.dart';
-import 'package:water/inventory_add_request_confirm_screen.dart';
-import 'package:water/inventory_add_request_screen.dart';
-import 'package:water/inventory_available_products_Screen.dart';
-import 'package:water/inventory_current_request_details_screen.dart';
-import 'package:water/inventory_second_add_request_screen.dart';
-import 'package:water/login_screen.dart';
-import 'package:water/order_details_return_screen.dart';
-import 'package:water/order_details_sale_Screen.dart';
-import 'package:water/previous_invoices_screen.dart';
-import 'package:water/profile_screen.dart';
-import 'package:water/registered_customers_screen.dart';
-import 'package:water/return_orders_screen.dart';
-import 'package:water/review_returned_products_screen.dart';
-import 'package:water/trader_details_screen.dart';
-import 'package:water/transfer_requests_screen.dart';
-import 'package:water/visit_details_screen_collected.dart';
-import 'package:water/visit_details_screen_public.dart';
-import 'package:water/visit_details_screen_sales.dart';
-import 'package:water/visits_history_screen.dart';
-import 'package:water/visits_today_screen.dart';
-import 'package:water/widgets/attach_photos_screen_body.dart';
-import 'package:water/work_orders_order_details_return_screen.dart';
-import 'package:water/work_orders_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
+import 'package:water/SplashScreen/presentation/pages/splash_screen.dart';
+import 'package:water/index.dart';
+import 'dart:io';
+import 'Base/common/shared_preference_manger.dart';
+
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+/*
+@pragma('vm:entry-point')
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  await Firebase.initializeApp();
+
+  if (message != null) {
+    final routeMessage = message.data['Type'];
+      switch (routeMessage) {
+        case "Jobs":
+          break;
+      }
+    }
+  }
+
+*/
+
+void main() async{
+  HttpOverrides.global = MyHttpOverrides();
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalizeAndTranslate.init(
+    defaultType: LocalizationDefaultType.device,
+    supportedLanguageCodes: <String>['ar', 'en'],
+    assetLoader: AssetLoaderRootBundleJson(
+      'assets/i18n/',
+    ),
+
+  );
+
+  //await Firebase.initializeApp();
 
 
-void main() {
+/*
+  /// maintain the push message if the application is closed
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+*/
+
+
+
+  await ScreenUtil.ensureScreenSize();
+
   runApp(const MyApp());
 }
 
-GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+  static var app_langauge;
 
+  static void setLocale(BuildContext context, Locale newLocale) {
+    _MyAppState? state = context.findAncestorStateOfType();
+
+    app_langauge = newLocale.languageCode;
+    state?.setState(() => state.local = newLocale);
+  }
+
+  static void restartApp(BuildContext context) {
+    context.findAncestorStateOfType<_MyAppState>()?.restartApp();
+  }
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  Locale? local;
+  Key? key = UniqueKey();
+  void restartApp() {
+    setState(() {
+      get_Static_data();
+      key = UniqueKey();
+    });
+  }
+
+  void get_Static_data() async {
+    await sharedPreferenceManager.readString(CachingKey.APP_LANGUAGE).then((value) {
+      if (value == '') {
+        MyApp.app_langauge = LocalizeAndTranslate.getLanguageCode();
+      } else {
+        MyApp.app_langauge = value;
+      }
+    });
+    /*   String? device_token = await FirebaseMessaging.instance.getToken();
+    sharedPreferenceManager.writeData(CachingKey.DEVICE_TOKEN, device_token);*/
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    get_Static_data();
+    // _fcmConfigure(context);
+
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey: navigatorKey,
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff1D7AFC)),
-        useMaterial3: true,
-        fontFamily:'GE Dinar One'
-      ),
-      home: InventoryAddRequestConfirmScreen(),       //InventoryCurrentRequestDetailsScreen(),    //InventorySecondAddRequestScreen(),   //InventoryAddRequestScreen(),       //TransferRequestsScreen()   //InventoryAvailableProductsScreen()         //AttachPhotosScreen()      //PreviousInvoicesScreen()         //CollectionReceipitDetailsScreen(),      //FinancialCollectionScreen(),     //AvailableProductsScreen()    //AddClientLocationScreen()       //AddStoreInformationScreen()     //AddMerchantInformationScreen()      //LoginScreen(),        //ProfileScreen(),      //ChangePasswordScreen()           //ClientDetailsScreen(),       //ClientDetailsIndebtScreen(),       //ClientDetailsPendingScreen(),       //InventoryAvailableProductsScreen(),       //WorkOrdersOrderDetailsReturnScreen()    //WorkOrdersScreen(),    //OrderDetailsSaleScreen(),    //OrderDetailsReturnScreen()       //ReturnOrdersScreen()     //ClientDetailsVisitsHistoryScreen(),      //TraderDetailsScreen(),     //VisitsTodayScreenDetails()     //VisitDetailsScreenCollected(),      //VisitDetailsScreenPublic(),     //VisitDetailsScreenSales(),     //VisitDetailsScreenReturned(),    //PreviousInvoicesScreen(),     //VisitDetailsScreenPublic(),      //ErrorInServiceScreen(), //ErrorInNetworkScreen(),   //LoginScreen(),      //VisitsHistoryScreen(),    //VisitsTodayScreen(),      //AvailableProductsWhenAddProductScreen(),     //AvailableProductsScreen(),      //ReviewProductScreen(),         //AvailableItemsScreen(),       //ReviewReturnedProductsScreen(),     //InvoicesDetailsScreen()       //AvailableProductsScreen(),           //InventoryScreen(),     //VisitsTodayScreen(),          //HomeScreen(),         //SoldProductsScreen(),            
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        locale: local,
+        supportedLocales: LocalizeAndTranslate.getLocals(),
+
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          DefaultCupertinoLocalizations.delegate,
+        ],
+    //    key: navigatorKey,
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: false,
+            fontFamily:'GE Dinar One'
+        ),
+        home: LocalizedApp(
+          child: SplashScreen(),
+        ));
+  }
+
+/*
+  Future<void> _fcmConfigure(BuildContext context) async {
+    LocalNotificationService.initialize(context);
+    final _firebaseMessaging = FirebaseMessaging.instance;
+
+
+    String? device_token = await FirebaseMessaging.instance.getToken();
+    sharedPreferenceManager.writeData(CachingKey.DEVICE_TOKEN, device_token);
+    print("device token : ${device_token}");
+
+    ///required by IOS permissions
+    _firebaseMessaging.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
     );
+    // //get the current device token
+    // _getCustomerNotification();
+
+    ///gives you the message on which use taps
+    ///and it opened from the terminated state
+    _firebaseMessaging.getInitialMessage().then((message) async {
+      // get the remote message when your app opened from push notification while in background state
+      RemoteMessage? initialMessage = await FirebaseMessaging.instance.getInitialMessage();
+
+// check if it is exists
+      if (initialMessage != null) {
+        // check the data property within RemoteMessage and do navigate based on it
+
+
+        if (initialMessage != null) {
+          final routeMessage = initialMessage.data['Type'];
+            switch (routeMessage) {
+              case "Jobs":
+                break;
+
+
+          }
+        }
+      }
+    });
+
+    ///app open on ForeGround. notification will not be visibile but you will receive the data
+    FirebaseMessaging.onMessage.listen((message) {
+
+
+      if (message.notification != null) {
+        LocalNotificationService.display(message);
+      }
+
+      if (message != null) {
+        final routeMessage = message.data['Type'];
+          switch (routeMessage) {
+            case "Jobs":
+              Navigator.push(
+                  navigatorKey.currentState!.context,
+                  MaterialPageRoute(
+                      builder: (context) => DashboardScreen()));
+              break;
+
+          }
+        }
+
+    });
+
+    ///app in background and not terminated when you click on the notification this should be triggered
+    FirebaseMessaging.onMessageOpenedApp.listen((message) {
+
+      if (message != null) {
+        final routeMessage = message.data['Type'];
+          switch (routeMessage) {
+            case "Jobs":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) => DashboardScreen()));
+              break;
+
+        }
+      }
+    });
+
+    FirebaseMessaging.onBackgroundMessage((message)async{
+      await Firebase.initializeApp();
+
+      if (message != null) {
+        final routeMessage = message.data['Type'];
+          switch (routeMessage) {
+            case "Jobs":
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (BuildContext context) =>DashboardScreen(
+                    //     image_path: baseUrl + previous_job.attachments!.firstWhere((element) => element.status ==1).filePath!
+                  )
+
+
+
+              ));
+              break;
+
+        }
+      }
+    });
+
+  }
+*/
+
+}
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }

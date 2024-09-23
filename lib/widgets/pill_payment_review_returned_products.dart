@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:water/basics/dialogs.dart';
+import 'package:water/Base/common/dialogs.dart';
 
 class PillPaymentReviewReturnedProducts extends StatelessWidget {
   const PillPaymentReviewReturnedProducts({super.key});

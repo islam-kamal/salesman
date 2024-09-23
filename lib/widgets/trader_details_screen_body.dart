@@ -15,7 +15,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        // drawer: const Drawer(),
+        // endDrawer: const Drawer(),
         body: Padding(
           padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
           child: Row(
@@ -173,7 +173,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                             ),
                             TransactionDetailsContainer(
                               image: 'assets/images/Union.png',
-                              color: Color(0xff5F480C),
+                              color: Color(0xFFAC6521),
                               name: 'مرتجعات',
                               price: '25,000 ر.س',
                             ),
@@ -196,7 +196,7 @@ class TraderDetailsScreenBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),
-                      const GoogleMapContainer(),
+                       GoogleMapContainer(),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.014,
                       ),

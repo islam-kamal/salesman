@@ -11,17 +11,6 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget {
             ? Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: const Icon(Icons.arrow_back),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.012,
-                      ),
                       Row(
                         children: [
                           InkWell(
@@ -40,8 +29,6 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ],
-                  ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.019,
                   ),

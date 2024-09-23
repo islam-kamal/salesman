@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Visits/presentation/pages/History/visits_history_screen.dart';
 import 'package:water/widgets/collected_button.dart';
 import 'package:water/widgets/collected_list_view_item.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
@@ -15,74 +17,17 @@ class VisitDetailsScreenCollectedBody extends StatelessWidget {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         // drawer: const Drawer(),
-        body: Padding(
-          padding: const EdgeInsets.only(left: 18, right: 18, top: 48),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.24,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.height * 0.041
-                          : MediaQuery.of(context).size.height * 0.063,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 11),
-                        child: Row(
-                          children: [
-                            InkWell(
-                              onTap: () {},
-                              child: const ImageIcon(AssetImage(
-                                  'assets/images/Icon-Wrappppper.png')),
-                            ),
-                            SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.01,
-                            ),
-                            const Opacity(
-                              opacity: 0.8,
-                              child: Text(
-                                'اخفاء القائمة',
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    NavigateBasicContainer(),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    const VisitDetailsContainer(),
-                  ],
-                ),
-              ),
-              Expanded(
-                flex: 5,
-                child: Column(
+        body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: const Icon(Icons.arrow_back)),
+                        InkWell(
+                            onTap: () {Navigator.of(context).pop();},
+                            child: Icon(Icons.arrow_back)),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.01,
+                        ),
                         const Text(
                           'تفاصيل الزيارة',
                           style: TextStyle(
@@ -222,10 +167,6 @@ class VisitDetailsScreenCollectedBody extends StatelessWidget {
                   ],
                 ),
               ),
-            ],
-          ),
-        ),
-      ),
     );
   }
 }

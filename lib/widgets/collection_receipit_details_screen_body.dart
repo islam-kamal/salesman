@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:water/index.dart';
+import 'package:water/App/presentation/widgets/Drawer/good_returns_edit_product_drawer.dart';
+import 'package:water/Base/common/dialogs.dart';
 import 'package:water/widgets/button.dart';
-import 'package:water/widgets/drawer_invoices_details_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_invoices_details.dart';
+import 'package:water/widgets/bill_container.dart';
 import 'package:water/widgets/search_text_field.dart';
 import 'package:water/widgets/store_deal_container_widget.dart';
 import 'package:water/widgets/water_item_invoices_details.dart';
+import 'package:water/widgets/water_item_previous_invoices.dart';
 
 class CollectionReceipitDetailsScreenBody extends StatelessWidget {
   CollectionReceipitDetailsScreenBody({super.key});
-
-  final GlobalKey<ScaffoldState> _key = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          drawer: const DrawerInvoicesDetailsScreen(),
-          key: _key,
+          endDrawer: const GoodReturnsEditProductDrawer(),
           body: Padding(
             padding: const EdgeInsets.only(right: 18, left: 18, top: 48),
             child: Row(
@@ -47,7 +46,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
                             child: Row(
                               children: [
                                 InkWell(
-                                  onTap: () => _key.currentState!.openDrawer(),
+                                  onTap: (){},
                                   child: const ImageIcon(AssetImage(
                                       'assets/images/Icon-Wrappppper.png')),
                                 ),
@@ -89,7 +88,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
                             child: Column(
                               children: [
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () => Dialogs.showDialogFinishVisit(context),
                                   child: const Button(
                                     color: Colors.black,
                                     iconImage: 'assets/images/ChCircle.png',
@@ -146,7 +145,7 @@ class CollectionReceipitDetailsScreenBody extends StatelessWidget {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.011,
                       ),
-                      const PillContainer(containerName: 'الصنف'),
+                      const BillContainer(containerName: 'الصنف'),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.011,
                       ),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:water/App/presentation/bloc/app_bloc.dart';
+import 'package:water/Base/Helper/app_event.dart';
 
 class ReviewProductWaterItem extends StatelessWidget{
   const ReviewProductWaterItem({super.key});
@@ -6,90 +8,90 @@ class ReviewProductWaterItem extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5),
-      child: Container(
-        width: double.infinity,
-              height: MediaQuery.of(context).orientation == Orientation.portrait ?
-          MediaQuery.of(context).size.height * 0.045
-          : MediaQuery.of(context).size.height * 0.065,
-              decoration: BoxDecoration(
-              color: Colors.white,
-                borderRadius: BorderRadius.circular(8)
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Image.asset('assets/images/IMGggg.png')
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.015,
-                    ),
-                    const Expanded(
-                    flex: 1,
-                    child: Text(
-                      '33',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500
+        padding: const EdgeInsets.symmetric(vertical: 5),
+        child: Container(
+          width: double.infinity,
+                height: MediaQuery.of(context).orientation == Orientation.portrait ?
+            MediaQuery.of(context).size.height * 0.045
+            : MediaQuery.of(context).size.height * 0.065,
+                decoration: BoxDecoration(
+                color: Colors.white,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Image.asset('assets/images/IMGggg.png')
                       ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.015,
                       ),
-                    ),
-                    const Expanded(
-                      flex: 6,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                         Row(
-                          children: [
-                            Text(
-                              'الكاتجوري',
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500
-                              ),
-                            ),
-                            Text(
-                              '   .   ',
-                              style: TextStyle(
-                                color: Color(0xff25292E),
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900
-                              ),
-                            ),
+                      const Expanded(
+                      flex: 1,
+                      child: Text(
+                        '33',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500
+                        ),
+                        ),
+                      ),
+                      const Expanded(
+                        flex: 6,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                           Row(
+                            children: [
                               Text(
-                              'مياه',
-                              style: TextStyle(
-                                color: Color(0xff25292E),
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500
+                                'الكاتجوري',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          'مياه مدينة شرنك 15 حبة  600 مل',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w300
+                              Text(
+                                '   .   ',
+                                style: TextStyle(
+                                  color: Color(0xff25292E),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w900
+                                ),
+                              ),
+                                Text(
+                                'مياه',
+                                style: TextStyle(
+                                  color: Color(0xff25292E),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500
+                                ),
+                              ),
+                            ],
                           ),
+                          Text(
+                            'مياه مدينة شرنك 15 حبة  600 مل',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w300
+                            ),
+                          ),
+                        ],
+                      ),
+                      ),
+                      const Expanded(
+                      flex: 1,
+                      child: Text(
+                        '42 ر.س',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500
                         ),
-                      ],
-                    ),
-                    ),
-                    const Expanded(
-                    flex: 1,
-                    child: Text(
-                      '42 ر.س',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500
+                        ),
                       ),
-                      ),
-                    ),
-                ],
-              ),
-      ),
-    );
+                  ],
+                ),
+        ),
+      );
 }
 }

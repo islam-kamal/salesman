@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:water/invoices_details_screen.dart';
+import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Inventory/presentation/pages/current_requests/inventory_current_request_details_screen.dart';
 
 class CurrentRequestGridViewItem extends StatelessWidget {
   const CurrentRequestGridViewItem(
@@ -27,18 +28,10 @@ class CurrentRequestGridViewItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: InkWell(
             onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => const InvoicesDetailsScreen(),
-                ),
-              );
+              customAnimatedPushNavigation(context, const InventoryCurrentRequestDetailsScreen());
             },
             child: Container(
                 width: double.infinity,
-                height:
-                    MediaQuery.of(context).orientation == Orientation.portrait
-                        ? MediaQuery.of(context).size.height * 0.093
-                        : MediaQuery.of(context).size.height * 0.148,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(

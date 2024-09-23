@@ -1,4 +1,4 @@
-package com.example.water
+package com.app.salesman
 
 import io.flutter.embedding.android.FlutterActivity
 
