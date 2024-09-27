@@ -1,13 +1,13 @@
 import 'package:water/Base/network/network-mappers.dart';
 
-class LoginModel extends BaseMappable{
+class ProductModel extends BaseMappable {
   String? jsonrpc;
   String? id;
   Result? result;
 
-  LoginModel({this.jsonrpc, this.id, this.result});
+  ProductModel({this.jsonrpc, this.id, this.result});
 
-  LoginModel.fromJson(Map<String, dynamic> json) {
+  ProductModel.fromJson(Map<String, dynamic> json) {
     jsonrpc = json['jsonrpc'];
     id = json['id'];
     result =
@@ -30,67 +30,66 @@ class LoginModel extends BaseMappable{
     id = json['id'];
     result =
     json['result'] != null ? new Result.fromJson(json['result']) : null;
-    return LoginModel(id: id,jsonrpc: jsonrpc,result: result);
+    return ProductModel(id: id,jsonrpc: jsonrpc,result: result);
   }
 }
 
 class Result {
-  String? status;
+  int? statusCode;
+  bool? isError;
   String? message;
-  Data? data;
+  List<Product>? products;
 
-  Result({this.status, this.message, this.data});
+  Result({this.statusCode, this.isError, this.message, this.products});
 
   Result.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
+    statusCode = json['status_code'];
+    isError = json['is_error'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    if (json['result'] != null) {
+      products = <Product>[];
+      json['result'].forEach((v) {
+        products!.add(new Product.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
+    data['status_code'] = this.statusCode;
+    data['is_error'] = this.isError;
     data['message'] = this.message;
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
+    if (this.products != null) {
+      data['result'] = this.products!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Data {
+class Product {
   int? id;
   String? name;
-  String? mobile;
-  bool? isManager;
-  bool? managerId;
-  String? type;
+  String? description;
+  double? price;
+  String? image;
 
-  Data(
-      {this.id,
-        this.name,
-        this.mobile,
-        this.isManager,
-        this.managerId,
-        this.type});
+  Product({this.id, this.name, this.description, this.price, this.image});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    mobile = json['mobile'];
-    isManager = json['is_manager'];
-    managerId = json['manager_id'];
-    type = json['type'];
+    description = json['description'];
+    price = json['price'];
+    image = json['image'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
-    data['mobile'] = this.mobile;
-    data['is_manager'] = this.isManager;
-    data['manager_id'] = this.managerId;
-    data['type'] = this.type;
+    data['description'] = this.description;
+    data['price'] = this.price;
+    data['image'] = this.image;
     return data;
   }
 }

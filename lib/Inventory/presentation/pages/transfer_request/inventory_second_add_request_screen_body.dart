@@ -57,9 +57,9 @@ class InventorySecondAddRequestScreenBody extends StatelessWidget {
                         return InkWell(
                             onTap: (){
                             appBloc.add(AppDrawrEvent(drawerType: 'addProduct'));
-                            scaffoldKey!.currentState?.openEndDrawer();
+                    //        scaffoldKey!.currentState?.openEndDrawer();
                             },
-                            child: const WaterItemAvailableProducts());
+                            child:  WaterItemAvailableProducts());
                       }),
                 ],
               ),

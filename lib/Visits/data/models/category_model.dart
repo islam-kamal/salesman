@@ -1,13 +1,13 @@
 import 'package:water/Base/network/network-mappers.dart';
 
-class LoginModel extends BaseMappable{
+class CategoryModel extends BaseMappable{
   String? jsonrpc;
   String? id;
   Result? result;
 
-  LoginModel({this.jsonrpc, this.id, this.result});
+  CategoryModel({this.jsonrpc, this.id, this.result});
 
-  LoginModel.fromJson(Map<String, dynamic> json) {
+  CategoryModel.fromJson(Map<String, dynamic> json) {
     jsonrpc = json['jsonrpc'];
     id = json['id'];
     result =
@@ -30,67 +30,65 @@ class LoginModel extends BaseMappable{
     id = json['id'];
     result =
     json['result'] != null ? new Result.fromJson(json['result']) : null;
-    return LoginModel(id: id,jsonrpc: jsonrpc,result: result);
+    return CategoryModel(id: id,jsonrpc: jsonrpc,result: result);
   }
 }
 
 class Result {
-  String? status;
+  int? statusCode;
+  bool? isError;
   String? message;
-  Data? data;
+  List<CategoryData>? categories;
 
-  Result({this.status, this.message, this.data});
+  Result({this.statusCode, this.isError, this.message, this.categories});
 
   Result.fromJson(Map<String, dynamic> json) {
-    status = json['status'];
+    statusCode = json['status_code'];
+    isError = json['is_error'];
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    if (json['result'] != null) {
+      categories = <CategoryData>[];
+      json['result'].forEach((v) {
+        categories!.add(new CategoryData.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['status'] = this.status;
+    data['status_code'] = this.statusCode;
+    data['is_error'] = this.isError;
     data['message'] = this.message;
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
+    if (this.categories != null) {
+      data['result'] = this.categories!.map((v) => v.toJson()).toList();
     }
     return data;
   }
 }
 
-class Data {
+class CategoryData {
   int? id;
   String? name;
-  String? mobile;
-  bool? isManager;
-  bool? managerId;
-  String? type;
+  int? productCount;
+  String? image;
 
-  Data(
-      {this.id,
-        this.name,
-        this.mobile,
-        this.isManager,
-        this.managerId,
-        this.type});
+  CategoryData({this.id, this.name, this.productCount,this.image});
 
-  Data.fromJson(Map<String, dynamic> json) {
+  CategoryData.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
-    mobile = json['mobile'];
-    isManager = json['is_manager'];
-    managerId = json['manager_id'];
-    type = json['type'];
+    productCount = json['product_count'];
+    image = json['image'];
+
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
     data['name'] = this.name;
-    data['mobile'] = this.mobile;
-    data['is_manager'] = this.isManager;
-    data['manager_id'] = this.managerId;
-    data['type'] = this.type;
+    data['product_count'] = this.productCount;
+    data['image'] = this.image;
+
     return data;
   }
 }

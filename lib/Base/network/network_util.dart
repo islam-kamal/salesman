@@ -66,7 +66,7 @@ SharedPreferenceManager sharedPreferenceManager =SharedPreferenceManager();
 
     var response;
     dio.options.baseUrl = baseUrl;
-
+    dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
     // Add the API key to the headers if provided
     Map<String, dynamic> finalHeaders = {};
     if (headers != null) {
@@ -83,7 +83,7 @@ SharedPreferenceManager sharedPreferenceManager =SharedPreferenceManager();
         options: Options(
           headers: finalHeaders,
           requestEncoder: encoding,
-          followRedirects: false,
+          followRedirects: true,
           validateStatus: (status) {
             return status! < 500;
           },
@@ -94,7 +94,6 @@ SharedPreferenceManager sharedPreferenceManager =SharedPreferenceManager();
         response = e.response;
       }
     }
-
     return handleResponse(response, responseType);
   }
 

@@ -1,10 +1,12 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/theme.dart';
+import 'package:water/Clients/data/models/invoice_history_model.dart';
 
 class BarChartSample extends StatelessWidget {
   final String title;
-  BarChartSample({required this.title});
+  List<Statistics>? statistics;
+  BarChartSample({required this.title,this.statistics});
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -38,7 +40,10 @@ class BarChartSample extends StatelessWidget {
                           icon: Icon(Icons.arrow_back_ios),
                           onPressed: () {},
                         ),
-                        Text('اكتوبر 2023 - مارس 2024',
+
+                         Text(
+                           statistics == null ?  'اكتوبر 2023 - مارس 2024'
+                          : ' ${statistics!.last.month} 2024   -  ${statistics!.first.month} 2024 ',
                         style: TextStyle(fontWeight: FontWeight.w500,fontSize: 14),),
                         IconButton(
                           icon: Icon(Icons.arrow_forward_ios),
@@ -52,9 +57,77 @@ class BarChartSample extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: BarChart(
-                      BarChartData(
+                      statistics != null ? BarChartData(
                         alignment: BarChartAlignment.spaceAround,
-                        barGroups: [
+                       barGroups: statistics!.map((e){
+                         return    BarChartGroupData(
+                           x: statistics!.indexOf(e),
+                           barRods: [
+                             BarChartRodData(
+                                 y: double.parse(e.collection.toString()),
+                                 colors: [Colors.green],
+                                 width:
+                                 MediaQuery.of(context).size.width * 0.02,
+                                 borderRadius: BorderRadius.only(
+                                     topLeft: Radius.circular(5),
+                                     topRight: Radius.circular(5))),
+                             BarChartRodData(
+                                 y: double.parse(e.sales.toString()),
+                                 colors: [Colors.blue],
+                                 width:
+                                 MediaQuery.of(context).size.width * 0.02,
+                                 borderRadius: BorderRadius.only(
+                                     topLeft: Radius.circular(5),
+                                     topRight: Radius.circular(5))),
+                             BarChartRodData(
+                                 y: double.parse(e.returns.toString()),
+                                 colors: [Colors.orange],
+                                 width:
+                                 MediaQuery.of(context).size.width * 0.02,
+                                 borderRadius: BorderRadius.only(
+                                     topLeft: Radius.circular(5),
+                                     topRight: Radius.circular(5))),
+                           ],
+                         );
+                       }).toList(),
+                        borderData: FlBorderData(show: false),
+                        titlesData: FlTitlesData(
+                          leftTitles: SideTitles(showTitles: true),
+                          rightTitles: SideTitles(showTitles: false),
+                          topTitles: SideTitles(showTitles: false),
+                          bottomTitles: SideTitles(
+                            showTitles: true,
+                            getTitles: (double value) {
+                              int index = value.toInt();
+                              return index >= 0 && index < statistics!.length ? statistics![index].month : '';
+                            },
+                          ),
+                   /*         getTitles: (double value) {
+                              switch (value.toInt()) {
+                                case 0:
+                                  return 'اكتوبر';
+                                case 1:
+                                  return 'نوفمبر';
+                                case 2:
+                                  return 'ديسمبر';
+                                case 3:
+                                  return 'يناير';
+                                case 4:
+                                  return 'فبراير';
+                                case 5:
+                                  return 'مارس';
+                                // Add more cases for each month
+                                default:
+                                  return '';
+                              }
+                            },*/
+
+                          //),
+                        ),
+                      )
+                      : BarChartData(
+                        alignment: BarChartAlignment.spaceAround,
+                     barGroups: [
                           BarChartGroupData(
                             x: 0,
                             barRods: [
@@ -106,7 +179,7 @@ class BarChartSample extends StatelessWidget {
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
                           ]),
                           BarChartGroupData(x: 3, barRods: [
-                            BarChartRodData(y: 800, colors: [Colors.orange],width: MediaQuery.of(context).size.width * 0.02,
+                            BarChartRodData(y: 800   , colors: [Colors.orange],width: MediaQuery.of(context).size.width * 0.02,
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
                             BarChartRodData(y: 300, colors: [Colors.blue],width: MediaQuery.of(context).size.width * 0.02,
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
@@ -126,8 +199,11 @@ class BarChartSample extends StatelessWidget {
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
                             BarChartRodData(y: 2300, colors: [Colors.blue],width: MediaQuery.of(context).size.width * 0.02,
                                 borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
-                            BarChartRodData(y: 2100, colors: [Colors.orange],width: MediaQuery.of(context).size.width * 0.02,
-                                borderRadius: BorderRadius.only(topLeft: Radius.circular(5),topRight: Radius.circular(5))),
+                            BarChartRodData(y: 2100,
+                                colors: [Colors.orange],
+                                width: MediaQuery.of(context).size.width * 0.02,
+                                borderRadius: BorderRadius.only(topLeft: Radius.circular(5),
+                                    topRight: Radius.circular(5))),
                           ]),
                           // Add more groups here for each month
                         ],
@@ -152,7 +228,7 @@ class BarChartSample extends StatelessWidget {
                                   return 'فبراير';
                                 case 5:
                                   return 'مارس';
-                                // Add more cases for each month
+                              // Add more cases for each month
                                 default:
                                   return '';
                               }
@@ -163,6 +239,7 @@ class BarChartSample extends StatelessWidget {
                     ),
                   ),
                 ),
+
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: Row(

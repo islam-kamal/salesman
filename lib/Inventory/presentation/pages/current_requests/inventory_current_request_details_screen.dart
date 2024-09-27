@@ -48,7 +48,7 @@ class _InventoryCurrentRequestDetailsScreenState extends State<InventoryCurrentR
                     text: 'اضف منتج',
                     onClick: () {
                       appBloc.add(AppDrawrEvent(drawerType: 'addProduct'));
-                    scaffoldKey!.currentState!.openEndDrawer();
+                //    scaffoldKey!.currentState!.openEndDrawer();
                     },
                   ),
                   AppButtonWidget(

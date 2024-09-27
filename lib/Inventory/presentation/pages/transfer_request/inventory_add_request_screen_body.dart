@@ -38,7 +38,7 @@ class InventoryAddRequestScreenBody extends StatelessWidget {
                                 onTap: (){
                                   customAnimatedPushNavigation(context, InventorySecondAddRequestScreen());
                                 },
-                                child: const WaterItemAvailableItems());
+                                child:  CategoriesWidget());
                           }),
                     ],
                   ),

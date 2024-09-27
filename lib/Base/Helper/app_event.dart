@@ -32,3 +32,17 @@ class GetTodayVisitsDetailsEvent extends AppEvent{
   GetTodayVisitsDetailsEvent({this.visit_id});
 }
 
+// Categories
+class GetCategoriesEvent extends AppEvent{
+  GetCategoriesEvent();
+}
+
+// PRODUCTS
+class GetProductsEvent extends AppEvent{
+  GetProductsEvent();
+}
+
+// HISTORY INVOICES
+class GetHistoryInvoiceEvent extends AppEvent{
+  GetHistoryInvoiceEvent();
+}

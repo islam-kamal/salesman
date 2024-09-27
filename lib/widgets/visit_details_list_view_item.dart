@@ -9,7 +9,7 @@ class VisitDetailsListViewItem extends StatelessWidget {
       required this.productNumber,
       required this.productValue});
 
-  final int number;
+  final String number;
   final String date;
   final String pillType;
   final String productNumber;
@@ -32,7 +32,7 @@ class VisitDetailsListViewItem extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Text(
                     number.toString(),
                     style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
@@ -67,7 +67,7 @@ class VisitDetailsListViewItem extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

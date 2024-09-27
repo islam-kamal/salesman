@@ -62,7 +62,7 @@ class _InventoryCurrentRequestDetailsScreenBodyState
                   return InkWell(
                     onTap: () {
                       appBloc.add(AppDrawrEvent(drawerType: 'editProduct'));
-                    scaffoldKey!.currentState!.openEndDrawer();
+              //      scaffoldKey!.currentState!.openEndDrawer();
                     },
                     child: const ReviewProductWaterItem(),
                   );

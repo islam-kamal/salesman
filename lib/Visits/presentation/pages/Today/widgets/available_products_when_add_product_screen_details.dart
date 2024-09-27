@@ -102,13 +102,13 @@ class AvailableProductsWhenAddProductScreenDetails extends StatelessWidget{
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 const SearchTextFieldAvailableProductsScreen(),
+                  SearchTextFieldAvailableProductsScreen(),
                   ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: 4,
                     itemBuilder: (context , index){
-                      return const WaterItemAvailableProducts();
+                      return  WaterItemAvailableProducts();
                     }
                     ),
                      const Divider(

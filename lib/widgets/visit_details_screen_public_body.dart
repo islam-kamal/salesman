@@ -91,7 +91,7 @@ class VisitDetailsScreenPublicBody extends StatelessWidget {
                             return const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8),
                               child: VisitDetailsListViewItem(
-                                number: 33,
+                                number: "33",
                                 date: '23/5/2024',
                                 pillType: 'مرتجع',
                                 productNumber: '50 منتج',

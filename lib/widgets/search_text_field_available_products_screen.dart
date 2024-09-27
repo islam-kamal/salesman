@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:water/Visits/data/models/category_model.dart';
 
 class SearchTextFieldAvailableProductsScreen extends StatelessWidget {
-  const SearchTextFieldAvailableProductsScreen({super.key});
+  CategoryData? categoryData;
+  SearchTextFieldAvailableProductsScreen({super.key,this.categoryData});
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +49,8 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Text(
-                              'مياه',
+                             Text(
+                               categoryData == null ? '' :     '${categoryData!.name}',
                               style: TextStyle(
                                 color: Color(0xff25292E),
                                 fontSize: 16,
@@ -77,11 +79,11 @@ class SearchTextFieldAvailableProductsScreen extends StatelessWidget {
                                       width: MediaQuery.of(context).size.width *
                                           0.002,
                                     ),
-                                    const Text(
-                                      '50 منتج',
+                                     Text(
+                                      categoryData == null ? '' :     '${categoryData!.productCount} منتج ',
                                       style: TextStyle(
                                           color: Color(0xff0056C9),
-                                          fontSize: 14,
+                                          fontSize: 16,
                                           fontWeight: FontWeight.w300),
                                     ),
                                   ],

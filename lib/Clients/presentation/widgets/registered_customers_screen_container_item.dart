@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Base/common/shared_preference_manger.dart';
 import 'package:water/Clients/presentation/pages/client_details_screen.dart';
 import 'package:water/Visits/data/models/today_visits_model.dart';
 import 'package:water/Visits/presentation/pages/Today/visits_today_screen_details.dart';
@@ -28,9 +29,9 @@ final Visit? visit ;
         builder: (context, constraints) {
           return InkWell(
             onTap: (){
+              sharedPreferenceManager.writeData(CachingKey.VISIT_ID,  visit?.visitId.toString());
               customAnimatedPushNavigation(context,
                   type == "visit" ?  VisitsTodayDetailsScreen(
-                    visitId: visit?.visitId.toString(),
                   )
               : const ClientDetailsScreen() );
             },

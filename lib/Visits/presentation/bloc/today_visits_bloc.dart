@@ -34,9 +34,7 @@ class TodayVisitsBloc extends Bloc<AppEvent,AppState> with Validator {
   Future<void> _onTodayVisitsDetails(GetTodayVisitsDetailsEvent event,
       Emitter<AppState> emit) async {
     emit(Loading());
-    var response = await todayVisitsRepository.getTodayVisitsDetails(
-      visit_id: event.visit_id
-    );
+    var response = await todayVisitsRepository.getTodayVisitsDetails();
     print("response visitDetails: ${response!.result!.visitDetails![0].toJson()}");
     try{
       if (response!.result!.statusCode! == 200 ) {

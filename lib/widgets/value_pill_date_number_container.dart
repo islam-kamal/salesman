@@ -23,7 +23,7 @@ class ValuePillDateNumberContainer extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Text(
                     'الرقم',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
@@ -44,7 +44,7 @@ class ValuePillDateNumberContainer extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

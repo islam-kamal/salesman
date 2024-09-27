@@ -84,7 +84,7 @@ class _pageState extends State<_page> {
                   );
                 }
                 else if (state is GeTodayVisitsDone) {
-                  if(state.visits != null || state.visits!.isNotEmpty){
+                  if(state.visits != null && state.visits!.isNotEmpty){
                     return GridView.builder(
                       physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,

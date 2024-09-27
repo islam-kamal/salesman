@@ -7,6 +7,7 @@ import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/Helper/app_event.dart';
 import 'package:water/Base/Helper/app_state.dart';
 import 'package:water/Base/common/navigtor.dart';
+import 'package:water/Base/common/shared_preference_manger.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Visits/presentation/bloc/today_visits_bloc.dart';
 import 'package:water/Visits/presentation/pages/Today/available_items_screen.dart';
@@ -21,14 +22,12 @@ import '../../../../Base/Shimmer/loading_shimmer.dart';
 
 
 class VisitsTodayDetailsScreen extends StatelessWidget{
-  final String? visitId;
-   VisitsTodayDetailsScreen({super.key,this.visitId});
+   VisitsTodayDetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AppScreen(
         child:  _page(
-          visitId: visitId,
         ),
         screenButtons: [
           AppButtonWidget(

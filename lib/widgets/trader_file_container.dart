@@ -105,28 +105,32 @@ class TraderFileContainer extends StatelessWidget {
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Opacity(
-                          opacity: 0.7,
-                          child: Text(
-                            'اسم التاجر',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300,
-                                color: Color(0xff25292E)),
+                    flex: 4,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Opacity(
+                            opacity: 0.7,
+                            child: Text(
+                              'اسم التاجر',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xff25292E)),
+                            ),
                           ),
-                        ),
-                        Text(
-                          traderName,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                          Text(
+                            traderName,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(

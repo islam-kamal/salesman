@@ -93,7 +93,7 @@ class _DrawerInventoryCurrentRequestsAddProductState extends State<DrawerInvento
                           onTap: (){
                             if(widget.type != "transfer_request"){
                               appBloc.add(AppDrawrEvent(drawerType: 'transferRequest'));
-                              scaffoldKey!.currentState!.openEndDrawer();
+                  //            scaffoldKey!.currentState!.openEndDrawer();
                             }
 
                           },

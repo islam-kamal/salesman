@@ -8,7 +8,7 @@ import 'package:water/Base/common/theme.dart';
 import 'package:water/Base/connectivity/network_indicator.dart';
 import 'package:water/Base/safe_area/page_container.dart';
 
- GlobalKey<ScaffoldState>? scaffoldKey ;
+ //GlobalKey<ScaffoldState>? scaffoldKey ;
 class AppScreen extends StatefulWidget {
   final Widget? child;
   final Widget? drawer;
@@ -28,7 +28,7 @@ class _AppScreenState extends State<AppScreen> {
 
   @override
   void initState() {
-    scaffoldKey = GlobalKey<ScaffoldState>();
+    //scaffoldKey = GlobalKey<ScaffoldState>();
     super.initState();
   }
   @override
@@ -41,7 +41,7 @@ class _AppScreenState extends State<AppScreen> {
               ? TextDirection.rtl
               : TextDirection.ltr,
           child: Scaffold(
-           key: scaffoldKey,
+       //    key: scaffoldKey,
             endDrawer: widget.drawer,
             body: Container(
               child: SafeArea(

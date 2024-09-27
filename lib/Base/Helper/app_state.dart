@@ -1,6 +1,10 @@
+import 'package:flutter/foundation.dart';
 import 'package:water/Authentication/data/models/login_model.dart';
+import 'package:water/Clients/data/models/invoice_history_model.dart';
 import 'package:water/Profile/data/models/profile_model.dart';
 import 'package:water/Profile/data/models/resetPassword_model.dart';
+import 'package:water/Visits/data/models/category_model.dart';
+import 'package:water/Visits/data/models/product_model.dart';
 import 'package:water/Visits/data/models/today_visits_details_model.dart';
 import 'package:water/Visits/data/models/today_visits_model.dart';
 
@@ -105,4 +109,38 @@ class GeTodayVisitDetailsDone extends AppState{
 class GetTodayVisitDetailsErrorLoading extends AppState{
   final String? message;
   GetTodayVisitDetailsErrorLoading({this.message});
+}
+
+// Categories
+class GetCategoriesDone extends AppState{
+  final  List<CategoryData>? categories;
+  GetCategoriesDone({this.categories});
+}
+
+class GetCategoriesErrorLoading extends AppState{
+  final String? message;
+  GetCategoriesErrorLoading({this.message});
+}
+
+
+//PRODUCTS
+class GetProductsDone extends AppState{
+  final  List<Product>? products;
+  GetProductsDone({this.products});
+}
+
+class GetProductsErrorLoading extends AppState{
+  final String? message;
+  GetProductsErrorLoading({this.message});
+}
+
+//HISTORY INVOICES
+class GetHistoryInvoiceDone extends AppState{
+  final  InvoiceResult? invoiceResult;
+  GetHistoryInvoiceDone({this.invoiceResult});
+}
+
+class GetHistoryInvoiceErrorLoading extends AppState{
+  final String? message;
+  GetHistoryInvoiceErrorLoading({this.message});
 }
