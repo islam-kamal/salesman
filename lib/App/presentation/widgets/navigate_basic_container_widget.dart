@@ -164,9 +164,7 @@ class _NavigateBasicContainerState extends State<NavigateBasicContainer> {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: LocalizeAndTranslate.getLanguageCode() == 'en'
-          ? TextDirection.rtl
-          : TextDirection.ltr,
+      textDirection:  TextDirection.rtl,
       child: Column(
         children: [
           Container(

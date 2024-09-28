@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/widgets/duration_status_contianers.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/search_text_field.dart';
@@ -10,7 +11,7 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Directionality(
-      textDirection: TextDirection.rtl,
+      textDirection:  TextDirection.rtl,
       child: Scaffold(
         body: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +70,7 @@ class ReturnOrdersScreenDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-        ),
+      ),
     );
   }
 }

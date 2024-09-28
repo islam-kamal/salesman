@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/navigate_basic_container.dart';
 import 'package:water/widgets/returned_details_container.dart';
@@ -10,9 +11,11 @@ class OrderDetailsReturnScreenBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
+    return /*Directionality(
+      textDirection: LocalizeAndTranslate.getLanguageCode() == 'ar'
+          ? TextDirection.rtl
+          : TextDirection.ltr,
+      child:*/ Scaffold(
         // drawer: const Drawer(),
         body:
               Column(
@@ -74,7 +77,7 @@ class OrderDetailsReturnScreenBody extends StatelessWidget {
                           }),
                     ],
                   ),
-          ),
+     //     ),
     );
   }
 }

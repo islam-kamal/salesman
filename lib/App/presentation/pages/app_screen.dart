@@ -37,9 +37,7 @@ class _AppScreenState extends State<AppScreen> {
       child: PageContainer(
 
         child: Directionality(
-          textDirection: LocalizeAndTranslate.getLanguageCode() == 'ar'
-              ? TextDirection.rtl
-              : TextDirection.ltr,
+          textDirection:  TextDirection.ltr,
           child: Scaffold(
        //    key: scaffoldKey,
             endDrawer: widget.drawer,
