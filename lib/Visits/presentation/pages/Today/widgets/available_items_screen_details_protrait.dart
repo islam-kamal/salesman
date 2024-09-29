@@ -38,7 +38,6 @@ class AvailableItemsScreenDetailsProtrait extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                         onTap: (){
-                          print("categories![index] : ${categories![index]}");
                           sharedPreferenceManager.writeData(CachingKey.Category_ID, categories![index].id.toString());
                           customAnimatedPushNavigation(context, AvailableProductsScreen(
                             categoryData: categories![index],

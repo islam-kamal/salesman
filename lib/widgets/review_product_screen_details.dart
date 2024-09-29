@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/widgets/Drawer/inventory_edit_product_drawer.dart';
+import 'package:water/Base/common/shared.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/payment_method.dart';
 import 'package:water/widgets/pill_payment.dart';
@@ -28,19 +29,21 @@ class ReviewProductScreenDetails extends StatelessWidget {
                     ListView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: 5,
+                        itemCount: Shared.order_products_list.length,
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: (){
                               //TODO SHOW DRAWER
                             },
-                            child: const ReviewProductWaterItem(),
+                            child:  ReviewProductWaterItem(
+                              addedProductEntity: Shared.order_products_list[index],
+                            ),
                           );
                         }),
                     SizedBox(
                       height: MediaQuery.of(context).size.height * 0.006,
                     ),
-                    const Row(
+                     Row(
                       children: [
                         Expanded(
                           flex: 8,
@@ -53,13 +56,16 @@ class ReviewProductScreenDetails extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                          flex: 1,
-                          child: Text(
-                            '42 ر.س',
-                            style: TextStyle(
-                                color: Color(0xff07326A),
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                          flex: 3,
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              '${Shared.calculateTotalForAllProducts()}  ر.س ',
+                              style: TextStyle(
+                                  color: Color(0xff07326A),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
                       ],

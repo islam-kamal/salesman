@@ -72,8 +72,9 @@ class Product {
   String? description;
   double? price;
   String? image;
+  String? count;
 
-  Product({this.id, this.name, this.description, this.price, this.image});
+  Product({this.id, this.name, this.description, this.price, this.image,this.count});
 
   Product.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -81,6 +82,7 @@ class Product {
     description = json['description'];
     price = json['price'];
     image = json['image'];
+    count = json['count']??20.toString();
   }
 
   Map<String, dynamic> toJson() {
@@ -90,6 +92,7 @@ class Product {
     data['description'] = this.description;
     data['price'] = this.price;
     data['image'] = this.image;
+    data['count'] = this.count;
     return data;
   }
 }

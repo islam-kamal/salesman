@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Visits/presentation/pages/History/visits_history_screen.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/public_information_container.dart';
 import 'package:water/widgets/review_product_water_item.dart';
@@ -141,7 +139,7 @@ class VisitDetailsScreenReturnedBody extends StatelessWidget {
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {},
-                              child: const ReviewProductWaterItem(),
+                              child:  ReviewProductWaterItem(),
                             );
                           }),
                     ],

@@ -76,6 +76,8 @@ class VisitDetails {
  var totalSales;
  var totalRefund;
  var totalPayment;
+ var long;
+ var lat;
 
   VisitDetails(
       {this.customerName,
@@ -86,7 +88,9 @@ class VisitDetails {
         this.totalAmountDue,
         this.totalSales,
         this.totalRefund,
-        this.totalPayment});
+        this.totalPayment,
+      this.long,
+      this.lat});
 
   VisitDetails.fromJson(Map<String, dynamic> json) {
     customerName = json['customer_name'];
@@ -98,6 +102,9 @@ class VisitDetails {
     totalSales = json['total_sales'];
     totalRefund = json['total_refund'];
     totalPayment = json['total_payment'];
+    long = json['long'];
+    lat = json['lat'];
+
   }
 
   Map<String, dynamic> toJson() {
@@ -111,6 +118,9 @@ class VisitDetails {
     data['total_sales'] = this.totalSales;
     data['total_refund'] = this.totalRefund;
     data['total_payment'] = this.totalPayment;
+    data['long'] = this.long;
+    data['lat'] = this.lat;
+
     return data;
   }
 }

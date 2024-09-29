@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:water/Base/common/shared.dart';
 import 'package:water/Visits/presentation/pages/Today/review_product_screen.dart';
 
 class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
@@ -12,9 +13,9 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
         children: [
           Container(
             width: MediaQuery.of(context).size.width * 0.245,
-            height: MediaQuery.of(context).orientation == Orientation.portrait ?
+     /*       height: MediaQuery.of(context).orientation == Orientation.portrait ?
             MediaQuery.of(context).size.height * 0.18
-            : MediaQuery.of(context).size.height * 0.28,
+            : MediaQuery.of(context).size.height * 0.28,*/
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
@@ -28,14 +29,14 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'مرتجع منتجات',
+                    'امر بيع',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                   const Text(
-                    'لأسم التاجر',
+                    'أسم التاجر',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
                   ),
                   SizedBox(
@@ -65,11 +66,15 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+
+                  ...showSelectedProducts(),
+
+
                   const Divider(
                     color: Color.fromARGB(255, 186, 180, 180),
                     thickness: 0.9,
                   ),
-                  const Row(
+                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Opacity(
@@ -85,7 +90,7 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
                       Opacity(
                         opacity: 0.9,
                         child: Text(
-                          '42 ر.س',
+                          '${Shared.calculateTotalForAllProducts()}  ر.س ',
                           style: TextStyle(
                               color: Color(0xff0056C9),
                               fontSize: 16,
@@ -98,6 +103,7 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.004,
                   ),
                   const Row(
+
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Opacity(
@@ -141,7 +147,7 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
                       Opacity(
                         opacity: 0.9,
                         child: Text(
-                          '42 ر.س',
+                          '300  ر.س ',
                           style: TextStyle(
                               color: Color(0xff0056C9),
                               fontSize: 16,
@@ -205,4 +211,43 @@ class ProductsAndPricesAvailableItemsScreen extends StatelessWidget {
       ),
     );
     }
+  List<Widget> showSelectedProducts() {
+    print("Shared.order_products_list : ${Shared.order_products_list}");
+
+    return Shared.order_products_list?.map((element) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 4,
+            child: Opacity(
+              opacity: 0.78,
+              child: Text(
+                ' ${element.selectedCount} * ${element.name} ',
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  color: Color(0xff758195),
+                  fontWeight: FontWeight.w300,
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ),
+
+        Expanded(
+          flex: 2,
+          child: Text(
+          '${element.total} ر.س',
+          style: TextStyle(
+            color: Color(0xff758195),
+            fontWeight: FontWeight.w500,
+            fontSize: 14,
+          ),
+        ),)
+        ],
+      );
+    }).toList() ?? [];
+  }
+
+
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:water/App/presentation/bloc/app_bloc.dart';
-import 'package:water/App/presentation/pages/app_screen.dart';
 import 'package:water/Base/Helper/app_event.dart';
 import 'package:water/widgets/image_number_product_price_container_Widget.dart';
 import 'package:water/widgets/pill_payment.dart';
@@ -64,7 +63,7 @@ class _InventoryCurrentRequestDetailsScreenBodyState
                       appBloc.add(AppDrawrEvent(drawerType: 'editProduct'));
               //      scaffoldKey!.currentState!.openEndDrawer();
                     },
-                    child: const ReviewProductWaterItem(),
+                    child:  ReviewProductWaterItem(),
                   );
                 }),
             SizedBox(

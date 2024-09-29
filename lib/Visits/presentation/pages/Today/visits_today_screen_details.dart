@@ -7,13 +7,12 @@ import 'package:water/App/presentation/widgets/app_home_button_widget.dart';
 import 'package:water/Base/Helper/app_event.dart';
 import 'package:water/Base/Helper/app_state.dart';
 import 'package:water/Base/common/navigtor.dart';
-import 'package:water/Base/common/shared_preference_manger.dart';
+import 'package:water/Base/common/shared.dart';
 import 'package:water/Base/common/theme.dart';
 import 'package:water/Visits/presentation/bloc/today_visits_bloc.dart';
 import 'package:water/Visits/presentation/pages/Today/available_items_screen.dart';
 import 'package:water/index.dart';
 import 'package:water/widgets/google_map_container.dart';
-import 'package:water/widgets/indebtedness_container.dart';
 import 'package:water/widgets/market_information_container.dart';
 import 'package:water/widgets/trader_file_container.dart';
 import 'package:water/widgets/transaction_details_container.dart';
@@ -41,16 +40,16 @@ class VisitsTodayDetailsScreen extends StatelessWidget{
             asset: 'assets/images/Route.png',
             text: 'الاتجاهات',
             onClick: (){
-              double latitude = 37.7749;  // Example latitude
-              double longitude = -122.4194;  // Example longitude
-              launchGoogleMaps(latitude, longitude);
+              launchGoogleMaps(Shared.marketLatitude , Shared.marketLongtitude);
             },
             color: kWhiteColor,
           ),
           AppButtonWidget(
             asset: 'assets/images/phonee.png',
             text: 'الإتصال بالتاجر',
-            onClick: ()=> launchUrlString("tel://21213123123"),
+            onClick: (){
+              launchUrlString("tel://${Shared.marketPhone}");
+            },
             color: kWhiteColor,
           ),
         ]);
@@ -101,6 +100,9 @@ class _pageState extends State<_page> {
               }
               else if (state is GeTodayVisitDetailsDone) {
                 if(state.visitDetails != null || state.visitDetails!.isNotEmpty){
+                  Shared.marketLatitude = double.parse(state.visitDetails![0].lat);
+                  Shared.marketLongtitude = double.parse(state.visitDetails![0].long);
+                  Shared.marketPhone = state.visitDetails![0].customerNumber;
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

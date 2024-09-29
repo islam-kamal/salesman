@@ -1,9 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:water/App/presentation/bloc/app_bloc.dart';
-import 'package:water/Base/Helper/app_event.dart';
+import 'package:water/Visits/domain/entities/added_product_entity.dart';
+import 'package:water/widgets/image_placholder_widget.dart';
 
 class ReviewProductWaterItem extends StatelessWidget{
-  const ReviewProductWaterItem({super.key});
+  AddedProductEntity? addedProductEntity;
+   ReviewProductWaterItem({super.key,this.addedProductEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -22,67 +24,70 @@ class ReviewProductWaterItem extends StatelessWidget{
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Image.asset('assets/images/IMGggg.png')
+                      child: addedProductEntity == null ?
+                      Image.asset('assets/images/IMGggg.png')
+                          :  CachedNetworkImage(
+                        imageUrl: addedProductEntity!.image!,
+                        placeholder: (context, url) {
+                          return ImagePlacholderWidget();
+                        },
+                        errorWidget: (context, url, error){
+                          return ImagePlacholderWidget();
+
+                        },
+                      ),
                       ),
                       SizedBox(
                         width: MediaQuery.of(context).size.width * 0.015,
                       ),
-                      const Expanded(
+                       Expanded(
                       flex: 1,
                       child: Text(
-                        '33',
+                        addedProductEntity == null ?  '33'
+                        : addedProductEntity!.selectedCount!.toString(),
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500
                         ),
                         ),
                       ),
-                      const Expanded(
+                       Expanded(
                         flex: 6,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                           Row(
-                            children: [
-                              Text(
-                                'الكاتجوري',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500
-                                ),
-                              ),
-                              Text(
-                                '   .   ',
-                                style: TextStyle(
-                                  color: Color(0xff25292E),
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w900
-                                ),
-                              ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
                                 Text(
-                                'مياه',
-                                style: TextStyle(
-                                  color: Color(0xff25292E),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500
+                                  addedProductEntity == null ?  'مياه'
+                                      : addedProductEntity!.name!,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      color: Color(0xff25292E),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          Text(
-                            'مياه مدينة شرنك 15 حبة  600 مل',
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300
+                                Text(
+                                  addedProductEntity == null ? 'مياه مدينة شرنك 15 حبة  600 مل'
+                                      : addedProductEntity!.description!,
+
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
                             ),
-                          ),
-                        ],
+                        ),
+
+
                       ),
-                      ),
-                      const Expanded(
+                       Expanded(
                       flex: 1,
                       child: Text(
-                        '42 ر.س',
+                        addedProductEntity == null ?  '42 ر.س'
+                            : " ${addedProductEntity!.total!} ر.س ",
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500

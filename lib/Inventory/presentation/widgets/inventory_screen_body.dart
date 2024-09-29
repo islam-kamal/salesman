@@ -42,7 +42,7 @@ class InventoryScreenBody extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: () {},
-                            child: const ReviewProductWaterItem(),
+                            child:  ReviewProductWaterItem(),
                           );
                         }),
                   ],
